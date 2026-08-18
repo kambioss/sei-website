@@ -22,7 +22,7 @@ Scripts that need writable project-scoped home, npm, XDG, and temporary paths us
 ## Included Shape
 
 - edit site code under `app/`
-- `.openai/hosting.json` déclare les bindings Cloudflare D1 (`DB`) et R2 (`MEDIA`)
+- `wrangler.jsonc` déclare les bindings de production Cloudflare D1 (`DB`) et Workers KV (`MEDIA`)
 - `vite.config.ts` simulates declared bindings for local development
 - `db/index.ts` reads the D1 binding from the Cloudflare Worker environment
 - `db/schema.ts` starts intentionally empty
@@ -40,7 +40,7 @@ Le contenu public est séparé des composants d’affichage :
 - /admin fournit des champs de saisie pour modifier et publier les textes français et anglais sans toucher au code ;
 - l’administration permet également de créer les actualités, leur image de couverture et une galerie de plusieurs images affichée sous forme de diaporama ;
 - l’onglet « Fiches projets » permet de créer chaque projet avec une image de couverture, un résumé et une description complète en français et en anglais ;
-- les images envoyées depuis l’administration sont stockées dans Cloudflare R2 via le binding MEDIA.
+- les images envoyées depuis l’administration sont stockées dans Workers KV via le binding MEDIA.
 
 L’administration utilise son propre nom d’utilisateur et mot de passe. Définissez
 les trois variables d’environnement SITE_ADMIN_USERNAME, SITE_ADMIN_PASSWORD et
@@ -56,8 +56,8 @@ Les migrations `drizzle/0000_windy_starfox.sql`,
 `drizzle/0001_lame_silk_fever.sql` et
 `drizzle/0002_spooky_jack_murdock.sql` créent respectivement le contenu éditorial,
 les actualités et les fiches projets. Elles doivent être appliquées à D1 lors du
-déploiement. Un bucket R2 lié sous le nom `MEDIA` est également nécessaire pour
-les images importées.
+déploiement. Le namespace Workers KV lié sous le nom `MEDIA` stocke les images
+importées sans nécessiter R2.
 
 L’espace d’administration n’utilise ni ChatGPT ni un compte OpenAI. Il repose
 uniquement sur les identifiants internes configurés par variables d’environnement.
@@ -71,6 +71,7 @@ uniquement sur les identifiants internes configurés par variables d’environne
 - `npm test`: build, validate, and verify the rendered development-preview metadata
 - `npm run validate:artifact`: recheck an existing artifact's manifest and ESM `default.fetch` export
 - `npm run db:generate`: generate Drizzle migrations after schema changes
+- `npm run deploy:cloudflare`: apply pending D1 migrations and deploy the Worker with its production bindings
 
 Use build and validation commands for targeted diagnosis after a remote failure, not as part of the normal checkpoint path.
 
