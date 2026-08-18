@@ -1,0 +1,126 @@
+{
+  "brand": {
+    "shortName": "SEI",
+    "name": "Social & Eco Impact",
+    "descriptor": "Cabinet de conseil · Afrique"
+  },
+  "hero": {
+    "title": "Des solutions intégrées pour des territoires durables, inclusifs et résilients",
+    "statement": "Restaurer les terres. Évaluer les impacts. Agir pour un développement durable.",
+    "lead": "SEI accompagne les institutions et les acteurs du développement dans la conception et la mise en œuvre de solutions à fort impact environnemental et social en Afrique.",
+    "primaryAction": "Parler de votre projet",
+    "secondaryAction": "Découvrir nos expertises",
+    "proofs": ["Expertise technique", "Ancrage territorial", "Résultats mesurables"],
+    "imageCaption": "Une vision intégrée des territoires"
+  },
+  "audiences": [
+    "Institutions publiques",
+    "Collectivités territoriales",
+    "Organisations internationales",
+    "Partenaires techniques et financiers"
+  ],
+  "identity": {
+    "eyebrow": "Identité & positionnement",
+    "title": "Un cabinet engagé au service de la transformation durable de l’Afrique",
+    "ambition": "Transformer les défis environnementaux, sociaux et climatiques en leviers d’action, de paix et de résilience pour les populations et les territoires africains.",
+    "paragraphs": [
+      "Social & Eco Impact (SEI) est un cabinet de conseil spécialisé dans la gestion durable des territoires, l’évaluation environnementale et sociale, ainsi que dans l’accompagnement des réponses aux enjeux de paix, de mobilités et de changement climatique en Afrique.",
+      "SEI accompagne les institutions publiques, les collectivités territoriales, les organisations internationales et les partenaires techniques et financiers dans la conception, la mise en œuvre, le suivi et l’évaluation de politiques, de stratégies, de projets et de programmes à fort impact environnemental et social."
+    ]
+  },
+  "expertiseIntro": {
+    "eyebrow": "Nos domaines d’expertise",
+    "title": "Trois domaines d’expertise complémentaires",
+    "text": "Relier la restauration des terres, la maîtrise des impacts et la résilience des sociétés pour répondre aux défis complexes des territoires."
+  },
+  "expertises": [
+    {
+      "number": "01",
+      "tone": "green",
+      "title": "Neutralité en matière de dégradation des terres",
+      "summary": "SEI accompagne les acteurs publics et leurs partenaires dans la prévention de la dégradation des terres, la restauration des écosystèmes et la gestion durable des ressources naturelles.",
+      "interventions": [
+        "Planification territoriale et gestion durable des terres",
+        "Identification et priorisation des zones minières à restaurer",
+        "Intégration des objectifs de neutralité en matière de dégradation des terres dans les politiques, stratégies et programmes de développement",
+        "Renforcement des capacités institutionnelles et techniques des acteurs"
+      ],
+      "impact": "Préserver le capital naturel, restaurer les fonctions productives des écosystèmes et améliorer durablement les conditions de vie des populations."
+    },
+    {
+      "number": "02",
+      "tone": "ochre",
+      "title": "Évaluation et gestion environnementale et sociale",
+      "summary": "SEI accompagne la maîtrise des risques et des impacts environnementaux et sociaux associés aux politiques, aux projets et aux programmes de développement.",
+      "interventions": [
+        "Conduite d’études et d’évaluations des impacts environnementaux et sociaux (EIES)",
+        "Élaboration, mise en œuvre et suivi des plans de gestion environnementale et sociale (PGES)",
+        "Intégration de la dimension genre et prise en compte des groupes vulnérables dans les projets et programmes",
+        "Réalisation des audits, suivi-évaluation et reporting environnemental et social"
+      ],
+      "impact": "Anticiper les risques, renforcer l’acceptabilité sociale des interventions et améliorer leur conformité, leur performance et leur durabilité."
+    },
+    {
+      "number": "03",
+      "tone": "teal",
+      "title": "Paix, mobilités et changement climatique",
+      "summary": "SEI intervient au cœur des interactions entre changement climatique, pression sur les ressources naturelles, mobilités humaines et pastorales, déplacements de populations et conflits d’usage.",
+      "interventions": [
+        "Élaboration de stratégies agropastorales inclusives favorisant une cohabitation apaisée entre les usagers des territoires",
+        "Anticipation et accompagnement des déplacements de populations induits par les crises climatiques et environnementales",
+        "Conception et mise en œuvre de stratégies d’adaptation au changement climatique",
+        "Développement de moyens d’existence durables, inclusifs et résilients"
+      ],
+      "impact": "Réduire les vulnérabilités, prévenir les tensions et renforcer la capacité des populations et des territoires à faire face au dérèglement climatique et aux transformations sociales et économiques."
+    }
+  ],
+  "approach": {
+    "eyebrow": "Notre approche",
+    "title": "Une intervention pensée pour durer",
+    "items": [
+      {"title": "Lecture croisée", "text": "Une lecture croisée des enjeux environnementaux, sociaux, climatiques et territoriaux."},
+      {"title": "Solutions adaptées", "text": "Des solutions adaptées aux réalités institutionnelles, écologiques et socioéconomiques de chaque territoire."},
+      {"title": "Participation active", "text": "Une implication active des institutions, des communautés locales et des parties prenantes à chaque étape."},
+      {"title": "Outils opérationnels", "text": "Des outils opérationnels pour éclairer la décision, maîtriser les risques et renforcer durablement la résilience."}
+    ]
+  },
+  "capabilities": {
+    "eyebrow": "Compétences transversales",
+    "title": "Une expertise mobilisée au service de l’impact",
+    "lead": "Les compétences transversales de SEI renforcent la qualité technique, la cohérence et la portée opérationnelle de l’ensemble de ses interventions.",
+    "items": [
+      {"title": "Suivi-évaluation et gestion des connaissances", "text": "Mesure des résultats, apprentissage et capitalisation des bonnes pratiques."},
+      {"title": "Développement et structuration de projets", "text": "Conception de projets solides, cohérents et alignés sur les priorités nationales et internationales."},
+      {"title": "Finance climatique et durable", "text": "Appui à l’identification des opportunités et à la mobilisation de financements adaptés."},
+      {"title": "Renforcement des capacités", "text": "Accompagnement institutionnel, transfert de compétences et appropriation des outils."}
+    ]
+  },
+  "projects": {
+    "eyebrow": "Projets",
+    "title": "Des interventions ancrées dans les territoires",
+    "intro": "Une sélection de projets dans lesquels SEI mobilise son expertise technique, sa connaissance des contextes locaux et son approche partenariale."
+  },
+  "trustedOrganizations": {
+    "enabled": false,
+    "eyebrow": "Ils nous font confiance",
+    "title": "Des organisations engagées à nos côtés",
+    "intro": "Institutions, programmes et partenaires qui choisissent l’expertise de Social & Eco Impact.",
+    "items": [
+      {"name": "Organisation partenaire 1", "description": "Ajoutez une courte présentation de l’organisation.", "logoUrl": "", "link": ""},
+      {"name": "Organisation partenaire 2", "description": "Ajoutez une courte présentation de l’organisation.", "logoUrl": "", "link": ""},
+      {"name": "Organisation partenaire 3", "description": "Ajoutez une courte présentation de l’organisation.", "logoUrl": "", "link": ""},
+      {"name": "Organisation partenaire 4", "description": "Ajoutez une courte présentation de l’organisation.", "logoUrl": "", "link": ""}
+    ]
+  },
+  "valueAdded": {
+    "label": "Notre valeur ajoutée",
+    "text": "SEI associe expertise technique, compréhension des dynamiques locales, innovation méthodologique et participation des acteurs. Cette approche permet de restaurer les terres et les écosystèmes, de maîtriser les risques environnementaux et sociaux, de prévenir les tensions et de renforcer durablement la résilience des populations et des écosystèmes africains."
+  },
+  "contact": {
+    "eyebrow": "Contact & partenariats",
+    "title": "Parlons de votre projet.",
+    "intro": "Pour une mission, une étude ou un partenariat, présentez-nous brièvement votre besoin.",
+    "email": "youssoufa.seimpact@outlook.fr",
+    "location": "Afrique · Missions internationales"
+  }
+}

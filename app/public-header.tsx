@@ -1,0 +1,70 @@
+import Image from "next/image";
+import Link from "next/link";
+import type { Locale } from "@/lib/site-content";
+
+export type PublicNavSection = "sei" | "expertises" | "approche" | "projets" | "actualites";
+
+type PublicHeaderProps = {
+  locale: Locale;
+  active?: PublicNavSection;
+  ctaLabel: string;
+  languageHrefFr: string;
+  languageHrefEn: string;
+};
+
+export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languageHrefEn }: PublicHeaderProps) {
+  const english = locale === "en";
+  const homeAnchor = (id: string) => `/?lang=${locale}#${id}`;
+  const links: Array<{ section: PublicNavSection; label: string; href: string }> = [
+    { section: "sei", label: "SEI", href: homeAnchor("sei") },
+    { section: "expertises", label: english ? "Expertise" : "Expertises", href: homeAnchor("expertises") },
+    { section: "approche", label: english ? "Approach" : "Approche", href: homeAnchor("approche") },
+    { section: "projets", label: english ? "Projects" : "Projets", href: `/projets?lang=${locale}` },
+    { section: "actualites", label: english ? "News" : "Actualités", href: `/actualites?lang=${locale}` },
+  ];
+
+  return (
+    <header className="siteHeader">
+      <Link className="brand" href={homeAnchor("accueil")} aria-label="Social & Eco Impact">
+        <span className="brandLogoFrame"><Image src="/images/Logo_SEImpact-01.png" alt="" fill priority unoptimized sizes="160px" /></span>
+        <span className="brandName">Social &amp; Eco Impact</span>
+      </Link>
+      <nav className="desktopNav" aria-label={english ? "Main navigation" : "Navigation principale"}>
+        {links.map((link) => (
+          <Link
+            key={link.section}
+            className={active === link.section ? "active" : undefined}
+            data-nav-section={link.section}
+            aria-current={active === link.section ? "page" : undefined}
+            href={link.href}
+          >
+            {link.label}
+          </Link>
+        ))}
+        <div className="languageSwitch">
+          <Link className={locale === "fr" ? "active" : ""} href={languageHrefFr}>FR</Link>
+          <Link className={locale === "en" ? "active" : ""} href={languageHrefEn}>EN</Link>
+        </div>
+        <Link className="navCta" href={homeAnchor("contact")}>{ctaLabel} <span aria-hidden="true">↗</span></Link>
+      </nav>
+      <details className="mobileMenu">
+        <summary aria-label={english ? "Menu" : "Menu"}>{english ? "Menu" : "Menu"}</summary>
+        <div>
+          {links.map((link) => (
+            <Link
+              key={link.section}
+              className={active === link.section ? "active" : undefined}
+              data-nav-section={link.section}
+              aria-current={active === link.section ? "page" : undefined}
+              href={link.href}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <span className="mobileLanguages"><Link href={languageHrefFr}>FR</Link><Link href={languageHrefEn}>EN</Link></span>
+          <Link href={homeAnchor("contact")}>{ctaLabel}</Link>
+        </div>
+      </details>
+    </header>
+  );
+}

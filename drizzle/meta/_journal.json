@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1786977249369,
+      "tag": "0000_windy_starfox",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1786982769512,
+      "tag": "0001_lame_silk_fever",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1787049434469,
+      "tag": "0002_spooky_jack_murdock",
+      "breakpoints": true
+    }
+  ]
+}
