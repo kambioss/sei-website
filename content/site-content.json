@@ -2,10 +2,10 @@
   "brand": {
     "shortName": "SEI",
     "name": "Social & Eco Impact",
-    "descriptor": "Cabinet de conseil · Afrique"
+    "descriptor": "Cabinet de conseils, études et stratégies"
   },
   "hero": {
-    "title": "Des solutions intégrées pour des territoires durables, inclusifs et résilients",
+    "title": "Des solutions intégrées pour des territoires inclusifs et résilients",
     "statement": "Restaurer les terres. Évaluer les impacts. Agir pour un développement durable.",
     "lead": "SEI accompagne les institutions et les acteurs du développement dans la conception et la mise en œuvre de solutions à fort impact environnemental et social en Afrique.",
     "primaryAction": "Parler de votre projet",
@@ -21,7 +21,7 @@
   ],
   "identity": {
     "eyebrow": "Identité & positionnement",
-    "title": "Un cabinet engagé au service de la transformation durable de l’Afrique",
+    "title": "Un cabinet engagé au service du développement durable",
     "ambition": "Transformer les défis environnementaux, sociaux et climatiques en leviers d’action, de paix et de résilience pour les populations et les territoires africains.",
     "paragraphs": [
       "Social & Eco Impact (SEI) est un cabinet de conseil spécialisé dans la gestion durable des territoires, l’évaluation environnementale et sociale, ainsi que dans l’accompagnement des réponses aux enjeux de paix, de mobilités et de changement climatique en Afrique.",
@@ -31,21 +31,21 @@
   "expertiseIntro": {
     "eyebrow": "Nos domaines d’expertise",
     "title": "Trois domaines d’expertise complémentaires",
-    "text": "Relier la restauration des terres, la maîtrise des impacts et la résilience des sociétés pour répondre aux défis complexes des territoires."
+    "text": "Neutralité en matière de dégradation des terres • Évaluation et gestion environnementale et sociale • Paix, mobilités et changement climatique"
   },
   "expertises": [
     {
       "number": "01",
       "tone": "green",
-      "title": "Neutralité en matière de dégradation des terres",
-      "summary": "SEI accompagne les acteurs publics et leurs partenaires dans la prévention de la dégradation des terres, la restauration des écosystèmes et la gestion durable des ressources naturelles.",
+      "title": "Neutralité en matière de dégradation des terres – NDT",
+      "summary": "SEI accompagne les acteurs publics et leurs partenaires dans la mise en œuvre de la neutralité en matière de dégradation des terres, en plaçant la restauration des terres dégradées par l’exploitation minière au cœur de son intervention.",
       "interventions": [
-        "Planification territoriale et gestion durable des terres",
-        "Identification et priorisation des zones minières à restaurer",
+        "Restauration des terres dégradées par l’exploitation minière pour un environnement sain et une production alimentaire durable",
+        "Fourniture d’informations fondées sur les données concernant les tendances de dégradation des sols et l’efficacité des interventions",
         "Intégration des objectifs de neutralité en matière de dégradation des terres dans les politiques, stratégies et programmes de développement",
         "Renforcement des capacités institutionnelles et techniques des acteurs"
       ],
-      "impact": "Préserver le capital naturel, restaurer les fonctions productives des écosystèmes et améliorer durablement les conditions de vie des populations."
+      "impact": "Restaurer les fonctions écologiques et productives des terres dégradées, soutenir une production alimentaire durable et orienter l’action publique au moyen de données fiables."
     },
     {
       "number": "02",
@@ -66,12 +66,12 @@
       "title": "Paix, mobilités et changement climatique",
       "summary": "SEI intervient au cœur des interactions entre changement climatique, pression sur les ressources naturelles, mobilités humaines et pastorales, déplacements de populations et conflits d’usage.",
       "interventions": [
-        "Élaboration de stratégies agropastorales inclusives favorisant une cohabitation apaisée entre les usagers des territoires",
-        "Anticipation et accompagnement des déplacements de populations induits par les crises climatiques et environnementales",
-        "Conception et mise en œuvre de stratégies d’adaptation au changement climatique",
-        "Développement de moyens d’existence durables, inclusifs et résilients"
+        "Élaboration de stratégies agropastorales inclusives favorisant une cohabitation apaisée entre les usagers des territoires (pasteurs et agriculteurs)",
+        "Accompagnement des institutions dans la prévention et la gestion des risques climatiques aux échelles locale, nationale et régionale",
+        "Conception et mise en œuvre de stratégies locales d’agriculture climato-intelligente",
+        "Développement de moyens d’existence inclusifs et résilients face aux défis climatiques"
       ],
-      "impact": "Réduire les vulnérabilités, prévenir les tensions et renforcer la capacité des populations et des territoires à faire face au dérèglement climatique et aux transformations sociales et économiques."
+      "impact": "Réduire les vulnérabilités, prévenir les tensions et renforcer la capacité des populations et des territoires à faire face au dérèglement climatique et aux transformations socio-économiques."
     }
   ],
   "approach": {
@@ -91,7 +91,7 @@
     "items": [
       {"title": "Suivi-évaluation et gestion des connaissances", "text": "Mesure des résultats, apprentissage et capitalisation des bonnes pratiques."},
       {"title": "Développement et structuration de projets", "text": "Conception de projets solides, cohérents et alignés sur les priorités nationales et internationales."},
-      {"title": "Finance climatique et durable", "text": "Appui à l’identification des opportunités et à la mobilisation de financements adaptés."},
+      {"title": "Finance climatique", "text": "Appui à l’identification des opportunités et à la mobilisation de financements adaptés."},
       {"title": "Renforcement des capacités", "text": "Accompagnement institutionnel, transfert de compétences et appropriation des outils."}
     ]
   },
@@ -114,7 +114,7 @@
   },
   "valueAdded": {
     "label": "Notre valeur ajoutée",
-    "text": "SEI associe expertise technique, compréhension des dynamiques locales, innovation méthodologique et participation des acteurs. Cette approche permet de restaurer les terres et les écosystèmes, de maîtriser les risques environnementaux et sociaux, de prévenir les tensions et de renforcer durablement la résilience des populations et des écosystèmes africains."
+    "text": "SEI conjugue expertise technique, connaissance approfondie des dynamiques locales, innovation technologique et participation active des acteurs. Cette approche intégrée permet de proposer des solutions fondées sur des données fiables et adaptées aux réalités des territoires, afin de restaurer les terres et les écosystèmes, de maîtriser les risques environnementaux et sociaux, de prévenir les tensions et de renforcer durablement la résilience des populations."
   },
   "contact": {
     "eyebrow": "Contact & partenariats",

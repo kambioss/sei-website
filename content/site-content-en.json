@@ -2,10 +2,10 @@
   "brand": {
     "shortName": "SEI",
     "name": "Social & Eco Impact",
-    "descriptor": "Consulting firm · Africa"
+    "descriptor": "Consulting, research and strategy firm"
   },
   "hero": {
-    "title": "Integrated solutions for sustainable, inclusive and resilient territories",
+    "title": "Integrated solutions for inclusive and resilient territories",
     "statement": "Restore land. Assess impacts. Act for sustainable development.",
     "lead": "SEI supports institutions and development actors in designing and implementing solutions with strong environmental and social impact across Africa.",
     "primaryAction": "Discuss your project",
@@ -21,7 +21,7 @@
   ],
   "identity": {
     "eyebrow": "Identity & positioning",
-    "title": "A committed firm serving Africa’s sustainable transformation",
+    "title": "A committed firm serving sustainable development",
     "ambition": "Turn environmental, social and climate challenges into levers for action, peace and resilience for African communities and territories.",
     "paragraphs": [
       "Social & Eco Impact (SEI) is a consulting firm specialised in sustainable territorial management, environmental and social assessment, and responses to peace, mobility and climate change challenges in Africa.",
@@ -31,21 +31,21 @@
   "expertiseIntro": {
     "eyebrow": "Our areas of expertise",
     "title": "Three complementary areas of expertise",
-    "text": "Connecting land restoration, impact management and societal resilience to address the complex challenges facing territories."
+    "text": "Land degradation neutrality • Environmental and social assessment and management • Peace, mobility and climate change"
   },
   "expertises": [
     {
       "number": "01",
       "tone": "green",
-      "title": "Land degradation neutrality",
-      "summary": "SEI supports public actors and their partners in preventing land degradation, restoring ecosystems and managing natural resources sustainably.",
+      "title": "Land degradation neutrality – LDN",
+      "summary": "SEI supports public actors and their partners in implementing land degradation neutrality, placing the restoration of land degraded by mining at the heart of its work.",
       "interventions": [
-        "Territorial planning and sustainable land management",
-        "Identification and prioritisation of mining areas to restore",
+        "Restoration of land degraded by mining to support a healthy environment and sustainable food production",
+        "Provision of data-driven information on land degradation trends and the effectiveness of interventions",
         "Integration of land degradation neutrality objectives into development policies, strategies and programmes",
         "Institutional and technical capacity building"
       ],
-      "impact": "Preserve natural capital, restore productive ecosystem functions and sustainably improve people’s living conditions."
+      "impact": "Restore the ecological and productive functions of degraded land, support sustainable food production and guide public action through reliable data."
     },
     {
       "number": "02",
@@ -66,12 +66,12 @@
       "title": "Peace, mobility and climate change",
       "summary": "SEI works at the heart of interactions between climate change, pressure on natural resources, human and pastoral mobility, displacement and conflicts over resource use.",
       "interventions": [
-        "Inclusive agropastoral strategies supporting peaceful coexistence among territorial users",
-        "Anticipation and support for population displacement caused by climate and environmental crises",
-        "Design and implementation of climate change adaptation strategies",
-        "Development of sustainable, inclusive and resilient livelihoods"
+        "Inclusive agropastoral strategies promoting peaceful coexistence among territorial users (pastoralists and farmers)",
+        "Support for institutions in preventing and managing climate risks at local, national and regional levels",
+        "Design and implementation of local climate-smart agriculture strategies",
+        "Development of inclusive and resilient livelihoods in response to climate challenges"
       ],
-      "impact": "Reduce vulnerabilities, prevent tensions and strengthen the capacity of communities and territories to face climate disruption and social and economic change."
+      "impact": "Reduce vulnerabilities, prevent tensions and strengthen the capacity of communities and territories to face climate disruption and socioeconomic change."
     }
   ],
   "approach": {
@@ -91,7 +91,7 @@
     "items": [
       {"title": "Monitoring, evaluation and knowledge management", "text": "Results measurement, learning and documentation of good practices."},
       {"title": "Project development and structuring", "text": "Design of robust, coherent projects aligned with national and international priorities."},
-      {"title": "Climate and sustainable finance", "text": "Support in identifying opportunities and mobilising appropriate financing."},
+      {"title": "Climate finance", "text": "Support in identifying opportunities and mobilising appropriate financing."},
       {"title": "Capacity building", "text": "Institutional support, skills transfer and ownership of tools."}
     ]
   },
@@ -114,7 +114,7 @@
   },
   "valueAdded": {
     "label": "Our added value",
-    "text": "SEI combines technical expertise, understanding of local dynamics, methodological innovation and stakeholder participation. This approach helps restore land and ecosystems, manage environmental and social risks, prevent tensions and sustainably strengthen the resilience of African communities and ecosystems."
+    "text": "SEI combines technical expertise, in-depth knowledge of local dynamics, technological innovation and active stakeholder participation. This integrated approach delivers reliable, data-driven solutions tailored to territorial realities in order to restore land and ecosystems, manage environmental and social risks, prevent tensions and sustainably strengthen community resilience."
   },
   "contact": {
     "eyebrow": "Contact & partnerships",
