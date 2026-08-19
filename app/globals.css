@@ -55,7 +55,7 @@ button, input, textarea, select { font: inherit; }
   font-weight: 800;
   letter-spacing: .08em;
 }
-.brandName { display: flex; flex-direction: column; align-items: flex-start; width: max-content; max-width: 145px; color: var(--forest); font-size: 16px; line-height: 1.12; letter-spacing: -.02em; }
+.brandName { display: flex; flex-direction: column; align-items: flex-start; width: max-content; max-width: 185px; color: var(--forest); font-size: 21px; line-height: 1.12; letter-spacing: -.02em; }
 .brandNameTop { font-weight: 800; white-space: nowrap; }
 .brandNameBottom { display: flex; justify-content: space-between; width: 100%; font-weight: 800; }
 .desktopNav { display: flex; align-items: center; gap: 30px; font-size: 14px; font-weight: 700; }
@@ -87,10 +87,10 @@ button, input, textarea, select { font: inherit; }
   grid-template-columns: 1.05fr .78fr;
   align-items: stretch;
   min-height: calc(100svh - 78px);
-  padding-block: 46px 56px;
+  padding-block: 18px 56px;
   gap: clamp(38px, 6vw, 92px);
 }
-.heroCopy { display: flex; flex-direction: column; justify-content: center; padding-block: 10px; }
+.heroCopy { display: flex; flex-direction: column; justify-content: flex-start; padding-block: 10px; }
 .eyebrow {
   display: flex;
   align-items: center;
@@ -440,7 +440,7 @@ button, input, textarea, select { font: inherit; }
   .sectionShell { width: min(100% - 28px, 1240px); }
   .siteHeader { min-height: 70px; padding-inline: 14px; }
   .brandMark { width: 42px; height: 42px; }
-  .brandName { font-size: 14px; }
+  .brandName { font-size: 17px; }
   .desktopNav { display: none; }
   .mobileMenu { display: block; }
   .hero { padding-block: 20px 42px; gap: 35px; }
@@ -797,8 +797,8 @@ button, input, textarea, select { font: inherit; }
   position: relative;
   display: block;
   flex: 0 0 auto;
-  width: 158px;
-  height: 60px;
+  width: 200px;
+  height: 76px;
   overflow: hidden;
   border-radius: 10px;
   transition: transform .25s ease, box-shadow .25s ease;
