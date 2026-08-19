@@ -27,7 +27,14 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
     <header className="siteHeader">
       <Link className="brand" href={homeAnchor("accueil")} aria-label="Social & Eco Impact">
         <span className="brandLogoFrame"><Image src="/images/Logo_SEImpact-01.png" alt="" fill priority unoptimized sizes="160px" /></span>
-        <span className="brandName">Social &amp; Eco Impact</span>
+        <span className="brandName">
+          <span className="brandNameTop">Social &amp; Eco</span>
+          <span className="brandNameBottom">
+            {"Impact".split("").map((letter, index) => (
+              <span key={index}>{letter}</span>
+            ))}
+          </span>
+        </span>
       </Link>
       <nav className="desktopNav" aria-label={english ? "Main navigation" : "Navigation principale"}>
         {links.map((link) => (

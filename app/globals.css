@@ -55,7 +55,9 @@ button, input, textarea, select { font: inherit; }
   font-weight: 800;
   letter-spacing: .08em;
 }
-.brandName { max-width: 145px; color: var(--forest); font-size: 16px; font-weight: 800; line-height: 1.12; letter-spacing: -.02em; }
+.brandName { display: flex; flex-direction: column; align-items: flex-start; width: max-content; max-width: 145px; color: var(--forest); font-size: 16px; line-height: 1.12; letter-spacing: -.02em; }
+.brandNameTop { font-weight: 800; white-space: nowrap; }
+.brandNameBottom { display: flex; justify-content: space-between; width: 100%; font-weight: 800; }
 .desktopNav { display: flex; align-items: center; gap: 30px; font-size: 14px; font-weight: 700; }
 .desktopNav > a:not(.navCta) { position: relative; padding-block: 10px; }
 .desktopNav > a:not(.navCta)::after {
