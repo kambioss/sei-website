@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PROJECTS_NEWS_ENABLED } from "@/lib/feature-flags";
 import type { Locale } from "@/lib/site-content";
 
 export type PublicNavSection = "sei" | "expertises" | "approche" | "projets" | "actualites";
@@ -16,11 +17,15 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
   const english = locale === "en";
   const homeAnchor = (id: string) => `/?lang=${locale}#${id}`;
   const links: Array<{ section: PublicNavSection; label: string; href: string }> = [
-    { section: "sei", label: "SEI", href: homeAnchor("sei") },
-    { section: "expertises", label: english ? "Expertise" : "Expertises", href: homeAnchor("expertises") },
-    { section: "approche", label: english ? "Approach" : "Approche", href: homeAnchor("approche") },
-    { section: "projets", label: english ? "Projects" : "Projets", href: `/projets?lang=${locale}` },
-    { section: "actualites", label: english ? "News" : "Actualités", href: `/actualites?lang=${locale}` },
+    { section: "sei", label: english ? "SEI" : "Qui sommes-nous", href: homeAnchor("sei") },
+    { section: "expertises", label: english ? "Expertise" : "Notre expertise", href: homeAnchor("expertises") },
+    { section: "approche", label: english ? "Approach" : "Nos savoir-faire", href: homeAnchor("approche") },
+    ...(PROJECTS_NEWS_ENABLED
+      ? [
+          { section: "projets" as const, label: english ? "Projects" : "Projets", href: `/projets?lang=${locale}` },
+          { section: "actualites" as const, label: english ? "News" : "Actualités", href: `/actualites?lang=${locale}` },
+        ]
+      : []),
   ];
 
   return (

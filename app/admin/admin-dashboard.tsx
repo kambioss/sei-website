@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ContentEditor, adminSectionLabels } from "@/app/admin/content-editor";
 import { NewsManager } from "@/app/admin/news-manager";
 import { ProjectManager } from "@/app/admin/project-manager";
+import { PROJECTS_NEWS_ENABLED } from "@/lib/feature-flags";
 import type { AdminNewsArticle } from "@/lib/news";
 import type { AdminProject } from "@/lib/projects";
 import type { Locale, SiteContent } from "@/lib/site-content";
@@ -26,6 +27,7 @@ const copy = {
     projects: "Fiches projets",
     language: "Langue de travail",
     editing: "Édition en français",
+    disabledHint: "Désactivé en attendant l’ajout de contenu",
   },
   en: {
     navigation: "Administration navigation",
@@ -35,6 +37,7 @@ const copy = {
     projects: "Project pages",
     language: "Working language",
     editing: "Editing in English",
+    disabledHint: "Disabled until content is added",
   },
 } as const;
 
@@ -72,11 +75,23 @@ export function AdminDashboard({ initialContentFr, initialContentEn, initialArti
               </button>
             ))}
             <p>{ui.publication}</p>
-            <button type="button" className={activeArea === "news" ? "active" : ""} onClick={() => setActiveArea("news")}>
+            <button
+              type="button"
+              className={activeArea === "news" ? "active" : ""}
+              onClick={() => setActiveArea("news")}
+              disabled={!PROJECTS_NEWS_ENABLED}
+              title={PROJECTS_NEWS_ENABLED ? undefined : ui.disabledHint}
+            >
               <span aria-hidden="true">＋</span>
               {ui.news}
             </button>
-            <button type="button" className={activeArea === "projectEntries" ? "active" : ""} onClick={() => setActiveArea("projectEntries")}>
+            <button
+              type="button"
+              className={activeArea === "projectEntries" ? "active" : ""}
+              onClick={() => setActiveArea("projectEntries")}
+              disabled={!PROJECTS_NEWS_ENABLED}
+              title={PROJECTS_NEWS_ENABLED ? undefined : ui.disabledHint}
+            >
               <span aria-hidden="true">＋</span>
               {ui.projects}
             </button>

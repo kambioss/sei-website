@@ -4,6 +4,7 @@ import { ContactForm } from "@/app/contact-form";
 import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
 import { OrganizationSlider } from "@/app/organization-slider";
+import { PROJECTS_NEWS_ENABLED } from "@/lib/feature-flags";
 import { getPublishedNews } from "@/lib/news";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
 
@@ -24,9 +25,8 @@ const ui = {
     interventions: "Nos interventions",
     impact: "Impact recherché",
     directContact: "Contact direct",
-    galleryEyebrow: "Territoires & écosystèmes",
-    galleryTitle: "Des paysages au cœur de notre engagement.",
-    galleryCaptions: ["Terres et biodiversité", "Résilience des paysages", "Ressources naturelles", "Territoires en transition"],
+    galleryTitle: "Le capital naturel au cœur de notre engagement.",
+    galleryCaptions: ["Terres et biodiversité", "Résilience des paysages", "Territoires en transition"],
     newsEyebrow: "Nos actualités",
     latestNewsTitle: "Notre dernière activité",
     newsTitle: "Projets, idées et nouvelles du terrain.",
@@ -51,9 +51,8 @@ const ui = {
     interventions: "Our services",
     impact: "Expected impact",
     directContact: "Direct contact",
-    galleryEyebrow: "Territories & ecosystems",
-    galleryTitle: "Landscapes at the heart of our commitment.",
-    galleryCaptions: ["Land and biodiversity", "Landscape resilience", "Natural resources", "Territories in transition"],
+    galleryTitle: "Natural capital at the heart of our commitment.",
+    galleryCaptions: ["Land and biodiversity", "Landscape resilience", "Territories in transition"],
     newsEyebrow: "Our news",
     latestNewsTitle: "Our latest activity",
     newsTitle: "Projects, ideas and news from the field.",
@@ -69,7 +68,6 @@ const ui = {
 const territoryImages = [
   "/images/beautiful-scenery-lone-tree-middle-empty-field-grey-cloudy-sky.jpg",
   "/images/extra-long-shot-peaceful-landscape-with-trees.jpg",
-  "/images/mountain-cloudy-sky.jpg",
   "/images/sei-territoires.webp",
 ];
 
@@ -83,7 +81,7 @@ export default async function Home({ searchParams }: HomeProps) {
   const copy = ui[locale];
   const [content, articles] = await Promise.all([
     getSiteContent(locale),
-    getPublishedNews(locale),
+    PROJECTS_NEWS_ENABLED ? getPublishedNews(locale) : Promise.resolve([]),
   ]);
   const { brand, hero, audiences, identity, expertiseIntro, expertises, approach, capabilities, trustedOrganizations, valueAdded, contact } = content;
   const anchor = (id: string) => "/?lang=" + locale + "#" + id;
@@ -119,7 +117,6 @@ export default async function Home({ searchParams }: HomeProps) {
             sizes="(max-width: 980px) 100vw, 42vw"
           />
           <div className="imageShade" />
-          <div className="imageBadge"><strong>{String(expertises.length).padStart(2, "0")}</strong><span>{copy.expertise}<br />{locale === "en" ? "combined" : "complémentaires"}</span></div>
           <p className="imageCaption">{hero.imageCaption}</p>
         </div>
       </section>
@@ -146,7 +143,6 @@ export default async function Home({ searchParams }: HomeProps) {
 
       <section className="territoryGallery sectionShell" aria-label={copy.galleryTitle}>
         <div className="territoryGalleryIntro">
-          <p className="eyebrow"><span /> {copy.galleryEyebrow}</p>
           <h2>{copy.galleryTitle}</h2>
         </div>
         <div className="territoryGalleryGrid">
@@ -178,6 +174,17 @@ export default async function Home({ searchParams }: HomeProps) {
         </div>
       </section>
 
+      <section className="capabilitiesSection">
+        <div className="sectionShell capabilitiesGrid">
+          <div><p className="eyebrow light"><span /> {capabilities.eyebrow}</p><h2>{capabilities.title}</h2><p className="capabilitiesLead">{capabilities.lead}</p></div>
+          <ul>
+            {capabilities.items.map((item, index) => (
+              <li key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><div><strong>{item.title}</strong><p>{item.text}</p></div></li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section className="approachSection" id="approche">
         <div className="sectionShell">
           <div className="approachIntro"><p className="eyebrow light"><span /> {approach.eyebrow}</p><h2>{approach.title}</h2></div>
@@ -189,43 +196,36 @@ export default async function Home({ searchParams }: HomeProps) {
         </div>
       </section>
 
-      <section className="capabilitiesSection sectionShell">
-        <div><p className="eyebrow"><span /> {capabilities.eyebrow}</p><h2>{capabilities.title}</h2><p className="capabilitiesLead">{capabilities.lead}</p></div>
-        <ul>
-          {capabilities.items.map((item, index) => (
-            <li key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><div><strong>{item.title}</strong><p>{item.text}</p></div></li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="newsSection" id="actualites">
-        <div className="sectionShell newsSectionInner">
-          <div className="sectionIntro">
-            <div><p className="eyebrow"><span /> {copy.newsEyebrow}</p><h2>{copy.latestNewsTitle}</h2></div>
-            <p>{copy.newsIntro}</p>
-          </div>
-          {articles.length ? (
-            <div className="latestNewsBlock">
-              <div className="newsGrid latestNewsGrid">
-                {articles.slice(0, 1).map((article) => (
-                  <article className="newsCard" key={article.id}>
-                    <Link className="newsCardImage" href={"/actualites/" + article.slug + "?lang=" + locale}>
-                      <Image src={article.coverImageUrl} alt={article.coverAlt} fill unoptimized sizes="(max-width: 800px) 100vw, 58vw" />
-                    </Link>
-                    <div className="newsCardCopy">
-                      <time dateTime={article.publishedAt}>{new Intl.DateTimeFormat(locale === "en" ? "en-GB" : "fr-FR", { dateStyle: "long" }).format(new Date(article.publishedAt))}</time>
-                      <h3><Link href={"/actualites/" + article.slug + "?lang=" + locale}>{article.title}</Link></h3>
-                      <p>{article.excerpt}</p>
-                      <Link href={"/actualites/" + article.slug + "?lang=" + locale}>{copy.read} <span aria-hidden="true">→</span></Link>
-                    </div>
-                  </article>
-                ))}
-              </div>
-              <Link className="newsArchiveLink" href={"/actualites?lang=" + locale}>{copy.allNews} <span aria-hidden="true">→</span></Link>
+      {PROJECTS_NEWS_ENABLED && (
+        <section className="newsSection" id="actualites">
+          <div className="sectionShell newsSectionInner">
+            <div className="sectionIntro">
+              <div><p className="eyebrow"><span /> {copy.newsEyebrow}</p><h2>{copy.latestNewsTitle}</h2></div>
+              <p>{copy.newsIntro}</p>
             </div>
-          ) : <p className="newsEmpty">{copy.noNews}</p>}
-        </div>
-      </section>
+            {articles.length ? (
+              <div className="latestNewsBlock">
+                <div className="newsGrid latestNewsGrid">
+                  {articles.slice(0, 1).map((article) => (
+                    <article className="newsCard" key={article.id}>
+                      <Link className="newsCardImage" href={"/actualites/" + article.slug + "?lang=" + locale}>
+                        <Image src={article.coverImageUrl} alt={article.coverAlt} fill unoptimized sizes="(max-width: 800px) 100vw, 58vw" />
+                      </Link>
+                      <div className="newsCardCopy">
+                        <time dateTime={article.publishedAt}>{new Intl.DateTimeFormat(locale === "en" ? "en-GB" : "fr-FR", { dateStyle: "long" }).format(new Date(article.publishedAt))}</time>
+                        <h3><Link href={"/actualites/" + article.slug + "?lang=" + locale}>{article.title}</Link></h3>
+                        <p>{article.excerpt}</p>
+                        <Link href={"/actualites/" + article.slug + "?lang=" + locale}>{copy.read} <span aria-hidden="true">→</span></Link>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+                <Link className="newsArchiveLink" href={"/actualites?lang=" + locale}>{copy.allNews} <span aria-hidden="true">→</span></Link>
+              </div>
+            ) : <p className="newsEmpty">{copy.noNews}</p>}
+          </div>
+        </section>
+      )}
       <section className="midCta sectionShell">
         <div><p>{valueAdded.label}</p><h2>{valueAdded.text}</h2></div>
         <Link className="roundArrow" href={anchor("contact")} aria-label={copy.conversation}><span aria-hidden="true">↘</span></Link>
@@ -262,7 +262,14 @@ export default async function Home({ searchParams }: HomeProps) {
       <footer className="siteFooter">
         <div className="sectionShell footerInner">
           <div className="footerBrand"><span className="brandLogoFrame"><Image src="/images/Logo_SEImpact-01.png" alt={brand.name} fill unoptimized sizes="150px" /></span><small>{copy.footerTagline}</small></div>
-          <div className="footerLinks"><Link href={anchor("sei")}>{copy.cabinet}</Link><Link href={anchor("expertises")}>{copy.expertise}</Link><Link href={anchor("approche")}>{copy.approach}</Link><Link href={`/projets?lang=${locale}`}>{locale === "en" ? "Projects" : "Projets"}</Link><Link href={"/actualites?lang=" + locale}>{copy.news}</Link><Link href={anchor("contact")}>Contact</Link></div>
+          <div className="footerLinks">
+            <Link href={anchor("sei")}>{copy.cabinet}</Link>
+            <Link href={anchor("expertises")}>{copy.expertise}</Link>
+            <Link href={anchor("approche")}>{copy.approach}</Link>
+            {PROJECTS_NEWS_ENABLED && <Link href={`/projets?lang=${locale}`}>{locale === "en" ? "Projects" : "Projets"}</Link>}
+            {PROJECTS_NEWS_ENABLED && <Link href={"/actualites?lang=" + locale}>{copy.news}</Link>}
+            <Link href={anchor("contact")}>Contact</Link>
+          </div>
           <p>© {new Date().getFullYear()} {brand.name}</p>
         </div>
       </footer>

@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
+import { PROJECTS_NEWS_ENABLED } from "@/lib/feature-flags";
 import { getPublishedProjects } from "@/lib/projects";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
 
@@ -10,6 +12,7 @@ export const dynamic = "force-dynamic";
 export default async function ProjectsPage({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
   const query = await searchParams;
   const locale = normaliseLocale(query.lang);
+  if (!PROJECTS_NEWS_ENABLED) redirect(`/?lang=${locale}`);
   const english = locale === "en";
   const [content, projects] = await Promise.all([getSiteContent(locale), getPublishedProjects(locale)]);
 

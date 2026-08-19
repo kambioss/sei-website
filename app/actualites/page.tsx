@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
+import { PROJECTS_NEWS_ENABLED } from "@/lib/feature-flags";
 import { getPublishedNews } from "@/lib/news";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
 
@@ -35,6 +37,7 @@ const copy = {
 export default async function NewsPage({ searchParams }: NewsPageProps) {
   const query = await searchParams;
   const locale = normaliseLocale(query.lang);
+  if (!PROJECTS_NEWS_ENABLED) redirect(`/?lang=${locale}`);
   const ui = copy[locale];
   const [content, articles] = await Promise.all([
     getSiteContent(locale),

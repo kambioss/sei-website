@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { GallerySlider } from "@/app/actualites/[slug]/gallery-slider";
 import { PublicHeader } from "@/app/public-header";
+import { PROJECTS_NEWS_ENABLED } from "@/lib/feature-flags";
 import { getPublishedNewsBySlug } from "@/lib/news";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
 
@@ -16,6 +17,7 @@ type ArticlePageProps = {
 export default async function ArticlePage({ params, searchParams }: ArticlePageProps) {
   const [{ slug }, query] = await Promise.all([params, searchParams]);
   const locale = normaliseLocale(query.lang);
+  if (!PROJECTS_NEWS_ENABLED) redirect(`/?lang=${locale}`);
   const [article, content] = await Promise.all([getPublishedNewsBySlug(slug, locale), getSiteContent(locale)]);
   if (!article) notFound();
   const english = locale === "en";

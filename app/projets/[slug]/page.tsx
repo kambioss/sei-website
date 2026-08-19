@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { PublicHeader } from "@/app/public-header";
+import { PROJECTS_NEWS_ENABLED } from "@/lib/feature-flags";
 import { getPublishedProjectBySlug } from "@/lib/projects";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
 
@@ -10,6 +11,7 @@ export const dynamic = "force-dynamic";
 export default async function ProjectPage({ params, searchParams }: { params: Promise<{ slug: string }>; searchParams: Promise<{ lang?: string }> }) {
   const [{ slug }, query] = await Promise.all([params, searchParams]);
   const locale = normaliseLocale(query.lang);
+  if (!PROJECTS_NEWS_ENABLED) redirect(`/?lang=${locale}`);
   const english = locale === "en";
   const [project, content] = await Promise.all([getPublishedProjectBySlug(slug, locale), getSiteContent(locale)]);
   if (!project) notFound();
