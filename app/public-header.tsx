@@ -18,8 +18,8 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
   const homeAnchor = (id: string) => `/?lang=${locale}#${id}`;
   const links: Array<{ section: PublicNavSection; label: string; href: string }> = [
     { section: "sei", label: english ? "SEI" : "Qui sommes-nous", href: homeAnchor("sei") },
-    { section: "expertises", label: english ? "Expertise" : "Notre expertise", href: homeAnchor("expertises") },
-    { section: "approche", label: english ? "Approach" : "Nos savoir-faire", href: homeAnchor("approche") },
+    { section: "expertises", label: english ? "Our expertise" : "Notre expertise", href: homeAnchor("expertises") },
+    { section: "approche", label: english ? "Knowledge" : "Notre savoir-faire", href: homeAnchor("approche") },
     ...(PROJECTS_NEWS_ENABLED
       ? [
           { section: "projets" as const, label: english ? "Projects" : "Projets", href: `/projets?lang=${locale}` },

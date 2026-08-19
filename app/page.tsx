@@ -134,6 +134,15 @@ export default async function Home({ searchParams }: HomeProps) {
         <div className="aboutTitle">
           <p className="eyebrow"><span /> {identity.eyebrow}</p>
           <h2>{identity.title}</h2>
+          <figure className="aboutTitleMedia">
+            <Image
+              src="/images/visite_terrain.jpeg"
+              alt={locale === "en" ? "SEI team on a field visit" : "L’équipe SEI en visite de terrain"}
+              fill
+              unoptimized
+              sizes="(max-width: 900px) 100vw, 40vw"
+            />
+          </figure>
         </div>
         <div className="aboutCopy">
           {identity.paragraphs.map((paragraph, index) => <p className={index === 0 ? "aboutLead" : undefined} key={paragraph}>{paragraph}</p>)}
