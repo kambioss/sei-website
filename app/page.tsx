@@ -185,9 +185,9 @@ export default async function Home({ searchParams }: HomeProps) {
 
       <section className="capabilitiesSection">
         <div className="sectionShell capabilitiesGrid">
-          <div><p className="eyebrow light"><span /> {capabilities.eyebrow}</p><h2>{capabilities.title}</h2><p className="capabilitiesLead">{capabilities.lead}</p></div>
+          <div><h2>{capabilities.title}</h2><p className="capabilitiesLead">{capabilities.lead}</p></div>
           <ul>
-            {capabilities.items.map((item, index) => (
+            {capabilities.items.filter((item) => item.title.trim().length > 0).map((item, index) => (
               <li key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><div><strong>{item.title}</strong><p>{item.text}</p></div></li>
             ))}
           </ul>

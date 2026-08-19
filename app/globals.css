@@ -155,7 +155,7 @@ button, input, textarea, select { font: inherit; }
 .heroVisual { position: relative; min-height: 660px; overflow: hidden; border-radius: 6px 100px 6px 6px; background: #d7d7ce; box-shadow: 0 34px 80px rgba(23, 54, 49, .17); }
 .heroVisual img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 58%; }
 .imageShade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(4,27,25,.34), transparent 42%, rgba(4,27,25,.42)); }
-.imageCaption { position: absolute; left: 28px; top: 28px; margin: 0; color: white; font-size: 13px; font-weight: 700; letter-spacing: .02em; }
+.imageCaption { position: absolute; left: 28px; top: 28px; right: 28px; margin: 0; color: white; font-size: 19px; font-weight: 700; line-height: 1.3; letter-spacing: -.01em; }
 
 .audienceBand { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 38px; padding: 25px max(24px, calc((100vw - 1240px) / 2)); background: var(--forest-dark); color: white; }
 .audienceBand p { margin: 0; color: #e8bb6a; font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
@@ -166,8 +166,7 @@ button, input, textarea, select { font: inherit; }
 .aboutTitle .eyebrow { margin-bottom: 21px; }
 .aboutTitle h2 { margin: 0; color: var(--forest); font-size: clamp(42px, 5vw, 68px); line-height: 1.02; letter-spacing: -.055em; }
 .aboutTitle h2 em { color: var(--teal); font-style: normal; }
-.aboutTitle { display: flex; flex-direction: column; }
-.aboutTitleMedia { position: relative; flex: 1; margin: 40px 0 0; min-height: 320px; overflow: hidden; border-radius: 6px 60px 6px 6px; box-shadow: 0 24px 55px rgba(17,57,48,.14); }
+.aboutTitleMedia { position: relative; margin: 40px 0 0; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; border-radius: 6px 60px 6px 6px; box-shadow: 0 24px 55px rgba(17,57,48,.14); }
 .aboutTitleMedia img { object-fit: cover; }
 .aboutCopy { padding-top: 38px; }
 .aboutCopy > p { margin: 0 0 22px; color: var(--muted); font-size: 16px; line-height: 1.75; }
@@ -199,8 +198,8 @@ button, input, textarea, select { font: inherit; }
 .expertiseCard .interventionList li { position: relative; padding: 0 0 0 15px; border-radius: 0; background: transparent; color: var(--ink); font-size: 16px; font-weight: 600; line-height: 1.55; letter-spacing: -.003em; }
 .expertiseCard .interventionList li::before { content: "•"; position: absolute; left: 0; color: var(--accent); font-weight: 900; }
 .impactBox { margin-top: auto; padding: 17px; background: color-mix(in srgb, var(--accent), white 92%); border-left: 3px solid var(--accent); }
-.impactBox strong { color: var(--accent); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; }
-.impactBox p { margin: 8px 0 0; color: var(--ink); font-size: 13px; line-height: 1.6; }
+.impactBox strong { color: var(--accent); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; }
+.impactBox p { margin: 8px 0 0; color: var(--ink); font-size: 15px; line-height: 1.6; }
 
 .firstCta { margin-bottom: 40px; padding: clamp(45px, 7vw, 82px); background: var(--forest); color: white; border-radius: 4px 70px 4px 4px; }
 .firstCta p { margin: 0 0 16px; color: #e6b663; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
@@ -322,18 +321,18 @@ button, input, textarea, select { font: inherit; }
 .contactCopy h2 { margin: 0; color: var(--forest); font-size: clamp(48px, 5.8vw, 78px); line-height: .97; letter-spacing: -.065em; }
 .contactCopy > p:not(.eyebrow) { margin: 27px 0 0; color: var(--muted); font-size: 17px; line-height: 1.7; }
 .directContact { display: grid; gap: 8px; margin-top: 38px; padding-top: 25px; border-top: 1px solid var(--line); }
-.directContact span { color: var(--ochre); font-size: 10px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+.directContact span { color: var(--ochre); font-size: 11.5px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
 .directContact a { color: var(--forest); font-size: clamp(17px, 1.7vw, 22px); font-weight: 800; word-break: break-word; }
-.directContact small { color: var(--muted); font-size: 12px; }
+.directContact small { color: var(--muted); font-size: 13.5px; }
 .projectForm { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 18px; padding: clamp(25px, 4vw, 45px); background: white; border: 1px solid rgba(24,52,61,.12); box-shadow: 0 30px 80px rgba(23,54,49,.09); }
 .field { display: grid; gap: 8px; }
 .fullField { grid-column: 1 / -1; }
-.field label { color: var(--ink); font-size: 12px; font-weight: 800; }
+.field label { color: var(--ink); font-size: 13.5px; font-weight: 800; }
 .field input, .field select, .field textarea { width: 100%; min-height: 50px; padding: 13px 14px; color: var(--ink); background: #fbfaf6; border: 1px solid rgba(24,52,61,.16); border-radius: 0; outline: none; transition: border-color .2s ease, box-shadow .2s ease; }
 .field textarea { min-height: 140px; resize: vertical; line-height: 1.55; }
 .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(47,116,120,.12); }
 .formSubmit { justify-self: start; border: 0; cursor: pointer; }
-.formNote { align-self: center; margin: 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.formNote { align-self: center; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
 
 .siteFooter { padding-block: 36px; background: var(--forest-dark); color: white; }
 .footerInner { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 50px; }
@@ -500,7 +499,7 @@ button, input, textarea, select { font: inherit; }
 .territoryGalleryGrid figure { position: relative; min-width: 0; margin: 0; overflow: hidden; background: #d7d7ce; }
 .territoryGalleryGrid img { object-fit: cover; transition: transform .6s ease; }
 .territoryGalleryGrid figure:hover img { transform: scale(1.035); }
-.territoryGalleryGrid figcaption { position: absolute; left: 15px; right: 15px; bottom: 15px; padding: 10px 12px; background: rgba(8,47,40,.8); color: white; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; backdrop-filter: blur(8px); }
+.territoryGalleryGrid figcaption { position: absolute; left: 15px; right: 15px; bottom: 15px; padding: 12px 14px; background: rgba(8,47,40,.8); color: white; font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; backdrop-filter: blur(8px); }
 
 .newsSection { padding-block: 120px; }
 .newsGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
