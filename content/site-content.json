@@ -89,10 +89,10 @@
     "title": "Une expertise mobilisée au service de l’impact",
     "lead": "Les compétences transversales de SEI renforcent la qualité technique, la cohérence et la portée opérationnelle de l’ensemble de ses interventions.",
     "items": [
-      {"title": "Suivi-évaluation et gestion des connaissances", "text": "Mesure des résultats, apprentissage et capitalisation des bonnes pratiques."},
-      {"title": "Développement et structuration de projets", "text": "Conception de projets solides, cohérents et alignés sur les priorités nationales et internationales."},
-      {"title": "Finance climatique", "text": "Appui à l’identification des opportunités et à la mobilisation de financements adaptés."},
-      {"title": "Renforcement des capacités", "text": "Accompagnement institutionnel, transfert de compétences et appropriation des outils."}
+      {"title": "Mise en œuvre intégrée et synergies entre les Conventions de Rio", "text": "Accompagnement des pays Parties dans la mise en œuvre de leurs engagements au titre des Conventions de Rio, à travers la création de synergies entre les enjeux liés à la biodiversité, au climat et à la lutte contre la désertification, ainsi que leur intégration cohérente dans les stratégies nationales de développement durable."},
+      {"title": "Développement de projets et mobilisation des parties prenantes", "text": "Conception de projets transformateurs alignés sur les priorités nationales et conformes aux standards internationaux, à travers une concertation inclusive et la conduite de consultations avec les parties prenantes."},
+      {"title": "Renforcement des capacités et gestion des connaissances", "text": "Conception et mise en œuvre de formations, capitalisation et diffusion des connaissances, sensibilisation des acteurs et appui au renforcement des capacités institutionnelles."},
+      {"title": "", "text": ""}
     ]
   },
   "projects": {
