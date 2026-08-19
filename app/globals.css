@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -10,6 +11,7 @@
   --ink: #18343d;
   --muted: #607278;
   --line: rgba(24, 52, 61, 0.16);
+  --font-display: "Outfit", Arial, Helvetica, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -19,7 +21,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-display);
   -webkit-font-smoothing: antialiased;
 }
 a { color: inherit; text-decoration: none; }
@@ -190,7 +192,7 @@ button, input, textarea, select { font: inherit; }
 .sectionIntro h2 em { color: var(--ochre); font-style: normal; }
 .sectionIntro > p { margin: 0 0 4px; color: var(--muted); font-size: 17px; line-height: 1.65; }
 .expertiseGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.expertiseCard { --accent: var(--forest); display: flex; flex-direction: column; min-height: 760px; padding: 30px; background: #fff; border: 1px solid rgba(24,52,61,.11); font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; transition: transform .25s ease, box-shadow .25s ease; }
+.expertiseCard { --accent: var(--forest); display: flex; flex-direction: column; min-height: 760px; padding: 30px; background: #fff; border: 1px solid rgba(24,52,61,.11); font-family: var(--font-display); transition: transform .25s ease, box-shadow .25s ease; }
 .expertiseCard:hover { transform: translateY(-7px); box-shadow: 0 24px 60px rgba(17,57,48,.12); }
 .expertiseCard.ochre { --accent: var(--ochre); }
 .expertiseCard.teal { --accent: var(--teal); }
