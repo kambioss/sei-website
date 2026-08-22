@@ -18,30 +18,10 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
   const homeAnchor = (id: string) => `/?lang=${locale}#${id}`;
   const aboutAnchor = (id: string) => `/qui-sommes-nous?lang=${locale}#${id}`;
   const aboutSubItems = [
-    {
-      id: "nous-connaitre",
-      label: english ? "Get to know us" : "Nous connaître",
-      description: english ? "Our positioning and approach" : "Notre positionnement et notre approche",
-      image: "/images/natural-landscape-with-sunrise-trees.jpg",
-    },
-    {
-      id: "notre-histoire",
-      label: english ? "Our history" : "Notre histoire",
-      description: english ? "From the Rio Conventions to the Great Green Wall" : "Des Conventions de Rio à la Grande Muraille Verte",
-      image: "/images/beautiful-scenery-lone-tree-middle-empty-field-grey-cloudy-sky.jpg",
-    },
-    {
-      id: "nos-valeurs",
-      label: english ? "Our values" : "Nos valeurs",
-      description: english ? "What drives us every day" : "Ce qui guide chacune de nos interventions",
-      image: "/images/extra-long-shot-peaceful-landscape-with-trees.jpg",
-    },
-    {
-      id: "notre-vision",
-      label: english ? "Our vision" : "Notre vision",
-      description: english ? "Resilient territories for Africa" : "Des territoires africains résilients",
-      image: "/images/mountain-cloudy-sky.jpg",
-    },
+    { id: "nous-connaitre", label: english ? "Get to know us" : "Nous connaître" },
+    { id: "notre-histoire", label: english ? "Our history" : "Notre histoire" },
+    { id: "nos-valeurs", label: english ? "Our values" : "Nos valeurs" },
+    { id: "notre-vision", label: english ? "Our vision" : "Notre vision" },
   ];
   const links: Array<{ section: PublicNavSection; label: string; href: string }> = [
     { section: "sei", label: english ? "Who we are" : "Qui sommes-nous", href: `/qui-sommes-nous?lang=${locale}` },
@@ -84,25 +64,9 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
                 </span>
               </Link>
               <div className="navDropdown">
-                <div className="navMega">
-                  <div className="navMegaIntro">
-                    <p className="navMegaLabel">{english ? "Overview" : "Présentation"}</p>
-                    <p>{english
-                      ? "SEI supports institutions and territories in sustainable land management and environmental and social assessment."
-                      : "SEI accompagne les institutions et les territoires dans la gestion durable des terres et l’évaluation environnementale et sociale."}</p>
-                  </div>
-                  <div className="navMegaGrid">
-                    {aboutSubItems.map((item) => (
-                      <Link className="navMegaItem" key={item.id} href={aboutAnchor(item.id)}>
-                        <span className="navMegaThumb"><Image src={item.image} alt="" fill unoptimized sizes="46px" /></span>
-                        <span className="navMegaItemCopy">
-                          <strong>{item.label}</strong>
-                          <small>{item.description}</small>
-                        </span>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
+                {aboutSubItems.map((item) => (
+                  <Link key={item.id} href={aboutAnchor(item.id)}>{item.label}</Link>
+                ))}
               </div>
             </div>
           ) : (
