@@ -58,6 +58,7 @@ const labelsFr: Record<string, string> = {
   intro: "Introduction",
   email: "Adresse e-mail",
   location: "Zone d’intervention",
+  address: "Adresse postale",
 };
 
 const labelsEn: Record<string, string> = {
@@ -112,6 +113,7 @@ const labelsEn: Record<string, string> = {
   intro: "Introduction",
   email: "Email address",
   location: "Area of operation",
+  address: "Postal address",
 };
 
 export const adminSectionLabels: Record<Locale, Record<string, string>> = {

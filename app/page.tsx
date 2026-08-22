@@ -434,6 +434,7 @@ export default async function Home({ searchParams }: HomeProps) {
           <div className="directContact">
             <span>{copy.directContact}</span>
             <a href={"mailto:" + contact.email}>{contact.email}</a>
+            <small>{contact.address}</small>
             <small>{contact.location}</small>
           </div>
         </div>
