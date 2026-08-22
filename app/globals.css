@@ -897,10 +897,10 @@ button, input, textarea, select { font: inherit; }
 .mobileSubLinks a { padding: 9px 0; border: 0; color: var(--muted); font-size: 12.5px; font-weight: 700; }
 
 /* Hero "Nous connaître" : titre nettement plus modeste que celui de l'accueil, image cadrée sur la hauteur du texte (pas sur tout le viewport) */
-#nous-connaitre.hero { min-height: 0; align-items: stretch; padding-top: 0; grid-template-columns: .8fr 1.05fr; }
+#nous-connaitre.hero { min-height: 0; align-items: start; padding-top: 0; grid-template-columns: .8fr 1.05fr; }
 #nous-connaitre h1 { max-width: none; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.1; white-space: nowrap; }
-#nous-connaitre .heroVisualColumn { display: flex; flex-direction: column; margin-top: 36px; }
-#nous-connaitre .heroVisual { flex: 1; min-height: 220px; }
+#nous-connaitre .heroVisualColumn { margin-top: 36px; }
+#nous-connaitre .heroVisual { min-height: 0; aspect-ratio: 4 / 3; }
 #nous-connaitre .heroVisual img { object-position: center; }
 
 .heroQuickLinks { margin-top: 18px; }
@@ -920,7 +920,7 @@ button, input, textarea, select { font: inherit; }
 .aboutFeature.reverse { flex-direction: row-reverse; }
 .aboutFeatureCopy { flex: 1 1 0; min-width: 0; }
 .aboutFeatureCopy .eyebrow { margin-bottom: 20px; }
-.aboutFeatureCopy h2 { margin: 0; max-width: 20ch; color: var(--forest); font-size: clamp(32px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -.05em; }
+.aboutFeatureCopy h1, .aboutFeatureCopy h2 { margin: 0; max-width: 20ch; color: var(--forest); font-size: clamp(32px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -.05em; }
 .aboutFeatureStatement { max-width: 46ch; margin: 20px 0 0; color: var(--ochre); font-size: clamp(16px, 1.3vw, 19px); font-weight: 800; line-height: 1.38; }
 .aboutFeatureCopy > p:not(.aboutFeatureStatement) { max-width: 58ch; margin: 20px 0 0; color: var(--muted); font-size: 16px; line-height: 1.45; }
 .aboutFeatureMedia { position: relative; flex: 1 1 0; min-width: 0; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 6px 64px 6px 6px; box-shadow: 0 26px 60px rgba(17,57,48,.15); }
@@ -931,7 +931,7 @@ button, input, textarea, select { font: inherit; }
 .historySection { padding-block: 84px; border-top: 1px solid var(--line); }
 .historyIntro { max-width: 680px; margin: 0 auto 50px; text-align: center; }
 .historyIntro .eyebrow { justify-content: center; margin-bottom: 18px; }
-.historyIntro h2 { margin: 0; color: var(--forest); font-size: clamp(32px, 3.6vw, 50px); line-height: 1.08; letter-spacing: -.05em; }
+.historyIntro h1, .historyIntro h2 { margin: 0; color: var(--forest); font-size: clamp(32px, 3.6vw, 50px); line-height: 1.08; letter-spacing: -.05em; }
 .historyIntro .aboutFeatureStatement { max-width: none; margin: 18px auto 0; text-align: center; }
 .historyColumns { display: grid; gap: 22px; max-width: 760px; margin: 0 auto; }
 .historyColumns p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.46; }

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-type QuickLinkItem = { id: string; icon: "history" | "values" | "vision"; label: string; heading: string; text: string };
+type QuickLinkItem = { id: string; href: string; icon: "history" | "values" | "vision"; label: string; heading: string; text: string };
 
 const ICONS: Record<QuickLinkItem["icon"], React.ReactNode> = {
   history: (
@@ -49,7 +49,7 @@ export function HeroQuickLinks({ items, moreLabel }: { items: QuickLinkItem[]; m
         <div className="heroQuickLinkPanel">
           <h3>{active.heading}</h3>
           <p>{active.text}</p>
-          <a href={"#" + active.id}>{moreLabel} <span aria-hidden="true">→</span></a>
+          <a href={active.href}>{moreLabel} <span aria-hidden="true">→</span></a>
         </div>
       )}
     </div>

@@ -16,12 +16,11 @@ type PublicHeaderProps = {
 export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languageHrefEn }: PublicHeaderProps) {
   const english = locale === "en";
   const homeAnchor = (id: string) => `/?lang=${locale}#${id}`;
-  const aboutAnchor = (id: string) => `/qui-sommes-nous?lang=${locale}#${id}`;
   const aboutSubItems = [
-    { id: "nous-connaitre", label: english ? "Get to know us" : "Nous connaître" },
-    { id: "notre-histoire", label: english ? "Our history" : "Notre histoire" },
-    { id: "nos-valeurs", label: english ? "Our values" : "Nos valeurs" },
-    { id: "notre-vision", label: english ? "Our vision" : "Notre vision" },
+    { id: "nous-connaitre", href: `/qui-sommes-nous?lang=${locale}#nous-connaitre`, label: english ? "Get to know us" : "Nous connaître" },
+    { id: "notre-histoire", href: `/notre-histoire?lang=${locale}`, label: english ? "Our history" : "Notre histoire" },
+    { id: "nos-valeurs", href: `/nos-valeurs?lang=${locale}`, label: english ? "Our values" : "Nos valeurs" },
+    { id: "notre-vision", href: `/notre-vision?lang=${locale}`, label: english ? "Our vision" : "Notre vision" },
   ];
   const links: Array<{ section: PublicNavSection; label: string; href: string }> = [
     { section: "sei", label: english ? "Who we are" : "Qui sommes-nous", href: `/qui-sommes-nous?lang=${locale}` },
@@ -65,7 +64,7 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
               </Link>
               <div className="navDropdown">
                 {aboutSubItems.map((item) => (
-                  <Link key={item.id} href={aboutAnchor(item.id)}>{item.label}</Link>
+                  <Link key={item.id} href={item.href}>{item.label}</Link>
                 ))}
               </div>
             </div>
@@ -103,7 +102,7 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
               {link.section === "sei" && (
                 <div className="mobileSubLinks">
                   {aboutSubItems.map((item) => (
-                    <Link key={item.id} href={aboutAnchor(item.id)}>{item.label}</Link>
+                    <Link key={item.id} href={item.href}>{item.label}</Link>
                   ))}
                 </div>
               )}

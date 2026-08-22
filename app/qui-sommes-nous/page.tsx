@@ -50,54 +50,11 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
           <HeroQuickLinks
             moreLabel={english ? "Learn more" : "En savoir plus"}
             items={[
-              { id: "notre-histoire", icon: "history", label: history.title, heading: history.heading, text: history.statement },
-              { id: "nos-valeurs", icon: "values", label: values.title, heading: values.heading, text: values.statement },
-              { id: "notre-vision", icon: "vision", label: vision.title, heading: vision.heading, text: vision.statement },
+              { id: "notre-histoire", href: `/notre-histoire?lang=${locale}`, icon: "history", label: history.title, heading: history.heading, text: history.statement },
+              { id: "nos-valeurs", href: `/nos-valeurs?lang=${locale}`, icon: "values", label: values.title, heading: values.heading, text: values.statement },
+              { id: "notre-vision", href: `/notre-vision?lang=${locale}`, icon: "vision", label: vision.title, heading: vision.heading, text: vision.statement },
             ]}
           />
-        </div>
-      </section>
-
-      <section id="notre-histoire" className="historySection sectionShell">
-        <div className="historyIntro">
-          <p className="eyebrow"><span /> {history.title}</p>
-          <h2>{history.heading}</h2>
-          <p className="aboutFeatureStatement">{history.statement}</p>
-        </div>
-        <div className="historyColumns">
-          {history.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-        </div>
-      </section>
-
-      <section id="nos-valeurs" className="aboutFeature sectionShell">
-        <div className="aboutFeatureCopy">
-          <p className="eyebrow"><span /> {values.title}</p>
-          <h2>{values.heading}</h2>
-          <p className="aboutFeatureStatement">{values.statement}</p>
-          <div className="valuesGrid">
-            {values.pillars.map((pillar, index) => (
-              <div className="valueCard" key={pillar}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{pillar}</strong>
-              </div>
-            ))}
-          </div>
-          <p>{values.text}</p>
-        </div>
-        <div className="aboutFeatureMedia">
-          <Image src={values.image} alt={values.title} fill unoptimized sizes="(max-width: 900px) 100vw, 46vw" />
-        </div>
-      </section>
-
-      <section id="notre-vision" className="aboutFeature reverse sectionShell">
-        <div className="aboutFeatureCopy">
-          <p className="eyebrow"><span /> {vision.title}</p>
-          <h2>{vision.heading}</h2>
-          <p className="aboutFeatureStatement">{vision.statement}</p>
-          <p>{vision.text}</p>
-        </div>
-        <div className="aboutFeatureMedia">
-          <Image src={vision.image} alt={vision.title} fill unoptimized sizes="(max-width: 900px) 100vw, 46vw" />
         </div>
       </section>
     </main>
