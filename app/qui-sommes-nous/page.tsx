@@ -40,12 +40,10 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
             {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
           </div>
         </div>
-        <div className="heroVisualFrame">
-          <div className="heroVisual">
-            <Image src={knowUs.image} alt={hero.statement} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
-            <div className="imageShade" />
-            <p className="imageCaption">{hero.imageCaption}</p>
-          </div>
+        <div className="heroVisual">
+          <Image src={knowUs.image} alt={hero.statement} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
+          <div className="imageShade" />
+          <p className="imageCaption">{hero.imageCaption}</p>
         </div>
       </section>
 
