@@ -85,17 +85,17 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
       </section>
 
       <section className="founderSection sectionShell">
-        <div className="founderCard">
-          <div className="founderPerson">
-            <span className="founderAvatar"><Image src={founder.photo} alt={founder.name} fill unoptimized sizes="56px" /></span>
-            <div className="founderPersonCopy">
-              <strong>{founder.name}</strong>
-              <span>{founder.role}</span>
-            </div>
+        <article className="founderCard">
+          <div className="founderCardImage">
+            <Image src={founder.photo} alt={founder.name} fill unoptimized sizes="(max-width: 800px) 100vw, 45vw" />
           </div>
-          <p className="eyebrow"><span /> {founder.eyebrow}</p>
-          {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
-        </div>
+          <div className="founderCardCopy">
+            <p className="eyebrow"><span /> {founder.eyebrow}</p>
+            <h2>{founder.name}</h2>
+            <p className="founderRole">{founder.role}</p>
+            {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
+          </div>
+        </article>
       </section>
     </main>
   );
