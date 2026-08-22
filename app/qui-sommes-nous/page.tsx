@@ -29,6 +29,18 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
           <p className="eyebrow"><span /> {english ? "Get to know us" : "Nous connaître"}</p>
           <h1>{hero.statement}</h1>
           {knowUs.paragraphs.map((paragraph) => <p className="heroLead" key={paragraph}>{paragraph}</p>)}
+
+          <div className="founderCard">
+            <div className="founderPerson">
+              <span className="founderAvatar"><Image src={founder.photo} alt={founder.name} fill unoptimized sizes="56px" /></span>
+              <div className="founderPersonCopy">
+                <strong>{founder.name}</strong>
+                <span>{founder.role}</span>
+              </div>
+            </div>
+            <p className="eyebrow"><span /> {founder.eyebrow}</p>
+            {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
+          </div>
         </div>
         <div className="heroVisual">
           <Image src={knowUs.image} alt={hero.statement} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
@@ -81,20 +93,6 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
         </div>
         <div className="aboutFeatureMedia">
           <Image src={vision.image} alt={vision.title} fill unoptimized sizes="(max-width: 900px) 100vw, 46vw" />
-        </div>
-      </section>
-
-      <section className="founderSection sectionShell">
-        <div className="founderCard">
-          <div className="founderPerson">
-            <span className="founderAvatar"><Image src={founder.photo} alt={founder.name} fill unoptimized sizes="56px" /></span>
-            <div className="founderPersonCopy">
-              <strong>{founder.name}</strong>
-              <span>{founder.role}</span>
-            </div>
-          </div>
-          <p className="eyebrow"><span /> {founder.eyebrow}</p>
-          {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
         </div>
       </section>
     </main>

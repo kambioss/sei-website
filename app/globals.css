@@ -927,8 +927,7 @@ button, input, textarea, select { font: inherit; }
 .valueCard strong { display: block; color: var(--forest); font-size: 17px; letter-spacing: -.02em; }
 
 /* Mot du fondateur : carte façon témoignage, en clôture de page */
-.founderSection { padding-block: 40px 110px; }
-.founderCard { max-width: 840px; margin: 0 auto; padding: clamp(28px, 4vw, 46px); border-left: 5px solid var(--teal); border-radius: 4px 36px 4px 4px; background: #fff; box-shadow: 0 26px 64px rgba(17,57,48,.1); }
+.heroCopy .founderCard { margin-top: 34px; padding: clamp(24px, 3vw, 34px); border-left: 5px solid var(--teal); border-radius: 4px 30px 4px 4px; background: #fff; box-shadow: 0 22px 54px rgba(17,57,48,.1); }
 .founderCard .eyebrow { color: var(--teal); margin-bottom: 20px; }
 .founderQuoteText { margin: 0 0 16px; color: var(--ink); font-size: clamp(16.5px, 1.5vw, 18.5px); font-style: italic; line-height: 1.78; }
 .founderQuoteText:last-of-type { margin-bottom: 0; }
@@ -951,8 +950,7 @@ button, input, textarea, select { font: inherit; }
 @media (max-width: 680px) {
   .aboutFeature { padding-block: 50px; }
   .valuesGrid { grid-template-columns: 1fr; }
-  .founderSection { padding-block: 26px 70px; }
-  .founderCard { padding: 26px 22px; border-radius: 4px 26px 4px 4px; }
+  .heroCopy .founderCard { padding: 22px 20px; border-radius: 4px 22px 4px 4px; }
   .historySection { padding-block: 50px; }
   .historyHero { min-height: 380px; margin-bottom: 30px; border-radius: 6px 46px 6px 6px; }
   .historyHeroCopy h2 { max-width: none; }
