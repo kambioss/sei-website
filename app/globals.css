@@ -125,10 +125,10 @@ button, input, textarea, select { font: inherit; }
 }
 .heroLead {
   max-width: 660px;
-  margin: 28px 0 0;
+  margin: 16px 0 0;
   color: var(--muted);
   font-size: clamp(17px, 1.35vw, 20px);
-  line-height: 1.4;
+  line-height: 1.28;
 }
 .heroActions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .button {
