@@ -35,6 +35,9 @@
     "ambition": "Turn environmental, social and climate challenges into levers for action, peace and resilience for African communities and territories.",
     "knowUs": {
       "title": "Get to know us",
+      "heading": "A consulting, research and strategy firm",
+      "statement": "Sustainable land management · Environmental and social assessment · Climate",
+      "image": "/images/visite_terrain.jpeg",
       "paragraphs": [
         "Social & Eco Impact (SEI) is a consulting, research and strategy firm working on sustainable land management, environmental and social impact assessment, and responses to peace, mobility and climate change challenges.",
         "SEI supports public institutions, local authorities, international organisations, and technical and financial partners in designing, implementing, monitoring and evaluating high-impact policies, strategies, projects and programmes across Africa."
@@ -42,6 +45,9 @@
     },
     "history": {
       "title": "Our history",
+      "heading": "Field expertise, in service of Africa",
+      "statement": "From the Rio Conventions to the Great Green Wall.",
+      "image": "/images/natural-landscape-with-sunrise-trees.jpg",
       "paragraphs": [
         "Founded in 2024 and operational since 2026, Social & Eco Impact (SEI) is a consulting firm based in Tunis, working with States, institutions, development partners, businesses and communities across Africa.",
         "SEI was born from its founder's experience implementing the three Rio Conventions on biodiversity, climate change and desertification. His international career, notably within the Sahara and Sahel Observatory (OSS), was built through coordinating and implementing projects and programmes carried out in partnership with the Global Mechanism of the United Nations Convention to Combat Desertification (UNCCD) and the United Nations Environment Programme (UNEP). It was further enriched by experience with the main international environmental and climate finance mechanisms, including the Adaptation Fund, the Green Climate Fund and the Global Environment Facility.",
@@ -53,11 +59,17 @@
     },
     "values": {
       "title": "Our values",
+      "heading": "Integrity, accountability and fairness",
+      "statement": "Principles that guide every intervention we lead.",
+      "image": "/images/extra-long-shot-peaceful-landscape-with-trees.jpg",
       "pillars": ["Integrity", "Accountability", "Fairness"],
       "text": "At SEI, we place integrity, accountability and fairness at the heart of our commitment. We favour listening and dialogue, combining institutional expertise with the knowledge and realities of communities. Our interventions are built on rigour, transparency and the pursuit of concrete, inclusive and sustainable solutions, generating tangible, measurable results for the benefit of communities and ecosystems."
     },
     "vision": {
       "title": "Our vision",
+      "heading": "More resilient African territories",
+      "statement": "Protecting ecosystems, securing livelihoods.",
+      "image": "/images/mountain-cloudy-sky.jpg",
       "text": "Contributing to more resilient African territories, where the sustainable management of natural resources protects ecosystems, secures community livelihoods and prevents tensions exacerbated by climate change."
     }
   },
