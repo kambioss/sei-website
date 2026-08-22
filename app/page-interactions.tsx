@@ -13,7 +13,7 @@ export function PageInteractions({ backToTopLabel }: { backToTopLabel: string })
       ".aboutCopy",
       ".aboutFeatureCopy",
       ".aboutFeatureMedia",
-      ".historyBanner",
+      ".historyHero",
       ".historyBody",
       ".founderCard",
       ".territoryGalleryIntro",
