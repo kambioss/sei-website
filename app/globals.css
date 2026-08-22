@@ -894,8 +894,10 @@ button, input, textarea, select { font: inherit; }
 .mobileSubLinks { display: grid; padding: 2px 0 8px 18px; border-bottom: 1px solid rgba(24,52,61,.09); }
 .mobileSubLinks a { padding: 9px 0; border: 0; color: var(--muted); font-size: 12.5px; font-weight: 700; }
 
-/* Hero "Nous connaître" : titre nettement plus modeste que celui de l'accueil */
+/* Hero "Nous connaître" : titre nettement plus modeste que celui de l'accueil, image cadrée sur la hauteur du texte (pas sur tout le viewport) */
+#nous-connaitre.hero { min-height: 0; align-items: start; }
 #nous-connaitre h1 { max-width: none; font-size: clamp(17px, 1.55vw, 22px); line-height: 1.4; text-align: justify; text-justify: inter-word; hyphens: auto; }
+#nous-connaitre .heroVisual { min-height: 0; aspect-ratio: 3 / 4; }
 
 /* Rangées alternées texte/image (Nos valeurs, Notre vision) */
 .aboutFeature { display: flex; align-items: flex-start; gap: clamp(40px, 6vw, 92px); padding-block: 76px; border-top: 1px solid var(--line); }
@@ -910,16 +912,13 @@ button, input, textarea, select { font: inherit; }
 .aboutFeatureMedia img { object-fit: cover; }
 
 /* Notre histoire : bannière pleine largeur + colonne d'intro collante */
-.historySection { padding-block: 76px; border-top: 1px solid var(--line); }
-.historyHero { position: relative; display: flex; min-height: 460px; align-items: end; overflow: hidden; margin-bottom: 46px; border-radius: 6px 90px 6px 6px; box-shadow: 0 26px 60px rgba(17,57,48,.18); }
-.historyHero img { object-fit: cover; }
-.historyHeroShade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(4,20,18,.1) 0%, rgba(4,20,18,.4) 48%, rgba(4,20,18,.92) 100%); }
-.historyHeroCopy { position: relative; z-index: 2; width: 100%; padding: clamp(28px, 4vw, 52px); color: #fff; text-shadow: 0 2px 18px rgba(0,0,0,.32); }
-.historyHeroCopy .eyebrow { color: #e6b65d; margin-bottom: 16px; }
-.historyHeroCopy h2 { max-width: 18ch; margin: 0; color: #fff; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.06; letter-spacing: -.05em; }
-.historyHeroStatement { max-width: 52ch; margin: 18px 0 0; color: #f0d9a8; font-size: clamp(15px, 1.3vw, 18px); font-weight: 800; line-height: 1.5; }
-.historyBody { max-width: 900px; margin: 0 auto; display: grid; gap: 22px; }
-.historyBody p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.78; }
+.historySection { padding-block: 84px; border-top: 1px solid var(--line); }
+.historyIntro { max-width: 680px; margin: 0 auto 50px; text-align: center; }
+.historyIntro .eyebrow { justify-content: center; margin-bottom: 18px; }
+.historyIntro h2 { margin: 0; color: var(--forest); font-size: clamp(32px, 3.6vw, 50px); line-height: 1.08; letter-spacing: -.05em; }
+.historyIntro .aboutFeatureStatement { max-width: none; margin: 18px auto 0; text-align: center; }
+.historyColumns { column-count: 2; column-gap: 52px; max-width: 1020px; margin: 0 auto; }
+.historyColumns p { margin: 0 0 22px; color: var(--muted); font-size: 16px; line-height: 1.78; break-inside: avoid; }
 
 .valuesGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 26px 0 0; max-width: 58ch; }
 .valueCard { padding: 20px 18px; border: 1px solid var(--line); border-radius: 16px; background: var(--sand); }
@@ -941,6 +940,7 @@ button, input, textarea, select { font: inherit; }
 @media (max-width: 900px) {
   .aboutFeature, .aboutFeature.reverse { flex-direction: column; }
   .aboutFeatureMedia, .aboutFeature.reverse .aboutFeatureMedia { border-radius: 6px 46px 6px 6px; }
+  .historyColumns { column-count: 1; }
 }
 
 @media (max-width: 900px) {
@@ -952,6 +952,5 @@ button, input, textarea, select { font: inherit; }
   .valuesGrid { grid-template-columns: 1fr; }
   .heroCopy .founderCard { padding: 22px 20px; border-radius: 4px 22px 4px 4px; }
   .historySection { padding-block: 50px; }
-  .historyHero { min-height: 380px; margin-bottom: 30px; border-radius: 6px 46px 6px 6px; }
-  .historyHeroCopy h2 { max-width: none; }
+  .historyColumns { column-count: 1; }
 }

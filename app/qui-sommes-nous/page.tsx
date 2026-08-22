@@ -50,16 +50,12 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
       </section>
 
       <section id="notre-histoire" className="historySection sectionShell">
-        <div className="historyHero">
-          <Image src={history.image} alt={history.heading} fill unoptimized sizes="100vw" />
-          <div className="historyHeroShade" />
-          <div className="historyHeroCopy">
-            <p className="eyebrow"><span /> {history.title}</p>
-            <h2>{history.heading}</h2>
-            <p className="historyHeroStatement">{history.statement}</p>
-          </div>
+        <div className="historyIntro">
+          <p className="eyebrow"><span /> {history.title}</p>
+          <h2>{history.heading}</h2>
+          <p className="aboutFeatureStatement">{history.statement}</p>
         </div>
-        <div className="historyBody">
+        <div className="historyColumns">
           {history.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         </div>
       </section>
