@@ -19,81 +19,109 @@
     "International organisations",
     "Technical and financial partners"
   ],
+  "founder": {
+    "eyebrow": "A word from our founder",
+    "quote": [
+      "« African ecosystems and the populations who depend on them are today facing growing vulnerability. Climate change, land degradation, biodiversity loss and human pressure on natural resources are weakening livelihoods, deepening inequalities and can fuel tensions within territories.",
+      "Faced with these challenges, I am convinced that responses must combine scientific expertise, knowledge of local realities, community participation and institutional commitment. With SEI, our ambition is to bridge international commitments, public policy and action on the ground, in order to protect ecosystems, strengthen community resilience and contribute to sustainable, inclusive development adapted to African realities. »"
+    ],
+    "attribution": "Founder of SEI"
+  },
   "identity": {
     "eyebrow": "Identity & positioning",
     "title": "A committed firm serving sustainable development",
     "ambition": "Turn environmental, social and climate challenges into levers for action, peace and resilience for African communities and territories.",
     "paragraphs": [
-      "Social & Eco Impact (SEI) is a consulting firm specialised in sustainable territorial management, environmental and social assessment, and responses to peace, mobility and climate change challenges in Africa.",
-      "SEI supports public institutions, local authorities, international organisations, and technical and financial partners in designing, implementing, monitoring and evaluating high-impact policies, strategies, projects and programmes."
-    ]
+      "Social & Eco Impact (SEI) is a consulting, research and strategy firm working on sustainable land management, environmental and social impact assessment, and responses to peace, mobility and climate change challenges.",
+      "SEI supports public institutions, local authorities, international organisations, and technical and financial partners in designing, implementing, monitoring and evaluating high-impact policies, strategies, projects and programmes across Africa."
+    ],
+    "history": {
+      "title": "Our history",
+      "paragraphs": [
+        "Founded in 2024 and operational since 2026, Social & Eco Impact (SEI) is a consulting firm based in Tunis, working with States, institutions, development partners, businesses and communities across Africa.",
+        "SEI was born from its founder's experience implementing the three Rio Conventions on biodiversity, climate change and desertification. His international career, notably within the Sahara and Sahel Observatory (OSS), was built through coordinating and implementing projects and programmes carried out in partnership with the Global Mechanism of the United Nations Convention to Combat Desertification (UNCCD) and the United Nations Environment Programme (UNEP). It was further enriched by experience with the main international environmental and climate finance mechanisms, including the Adaptation Fund, the Green Climate Fund and the Global Environment Facility.",
+        "Having coordinated major environmental and climate projects and led numerous field missions and institutional support assignments with ministries in Benin, Burkina Faso, Niger, the Central African Republic, the Republic of Guinea, Seychelles and Tunisia, its founder gained a concrete understanding of the realities facing African territories.",
+        "His career has also been marked by an active contribution to implementing the Great Green Wall Initiative, notably through leading stakeholder consultation and coordination mechanisms, as well as designing and developing regional projects dedicated to land restoration, climate change adaptation and strengthening community resilience.",
+        "This experience gave rise to a strong conviction: international commitments and public policies only deliver lasting results when translated into concrete solutions, adapted to local realities and designed as close as possible to their beneficiaries.",
+        "SEI was created to bring technical expertise, international standards and financing mechanisms closer to the real needs of territories. The firm supports its partners in the sustainable management of land and natural resources, the assessment and management of environmental and social risks, climate change adaptation, biodiversity conservation, and the design of transformative, inclusive and resilient projects."
+      ]
+    },
+    "values": {
+      "title": "Our values",
+      "text": "At SEI, we place integrity, accountability and fairness at the heart of our commitment. We favour listening and dialogue, combining institutional expertise with the knowledge and realities of communities. Our interventions are built on rigour, transparency and the pursuit of concrete, inclusive and sustainable solutions, generating tangible, measurable results for the benefit of communities and ecosystems."
+    },
+    "vision": {
+      "title": "Our vision",
+      "text": "Contributing to more resilient African territories, where the sustainable management of natural resources protects ecosystems, secures community livelihoods and prevents tensions exacerbated by climate change."
+    }
   },
   "expertiseIntro": {
     "eyebrow": "Our expertise",
-    "title": "Three complementary areas of expertise",
-    "text": "Land degradation neutrality • Environmental and social assessment and management • Peace, mobility and climate change"
+    "title": "Linking international commitments to territorial realities.",
+    "text": "SEI supports the integrated implementation of, and synergies between, the Rio Conventions on biodiversity, climate and desertification. Our expertise helps restore land and ecosystems, manage environmental and social risks, and strengthen the resilience of communities and territories.",
+    "sectionTitle": "Natural capital and territorial resilience at the heart of our work"
   },
   "expertises": [
     {
       "number": "01",
       "tone": "green",
-      "title": "Land degradation neutrality – LDN",
-      "summary": "SEI supports public actors and their partners in implementing land degradation neutrality, placing the restoration of land degraded by mining at the heart of its work.",
+      "imageSrc": "/images/beautiful-scenery-lone-tree-middle-empty-field-grey-cloudy-sky.jpg",
+      "title": "Sustainable land management and LDN",
+      "summary": "SEI supports public actors and their partners in the sustainable management of land and in achieving Land Degradation Neutrality (LDN). Our expertise covers preventing and reducing degradation, restoring land and ecosystems, and planning and monitoring national commitments.",
       "interventions": [
-        "Restoration of land degraded by mining to support a healthy environment and sustainable food production",
-        "Provision of data-driven information on land degradation trends and the effectiveness of interventions",
-        "Integration of land degradation neutrality objectives into development policies, strategies and programmes",
-        "Institutional and technical capacity building"
+        {"title": "Ecological rehabilitation and sustainable repurposing of degraded mining sites", "text": "Conducting diagnostics, developing restoration plans, supporting soil rehabilitation, revegetation and defining sustainable uses — including agricultural uses where soil quality allows."},
+        {"title": "Data production, mapping and monitoring of land degradation", "text": "Assessing degradation trends, identifying priority areas, defining Land Degradation Neutrality (LDN) targets and measuring the effectiveness of interventions using GIS, remote sensing and monitoring indicators."},
+        {"title": "Mainstreaming LDN into policy and territorial planning", "text": "Supporting institutions in integrating LDN objectives into national and territorial policies, strategies, investment plans and development programmes."},
+        {"title": "Institutional and technical capacity building", "text": "Designing training, guides, operational manuals and decision-support tools, complemented by hands-on support for institutions, local authorities and field actors."},
+        {"title": "Project design and financing mobilisation", "text": "Preparing concept notes, feasibility studies and funding proposals dedicated to sustainable land management, ecosystem restoration and achieving LDN."}
       ],
-      "impact": "Restore the ecological and productive functions of degraded land, support sustainable food production and guide public action through reliable data."
+      "impact": "Restore the ecological and productive functions of degraded land, support sustainable food production and guide public action through reliable data, in order to accelerate progress toward Land Degradation Neutrality."
     },
     {
       "number": "02",
       "tone": "ochre",
-      "title": "Environmental and social assessment and management",
-      "summary": "SEI helps manage the environmental and social risks and impacts associated with development policies, projects and programmes.",
+      "imageSrc": "/images/extra-long-shot-peaceful-landscape-with-trees.jpg",
+      "title": "Environmental and social assessment",
+      "summary": "SEI supports project developers in identifying, assessing and managing environmental and social risks throughout their intervention cycle. Our approach aims to preserve ecosystems, protect communities and promote responsible projects that comply with national regulations and international standards.",
       "interventions": [
-        "Environmental and social impact assessments (ESIA)",
-        "Development, implementation and monitoring of environmental and social management plans (ESMP)",
-        "Gender mainstreaming and inclusion of vulnerable groups in projects and programmes",
-        "Audits, monitoring and evaluation, and environmental and social reporting"
+        {"title": "Conducting environmental and social assessments", "text": "Carrying out impact studies (ESIA), impact notices and strategic environmental assessments, including risk analysis, effects on ecosystems and communities, and defining appropriate mitigation measures."},
+        {"title": "Developing and operationalising environmental and social management instruments", "text": "Designing environmental and social management plans (ESMP), procedures, budgets and monitoring indicators, together with support for implementation and corrective measures."},
+        {"title": "Stakeholder consultation and mobilisation", "text": "Mapping stakeholders, conducting inclusive consultations, developing engagement plans and setting up accessible grievance-handling mechanisms."},
+        {"title": "Gender mainstreaming and inclusion of vulnerable groups", "text": "Conducting social and gender analyses, defining inclusion measures and integrating specific indicators to prevent disproportionate impacts and promote equitable participation."},
+        {"title": "Environmental and social audit, monitoring and reporting", "text": "Conducting compliance audits and field monitoring missions, setting up dashboards and preparing reports that meet regulatory requirements and financial partners' standards."}
       ],
-      "impact": "Anticipate risks, strengthen social acceptance and improve the compliance, performance and sustainability of interventions."
+      "impact": "Anticipate and manage environmental and social risks, reduce impacts on ecosystems and communities, and strengthen the acceptability, compliance and long-term performance of projects."
     },
     {
       "number": "03",
       "tone": "teal",
+      "imageSrc": "/images/mountain-cloudy-sky.jpg",
       "title": "Peace, mobility and climate change",
-      "summary": "SEI works at the heart of interactions between climate change, pressure on natural resources, human and pastoral mobility, displacement and conflicts over resource use.",
+      "summary": "SEI supports institutions, territories and communities in anticipating the effects of climate change on natural resources, livelihoods and human mobility. Our approach aims to strengthen community resilience, prevent tensions linked to resource access, and promote inclusive responses adapted to local realities.",
       "interventions": [
-        "Inclusive agropastoral strategies promoting peaceful coexistence among territorial users (pastoralists and farmers)",
-        "Support for institutions in preventing and managing climate risks at local, national and regional levels",
-        "Design and implementation of local climate-smart agriculture strategies",
-        "Development of inclusive and resilient livelihoods in response to climate challenges"
+        {"title": "Participatory planning and prevention of natural resource conflicts", "text": "Conducting participatory diagnostics and developing action plans, charters or local agreements that promote shared management of land, water, pastoral areas and transhumance routes."},
+        {"title": "Prevention and management of climate risks", "text": "Conducting vulnerability analyses, developing prevention and preparedness plans, supporting early-warning systems and strengthening institutional coordination at local, national and regional levels."},
+        {"title": "Anticipating climate-related mobility and displacement", "text": "Analysing the environmental and climate drivers of mobility, mapping at-risk areas and integrating anticipation and support measures into territorial policies and plans."},
+        {"title": "Developing local climate-smart agriculture strategies", "text": "Designing and operationalising strategies adapted to local realities, integrating sustainable soil and water management, improved farming practices and producer capacity building."},
+        {"title": "Diversifying resilient livelihoods", "text": "Identifying and developing inclusive economic activities, sustainable value chains and income diversification solutions, with particular attention to women, youth and vulnerable groups."}
       ],
-      "impact": "Reduce vulnerabilities, prevent tensions and strengthen the capacity of communities and territories to face climate disruption and socioeconomic change."
+      "impact": "Reduce climate vulnerabilities, secure access to natural resources and livelihoods, anticipate mobility and prevent tensions in order to strengthen the resilience and social cohesion of territories."
     }
   ],
   "approach": {
     "eyebrow": "Knowledge",
     "title": "Interventions designed to last",
-    "items": [
-      {"title": "Integrated analysis", "text": "A cross-cutting analysis of environmental, social, climate and territorial challenges."},
-      {"title": "Tailored solutions", "text": "Solutions adapted to the institutional, ecological and socioeconomic realities of each territory."},
-      {"title": "Active participation", "text": "Active involvement of institutions, local communities and stakeholders at every stage."},
-      {"title": "Operational tools", "text": "Practical tools to inform decisions, manage risks and strengthen long-term resilience."}
-    ]
+    "text": "SEI combines a cross-cutting reading of environmental, social, climate and territorial issues with an understanding of institutional and socioeconomic realities. Our approach is built on the active participation of institutions, communities, civil society organisations and other stakeholders, together with operational tools that inform decisions, manage risks and sustainably strengthen the resilience of territories."
   },
   "capabilities": {
-    "eyebrow": "Cross-cutting capabilities",
-    "title": "Expertise mobilised for impact",
-    "lead": "SEI’s cross-cutting capabilities strengthen the technical quality, coherence and operational reach of all its interventions.",
     "items": [
-      {"title": "Integrated implementation and synergies across the Rio Conventions", "text": "Supporting Party countries in implementing their commitments under the Rio Conventions, by building synergies across biodiversity, climate and desertification issues, and integrating them coherently into national sustainable development strategies."},
-      {"title": "Project development and stakeholder mobilisation", "text": "Designing transformative projects aligned with national priorities and international standards, through inclusive dialogue and stakeholder consultations."},
-      {"title": "Capacity building and knowledge management", "text": "Designing and delivering training, capturing and sharing knowledge, raising stakeholder awareness, and supporting institutional capacity building."},
-      {"title": "", "text": ""}
+      {"title": "Capacity building and knowledge management", "text": "Needs assessment, design and delivery of training, development of guides and practical tools, capturing and sharing knowledge, raising stakeholder awareness and supporting institutional and technical capacity building."},
+      {"title": "Design and organisation of strategic events", "text": "Design and organisation of international conferences, high-level dialogues, multi-stakeholder workshops and side events. SEI supports theme definition, mobilising speakers and partners, content preparation, facilitation, communication and capitalising on results."}
     ]
+  },
+  "agenda2030": {
+    "title": "Interventions at the heart of the 2030 Agenda",
+    "text": "SEI's interventions contribute directly to several Sustainable Development Goals, particularly those related to climate action, land restoration and biodiversity conservation, peace and effective institutions, and partnerships. Our integrated approach translates these global goals into concrete action for the benefit of communities and territories."
   },
   "projects": {
     "eyebrow": "Projects",

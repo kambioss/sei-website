@@ -83,7 +83,7 @@ export default async function Home({ searchParams }: HomeProps) {
     getSiteContent(locale),
     PROJECTS_NEWS_ENABLED ? getPublishedNews(locale) : Promise.resolve([]),
   ]);
-  const { brand, hero, audiences, identity, expertiseIntro, expertises, approach, capabilities, trustedOrganizations, valueAdded, contact } = content;
+  const { brand, hero, audiences, founder, identity, expertiseIntro, expertises, trustedOrganizations, valueAdded, contact } = content;
   const anchor = (id: string) => "/?lang=" + locale + "#" + id;
 
   return (
@@ -99,7 +99,7 @@ export default async function Home({ searchParams }: HomeProps) {
           <p className="heroLead">{hero.lead}</p>
           <div className="heroActions">
             <Link className="button buttonPrimary" href={anchor("contact")}>{hero.primaryAction} <span aria-hidden="true">→</span></Link>
-            <Link className="button buttonGhost" href={anchor("expertises")}>{hero.secondaryAction}</Link>
+            <Link className="button buttonGhost" href={`/expertises?lang=${locale}`}>{hero.secondaryAction}</Link>
           </div>
           <div className="heroProof" aria-label={copy.strengths}>
             {hero.proofs.map((proof, index) => (
@@ -130,6 +130,14 @@ export default async function Home({ searchParams }: HomeProps) {
         </div>
       </section>
 
+      <section className="founderSection sectionShell">
+        <p className="eyebrow"><span /> {founder.eyebrow}</p>
+        <div className="founderQuote">
+          {founder.quote.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        </div>
+        <p className="founderAttribution">{founder.attribution}</p>
+      </section>
+
       <section className="aboutSection sectionShell" id="sei">
         <div className="aboutTitle">
           <p className="eyebrow"><span /> {identity.eyebrow}</p>
@@ -147,6 +155,7 @@ export default async function Home({ searchParams }: HomeProps) {
         <div className="aboutCopy">
           {identity.paragraphs.map((paragraph, index) => <p className={index === 0 ? "aboutLead" : undefined} key={paragraph}>{paragraph}</p>)}
           <blockquote><span>{copy.ambition}</span>{identity.ambition}</blockquote>
+          <Link className="teaserLink" href={`/qui-sommes-nous?lang=${locale}`}>{locale === "en" ? "Learn more" : "En savoir plus"} <span aria-hidden="true">→</span></Link>
         </div>
       </section>
 
@@ -175,34 +184,11 @@ export default async function Home({ searchParams }: HomeProps) {
               <div className="cardTop"><span>{card.number}</span><i /></div>
               <h3>{card.title}</h3>
               <p className="cardBody">{card.summary}</p>
-              <h4>{copy.interventions}</h4>
-              <ul className="interventionList">{card.interventions.map((item) => <li key={item}>{item}</li>)}</ul>
               <div className="impactBox"><strong>{copy.impact}</strong><p>{card.impact}</p></div>
             </article>
           ))}
         </div>
-      </section>
-
-      <section className="capabilitiesSection">
-        <div className="sectionShell capabilitiesGrid">
-          <div><h2>{capabilities.title}</h2><p className="capabilitiesLead">{capabilities.lead}</p></div>
-          <ul>
-            {capabilities.items.filter((item) => item.title.trim().length > 0).map((item, index) => (
-              <li key={item.title}><span>{String(index + 1).padStart(2, "0")}</span><div><strong>{item.title}</strong><p>{item.text}</p></div></li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="approachSection" id="approche">
-        <div className="sectionShell">
-          <div className="approachIntro"><p className="eyebrow light"><span /> {approach.eyebrow}</p><h2>{approach.title}</h2></div>
-          <div className="approachGrid">
-            {approach.items.map((step, index) => (
-              <article key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{step.title}</h3><p>{step.text}</p></article>
-            ))}
-          </div>
-        </div>
+        <Link className="teaserLink" href={`/expertises?lang=${locale}`}>{locale === "en" ? "See all our interventions" : "Voir toutes nos interventions"} <span aria-hidden="true">→</span></Link>
       </section>
 
       {PROJECTS_NEWS_ENABLED && (
@@ -274,7 +260,7 @@ export default async function Home({ searchParams }: HomeProps) {
           <div className="footerLinks">
             <Link href={anchor("sei")}>{copy.cabinet}</Link>
             <Link href={anchor("expertises")}>{copy.expertise}</Link>
-            <Link href={anchor("approche")}>{copy.approach}</Link>
+            <Link href={`/savoir-faire?lang=${locale}`}>{copy.approach}</Link>
             {PROJECTS_NEWS_ENABLED && <Link href={`/projets?lang=${locale}`}>{locale === "en" ? "Projects" : "Projets"}</Link>}
             {PROJECTS_NEWS_ENABLED && <Link href={"/actualites?lang=" + locale}>{copy.news}</Link>}
             <Link href={anchor("contact")}>Contact</Link>
