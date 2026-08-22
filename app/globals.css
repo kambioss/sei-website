@@ -877,10 +877,15 @@ button, input, textarea, select { font: inherit; }
 
 /* Menu principal : dropdown "Qui sommes-nous" au survol */
 .navItem { position: relative; }
-.navDropdown { position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%) translateY(6px); z-index: 55; display: grid; gap: 2px; width: max-content; min-width: 200px; padding: 10px; background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 24px 55px rgba(13,77,59,.18); opacity: 0; visibility: hidden; transition: opacity .18s ease, transform .18s ease, visibility .18s; }
-.navItem:hover .navDropdown, .navItem:focus-within .navDropdown { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-.navDropdown a { display: block; padding: 10px 14px; border-radius: 10px; color: var(--ink); font-size: 13px; font-weight: 700; white-space: nowrap; }
+.navItem > a { display: inline-flex; align-items: center; gap: 6px; }
+.navCaret { display: inline-flex; color: var(--ochre); transition: transform .2s ease; }
+.navItem:hover .navCaret, .navItem:focus-within .navCaret { transform: rotate(180deg); }
+.navDropdown { position: absolute; top: 100%; left: -16px; z-index: 55; width: 250px; margin-top: 16px; padding: 9px; background: #fff; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 26px 64px rgba(13,77,59,.2); opacity: 0; visibility: hidden; transform: translateY(6px) scale(.98); transform-origin: top left; transition: opacity .18s ease, transform .18s ease, visibility .18s; }
+.navDropdown::before { content: ""; position: absolute; top: -16px; left: 0; right: 0; height: 16px; }
+.navItem:hover .navDropdown, .navItem:focus-within .navDropdown { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+.navDropdown a { display: flex; align-items: center; gap: 11px; padding: 11px 13px; border-radius: 12px; color: var(--ink); font-size: 13px; font-weight: 700; white-space: nowrap; }
 .navDropdown a:hover { background: var(--sand); color: var(--forest); }
+.navDropdownIndex { color: var(--ochre); font-size: 11px; font-weight: 900; letter-spacing: .04em; }
 
 .mobileNavGroup { display: grid; }
 .mobileSubLinks { display: grid; padding: 2px 0 8px 18px; border-bottom: 1px solid rgba(24,52,61,.09); }
@@ -914,7 +919,7 @@ button, input, textarea, select { font: inherit; }
 .founderCard .eyebrow { color: var(--teal); margin-bottom: 20px; }
 .founderQuoteText { margin: 0 0 16px; color: var(--ink); font-size: clamp(16.5px, 1.5vw, 18.5px); font-style: italic; line-height: 1.78; }
 .founderQuoteText:last-of-type { margin-bottom: 0; }
-.founderPerson { display: flex; align-items: center; gap: 16px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
+.founderPerson { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
 .founderAvatar { position: relative; width: 56px; height: 56px; flex: 0 0 auto; border-radius: 50%; overflow: hidden; box-shadow: 0 8px 18px rgba(17,57,48,.2); }
 .founderAvatar img { object-fit: cover; }
 .founderPersonCopy { display: grid; gap: 3px; }

@@ -10,7 +10,7 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
   const locale = normaliseLocale(query.lang);
   const english = locale === "en";
   const content = await getSiteContent(locale);
-  const { identity, founder, hero } = content;
+  const { brand, identity, founder, hero } = content;
   const { knowUs, history, values, vision } = identity;
 
   return (
@@ -24,15 +24,17 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
         languageHrefEn="/qui-sommes-nous?lang=en"
       />
 
-      <section id="nous-connaitre" className="aboutFeature sectionShell">
-        <div className="aboutFeatureCopy">
-          <p className="eyebrow"><span /> {knowUs.title}</p>
-          <h2>{knowUs.heading}</h2>
-          <p className="aboutFeatureStatement">{knowUs.statement}</p>
-          {knowUs.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+      <section id="nous-connaitre" className="hero sectionShell">
+        <div className="heroCopy">
+          <p className="eyebrow"><span /> {brand.descriptor}</p>
+          <h1>{identity.title}</h1>
+          <p className="heroStatement">{hero.statement}</p>
+          {knowUs.paragraphs.map((paragraph) => <p className="heroLead" key={paragraph}>{paragraph}</p>)}
         </div>
-        <div className="aboutFeatureMedia">
-          <Image src={knowUs.image} alt={knowUs.title} fill unoptimized sizes="(max-width: 900px) 100vw, 46vw" />
+        <div className="heroVisual">
+          <Image src={knowUs.image} alt={identity.title} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
+          <div className="imageShade" />
+          <p className="imageCaption">{knowUs.imageCaption}</p>
         </div>
       </section>
 
@@ -84,8 +86,6 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
 
       <section className="founderSection sectionShell">
         <div className="founderCard">
-          <p className="eyebrow"><span /> {founder.eyebrow}</p>
-          {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
           <div className="founderPerson">
             <span className="founderAvatar"><Image src={founder.photo} alt={founder.name} fill unoptimized sizes="56px" /></span>
             <div className="founderPersonCopy">
@@ -93,6 +93,8 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
               <span>{founder.role}</span>
             </div>
           </div>
+          <p className="eyebrow"><span /> {founder.eyebrow}</p>
+          {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
         </div>
       </section>
     </main>

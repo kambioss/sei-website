@@ -59,10 +59,16 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
                 href={link.href}
               >
                 {link.label}
+                <span className="navCaret" aria-hidden="true">
+                  <svg width="9" height="6" viewBox="0 0 9 6" fill="none"><path d="M1 1l3.5 3.5L8 1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </span>
               </Link>
               <div className="navDropdown">
-                {aboutSubItems.map((item) => (
-                  <Link key={item.id} href={aboutAnchor(item.id)}>{item.label}</Link>
+                {aboutSubItems.map((item, index) => (
+                  <Link key={item.id} href={aboutAnchor(item.id)}>
+                    <span className="navDropdownIndex">{String(index + 1).padStart(2, "0")}</span>
+                    {item.label}
+                  </Link>
                 ))}
               </div>
             </div>
