@@ -98,15 +98,13 @@ export default async function Home({ searchParams }: HomeProps) {
     hero,
     audiences,
     identity,
-    expertiseIntro,
     expertises,
-    approach,
-    capabilities,
     trustedOrganizations,
     valueAdded,
     contact,
   } = content;
   const anchor = (id: string) => "/?lang=" + locale + "#" + id;
+  const aboutAnchor = (id: string) => `/qui-sommes-nous?lang=${locale}#${id}`;
 
   return (
     <main>
@@ -132,7 +130,10 @@ export default async function Home({ searchParams }: HomeProps) {
             <Link className="button buttonPrimary" href={anchor("contact")}>
               {hero.primaryAction} <span aria-hidden="true">→</span>
             </Link>
-            <Link className="button buttonGhost" href={anchor("expertises")}>
+            <Link
+              className="button buttonGhost"
+              href={aboutAnchor("expertises")}
+            >
               {hero.secondaryAction}
             </Link>
           </div>
@@ -235,82 +236,6 @@ export default async function Home({ searchParams }: HomeProps) {
               <figcaption>{copy.galleryCaptions[index]}</figcaption>
             </figure>
           ))}
-        </div>
-      </section>
-
-      <section className="expertiseSection sectionShell" id="expertises">
-        <div className="sectionIntro">
-          <div>
-            <p className="eyebrow">
-              <span /> {expertiseIntro.eyebrow}
-            </p>
-            <h2>{expertiseIntro.title}</h2>
-          </div>
-          <p>{expertiseIntro.text}</p>
-        </div>
-        <div className="expertiseGrid">
-          {expertises.map((card) => (
-            <article className={"expertiseCard " + card.tone} key={card.number}>
-              <div className="cardTop">
-                <span>{card.number}</span>
-                <i />
-              </div>
-              <h3>{card.title}</h3>
-              <p className="cardBody">{card.summary}</p>
-              <h4>{copy.interventions}</h4>
-              <ul className="interventionList">
-                {card.interventions.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              <div className="impactBox">
-                <strong>{copy.impact}</strong>
-                <p>{card.impact}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="capabilitiesSection">
-        <div className="sectionShell capabilitiesGrid">
-          <div>
-            <h2>{capabilities.title}</h2>
-            <p className="capabilitiesLead">{capabilities.lead}</p>
-          </div>
-          <ul>
-            {capabilities.items
-              .filter((item) => item.title.trim().length > 0)
-              .map((item, index) => (
-                <li key={item.title}>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <div>
-                    <strong>{item.title}</strong>
-                    <p>{item.text}</p>
-                  </div>
-                </li>
-              ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="approachSection" id="approche">
-        <div className="sectionShell">
-          <div className="approachIntro">
-            <p className="eyebrow light">
-              <span /> {approach.eyebrow}
-            </p>
-            <h2>{approach.title}</h2>
-          </div>
-          <div className="approachGrid">
-            {approach.items.map((step, index) => (
-              <article key={step.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -461,8 +386,8 @@ export default async function Home({ searchParams }: HomeProps) {
           </div>
           <div className="footerLinks">
             <Link href={`/qui-sommes-nous?lang=${locale}`}>{copy.cabinet}</Link>
-            <Link href={anchor("expertises")}>{copy.expertise}</Link>
-            <Link href={anchor("approche")}>{copy.approach}</Link>
+            <Link href={aboutAnchor("expertises")}>{copy.expertise}</Link>
+            <Link href={aboutAnchor("approche")}>{copy.approach}</Link>
             {PROJECTS_NEWS_ENABLED && (
               <Link href={`/projets?lang=${locale}`}>
                 {locale === "en" ? "Projects" : "Projets"}
