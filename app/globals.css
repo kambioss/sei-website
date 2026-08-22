@@ -897,6 +897,7 @@ button, input, textarea, select { font: inherit; }
 #nous-connaitre.hero { min-height: 0; align-items: start; padding-top: 0; }
 #nous-connaitre h1 { max-width: none; font-size: clamp(17px, 1.55vw, 22px); line-height: 1.4; text-align: justify; text-justify: inter-word; hyphens: auto; }
 #nous-connaitre .heroVisual { min-height: 0; aspect-ratio: 4 / 3; }
+#nous-connaitre .heroVisual img { object-position: center; }
 
 /* Rangées alternées texte/image (Nos valeurs, Notre vision) */
 .aboutFeature { display: flex; align-items: flex-start; gap: clamp(40px, 6vw, 92px); padding-block: 76px; border-top: 1px solid var(--line); }
