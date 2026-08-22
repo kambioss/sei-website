@@ -145,8 +145,9 @@ export default async function Home({ searchParams }: HomeProps) {
           </figure>
         </div>
         <div className="aboutCopy">
-          {identity.paragraphs.map((paragraph, index) => <p className={index === 0 ? "aboutLead" : undefined} key={paragraph}>{paragraph}</p>)}
+          {identity.knowUs.paragraphs.map((paragraph, index) => <p className={index === 0 ? "aboutLead" : undefined} key={paragraph}>{paragraph}</p>)}
           <blockquote><span>{copy.ambition}</span>{identity.ambition}</blockquote>
+          <Link className="teaserLink" href={`/qui-sommes-nous?lang=${locale}`}>{locale === "en" ? "Learn more" : "En savoir plus"} <span aria-hidden="true">→</span></Link>
         </div>
       </section>
 
@@ -272,7 +273,7 @@ export default async function Home({ searchParams }: HomeProps) {
         <div className="sectionShell footerInner">
           <div className="footerBrand"><span className="brandLogoFrame"><Image src="/images/Logo_SEImpact-01.png" alt={brand.name} fill unoptimized sizes="150px" /></span><small>{copy.footerTagline}</small></div>
           <div className="footerLinks">
-            <Link href={anchor("sei")}>{copy.cabinet}</Link>
+            <Link href={`/qui-sommes-nous?lang=${locale}`}>{copy.cabinet}</Link>
             <Link href={anchor("expertises")}>{copy.expertise}</Link>
             <Link href={anchor("approche")}>{copy.approach}</Link>
             {PROJECTS_NEWS_ENABLED && <Link href={`/projets?lang=${locale}`}>{locale === "en" ? "Projects" : "Projets"}</Link>}

@@ -19,14 +19,47 @@
     "International organisations",
     "Technical and financial partners"
   ],
+  "founder": {
+    "eyebrow": "A word from our founder",
+    "quote": [
+      "« African ecosystems and the populations who depend on them are today facing growing vulnerability. Climate change, land degradation, biodiversity loss and human pressure on natural resources are weakening livelihoods, deepening inequalities and can fuel tensions within territories.",
+      "Faced with these challenges, I am convinced that responses must combine scientific expertise, knowledge of local realities, community participation and institutional commitment. With SEI, our ambition is to bridge international commitments, public policy and action on the ground, in order to protect ecosystems, strengthen community resilience and contribute to sustainable, inclusive development adapted to African realities. »"
+    ],
+    "photo": "/images/fondateur-sei.jpeg",
+    "name": "Founder of SEI",
+    "role": "Social & Eco Impact"
+  },
   "identity": {
     "eyebrow": "Identity & positioning",
     "title": "A committed firm serving sustainable development",
     "ambition": "Turn environmental, social and climate challenges into levers for action, peace and resilience for African communities and territories.",
-    "paragraphs": [
-      "Social & Eco Impact (SEI) is a consulting firm specialised in sustainable territorial management, environmental and social assessment, and responses to peace, mobility and climate change challenges in Africa.",
-      "SEI supports public institutions, local authorities, international organisations, and technical and financial partners in designing, implementing, monitoring and evaluating high-impact policies, strategies, projects and programmes."
-    ]
+    "knowUs": {
+      "title": "Get to know us",
+      "paragraphs": [
+        "Social & Eco Impact (SEI) is a consulting, research and strategy firm working on sustainable land management, environmental and social impact assessment, and responses to peace, mobility and climate change challenges.",
+        "SEI supports public institutions, local authorities, international organisations, and technical and financial partners in designing, implementing, monitoring and evaluating high-impact policies, strategies, projects and programmes across Africa."
+      ]
+    },
+    "history": {
+      "title": "Our history",
+      "paragraphs": [
+        "Founded in 2024 and operational since 2026, Social & Eco Impact (SEI) is a consulting firm based in Tunis, working with States, institutions, development partners, businesses and communities across Africa.",
+        "SEI was born from its founder's experience implementing the three Rio Conventions on biodiversity, climate change and desertification. His international career, notably within the Sahara and Sahel Observatory (OSS), was built through coordinating and implementing projects and programmes carried out in partnership with the Global Mechanism of the United Nations Convention to Combat Desertification (UNCCD) and the United Nations Environment Programme (UNEP). It was further enriched by experience with the main international environmental and climate finance mechanisms, including the Adaptation Fund, the Green Climate Fund and the Global Environment Facility.",
+        "Having coordinated major environmental and climate projects and led numerous field missions and institutional support assignments with ministries in Benin, Burkina Faso, Niger, the Central African Republic, the Republic of Guinea, Seychelles and Tunisia, its founder gained a concrete understanding of the realities facing African territories.",
+        "His career has also been marked by an active contribution to implementing the Great Green Wall Initiative, notably through leading stakeholder consultation and coordination mechanisms, as well as designing and developing regional projects dedicated to land restoration, climate change adaptation and strengthening community resilience.",
+        "This experience gave rise to a strong conviction: international commitments and public policies only deliver lasting results when translated into concrete solutions, adapted to local realities and designed as close as possible to their beneficiaries.",
+        "SEI was created to bring technical expertise, international standards and financing mechanisms closer to the real needs of territories. The firm supports its partners in the sustainable management of land and natural resources, the assessment and management of environmental and social risks, climate change adaptation, biodiversity conservation, and the design of transformative, inclusive and resilient projects."
+      ]
+    },
+    "values": {
+      "title": "Our values",
+      "pillars": ["Integrity", "Accountability", "Fairness"],
+      "text": "At SEI, we place integrity, accountability and fairness at the heart of our commitment. We favour listening and dialogue, combining institutional expertise with the knowledge and realities of communities. Our interventions are built on rigour, transparency and the pursuit of concrete, inclusive and sustainable solutions, generating tangible, measurable results for the benefit of communities and ecosystems."
+    },
+    "vision": {
+      "title": "Our vision",
+      "text": "Contributing to more resilient African territories, where the sustainable management of natural resources protects ecosystems, secures community livelihoods and prevents tensions exacerbated by climate change."
+    }
   },
   "expertiseIntro": {
     "eyebrow": "Our expertise",
