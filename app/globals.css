@@ -918,23 +918,21 @@ button, input, textarea, select { font: inherit; }
 
 /* Mot du fondateur : carte façon témoignage, en clôture de page */
 .founderSection { padding-block: 40px 110px; }
-.founderCard { display: grid; grid-template-columns: 1fr 1.15fr; overflow: hidden; border: 1px solid rgba(13,77,59,.12); border-radius: 24px 24px 48px 24px; background: #fff; box-shadow: 0 16px 44px rgba(17,57,48,.08); transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease; }
+.founderCard { padding: clamp(30px, 4vw, 48px); border: 1px solid rgba(13,77,59,.12); border-radius: 24px 24px 48px 24px; background: #fff; box-shadow: 0 16px 44px rgba(17,57,48,.08); transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease; }
+.founderCard::after { content: ""; display: block; clear: both; }
 .founderCard:hover { transform: translateY(-8px); box-shadow: 0 30px 70px rgba(17,57,48,.16); }
-.founderCardImage { position: relative; min-height: 320px; overflow: hidden; background: var(--sand); }
+.founderCardImage { position: relative; float: left; width: clamp(180px, 32%, 300px); aspect-ratio: 3 / 4; margin: 0 clamp(24px, 3vw, 38px) 18px 0; overflow: hidden; border-radius: 16px 16px 44px 16px; background: var(--sand); box-shadow: 0 18px 40px rgba(17,57,48,.16); }
 .founderCardImage img { object-fit: cover; transition: transform .45s ease; }
 .founderCard:hover .founderCardImage img { transform: scale(1.04); }
-.founderCardCopy { display: flex; min-width: 0; flex-direction: column; justify-content: center; padding: clamp(28px, 4vw, 46px); }
 .founderCardCopy .eyebrow { color: var(--ochre); margin-bottom: 14px; }
 .founderCardCopy h2 { margin: 0 0 6px; color: var(--forest); font-size: clamp(24px, 2.3vw, 31px); line-height: 1.15; letter-spacing: -.03em; }
-.founderRole { margin: 0 0 22px; color: var(--muted); font-size: 12.5px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.founderRole { margin: 0 0 20px; color: var(--muted); font-size: 12.5px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
 .founderQuoteText { margin: 0 0 16px; color: var(--ink); font-size: clamp(15px, 1.3vw, 16.5px); font-style: italic; line-height: 1.72; }
 .founderQuoteText:last-of-type { margin-bottom: 0; }
 
 @media (max-width: 900px) {
   .aboutFeature, .aboutFeature.reverse { flex-direction: column; }
   .aboutFeatureMedia, .aboutFeature.reverse .aboutFeatureMedia { border-radius: 6px 46px 6px 6px; }
-  .founderCard { grid-template-columns: 1fr; }
-  .founderCardImage { min-height: 260px; }
 }
 
 @media (max-width: 900px) {
@@ -947,5 +945,5 @@ button, input, textarea, select { font: inherit; }
   .valuesGrid { grid-template-columns: 1fr; }
   .founderSection { padding-block: 26px 70px; }
   .founderCard { border-radius: 19px 19px 36px 19px; }
-  .founderCardImage { min-height: 220px; }
+  .founderCardImage { float: none; width: 100%; aspect-ratio: 16 / 10; margin: 0 0 22px; }
 }
