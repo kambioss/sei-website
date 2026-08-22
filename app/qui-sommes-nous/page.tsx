@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HeroQuickLinks } from "@/app/hero-quick-links";
 import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
@@ -40,10 +41,20 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
             {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
           </div>
         </div>
-        <div className="heroVisual">
-          <Image src={knowUs.image} alt={english ? "Act for sustainable development" : "Agir pour le développement durable"} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
-          <div className="imageShade" />
-          <p className="imageCaption">{hero.imageCaption}</p>
+        <div className="heroVisualColumn">
+          <div className="heroVisual">
+            <Image src={knowUs.image} alt={english ? "Act for sustainable development" : "Agir pour le développement durable"} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
+            <div className="imageShade" />
+            <p className="imageCaption">{hero.imageCaption}</p>
+          </div>
+          <HeroQuickLinks
+            moreLabel={english ? "Learn more" : "En savoir plus"}
+            items={[
+              { id: "notre-histoire", icon: "history", label: history.title, heading: history.heading, text: history.statement },
+              { id: "nos-valeurs", icon: "values", label: values.title, heading: values.heading, text: values.statement },
+              { id: "notre-vision", icon: "vision", label: vision.title, heading: vision.heading, text: vision.statement },
+            ]}
+          />
         </div>
       </section>
 

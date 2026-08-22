@@ -399,6 +399,8 @@ button, input, textarea, select { font: inherit; }
   .heroVisual { min-height: 610px; order: -1; }
   .heroCopy { padding-bottom: 28px; }
   #nous-connaitre.hero { grid-template-columns: 1fr; }
+  #nous-connaitre .heroVisualColumn { order: -1; margin-top: 0; margin-bottom: 28px; }
+  #nous-connaitre .heroVisual { min-height: 420px; }
   .audienceBand { grid-template-columns: 1fr; gap: 15px; }
   .audienceBand div { justify-content: flex-start; flex-wrap: wrap; }
   .sectionIntro { grid-template-columns: 1fr; gap: 22px; }
@@ -895,10 +897,23 @@ button, input, textarea, select { font: inherit; }
 .mobileSubLinks a { padding: 9px 0; border: 0; color: var(--muted); font-size: 12.5px; font-weight: 700; }
 
 /* Hero "Nous connaître" : titre nettement plus modeste que celui de l'accueil, image cadrée sur la hauteur du texte (pas sur tout le viewport) */
-#nous-connaitre.hero { min-height: 0; align-items: start; padding-top: 0; grid-template-columns: .8fr 1.05fr; }
+#nous-connaitre.hero { min-height: 0; align-items: stretch; padding-top: 0; grid-template-columns: .8fr 1.05fr; }
 #nous-connaitre h1 { max-width: none; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.1; white-space: nowrap; }
-#nous-connaitre .heroVisual { min-height: 0; aspect-ratio: 1 / 1; margin-top: 36px; }
+#nous-connaitre .heroVisualColumn { display: flex; flex-direction: column; margin-top: 36px; }
+#nous-connaitre .heroVisual { flex: 1; min-height: 220px; }
 #nous-connaitre .heroVisual img { object-position: center; }
+
+.heroQuickLinks { margin-top: 18px; }
+.heroQuickLinksRow { display: flex; gap: 10px; }
+.heroQuickLinkButton { display: inline-flex; align-items: center; gap: 9px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted); font-size: 13px; font-weight: 800; cursor: pointer; transition: background .2s ease, border-color .2s ease, color .2s ease; }
+.heroQuickLinkIcon { display: inline-flex; color: var(--ochre); }
+.heroQuickLinkButton:hover { border-color: var(--forest); color: var(--forest); }
+.heroQuickLinkButton.active { border-color: var(--forest); background: var(--forest); color: #fff; }
+.heroQuickLinkButton.active .heroQuickLinkIcon { color: #e6b65d; }
+.heroQuickLinkPanel { margin-top: 14px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--sand); }
+.heroQuickLinkPanel h3 { margin: 0 0 8px; color: var(--forest); font-size: 17px; letter-spacing: -.02em; }
+.heroQuickLinkPanel p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.heroQuickLinkPanel a { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; color: var(--forest); font-size: 12.5px; font-weight: 800; }
 
 /* Rangées alternées texte/image (Nos valeurs, Notre vision) */
 .aboutFeature { display: flex; align-items: flex-start; gap: clamp(40px, 6vw, 92px); padding-block: 76px; border-top: 1px solid var(--line); }
