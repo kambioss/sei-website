@@ -894,7 +894,7 @@ button, input, textarea, select { font: inherit; }
 .mobileSubLinks a { padding: 9px 0; border: 0; color: var(--muted); font-size: 12.5px; font-weight: 700; }
 
 /* Hero "Nous connaître" : titre nettement plus modeste que celui de l'accueil, image cadrée sur la hauteur du texte (pas sur tout le viewport) */
-#nous-connaitre.hero { min-height: 0; align-items: start; }
+#nous-connaitre.hero { min-height: 0; align-items: start; padding-top: 0; }
 #nous-connaitre h1 { max-width: none; font-size: clamp(17px, 1.55vw, 22px); line-height: 1.4; text-align: justify; text-justify: inter-word; hyphens: auto; }
 #nous-connaitre .heroVisual { min-height: 0; aspect-ratio: 3 / 4; }
 
