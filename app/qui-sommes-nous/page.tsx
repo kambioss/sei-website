@@ -29,6 +29,15 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
           <p className="eyebrow"><span /> {english ? "Get to know us" : "Nous connaître"}</p>
           <h1>{hero.statement}</h1>
           {knowUs.paragraphs.map((paragraph) => <p className="heroLead" key={paragraph}>{paragraph}</p>)}
+
+          <div className="founderLetter">
+            <p className="eyebrow"><span /> {founder.eyebrow}</p>
+            <div className="founderPhoto">
+              <Image src={founder.photo} alt={founder.name} fill unoptimized sizes="160px" />
+            </div>
+            {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
+            <p className="founderSignature"><strong>{founder.name}</strong><br />{founder.role}</p>
+          </div>
         </div>
         <div className="heroVisual">
           <Image src={knowUs.image} alt={hero.statement} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
@@ -36,17 +45,6 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
           <p className="imageCaption">{hero.imageCaption}</p>
         </div>
       </section>
-
-      <div className="sectionShell founderRow">
-        <div className="founderLetter">
-          <p className="eyebrow"><span /> {founder.eyebrow}</p>
-          <div className="founderPhoto">
-            <Image src={founder.photo} alt={founder.name} fill unoptimized sizes="200px" />
-          </div>
-          {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
-          <p className="founderSignature"><strong>{founder.name}</strong><br />{founder.role}</p>
-        </div>
-      </div>
 
       <section id="notre-histoire" className="historySection sectionShell">
         <div className="historyIntro">

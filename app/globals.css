@@ -935,8 +935,7 @@ button, input, textarea, select { font: inherit; }
 .valueCard strong { display: block; color: var(--forest); font-size: 17px; letter-spacing: -.02em; }
 
 /* Mot du fondateur : carte façon témoignage, en clôture de page */
-.founderRow { padding-block: 44px 8px; }
-.founderLetter { max-width: 800px; margin: 0 auto; }
+.heroCopy .founderLetter { margin-top: 32px; }
 .founderLetter::after { content: ""; display: block; clear: both; }
 .founderLetter .eyebrow { color: var(--teal); margin-bottom: 18px; }
 .founderPhoto { position: relative; float: left; width: clamp(130px, 24%, 190px); aspect-ratio: 4 / 5; margin: 0 26px 14px 0; overflow: hidden; border-radius: 14px 14px 36px 14px; box-shadow: 0 16px 36px rgba(17,57,48,.18); background: var(--sand); }
@@ -958,7 +957,7 @@ button, input, textarea, select { font: inherit; }
 @media (max-width: 680px) {
   .aboutFeature { padding-block: 50px; }
   .valuesGrid { grid-template-columns: 1fr; }
-  .founderRow { padding-block: 26px 4px; }
+  .heroCopy .founderLetter { margin-top: 24px; }
   .founderPhoto { float: none; width: 100%; max-width: 220px; aspect-ratio: 4 / 3; margin: 0 0 18px; }
   .historySection { padding-block: 50px; }
 }
