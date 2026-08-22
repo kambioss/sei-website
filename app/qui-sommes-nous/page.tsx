@@ -26,7 +26,7 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
 
       <section id="nous-connaitre" className="hero sectionShell">
         <div className="heroCopy">
-          <h1>{hero.statement}</h1>
+          <h1>{english ? "Act for sustainable development" : "Agir pour un développement durable"}</h1>
           {knowUs.paragraphs.map((paragraph) => <p className="heroLead" key={paragraph}>{paragraph}</p>)}
 
           <div className="founderLetter">
@@ -41,7 +41,7 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
           </div>
         </div>
         <div className="heroVisual">
-          <Image src={knowUs.image} alt={hero.statement} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
+          <Image src={knowUs.image} alt={english ? "Act for sustainable development" : "Agir pour un développement durable"} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
           <div className="imageShade" />
           <p className="imageCaption">{hero.imageCaption}</p>
         </div>

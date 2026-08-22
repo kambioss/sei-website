@@ -896,8 +896,8 @@ button, input, textarea, select { font: inherit; }
 
 /* Hero "Nous connaître" : titre nettement plus modeste que celui de l'accueil, image cadrée sur la hauteur du texte (pas sur tout le viewport) */
 #nous-connaitre.hero { min-height: 0; align-items: start; padding-top: 0; grid-template-columns: .95fr .9fr; }
-#nous-connaitre h1 { max-width: none; font-size: clamp(17px, 1.55vw, 22px); line-height: 1.4; text-align: justify; text-justify: inter-word; hyphens: auto; }
-#nous-connaitre .heroVisual { min-height: 0; aspect-ratio: 4 / 3; }
+#nous-connaitre h1 { max-width: none; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.1; white-space: nowrap; }
+#nous-connaitre .heroVisual { min-height: 0; aspect-ratio: 4 / 3; margin-top: 36px; }
 #nous-connaitre .heroVisual img { object-position: center; }
 
 /* Rangées alternées texte/image (Nos valeurs, Notre vision) */
@@ -949,6 +949,7 @@ button, input, textarea, select { font: inherit; }
 @media (max-width: 680px) {
   .aboutFeature { padding-block: 50px; }
   .valuesGrid { grid-template-columns: 1fr; }
+  #nous-connaitre h1 { white-space: normal; font-size: clamp(20px, 5.5vw, 28px); }
   .heroCopy .founderLetter { margin-top: 24px; }
   .founderPhotoBlock { float: none; width: 100%; max-width: 220px; margin: 0 0 18px; }
   .founderPhoto { aspect-ratio: 4 / 3; }
