@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { AboutSubnav } from "@/app/about-subnav";
 import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
@@ -14,13 +13,6 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
   const { identity, founder, hero } = content;
   const { knowUs, history, values, vision } = identity;
 
-  const subnavItems = [
-    { id: "nous-connaitre", label: knowUs.title },
-    { id: "notre-histoire", label: history.title },
-    { id: "nos-valeurs", label: values.title },
-    { id: "notre-vision", label: vision.title },
-  ];
-
   return (
     <main className="aboutPage">
       <PageInteractions backToTopLabel={english ? "Back to top" : "Retour en haut"} />
@@ -31,7 +23,6 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
         languageHrefFr="/qui-sommes-nous?lang=fr"
         languageHrefEn="/qui-sommes-nous?lang=en"
       />
-      <AboutSubnav items={subnavItems} />
 
       <section id="nous-connaitre" className="aboutFeature sectionShell">
         <div className="aboutFeatureCopy">

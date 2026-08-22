@@ -16,6 +16,13 @@ type PublicHeaderProps = {
 export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languageHrefEn }: PublicHeaderProps) {
   const english = locale === "en";
   const homeAnchor = (id: string) => `/?lang=${locale}#${id}`;
+  const aboutAnchor = (id: string) => `/qui-sommes-nous?lang=${locale}#${id}`;
+  const aboutSubItems = [
+    { id: "nous-connaitre", label: english ? "Get to know us" : "Nous connaître" },
+    { id: "notre-histoire", label: english ? "Our history" : "Notre histoire" },
+    { id: "nos-valeurs", label: english ? "Our values" : "Nos valeurs" },
+    { id: "notre-vision", label: english ? "Our vision" : "Notre vision" },
+  ];
   const links: Array<{ section: PublicNavSection; label: string; href: string }> = [
     { section: "sei", label: english ? "Who we are" : "Qui sommes-nous", href: `/qui-sommes-nous?lang=${locale}` },
     { section: "expertises", label: english ? "Our expertise" : "Notre expertise", href: homeAnchor("expertises") },
@@ -42,17 +49,35 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
         </span>
       </Link>
       <nav className="desktopNav" aria-label={english ? "Main navigation" : "Navigation principale"}>
-        {links.map((link) => (
-          <Link
-            key={link.section}
-            className={active === link.section ? "active" : undefined}
-            data-nav-section={link.section}
-            aria-current={active === link.section ? "page" : undefined}
-            href={link.href}
-          >
-            {link.label}
-          </Link>
-        ))}
+        {links.map((link) =>
+          link.section === "sei" ? (
+            <div className="navItem" key={link.section}>
+              <Link
+                className={active === link.section ? "active" : undefined}
+                data-nav-section={link.section}
+                aria-current={active === link.section ? "page" : undefined}
+                href={link.href}
+              >
+                {link.label}
+              </Link>
+              <div className="navDropdown">
+                {aboutSubItems.map((item) => (
+                  <Link key={item.id} href={aboutAnchor(item.id)}>{item.label}</Link>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <Link
+              key={link.section}
+              className={active === link.section ? "active" : undefined}
+              data-nav-section={link.section}
+              aria-current={active === link.section ? "page" : undefined}
+              href={link.href}
+            >
+              {link.label}
+            </Link>
+          ),
+        )}
         <div className="languageSwitch">
           <Link className={locale === "fr" ? "active" : ""} href={languageHrefFr}>FR</Link>
           <Link className={locale === "en" ? "active" : ""} href={languageHrefEn}>EN</Link>
@@ -63,15 +88,23 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
         <summary aria-label={english ? "Menu" : "Menu"}>{english ? "Menu" : "Menu"}</summary>
         <div>
           {links.map((link) => (
-            <Link
-              key={link.section}
-              className={active === link.section ? "active" : undefined}
-              data-nav-section={link.section}
-              aria-current={active === link.section ? "page" : undefined}
-              href={link.href}
-            >
-              {link.label}
-            </Link>
+            <div className="mobileNavGroup" key={link.section}>
+              <Link
+                className={active === link.section ? "active" : undefined}
+                data-nav-section={link.section}
+                aria-current={active === link.section ? "page" : undefined}
+                href={link.href}
+              >
+                {link.label}
+              </Link>
+              {link.section === "sei" && (
+                <div className="mobileSubLinks">
+                  {aboutSubItems.map((item) => (
+                    <Link key={item.id} href={aboutAnchor(item.id)}>{item.label}</Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
           <span className="mobileLanguages"><Link href={languageHrefFr}>FR</Link><Link href={languageHrefEn}>EN</Link></span>
           <Link href={homeAnchor("contact")}>{ctaLabel}</Link>
