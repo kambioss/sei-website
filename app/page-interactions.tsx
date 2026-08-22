@@ -15,7 +15,7 @@ export function PageInteractions({ backToTopLabel }: { backToTopLabel: string })
       ".aboutFeatureMedia",
       ".historyIntro",
       ".historyColumns",
-      ".founderCard",
+      ".founderLetter",
       ".territoryGalleryIntro",
       ".territoryGalleryGrid figure",
       ".expertiseSection .sectionIntro",
