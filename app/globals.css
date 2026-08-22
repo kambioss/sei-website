@@ -56,7 +56,7 @@ button, input, textarea, select { font: inherit; }
   letter-spacing: .08em;
 }
 .brandName { display: flex; flex-direction: column; align-items: flex-start; width: max-content; max-width: 185px; color: var(--forest); font-size: 21px; line-height: 1.12; letter-spacing: -.02em; }
-.brandNameTop { font-weight: 800; white-space: nowrap; }
+.brandNameTop { color: var(--ochre); font-weight: 800; white-space: nowrap; }
 .brandNameBottom { display: flex; justify-content: space-between; width: 100%; font-weight: 800; }
 .desktopNav { display: flex; align-items: center; gap: 30px; font-size: 14px; font-weight: 700; }
 .desktopNav > a:not(.navCta), .desktopNav .navItem > a { position: relative; padding-block: 10px; }
@@ -895,9 +895,9 @@ button, input, textarea, select { font: inherit; }
 .mobileSubLinks a { padding: 9px 0; border: 0; color: var(--muted); font-size: 12.5px; font-weight: 700; }
 
 /* Hero "Nous connaître" : titre nettement plus modeste que celui de l'accueil, image cadrée sur la hauteur du texte (pas sur tout le viewport) */
-#nous-connaitre.hero { min-height: 0; align-items: start; padding-top: 0; grid-template-columns: .95fr .9fr; }
+#nous-connaitre.hero { min-height: 0; align-items: start; padding-top: 0; grid-template-columns: .8fr 1.05fr; }
 #nous-connaitre h1 { max-width: none; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.1; white-space: nowrap; }
-#nous-connaitre .heroVisual { min-height: 0; aspect-ratio: 4 / 3; margin-top: 36px; }
+#nous-connaitre .heroVisual { min-height: 0; aspect-ratio: 1 / 1; margin-top: 36px; }
 #nous-connaitre .heroVisual img { object-position: center; }
 
 /* Rangées alternées texte/image (Nos valeurs, Notre vision) */
