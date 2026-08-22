@@ -26,13 +26,13 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
 
       <section id="nous-connaitre" className="hero sectionShell">
         <div className="heroCopy">
-          <p className="eyebrow"><span /> {brand.descriptor}</p>
-          <h1>{identity.title}</h1>
+          <p className="eyebrow"><span /> {english ? "Get to know us" : "Nous connaître"}</p>
+          <h1>{brand.descriptor}</h1>
           <p className="heroStatement">{hero.statement}</p>
           {knowUs.paragraphs.map((paragraph) => <p className="heroLead" key={paragraph}>{paragraph}</p>)}
         </div>
         <div className="heroVisual">
-          <Image src={knowUs.image} alt={identity.title} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
+          <Image src={knowUs.image} alt={brand.descriptor} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
           <div className="imageShade" />
           <p className="imageCaption">{knowUs.imageCaption}</p>
         </div>
