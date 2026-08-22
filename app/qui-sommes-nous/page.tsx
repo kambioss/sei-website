@@ -10,7 +10,7 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
   const locale = normaliseLocale(query.lang);
   const english = locale === "en";
   const content = await getSiteContent(locale);
-  const { brand, identity, founder, hero } = content;
+  const { identity, founder, hero } = content;
   const { knowUs, history, values, vision } = identity;
 
   return (
@@ -27,12 +27,11 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
       <section id="nous-connaitre" className="hero sectionShell">
         <div className="heroCopy">
           <p className="eyebrow"><span /> {english ? "Get to know us" : "Nous connaître"}</p>
-          <h1>{brand.descriptor}</h1>
-          <p className="heroStatement">{hero.statement}</p>
+          <h1>{hero.statement}</h1>
           {knowUs.paragraphs.map((paragraph) => <p className="heroLead" key={paragraph}>{paragraph}</p>)}
         </div>
         <div className="heroVisual">
-          <Image src={knowUs.image} alt={brand.descriptor} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
+          <Image src={knowUs.image} alt={hero.statement} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
           <div className="imageShade" />
           <p className="imageCaption">{knowUs.imageCaption}</p>
         </div>
