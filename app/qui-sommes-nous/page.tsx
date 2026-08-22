@@ -26,7 +26,6 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
 
       <section id="nous-connaitre" className="hero sectionShell">
         <div className="heroCopy">
-          <p className="eyebrow"><span /> {english ? "Get to know us" : "Nous connaître"}</p>
           <h1>{hero.statement}</h1>
           {knowUs.paragraphs.map((paragraph) => <p className="heroLead" key={paragraph}>{paragraph}</p>)}
 
