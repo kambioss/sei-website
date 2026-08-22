@@ -33,21 +33,23 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
         <div className="heroVisual">
           <Image src={knowUs.image} alt={hero.statement} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
           <div className="imageShade" />
-          <p className="imageCaption">{knowUs.imageCaption}</p>
+          <p className="imageCaption">{hero.imageCaption}</p>
         </div>
       </section>
 
-      <section id="notre-histoire" className="aboutFeature reverse sectionShell">
-        <div className="aboutFeatureCopy">
-          <p className="eyebrow"><span /> {history.title}</p>
-          <h2>{history.heading}</h2>
-          <p className="aboutFeatureStatement">{history.statement}</p>
-          <div className="historyTimeline">
+      <section id="notre-histoire" className="historySection sectionShell">
+        <div className="historyBanner">
+          <Image src={history.image} alt={history.title} fill unoptimized sizes="100vw" />
+        </div>
+        <div className="historyLayout">
+          <div className="historyIntro">
+            <p className="eyebrow"><span /> {history.title}</p>
+            <h2>{history.heading}</h2>
+            <p className="aboutFeatureStatement">{history.statement}</p>
+          </div>
+          <div className="historyBody">
             {history.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
-        </div>
-        <div className="aboutFeatureMedia">
-          <Image src={history.image} alt={history.title} fill unoptimized sizes="(max-width: 900px) 100vw, 46vw" />
         </div>
       </section>
 

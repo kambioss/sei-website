@@ -826,7 +826,7 @@ button, input, textarea, select { font: inherit; }
 .articleBody > p,
 .newsArchiveIntro > p:not(.eyebrow),
 .aboutFeatureCopy > p:not(.aboutFeatureStatement),
-.historyTimeline p,
+.historyBody p,
 .founderQuoteText {
   text-align: justify;
   hyphens: auto;
@@ -894,9 +894,11 @@ button, input, textarea, select { font: inherit; }
 .mobileSubLinks { display: grid; padding: 2px 0 8px 18px; border-bottom: 1px solid rgba(24,52,61,.09); }
 .mobileSubLinks a { padding: 9px 0; border: 0; color: var(--muted); font-size: 12.5px; font-weight: 700; }
 
-/* Rangées alternées texte/image (Nous connaître, Notre histoire, Nos valeurs, Notre vision) */
+/* Hero "Nous connaître" : titre nettement plus modeste que celui de l'accueil */
+#nous-connaitre h1 { max-width: 22ch; font-size: clamp(26px, 2.6vw, 38px); line-height: 1.2; }
+
+/* Rangées alternées texte/image (Nos valeurs, Notre vision) */
 .aboutFeature { display: flex; align-items: flex-start; gap: clamp(40px, 6vw, 92px); padding-block: 76px; border-top: 1px solid var(--line); }
-.aboutFeature:first-of-type { border-top: 0; padding-top: 60px; }
 .aboutFeature.reverse { flex-direction: row-reverse; }
 .aboutFeatureCopy { flex: 1 1 0; min-width: 0; }
 .aboutFeatureCopy .eyebrow { margin-bottom: 20px; }
@@ -907,9 +909,17 @@ button, input, textarea, select { font: inherit; }
 .aboutFeature.reverse .aboutFeatureMedia { border-radius: 64px 6px 6px 6px; }
 .aboutFeatureMedia img { object-fit: cover; }
 
-.historyTimeline { position: relative; margin: 20px 0 0 8px; padding-left: 26px; border-left: 2px solid var(--line); display: grid; gap: 22px; }
-.historyTimeline p { position: relative; margin: 0; max-width: 58ch; color: var(--muted); font-size: 16px; line-height: 1.76; }
-.historyTimeline p::before { content: ""; position: absolute; left: -34px; top: 7px; width: 10px; height: 10px; border-radius: 50%; background: var(--ochre); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ochre), white 75%); }
+/* Notre histoire : bannière pleine largeur + colonne d'intro collante */
+.historySection { padding-block: 76px; border-top: 1px solid var(--line); }
+.historyBanner { position: relative; width: 100%; aspect-ratio: 21 / 8; margin-bottom: 52px; overflow: hidden; border-radius: 6px 90px 6px 6px; box-shadow: 0 26px 60px rgba(17,57,48,.15); }
+.historyBanner img { object-fit: cover; }
+.historyLayout { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(40px, 6vw, 90px); align-items: start; }
+.historyIntro { position: sticky; top: 118px; }
+.historyIntro .eyebrow { margin-bottom: 20px; }
+.historyIntro h2 { margin: 0; max-width: 16ch; color: var(--forest); font-size: clamp(30px, 3.2vw, 44px); line-height: 1.08; letter-spacing: -.05em; }
+.historyIntro .aboutFeatureStatement { max-width: none; }
+.historyBody { display: grid; gap: 22px; }
+.historyBody p { margin: 0; max-width: 62ch; color: var(--muted); font-size: 16px; line-height: 1.78; }
 
 .valuesGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 26px 0 0; max-width: 58ch; }
 .valueCard { padding: 20px 18px; border: 1px solid var(--line); border-radius: 16px; background: var(--sand); }
@@ -932,6 +942,9 @@ button, input, textarea, select { font: inherit; }
 @media (max-width: 900px) {
   .aboutFeature, .aboutFeature.reverse { flex-direction: column; }
   .aboutFeatureMedia, .aboutFeature.reverse .aboutFeatureMedia { border-radius: 6px 46px 6px 6px; }
+  .historyLayout { grid-template-columns: 1fr; gap: 26px; }
+  .historyIntro { position: static; }
+  .historyIntro h2 { max-width: none; }
 }
 
 @media (max-width: 900px) {
@@ -940,8 +953,9 @@ button, input, textarea, select { font: inherit; }
 
 @media (max-width: 680px) {
   .aboutFeature { padding-block: 50px; }
-  .aboutFeature:first-of-type { padding-top: 40px; }
   .valuesGrid { grid-template-columns: 1fr; }
   .founderSection { padding-block: 26px 70px; }
   .founderCard { padding: 26px 22px; border-radius: 4px 26px 4px 4px; }
+  .historySection { padding-block: 50px; }
+  .historyBanner { aspect-ratio: 4 / 3; margin-bottom: 34px; border-radius: 6px 46px 6px 6px; }
 }
