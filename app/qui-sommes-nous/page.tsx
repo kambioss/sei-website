@@ -36,7 +36,7 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
               <Image src={founder.photo} alt={founder.name} fill unoptimized sizes="160px" />
             </div>
             {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
-            <p className="founderSignature"><strong>{founder.name}</strong><br />{founder.role}</p>
+            <p className="founderSignature"><strong>{founder.name}</strong></p>
           </div>
         </div>
         <div className="heroVisual">
