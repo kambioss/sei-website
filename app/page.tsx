@@ -4,6 +4,7 @@ import { ContactForm } from "@/app/contact-form";
 import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
 import { OrganizationSlider } from "@/app/organization-slider";
+import { SiteFooter } from "@/app/site-footer";
 import { PROJECTS_NEWS_ENABLED } from "@/lib/feature-flags";
 import { getPublishedNews } from "@/lib/news";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
@@ -370,39 +371,22 @@ export default async function Home({ searchParams }: HomeProps) {
         />
       </section>
 
-      <footer className="siteFooter">
-        <div className="sectionShell footerInner">
-          <div className="footerBrand">
-            <span className="brandLogoFrame">
-              <Image
-                src="/images/Logo_SEImpact-01.png"
-                alt={brand.name}
-                fill
-                unoptimized
-                sizes="150px"
-              />
-            </span>
-            <small>{copy.footerTagline}</small>
-          </div>
-          <div className="footerLinks">
-            <Link href={`/qui-sommes-nous?lang=${locale}`}>{copy.cabinet}</Link>
-            <Link href={aboutAnchor("expertises")}>{copy.expertise}</Link>
-            <Link href={aboutAnchor("approche")}>{copy.approach}</Link>
-            {PROJECTS_NEWS_ENABLED && (
-              <Link href={`/projets?lang=${locale}`}>
-                {locale === "en" ? "Projects" : "Projets"}
-              </Link>
-            )}
-            {PROJECTS_NEWS_ENABLED && (
-              <Link href={"/actualites?lang=" + locale}>{copy.news}</Link>
-            )}
-            <Link href={anchor("contact")}>Contact</Link>
-          </div>
-          <p>
-            © {new Date().getFullYear()} {brand.name}
-          </p>
-        </div>
-      </footer>
+      <SiteFooter
+        brandName={brand.name}
+        tagline={copy.footerTagline}
+        links={[
+          { href: `/qui-sommes-nous?lang=${locale}`, label: copy.cabinet },
+          { href: aboutAnchor("expertises"), label: copy.expertise },
+          { href: aboutAnchor("approche"), label: copy.approach },
+          ...(PROJECTS_NEWS_ENABLED
+            ? [{ href: `/projets?lang=${locale}`, label: locale === "en" ? "Projects" : "Projets" }]
+            : []),
+          ...(PROJECTS_NEWS_ENABLED
+            ? [{ href: "/actualites?lang=" + locale, label: copy.news }]
+            : []),
+          { href: anchor("contact"), label: "Contact" },
+        ]}
+      />
     </main>
   );
 }

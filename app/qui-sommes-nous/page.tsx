@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { HeroQuickLinks } from "@/app/hero-quick-links";
 import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
+import { SiteFooter } from "@/app/site-footer";
+import { PROJECTS_NEWS_ENABLED } from "@/lib/feature-flags";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
 
 export const dynamic = "force-dynamic";
@@ -11,7 +12,7 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
   const locale = normaliseLocale(query.lang);
   const english = locale === "en";
   const content = await getSiteContent(locale);
-  const { identity, founder, hero, expertiseIntro, expertises, approach, capabilities } = content;
+  const { brand, identity, founder, hero, expertiseIntro, expertises, approach, capabilities } = content;
   const { knowUs, history, values, vision } = identity;
   const interventionsLabel = english ? "Our services" : "Nos interventions";
   const impactLabel = english ? "Expected impact" : "Impact recherché";
@@ -49,14 +50,6 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
             <div className="imageShade" />
             <p className="imageCaption">{hero.imageCaption}</p>
           </div>
-          <HeroQuickLinks
-            moreLabel={english ? "Learn more" : "En savoir plus"}
-            items={[
-              { id: "notre-histoire", href: `/notre-histoire?lang=${locale}`, icon: "history", label: history.title, heading: history.heading, text: history.statement },
-              { id: "nos-valeurs", href: `/nos-valeurs?lang=${locale}`, icon: "values", label: values.title, heading: values.heading, text: values.statement },
-              { id: "notre-vision", href: `/notre-vision?lang=${locale}`, icon: "vision", label: vision.title, heading: vision.heading, text: vision.statement },
-            ]}
-          />
         </div>
       </section>
 
@@ -124,6 +117,23 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
           </div>
         </div>
       </section>
+
+      <SiteFooter
+        brandName={brand.name}
+        tagline={english ? "Consulting · Strategy · Impact" : "Conseil · Stratégie · Impact"}
+        links={[
+          { href: `/qui-sommes-nous?lang=${locale}`, label: english ? "About us" : "Le cabinet" },
+          { href: `/qui-sommes-nous?lang=${locale}#expertises`, label: english ? "Expertise" : "Expertises" },
+          { href: `/qui-sommes-nous?lang=${locale}#approche`, label: english ? "Approach" : "Approche" },
+          { href: `/notre-histoire?lang=${locale}`, label: history.title },
+          { href: `/nos-valeurs?lang=${locale}`, label: values.title },
+          { href: `/notre-vision?lang=${locale}`, label: vision.title },
+          ...(PROJECTS_NEWS_ENABLED
+            ? [{ href: `/actualites?lang=${locale}`, label: english ? "News" : "Actualités" }]
+            : []),
+          { href: `/?lang=${locale}#contact`, label: "Contact" },
+        ]}
+      />
     </main>
   );
 }
