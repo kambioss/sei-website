@@ -157,9 +157,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
       <SiteFooter
         brandName={brand.name}
         descriptor={brand.descriptor}
-        email={contact.email}
-        address={contact.address}
-        location={contact.location}
         linkGroups={getFooterLinkGroups(locale, content)}
       />
     </main>

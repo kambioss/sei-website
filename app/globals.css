@@ -228,7 +228,7 @@ button, input, textarea, select { font: inherit; }
     url("/images/extra-long-shot-peaceful-landscape-with-trees.jpg") center 30% / cover no-repeat;
 }
 .approachClosing h3 { max-width: 44ch; margin: 0 auto 14px; color: var(--forest); font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.03em; }
-.approachClosing p { max-width: 62ch; margin: 0 auto; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.approachClosing p { max-width: 62ch; margin: 0 auto; color: var(--muted); font-size: 18px; line-height: 1.6; }
 .approachClosingImage { display: block; width: min(100%, 640px); height: auto; margin: 30px auto 0; border-radius: 10px; box-shadow: 0 16px 40px rgba(17,57,48,.08); }
 .principles { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 39px; color: rgba(255,255,255,.74); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .principles i { width: 4px; height: 4px; flex: 0 0 auto; border-radius: 50%; background: #e1ad54; }
@@ -339,11 +339,8 @@ button, input, textarea, select { font: inherit; }
 .footerTop { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 40px; padding-block: 60px; border-bottom: 1px solid rgba(255,255,255,.12); }
 .footerBrand { grid-column: span 2; display: grid; gap: 22px; align-content: start; }
 .footerDescriptor { margin: 0; max-width: 30ch; color: rgba(255,255,255,.65); font-size: 13px; line-height: 1.5; }
-.footerContact, .footerNavGroup { display: grid; gap: 11px; align-content: start; }
-.footerContact h3, .footerNavGroup h3 { margin: 0; color: #e6b662; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-.footerContact a { color: white; font-size: 13.5px; font-weight: 700; }
-.footerContact a:hover { color: #e6b662; }
-.footerContact span { color: rgba(255,255,255,.55); font-size: 12.5px; line-height: 1.45; }
+.footerNavGroup { display: grid; gap: 11px; align-content: start; }
+.footerNavGroup h3 { margin: 0; color: #e6b662; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .footerNav { display: contents; }
 .footerNavGroup ul { display: grid; gap: 11px; margin: 0; padding: 0; list-style: none; }
 .footerNavGroup a { color: rgba(255,255,255,.78); font-size: 13.5px; font-weight: 600; transition: color .2s ease; }
@@ -878,7 +875,7 @@ button, input, textarea, select { font: inherit; }
   padding-bottom: 20px;
   column-gap: clamp(24px, 3vw, 48px);
   row-gap: 0;
-  grid-template-columns: .78fr 1.12fr;
+  grid-template-columns: .84fr 1.06fr;
   grid-template-areas: "intro visual";
 }
 #nous-connaitre h1 { max-width: none; font-size: clamp(24px, 2.7vw, 40px); line-height: 1.1; white-space: nowrap; }

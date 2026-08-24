@@ -7,16 +7,10 @@ export type FooterLinkGroup = { title: string; links: FooterLink[] };
 export function SiteFooter({
   brandName,
   descriptor,
-  email,
-  address,
-  location,
   linkGroups,
 }: {
   brandName: string;
   descriptor: string;
-  email: string;
-  address: string;
-  location: string;
   linkGroups: FooterLinkGroup[];
 }) {
   return (
@@ -33,12 +27,6 @@ export function SiteFooter({
             />
           </span>
           <p className="footerDescriptor">{descriptor}</p>
-          <div className="footerContact">
-            <h3>Contact</h3>
-            <a href={"mailto:" + email}>{email}</a>
-            <span>{address}</span>
-            <span>{location}</span>
-          </div>
         </div>
         <nav className="footerNav" aria-label="Footer">
           {linkGroups.map((group) => (

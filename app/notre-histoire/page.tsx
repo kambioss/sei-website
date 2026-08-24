@@ -12,7 +12,7 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
   const locale = normaliseLocale(query.lang);
   const english = locale === "en";
   const content = await getSiteContent(locale);
-  const { brand, identity, hero, contact } = content;
+  const { brand, identity, hero } = content;
   const { history, values, vision } = identity;
 
   return (
@@ -78,9 +78,6 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
       <SiteFooter
         brandName={brand.name}
         descriptor={brand.descriptor}
-        email={contact.email}
-        address={contact.address}
-        location={contact.location}
         linkGroups={getFooterLinkGroups(locale, content)}
       />
     </main>

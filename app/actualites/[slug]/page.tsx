@@ -58,9 +58,6 @@ export default async function ArticlePage({ params, searchParams }: ArticlePageP
       <SiteFooter
         brandName={content.brand.name}
         descriptor={content.brand.descriptor}
-        email={content.contact.email}
-        address={content.contact.address}
-        location={content.contact.location}
         linkGroups={getFooterLinkGroups(locale, content)}
       />
     </main>
