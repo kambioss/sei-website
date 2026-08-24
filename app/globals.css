@@ -792,6 +792,7 @@ button, input, textarea, select { font: inherit; }
 
 /* Textes justifiés et page dédiée aux actualités */
 .heroLead,
+.heroStatement,
 .aboutCopy > p,
 .sectionIntro > p,
 .approachGrid p,
@@ -925,6 +926,14 @@ button, input, textarea, select { font: inherit; }
 .historyTimeline p { position: relative; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
 .historyTimeline p::before { content: ""; position: absolute; left: -38px; top: 7px; width: 11px; height: 11px; border-radius: 50%; background: var(--ochre); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ochre), white 72%); }
 
+.relatedPagesSection { padding-block: 0 100px; }
+.relatedPagesGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
+.relatedPageCard { display: block; padding: 30px 32px; border: 1px solid var(--line); border-radius: 18px; background: white; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.relatedPageCard:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--ochre), transparent 45%); box-shadow: 0 20px 45px rgba(17,57,48,.1); }
+.relatedPageCard span { display: block; margin-bottom: 10px; color: var(--ochre); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.relatedPageCard h3 { margin: 0 0 8px; color: var(--forest); font-size: 22px; letter-spacing: -.03em; }
+.relatedPageCard p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+
 .valuesSection { padding-block: 20px 100px; }
 .valuesGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 900px; margin: 0 auto 44px; }
 .valueCard { padding: 20px 18px; border: 1px solid var(--line); border-radius: 16px; background: var(--sand); }
@@ -954,7 +963,7 @@ button, input, textarea, select { font: inherit; }
 
 @media (max-width: 680px) {
   .aboutFeature { padding-block: 50px; }
-  .valuesGrid { grid-template-columns: 1fr; }
+  .valuesGrid, .relatedPagesGrid { grid-template-columns: 1fr; }
   #nous-connaitre h1 { white-space: normal; font-size: clamp(20px, 5.5vw, 28px); }
   #nous-connaitre .founderLetter { margin-top: 24px; }
   .founderPhotoBlock { float: none; width: 100%; max-width: 220px; margin: 0 0 18px; }

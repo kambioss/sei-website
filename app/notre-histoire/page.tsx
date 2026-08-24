@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
 import { SiteFooter } from "@/app/site-footer";
@@ -13,7 +14,7 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
   const english = locale === "en";
   const content = await getSiteContent(locale);
   const { brand, identity, hero, contact } = content;
-  const { history } = identity;
+  const { history, values, vision } = identity;
 
   return (
     <main className="aboutPage">
@@ -41,6 +42,21 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
       <section className="historySection sectionShell">
         <div className="historyTimeline">
           {history.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        </div>
+      </section>
+
+      <section className="relatedPagesSection sectionShell">
+        <div className="relatedPagesGrid">
+          <Link className="relatedPageCard" href={`/nos-valeurs?lang=${locale}`}>
+            <span>{values.title}</span>
+            <h3>{values.heading}</h3>
+            <p>{values.statement}</p>
+          </Link>
+          <Link className="relatedPageCard" href={`/notre-vision?lang=${locale}`}>
+            <span>{vision.title}</span>
+            <h3>{vision.heading}</h3>
+            <p>{vision.statement}</p>
+          </Link>
         </div>
       </section>
 

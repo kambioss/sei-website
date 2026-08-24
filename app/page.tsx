@@ -125,8 +125,8 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
               className="approachClosingImage"
               src="/images/objectifs-developpement-durable.png"
               alt={english ? "United Nations Sustainable Development Goals" : "Objectifs de développement durable des Nations unies"}
-              width={1200}
-              height={665}
+              width={2482}
+              height={1755}
               unoptimized
             />
           </div>
