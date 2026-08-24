@@ -27,15 +27,14 @@ export default async function ValuesPage({ searchParams }: { searchParams: Promi
       />
 
       <section id="nos-valeurs" className="hero sectionShell">
-        <div className="heroCopy">
-          <p className="eyebrow"><span /> {values.title}</p>
-          <h1>{values.heading}</h1>
-          <p className="heroStatement">{values.statement}</p>
-        </div>
         <div className="heroVisual">
-          <Image src={values.image} alt={values.heading} fill unoptimized priority sizes="(max-width: 980px) 100vw, 42vw" />
+          <Image src={values.image} alt={values.heading} fill unoptimized priority sizes="(max-width: 1240px) 100vw, 1240px" />
           <div className="imageShade" />
-          <p className="imageCaption">{values.title}</p>
+          <div className="heroCopy">
+            <p className="eyebrow"><span /> {values.title}</p>
+            <h1>{values.heading}</h1>
+            <p className="heroStatement">{values.statement}</p>
+          </div>
         </div>
       </section>
 
