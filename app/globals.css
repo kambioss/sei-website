@@ -908,16 +908,16 @@ button, input, textarea, select { font: inherit; }
 
 /* Notre histoire et Nos valeurs : hero dédié (même gabarit que #nous-connaitre) + contenu en dessous */
 #notre-histoire.hero, #nos-valeurs.hero { grid-template-columns: 1fr; min-height: 0; padding-block: 40px 64px; }
-#notre-histoire.hero .heroVisual, #nos-valeurs.hero .heroVisual { position: relative; min-height: 0; aspect-ratio: 20 / 9; border-radius: 8px; box-shadow: 0 26px 60px rgba(17,57,48,.18); }
+#notre-histoire.hero .heroVisual, #nos-valeurs.hero .heroVisual { position: relative; left: 50%; width: 100vw; transform: translateX(-50%); min-height: 0; aspect-ratio: 20 / 9; border-radius: 0; box-shadow: none; }
 #notre-histoire.hero .imageShade, #nos-valeurs.hero .imageShade { background: linear-gradient(0deg, rgba(4,20,18,.88) 0%, rgba(4,20,18,.4) 48%, transparent 78%); }
 #notre-histoire.hero .heroCopy, #nos-valeurs.hero .heroCopy {
   position: absolute;
-  left: 0;
-  right: 0;
+  left: max(24px, calc((100vw - 1240px) / 2));
+  right: 24px;
   bottom: 0;
   z-index: 1;
-  max-width: 720px;
-  padding: 40px;
+  max-width: 640px;
+  padding-bottom: 44px;
   color: white;
 }
 #notre-histoire.hero .heroCopy h1, #nos-valeurs.hero .heroCopy h1 { color: white; font-size: clamp(30px, 3.4vw, 48px); }
@@ -966,5 +966,5 @@ button, input, textarea, select { font: inherit; }
   .historyTimeline { padding-left: 22px; }
   .historyTimeline p::before { left: -28px; }
   #notre-histoire.hero .heroVisual, #nos-valeurs.hero .heroVisual { aspect-ratio: 4 / 3; }
-  #notre-histoire.hero .heroCopy, #nos-valeurs.hero .heroCopy { max-width: none; padding: 22px; }
+  #notre-histoire.hero .heroCopy, #nos-valeurs.hero .heroCopy { max-width: none; padding-bottom: 22px; }
 }
