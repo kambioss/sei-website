@@ -213,7 +213,20 @@ button, input, textarea, select { font: inherit; }
 .approachIcon { display: inline-flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 18px; background: var(--sand); }
 .approachGrid h3 { margin: 24px 0 17px; color: var(--ink); font-size: clamp(27px, 2.5vw, 37px); letter-spacing: -.04em; }
 .approachGrid p { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.42; }
-.approachClosing { margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--line); text-align: center; }
+.approachClosing { position: relative; isolation: isolate; margin-top: 64px; padding: 56px 24px 60px; border-top: 1px solid var(--line); text-align: center; }
+.approachClosing::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background:
+    linear-gradient(180deg, rgba(251,250,246,.93) 0%, rgba(251,250,246,.85) 45%, rgba(251,250,246,.95) 100%),
+    url("/images/extra-long-shot-peaceful-landscape-with-trees.jpg") center 30% / cover no-repeat;
+}
 .approachClosing h3 { max-width: 44ch; margin: 0 auto 14px; color: var(--forest); font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.03em; }
 .approachClosing p { max-width: 62ch; margin: 0 auto; color: var(--muted); font-size: 15px; line-height: 1.55; }
 .approachClosingImage { display: block; width: min(100%, 640px); height: auto; margin: 30px auto 0; border-radius: 10px; box-shadow: 0 16px 40px rgba(17,57,48,.08); }
@@ -865,12 +878,12 @@ button, input, textarea, select { font: inherit; }
   align-items: start;
   padding-top: 6px;
   padding-bottom: 20px;
-  column-gap: clamp(38px, 6vw, 92px);
+  column-gap: clamp(24px, 3vw, 48px);
   row-gap: 0;
-  grid-template-columns: .55fr 1.35fr;
+  grid-template-columns: .46fr 1.44fr;
   grid-template-areas: "intro visual";
 }
-#nous-connaitre h1 { max-width: none; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.1; white-space: nowrap; }
+#nous-connaitre h1 { max-width: none; font-size: clamp(24px, 2.7vw, 40px); line-height: 1.1; white-space: nowrap; }
 #nous-connaitre .heroCopy { padding-block: 0; }
 #nous-connaitre .heroIntro { grid-area: intro; }
 #nous-connaitre .heroVisualColumn { grid-area: visual; align-self: stretch; margin-top: 6px; }
@@ -946,9 +959,9 @@ button, input, textarea, select { font: inherit; }
 .valuesText { max-width: 760px; margin: 0 auto; color: var(--muted); font-size: 16px; line-height: 1.6; }
 
 /* Mot du fondateur : carte façon témoignage, en clôture de page */
-#nous-connaitre .founderLetter { margin-top: 32px; }
+#nous-connaitre .founderLetter { margin-top: 16px; }
 .founderLetter::after { content: ""; display: block; clear: both; }
-.founderLetter .eyebrow { color: var(--teal); margin-bottom: 18px; }
+.founderLetter .eyebrow { color: var(--teal); margin-bottom: 18px; font-size: 10.5px; }
 .founderPhotoBlock { float: left; width: clamp(130px, 24%, 190px); margin: 0 26px 14px 0; }
 .founderPhoto { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 14px 14px 36px 14px; box-shadow: 0 16px 36px rgba(17,57,48,.18); background: var(--sand); }
 .founderPhoto img { object-fit: cover; }
@@ -969,7 +982,7 @@ button, input, textarea, select { font: inherit; }
   .aboutFeature { padding-block: 50px; }
   .valuesGrid { grid-template-columns: 1fr; }
   #nous-connaitre h1 { white-space: normal; font-size: clamp(20px, 5.5vw, 28px); }
-  #nous-connaitre .founderLetter { margin-top: 24px; }
+  #nous-connaitre .founderLetter { margin-top: 12px; }
   .founderPhotoBlock { float: none; width: 100%; max-width: 220px; margin: 0 0 18px; }
   .founderPhoto { aspect-ratio: 4 / 3; }
   .historySection, .valuesSection { padding-block: 50px; }
