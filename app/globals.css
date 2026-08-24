@@ -336,16 +336,16 @@ button, input, textarea, select { font: inherit; }
 .formNote { align-self: center; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.38; }
 
 .siteFooter { background: var(--forest-dark); color: white; }
-.footerTop { display: flex; flex-wrap: wrap; gap: 40px 90px; padding-block: 60px; border-bottom: 1px solid rgba(255,255,255,.12); }
-.footerBrand { flex: 0 0 auto; display: grid; gap: 22px; align-content: start; }
+.footerTop { display: flex; flex-direction: column; align-items: center; gap: 40px; padding-block: 64px; border-bottom: 1px solid rgba(255,255,255,.12); text-align: center; }
+.footerBrand { display: grid; justify-items: center; gap: 16px; }
 .footerDescriptor { margin: 0; max-width: 30ch; color: rgba(255,255,255,.65); font-size: 13px; line-height: 1.5; }
-.footerNavGroup { flex: 0 0 auto; display: grid; gap: 11px; align-content: start; }
+.footerNav { display: flex; flex-wrap: wrap; justify-content: center; gap: 48px 64px; }
+.footerNavGroup { display: grid; justify-items: center; gap: 11px; align-content: start; }
 .footerNavGroup h3 { margin: 0; color: #e6b662; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-.footerNav { display: contents; }
-.footerNavGroup ul { display: grid; gap: 11px; margin: 0; padding: 0; list-style: none; }
+.footerNavGroup ul { display: grid; justify-items: center; gap: 11px; margin: 0; padding: 0; list-style: none; }
 .footerNavGroup a { color: rgba(255,255,255,.78); font-size: 13.5px; font-weight: 600; transition: color .2s ease; }
 .footerNavGroup a:hover { color: white; }
-.footerBottom { padding-block: 20px; }
+.footerBottom { padding-block: 20px; text-align: center; }
 .footerBottom p { margin: 0; color: rgba(255,255,255,.5); font-size: 11px; }
 
 .adminShell { width: min(1080px, calc(100% - 40px)); margin: 0 auto; padding: 55px 0 130px; }
@@ -420,8 +420,7 @@ button, input, textarea, select { font: inherit; }
   .projectDetailCover { min-height: 520px; order: -1; }
   .principles { flex-wrap: wrap; justify-content: flex-start; }
   .contactCopy { position: static; }
-  .footerTop { gap: 32px 60px; }
-  .footerBrand { flex-basis: 100%; }
+  .footerTop { gap: 32px; }
   .adminHeader { display: grid; }
   .adminAccount { justify-items: start; }
 }
@@ -473,9 +472,8 @@ button, input, textarea, select { font: inherit; }
   .fullField { grid-column: auto; }
   .formSubmit { width: 100%; }
   .formNote { text-align: center; }
-  .footerTop { gap: 28px 40px; }
-  .footerBrand { flex-basis: 100%; }
-  .footerNavGroup { flex-basis: calc(50% - 20px); }
+  .footerTop { gap: 28px; }
+  .footerNav { gap: 28px 40px; }
   .firstCta { width: calc(100% - 28px); padding: 40px 24px; border-radius: 4px 42px 4px 4px; }
   .adminShell { width: min(100% - 24px, 1080px); padding-top: 28px; }
   .adminSaveBar { justify-content: stretch; display: grid; gap: 8px; }
