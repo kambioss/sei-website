@@ -22,6 +22,7 @@ export function PageInteractions({ backToTopLabel }: { backToTopLabel: string })
       ".domainGalleryGrid .domainCard",
       ".approachIntro",
       ".approachGrid article",
+      ".approachClosing",
       ".projectsIntro",
       ".projectsGrid article",
       ".newsSection .sectionIntro",
