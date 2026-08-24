@@ -15,6 +15,18 @@ const domainImages = [
   "/images/sei-territoires.webp",
 ];
 
+const approachIcons = [
+  <svg key="capacity" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M12 6.5c-1.8-1.3-4.2-1.8-6.5-1.3v12c2.3-.5 4.7 0 6.5 1.3 1.8-1.3 4.2-1.8 6.5-1.3v-12c-2.3-.5-4.7 0-6.5 1.3Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+    <path d="M12 6.5v12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+  </svg>,
+  <svg key="events" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <rect x="9" y="3" width="6" height="10" rx="3" stroke="currentColor" strokeWidth="1.6" />
+    <path d="M5.5 11a6.5 6.5 0 0 0 13 0" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    <path d="M12 17.5V21M8.5 21h7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+  </svg>,
+];
+
 export default async function Home({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
   const query = await searchParams;
   const locale = normaliseLocale(query.lang);
@@ -109,15 +121,20 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           <div className="approachIntro">
             <p className="eyebrow light"><span /> {approach.eyebrow}</p>
             <h2>{approach.title}</h2>
+            <p className="approachLead">{approach.lead}</p>
           </div>
           <div className="approachGrid">
             {approach.items.map((step, index) => (
               <article key={step.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span className="approachIcon">{approachIcons[index]}</span>
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
               </article>
             ))}
+          </div>
+          <div className="approachClosing">
+            <h3>{approach.closingTitle}</h3>
+            <p>{approach.closingText}</p>
           </div>
         </div>
       </section>

@@ -173,24 +173,19 @@
   "approach": {
     "eyebrow": "Knowledge",
     "title": "Interventions designed to last",
+    "lead": "SEI combines a cross-cutting reading of environmental, social, climate and territorial issues with a solid understanding of institutional and socioeconomic realities. Our approach relies on the active participation of institutions, communities, civil society organisations and other stakeholders, together with operational tools that inform decisions, manage risks and durably strengthen the resilience of territories.",
     "items": [
       {
-        "title": "Integrated analysis",
-        "text": "A cross-cutting analysis of environmental, social, climate and territorial challenges."
+        "title": "Capacity building and knowledge management",
+        "text": "Needs assessments, design and delivery of training, development of guides and practical tools, capitalisation and dissemination of knowledge, stakeholder awareness-raising and support for institutional and technical capacity building."
       },
       {
-        "title": "Tailored solutions",
-        "text": "Solutions adapted to the institutional, ecological and socioeconomic realities of each territory."
-      },
-      {
-        "title": "Active participation",
-        "text": "Active involvement of institutions, local communities and stakeholders at every stage."
-      },
-      {
-        "title": "Operational tools",
-        "text": "Practical tools to inform decisions, manage risks and strengthen long-term resilience."
+        "title": "Design and organisation of strategic events",
+        "text": "Design and organisation of international conferences, high-level dialogues, multi-stakeholder workshops and side events. SEI supports the definition of themes, the mobilisation of speakers and partners, content preparation, facilitation, communication and the capitalisation of outcomes."
       }
-    ]
+    ],
+    "closingTitle": "Interventions at the heart of the 2030 Agenda",
+    "closingText": "SEI's interventions contribute directly to several Sustainable Development Goals, particularly those related to climate action, land restoration and biodiversity conservation, peace and effective institutions, and partnerships. Our integrated approach translates these global goals into concrete action for the benefit of people and territories."
   },
   "capabilities": {
     "eyebrow": "Cross-cutting capabilities",

@@ -173,25 +173,20 @@
   ],
   "approach": {
     "eyebrow": "Notre savoir-faire",
-    "title": "Une intervention pensée pour durer",
+    "title": "Des interventions conçues pour durer",
+    "lead": "SEI associe une lecture croisée des enjeux environnementaux, sociaux, climatiques et territoriaux à une connaissance des réalités institutionnelles et socioéconomiques. Notre approche repose sur la participation active des institutions, des communautés, des organisations de la société civile et des autres parties prenantes, ainsi que sur des outils opérationnels permettant d’éclairer les décisions, de maîtriser les risques et de renforcer durablement la résilience des territoires.",
     "items": [
       {
-        "title": "Lecture croisée",
-        "text": "Une lecture croisée des enjeux environnementaux, sociaux, climatiques et territoriaux."
+        "title": "Renforcement des capacités et gestion des connaissances",
+        "text": "Diagnostic des besoins, conception et animation de formations, élaboration de guides et d’outils pratiques, capitalisation et diffusion des connaissances, sensibilisation des acteurs et accompagnement au renforcement des capacités institutionnelles et techniques."
       },
       {
-        "title": "Solutions adaptées",
-        "text": "Des solutions adaptées aux réalités institutionnelles, écologiques et socioéconomiques de chaque territoire."
-      },
-      {
-        "title": "Participation active",
-        "text": "Une implication active des institutions, des communautés locales et des parties prenantes à chaque étape."
-      },
-      {
-        "title": "Outils opérationnels",
-        "text": "Des outils opérationnels pour éclairer la décision, maîtriser les risques et renforcer durablement la résilience."
+        "title": "Conception et organisation d’événements stratégiques",
+        "text": "Conception et organisation de conférences internationales, de dialogues de haut niveau, d’ateliers multi-acteurs et d’événements parallèles. SEI accompagne la définition des thématiques, la mobilisation des intervenants et des partenaires, la préparation des contenus, la facilitation des échanges, la communication et la capitalisation des résultats."
       }
-    ]
+    ],
+    "closingTitle": "Des interventions au cœur de l’Agenda 2030",
+    "closingText": "Les interventions de SEI contribuent directement à plusieurs Objectifs de développement durable, notamment ceux liés à l’action climatique, à la restauration des terres et à la préservation de la biodiversité, à la paix et aux institutions efficaces, ainsi qu’aux partenariats. Notre approche intégrée traduit ces objectifs mondiaux en actions concrètes au service des populations et des territoires."
   },
   "capabilities": {
     "eyebrow": "Compétences transversales",
