@@ -38,7 +38,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
   const locale = normaliseLocale(query.lang);
   const english = locale === "en";
   const content = await getSiteContent(locale);
-  const { brand, identity, founder, hero, expertiseIntro, expertises, approach, capabilities, contact } = content;
+  const { brand, identity, founder, hero, expertiseIntro, expertises, approach, contact } = content;
   const { knowUs } = identity;
   const impactLabel = english ? "Expected impact" : "Impact recherché";
   const domainGalleryHeading = english
@@ -102,26 +102,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
         />
       </section>
 
-      <section className="capabilitiesSection">
-        <div className="sectionShell capabilitiesGrid">
-          <div>
-            <h2>{capabilities.title}</h2>
-            <p className="capabilitiesLead">{capabilities.lead}</p>
-          </div>
-          <ul>
-            {capabilities.items.filter((item) => item.title.trim().length > 0).map((item, index) => (
-              <li key={item.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <div>
-                  <strong>{item.title}</strong>
-                  <p>{item.text}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       <section className="approachSection" id="approche">
         <div className="sectionShell">
           <div className="approachIntro">
@@ -141,6 +121,14 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           <div className="approachClosing">
             <h3>{approach.closingTitle}</h3>
             <p>{approach.closingText}</p>
+            <Image
+              className="approachClosingImage"
+              src="/images/objectifs-developpement-durable.png"
+              alt={english ? "United Nations Sustainable Development Goals" : "Objectifs de développement durable des Nations unies"}
+              width={1200}
+              height={665}
+              unoptimized
+            />
           </div>
         </div>
       </section>
