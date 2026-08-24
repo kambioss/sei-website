@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ContactForm } from "@/app/contact-form";
 import { DomainCards } from "@/app/domain-cards";
 import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
@@ -19,7 +20,7 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
   const locale = normaliseLocale(query.lang);
   const english = locale === "en";
   const content = await getSiteContent(locale);
-  const { brand, identity, founder, hero, expertiseIntro, expertises, approach, capabilities } = content;
+  const { brand, identity, founder, hero, expertiseIntro, expertises, approach, capabilities, contact } = content;
   const { knowUs, history, values, vision } = identity;
   const impactLabel = english ? "Expected impact" : "Impact recherché";
   const domainGalleryHeading = english
@@ -121,6 +122,27 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
         </div>
       </section>
 
+      <section className="contactSection sectionShell" id="contact">
+        <div className="contactCopy">
+          <p className="eyebrow">
+            <span /> {contact.eyebrow}
+          </p>
+          <h2>{contact.title}</h2>
+          <p>{contact.intro}</p>
+          <div className="directContact">
+            <span>{english ? "Direct contact" : "Contact direct"}</span>
+            <a href={"mailto:" + contact.email}>{contact.email}</a>
+            <small>{contact.address}</small>
+            <small>{contact.location}</small>
+          </div>
+        </div>
+        <ContactForm
+          email={contact.email}
+          expertiseOptions={expertises.map((item) => item.title)}
+          locale={locale}
+        />
+      </section>
+
       <SiteFooter
         brandName={brand.name}
         tagline={english ? "Consulting · Strategy · Impact" : "Conseil · Stratégie · Impact"}
@@ -134,7 +156,7 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
           ...(PROJECTS_NEWS_ENABLED
             ? [{ href: `/actualites?lang=${locale}`, label: english ? "News" : "Actualités" }]
             : []),
-          { href: `/?lang=${locale}#contact`, label: "Contact" },
+          { href: `/qui-sommes-nous?lang=${locale}#contact`, label: "Contact" },
         ]}
       />
     </main>
