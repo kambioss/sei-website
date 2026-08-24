@@ -5,37 +5,40 @@ import Image from "next/image";
 
 type Intervention = { title: string; text: string };
 
-type GalleryItem = {
+type DomainItem = {
   src: string;
   title: string;
   summary: string;
   interventions: Intervention[];
+  impact: string;
+  impactLabel: string;
+  tone: string;
 };
 
-export function TerritoryGallery({ items }: { items: GalleryItem[] }) {
+export function DomainCards({ items }: { items: DomainItem[] }) {
   return (
-    <div className="territoryGalleryGrid">
+    <div className="domainGalleryGrid">
       {items.map((item) => (
-        <TerritoryCard key={item.src} item={item} />
+        <DomainCard key={item.src} item={item} />
       ))}
     </div>
   );
 }
 
-function TerritoryCard({ item }: { item: GalleryItem }) {
+function DomainCard({ item }: { item: DomainItem }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="territoryCard" role="group" aria-label={item.title}>
-      <div className="territoryCardInner">
-        <div className="territoryCardFace territoryCardFront">
+    <div className={"domainCard " + item.tone} role="group" aria-label={item.title}>
+      <div className="domainCardInner">
+        <div className="domainCardFace domainCardFront">
           <Image src={item.src} alt={item.title} fill unoptimized sizes="(max-width: 680px) 100vw, 33vw" />
-          <span className="territoryCardCaption">{item.title}</span>
+          <span className="domainCardCaption">{item.title}</span>
         </div>
-        <div className="territoryCardFace territoryCardBack">
+        <div className="domainCardFace domainCardBack">
           <h3>{item.title}</h3>
-          <p className="territoryCardSummary">{item.summary}</p>
-          <ul className="territoryCardInterventions">
+          <p className="domainCardSummary">{item.summary}</p>
+          <ul className="domainCardInterventions">
             {item.interventions.map((entry, index) => {
               const isOpen = openIndex === index;
               return (
@@ -49,6 +52,10 @@ function TerritoryCard({ item }: { item: GalleryItem }) {
               );
             })}
           </ul>
+          <div className="domainCardImpact">
+            <strong>{item.impactLabel}</strong>
+            <p>{item.impact}</p>
+          </div>
         </div>
       </div>
     </div>

@@ -5,7 +5,6 @@ import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
 import { OrganizationSlider } from "@/app/organization-slider";
 import { SiteFooter } from "@/app/site-footer";
-import { TerritoryGallery } from "@/app/territory-gallery";
 import { PROJECTS_NEWS_ENABLED } from "@/lib/feature-flags";
 import { getPublishedNews } from "@/lib/news";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
@@ -27,7 +26,6 @@ const ui = {
     interventions: "Nos interventions",
     impact: "Impact recherché",
     directContact: "Contact direct",
-    galleryTitle: "Le capital naturel et la résilience des territoires au cœur de nos interventions",
     newsEyebrow: "Nos actualités",
     latestNewsTitle: "Notre dernière activité",
     newsTitle: "Projets, idées et nouvelles du terrain.",
@@ -53,7 +51,6 @@ const ui = {
     interventions: "Our services",
     impact: "Expected impact",
     directContact: "Direct contact",
-    galleryTitle: "Natural capital and territorial resilience at the heart of our interventions",
     newsEyebrow: "Our news",
     latestNewsTitle: "Our latest activity",
     newsTitle: "Projects, ideas and news from the field.",
@@ -66,12 +63,6 @@ const ui = {
     conversation: "Start a conversation",
   },
 };
-
-const territoryImages = [
-  "/images/beautiful-scenery-lone-tree-middle-empty-field-grey-cloudy-sky.jpg",
-  "/images/extra-long-shot-peaceful-landscape-with-trees.jpg",
-  "/images/sei-territoires.webp",
-];
 
 type HomeProps = {
   searchParams: Promise<{ lang?: string }>;
@@ -206,23 +197,6 @@ export default async function Home({ searchParams }: HomeProps) {
             <span aria-hidden="true">→</span>
           </Link>
         </div>
-      </section>
-
-      <section
-        className="territoryGallery sectionShell"
-        aria-label={copy.galleryTitle}
-      >
-        <div className="territoryGalleryIntro">
-          <h2>{copy.galleryTitle}</h2>
-        </div>
-        <TerritoryGallery
-          items={territoryImages.map((src, index) => ({
-            src,
-            title: expertises[index].title,
-            summary: expertises[index].summary,
-            interventions: expertises[index].interventions,
-          }))}
-        />
       </section>
 
       {PROJECTS_NEWS_ENABLED && (

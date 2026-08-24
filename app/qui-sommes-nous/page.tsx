@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { DomainCards } from "@/app/domain-cards";
 import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
 import { SiteFooter } from "@/app/site-footer";
@@ -7,6 +8,12 @@ import { getSiteContent, normaliseLocale } from "@/lib/site-content";
 
 export const dynamic = "force-dynamic";
 
+const domainImages = [
+  "/images/beautiful-scenery-lone-tree-middle-empty-field-grey-cloudy-sky.jpg",
+  "/images/extra-long-shot-peaceful-landscape-with-trees.jpg",
+  "/images/sei-territoires.webp",
+];
+
 export default async function AboutPage({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
   const query = await searchParams;
   const locale = normaliseLocale(query.lang);
@@ -14,8 +21,10 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
   const content = await getSiteContent(locale);
   const { brand, identity, founder, hero, expertiseIntro, expertises, approach, capabilities } = content;
   const { knowUs, history, values, vision } = identity;
-  const interventionsLabel = english ? "Our services" : "Nos interventions";
   const impactLabel = english ? "Expected impact" : "Impact recherché";
+  const domainGalleryHeading = english
+    ? "Natural capital and territorial resilience at the heart of our interventions"
+    : "Le capital naturel et la résilience des territoires au cœur de nos interventions";
 
   return (
     <main className="aboutPage">
@@ -63,28 +72,18 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
           </div>
           <p>{expertiseIntro.text}</p>
         </div>
-        <div className="expertiseGrid">
-          {expertises.map((card) => (
-            <article className={"expertiseCard " + card.tone} id={`expertise-${card.number}`} key={card.number}>
-              <div className="cardTop"><span>{card.number}</span><i /></div>
-              <h3>{card.title}</h3>
-              <p className="cardBody">{card.summary}</p>
-              <h4>{interventionsLabel}</h4>
-              <ul className="interventionList">
-                {card.interventions.map((item) => (
-                  <li key={item.title}>
-                    <strong>{item.title}</strong>
-                    <span>{item.text}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="impactBox">
-                <strong>{impactLabel}</strong>
-                <p>{card.impact}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+        <h3 className="domainGalleryHeading">{domainGalleryHeading}</h3>
+        <DomainCards
+          items={domainImages.map((src, index) => ({
+            src,
+            title: expertises[index].title,
+            summary: expertises[index].summary,
+            interventions: expertises[index].interventions,
+            impact: expertises[index].impact,
+            impactLabel,
+            tone: expertises[index].tone,
+          }))}
+        />
       </section>
 
       <section className="capabilitiesSection">
