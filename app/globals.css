@@ -336,16 +336,15 @@ button, input, textarea, select { font: inherit; }
 .formNote { align-self: center; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.38; }
 
 .siteFooter { background: var(--forest-dark); color: white; }
-.footerTop { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px 70px; padding-block: 60px; border-bottom: 1px solid rgba(255,255,255,.12); }
-.footerBrand { flex: 0 1 280px; display: grid; gap: 22px; align-content: start; }
+.footerTop { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 40px; padding-block: 60px; border-bottom: 1px solid rgba(255,255,255,.12); }
+.footerBrand { grid-column: span 2; display: grid; gap: 22px; align-content: start; }
 .footerDescriptor { margin: 0; max-width: 30ch; color: rgba(255,255,255,.65); font-size: 13px; line-height: 1.5; }
 .footerContact, .footerNavGroup { display: grid; gap: 11px; align-content: start; }
 .footerContact h3, .footerNavGroup h3 { margin: 0; color: #e6b662; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .footerContact a { color: white; font-size: 13.5px; font-weight: 700; }
 .footerContact a:hover { color: #e6b662; }
 .footerContact span { color: rgba(255,255,255,.55); font-size: 12.5px; line-height: 1.45; }
-.footerNav { display: flex; flex-wrap: wrap; gap: 56px; }
-.footerNavGroup { flex: 0 0 170px; }
+.footerNav { display: contents; }
 .footerNavGroup ul { display: grid; gap: 11px; margin: 0; padding: 0; list-style: none; }
 .footerNavGroup a { color: rgba(255,255,255,.78); font-size: 13.5px; font-weight: 600; transition: color .2s ease; }
 .footerNavGroup a:hover { color: white; }
@@ -424,9 +423,8 @@ button, input, textarea, select { font: inherit; }
   .projectDetailCover { min-height: 520px; order: -1; }
   .principles { flex-wrap: wrap; justify-content: flex-start; }
   .contactCopy { position: static; }
-  .footerTop { gap: 40px; }
-  .footerBrand { flex-basis: 100%; max-width: none; }
-  .footerNav { gap: 40px; }
+  .footerTop { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 32px; }
+  .footerBrand { grid-column: 1 / -1; }
   .adminHeader { display: grid; }
   .adminAccount { justify-items: start; }
 }
@@ -478,8 +476,8 @@ button, input, textarea, select { font: inherit; }
   .fullField { grid-column: auto; }
   .formSubmit { width: 100%; }
   .formNote { text-align: center; }
-  .footerNav { gap: 24px 32px; }
-  .footerNavGroup { flex: 0 0 calc(50% - 16px); }
+  .footerTop { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footerBrand { grid-column: 1 / -1; }
   .firstCta { width: calc(100% - 28px); padding: 40px 24px; border-radius: 4px 42px 4px 4px; }
   .adminShell { width: min(100% - 24px, 1080px); padding-top: 28px; }
   .adminSaveBar { justify-content: stretch; display: grid; gap: 8px; }
@@ -880,7 +878,7 @@ button, input, textarea, select { font: inherit; }
   padding-bottom: 20px;
   column-gap: clamp(24px, 3vw, 48px);
   row-gap: 0;
-  grid-template-columns: .7fr 1.2fr;
+  grid-template-columns: .78fr 1.12fr;
   grid-template-areas: "intro visual";
 }
 #nous-connaitre h1 { max-width: none; font-size: clamp(24px, 2.7vw, 40px); line-height: 1.1; white-space: nowrap; }
