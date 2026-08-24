@@ -32,6 +32,16 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
         <div className="heroCopy heroIntro">
           <h1>{english ? "Act for sustainable development" : "Agir pour le développement durable"}</h1>
           {knowUs.paragraphs.map((paragraph) => <p className="heroLead" key={paragraph}>{paragraph}</p>)}
+          <div className="founderLetter">
+            <p className="eyebrow"><span /> {founder.eyebrow}</p>
+            <div className="founderPhotoBlock">
+              <div className="founderPhoto">
+                <Image src={founder.photo} alt={founder.name} fill unoptimized sizes="160px" />
+              </div>
+              <p className="founderPhotoName">{founder.name}</p>
+            </div>
+            <p className="founderQuoteText">{founder.quote[0]}</p>
+          </div>
         </div>
         <div className="heroVisualColumn">
           <div className="heroVisual">
@@ -40,15 +50,8 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
             <p className="imageCaption">{hero.imageCaption}</p>
           </div>
         </div>
-        <div className="founderLetter">
-          <p className="eyebrow"><span /> {founder.eyebrow}</p>
-          <div className="founderPhotoBlock">
-            <div className="founderPhoto">
-              <Image src={founder.photo} alt={founder.name} fill unoptimized sizes="160px" />
-            </div>
-            <p className="founderPhotoName">{founder.name}</p>
-          </div>
-          {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
+        <div className="founderLetterRest">
+          {founder.quote.slice(1).map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
         </div>
       </section>
 

@@ -400,7 +400,7 @@ button, input, textarea, select { font: inherit; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .heroVisual { min-height: 610px; order: -1; }
   .heroCopy { padding-bottom: 28px; }
-  #nous-connaitre.hero { grid-template-columns: 1fr; grid-template-areas: "visual" "intro" "founder"; }
+  #nous-connaitre.hero { grid-template-columns: 1fr; grid-template-areas: "visual" "intro" "founder-rest"; }
   #nous-connaitre .heroVisualColumn { align-self: auto; margin-top: 0; margin-bottom: 28px; }
   #nous-connaitre .heroVisual { min-height: 420px; height: auto; }
   .audienceBand { grid-template-columns: 1fr; gap: 15px; }
@@ -923,13 +923,13 @@ button, input, textarea, select { font: inherit; }
   padding-top: 0;
   column-gap: clamp(38px, 6vw, 92px);
   row-gap: 0;
-  grid-template-columns: .8fr 1.05fr;
-  grid-template-areas: "intro visual" "founder .";
+  grid-template-columns: .65fr 1.2fr;
+  grid-template-areas: "intro visual" "founder-rest .";
 }
 #nous-connaitre h1 { max-width: none; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.1; white-space: nowrap; }
 #nous-connaitre .heroIntro { grid-area: intro; }
 #nous-connaitre .heroVisualColumn { grid-area: visual; align-self: stretch; margin-top: 36px; }
-#nous-connaitre .founderLetter { grid-area: founder; }
+#nous-connaitre .founderLetterRest { grid-area: founder-rest; margin-top: 16px; }
 #nous-connaitre .heroVisual { min-height: 280px; height: 100%; }
 #nous-connaitre .heroVisual img { object-position: center; }
 
@@ -990,6 +990,7 @@ button, input, textarea, select { font: inherit; }
   .valuesGrid { grid-template-columns: 1fr; }
   #nous-connaitre h1 { white-space: normal; font-size: clamp(20px, 5.5vw, 28px); }
   #nous-connaitre .founderLetter { margin-top: 24px; }
+  #nous-connaitre .founderLetterRest { margin-top: 12px; }
   .founderPhotoBlock { float: none; width: 100%; max-width: 220px; margin: 0 0 18px; }
   .founderPhoto { aspect-ratio: 4 / 3; }
   .historySection { padding-block: 50px; }
