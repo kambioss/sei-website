@@ -28,9 +28,6 @@ const ui = {
     impact: "Impact recherché",
     directContact: "Contact direct",
     galleryTitle: "Le capital naturel et la résilience des territoires au cœur de nos interventions",
-    galleryFlip: "Voir le domaine d’expertise",
-    galleryClose: "Revenir à l’image",
-    galleryMore: "Interventions et impact recherché",
     newsEyebrow: "Nos actualités",
     latestNewsTitle: "Notre dernière activité",
     newsTitle: "Projets, idées et nouvelles du terrain.",
@@ -57,9 +54,6 @@ const ui = {
     impact: "Expected impact",
     directContact: "Direct contact",
     galleryTitle: "Natural capital and territorial resilience at the heart of our interventions",
-    galleryFlip: "View this area of expertise",
-    galleryClose: "Back to the image",
-    galleryMore: "Services and expected impact",
     newsEyebrow: "Our news",
     latestNewsTitle: "Our latest activity",
     newsTitle: "Projects, ideas and news from the field.",
@@ -222,14 +216,11 @@ export default async function Home({ searchParams }: HomeProps) {
           <h2>{copy.galleryTitle}</h2>
         </div>
         <TerritoryGallery
-          flipLabel={copy.galleryFlip}
-          closeLabel={copy.galleryClose}
-          moreLabel={copy.galleryMore}
           items={territoryImages.map((src, index) => ({
             src,
             title: expertises[index].title,
             summary: expertises[index].summary,
-            href: `/qui-sommes-nous?lang=${locale}#expertise-${expertises[index].number}`,
+            interventions: expertises[index].interventions,
           }))}
         />
       </section>

@@ -505,19 +505,26 @@ button, input, textarea, select { font: inherit; }
 .territoryGalleryGrid { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 470px; gap: 12px; }
 .territoryCard { position: relative; min-width: 0; perspective: 1600px; }
 .territoryCardInner { position: relative; width: 100%; height: 100%; transition: transform .7s cubic-bezier(.3,.2,.2,1); transform-style: preserve-3d; }
-.territoryCard.flipped .territoryCardInner { transform: rotateY(180deg); }
+.territoryCard:hover .territoryCardInner,
+.territoryCard:focus-within .territoryCardInner,
+.territoryCard:active .territoryCardInner { transform: rotateY(180deg); }
 .territoryCardFace { position: absolute; inset: 0; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
-.territoryCardFront { margin: 0; padding: 0; border: 0; width: 100%; height: 100%; background: #d7d7ce; text-align: left; cursor: pointer; }
+.territoryCardFront { background: #d7d7ce; }
 .territoryCardFront img { object-fit: cover; transition: transform .6s ease; }
 .territoryCard:hover .territoryCardFront img { transform: scale(1.035); }
 .territoryCardCaption { position: absolute; left: 15px; right: 15px; bottom: 15px; padding: 12px 14px; background: rgba(8,47,40,.8); color: white; font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; backdrop-filter: blur(8px); transition: transform .3s ease, background .3s ease; }
 .territoryCard:hover .territoryCardCaption { background: rgba(8,47,40,.93); }
-.territoryCardBack { transform: rotateY(180deg); display: flex; flex-direction: column; padding: 26px 24px; background: var(--forest-dark); color: white; }
-.territoryCardBack h3 { margin: 4px 0 12px; color: white; font-size: 19px; line-height: 1.18; letter-spacing: -.03em; }
-.territoryCardBack p { margin: 0; color: rgba(255,255,255,.82); font-size: 13.5px; font-weight: 500; line-height: 1.55; flex: 1; overflow-y: auto; }
-.territoryCardBack a { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; color: #e6b65d; font-size: 12.5px; font-weight: 800; }
-.territoryCardBackClose { position: absolute; top: 14px; right: 14px; width: 30px; height: 30px; padding: 0; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 999px; background: rgba(255,255,255,.14); color: white; font-size: 18px; line-height: 1; cursor: pointer; }
-.territoryCardBackClose:hover { background: rgba(255,255,255,.24); }
+.territoryCardBack { transform: rotateY(180deg); display: flex; flex-direction: column; padding: 22px 22px 16px; background: var(--forest-dark); color: white; overflow-y: auto; }
+.territoryCardBack h3 { margin: 0 0 8px; color: white; font-size: 17px; line-height: 1.2; letter-spacing: -.03em; }
+.territoryCardSummary { margin: 0 0 14px; color: rgba(255,255,255,.8); font-size: 12.5px; font-weight: 500; line-height: 1.48; }
+.territoryCardInterventions { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.territoryCardInterventions li { border-radius: 10px; background: rgba(255,255,255,.06); transition: background .2s ease; }
+.territoryCardInterventions li.open { background: rgba(255,255,255,.1); }
+.territoryCardInterventions li button { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; margin: 0; padding: 9px 11px; border: 0; background: none; color: white; font-size: 12px; font-weight: 700; line-height: 1.32; text-align: left; cursor: pointer; }
+.territoryCardInterventions li.open button { color: #e6b65d; }
+.territoryCardInterventions li i { flex: none; font-style: normal; font-size: 15px; line-height: 1; color: rgba(255,255,255,.55); }
+.territoryCardInterventions li.open i { color: #e6b65d; }
+.territoryCardInterventions li p { margin: 0; padding: 0 11px 11px; color: rgba(255,255,255,.72); font-size: 11.5px; line-height: 1.5; }
 
 .newsSection { padding-block: 120px; }
 .newsGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
