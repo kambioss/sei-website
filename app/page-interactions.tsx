@@ -14,7 +14,7 @@ export function PageInteractions({ backToTopLabel }: { backToTopLabel: string })
       ".aboutFeatureCopy",
       ".aboutFeatureMedia",
       ".historyTimeline",
-      ".relatedPageCard",
+      ".valuesSection .sectionIntro",
       ".valuesGrid",
       ".valuesText",
       ".founderLetter",

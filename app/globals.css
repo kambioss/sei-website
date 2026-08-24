@@ -390,9 +390,6 @@ button, input, textarea, select { font: inherit; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .heroVisual { min-height: 610px; order: -1; }
   .heroCopy { padding-bottom: 28px; }
-  #nous-connaitre.hero { grid-template-columns: 1fr; grid-template-areas: "visual" "intro"; }
-  #nous-connaitre .heroVisualColumn { align-self: auto; margin-top: 0; margin-bottom: 28px; }
-  #nous-connaitre .heroVisual { min-height: 420px; height: auto; }
   .audienceBand { grid-template-columns: 1fr; gap: 15px; }
   .audienceBand div { justify-content: flex-start; flex-wrap: wrap; }
   .sectionIntro { grid-template-columns: 1fr; gap: 22px; }
@@ -878,6 +875,11 @@ button, input, textarea, select { font: inherit; }
 #nous-connaitre .heroVisualColumn { grid-area: visual; align-self: stretch; margin-top: 36px; }
 #nous-connaitre .heroVisual { min-height: 280px; height: 100%; }
 #nous-connaitre .heroVisual img { object-position: center 15%; }
+@media (max-width: 980px) {
+  #nous-connaitre.hero { grid-template-columns: 1fr; grid-template-areas: "visual" "intro"; padding-bottom: 0; }
+  #nous-connaitre .heroVisualColumn { align-self: auto; margin-top: 0; margin-bottom: 28px; }
+  #nous-connaitre .heroVisual { min-height: 420px; height: auto; }
+}
 
 /* Rangées alternées texte/image (Nos valeurs, Notre vision) */
 .aboutFeature { display: flex; align-items: flex-start; gap: clamp(40px, 6vw, 92px); padding-block: 76px; border-top: 1px solid var(--line); }
@@ -891,21 +893,30 @@ button, input, textarea, select { font: inherit; }
 .aboutFeature.reverse .aboutFeatureMedia { border-radius: 64px 6px 6px 6px; }
 .aboutFeatureMedia img { object-fit: cover; }
 
-/* Notre histoire et Nos valeurs : hero dédié (même gabarit que #nous-connaitre) + contenu en dessous */
-#notre-histoire.hero, #nos-valeurs.hero { grid-template-columns: 1fr; min-height: 0; padding-block: 40px 64px; }
-#notre-histoire.hero .heroVisual, #nos-valeurs.hero .heroVisual { position: relative; left: 50%; width: 100vw; transform: translateX(-50%); min-height: 0; aspect-ratio: 20 / 9; border-radius: 0; box-shadow: none; }
-#notre-histoire.hero .imageShade, #nos-valeurs.hero .imageShade { background: linear-gradient(0deg, rgba(4,20,18,.88) 0%, rgba(4,20,18,.4) 48%, transparent 78%); }
-#notre-histoire.hero .heroCopy, #nos-valeurs.hero .heroCopy {
+/* Notre histoire : bannière plein écran (pas de grille — un seul enfant, sorti du flux via 100vw) */
+#notre-histoire.hero { display: block; min-height: 0; padding: 0 0 64px; }
+#notre-histoire.hero .heroVisual {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  min-height: 480px;
+  aspect-ratio: 21 / 9;
+  border-radius: 0;
+  box-shadow: none;
+}
+#notre-histoire.hero .imageShade { background: linear-gradient(0deg, rgba(4,20,18,.9) 0%, rgba(4,20,18,.42) 52%, transparent 82%); }
+#notre-histoire.hero .heroCopy {
   position: absolute;
   left: max(24px, calc((100vw - 1240px) / 2));
   right: 24px;
   bottom: 0;
   z-index: 1;
   max-width: 640px;
-  padding-bottom: 44px;
+  padding-bottom: 56px;
   color: white;
 }
-#notre-histoire.hero .heroCopy h1, #nos-valeurs.hero .heroCopy h1 { color: white; font-size: clamp(30px, 3.4vw, 48px); }
+#notre-histoire.hero .heroCopy h1 { color: white; font-size: clamp(30px, 3.4vw, 48px); }
 #notre-histoire.hero .heroCopy .heroStatement { margin-top: 14px; }
 
 .historySection { position: relative; isolation: isolate; padding-block: 60px 100px; }
@@ -925,14 +936,6 @@ button, input, textarea, select { font: inherit; }
 .historyTimeline { position: relative; max-width: 760px; margin: 0 auto; padding-left: 30px; border-left: 2px solid var(--line); display: grid; gap: 30px; }
 .historyTimeline p { position: relative; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
 .historyTimeline p::before { content: ""; position: absolute; left: -38px; top: 7px; width: 11px; height: 11px; border-radius: 50%; background: var(--ochre); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ochre), white 72%); }
-
-.relatedPagesSection { padding-block: 0 100px; }
-.relatedPagesGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
-.relatedPageCard { display: block; padding: 30px 32px; border: 1px solid var(--line); border-radius: 18px; background: white; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
-.relatedPageCard:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--ochre), transparent 45%); box-shadow: 0 20px 45px rgba(17,57,48,.1); }
-.relatedPageCard span { display: block; margin-bottom: 10px; color: var(--ochre); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-.relatedPageCard h3 { margin: 0 0 8px; color: var(--forest); font-size: 22px; letter-spacing: -.03em; }
-.relatedPageCard p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
 
 .valuesSection { padding-block: 20px 100px; }
 .valuesGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 900px; margin: 0 auto 44px; }
@@ -963,7 +966,7 @@ button, input, textarea, select { font: inherit; }
 
 @media (max-width: 680px) {
   .aboutFeature { padding-block: 50px; }
-  .valuesGrid, .relatedPagesGrid { grid-template-columns: 1fr; }
+  .valuesGrid { grid-template-columns: 1fr; }
   #nous-connaitre h1 { white-space: normal; font-size: clamp(20px, 5.5vw, 28px); }
   #nous-connaitre .founderLetter { margin-top: 24px; }
   .founderPhotoBlock { float: none; width: 100%; max-width: 220px; margin: 0 0 18px; }
@@ -971,6 +974,6 @@ button, input, textarea, select { font: inherit; }
   .historySection, .valuesSection { padding-block: 50px; }
   .historyTimeline { padding-left: 22px; }
   .historyTimeline p::before { left: -28px; }
-  #notre-histoire.hero .heroVisual, #nos-valeurs.hero .heroVisual { aspect-ratio: 4 / 3; }
-  #notre-histoire.hero .heroCopy, #nos-valeurs.hero .heroCopy { max-width: none; padding-bottom: 22px; }
+  #notre-histoire.hero .heroVisual { min-height: 0; aspect-ratio: 4 / 3; }
+  #notre-histoire.hero .heroCopy { max-width: none; padding-bottom: 22px; }
 }

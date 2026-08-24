@@ -20,8 +20,8 @@ export function getFooterLinkGroups(locale: Locale, content: SiteContent): Foote
       title: english ? "Discover" : "Découvrir",
       links: [
         { href: `/notre-histoire?lang=${locale}`, label: identity.history.title },
-        { href: `/nos-valeurs?lang=${locale}`, label: identity.values.title },
-        { href: `/notre-vision?lang=${locale}`, label: identity.vision.title },
+        { href: `/notre-histoire?lang=${locale}#nos-valeurs`, label: identity.values.title },
+        { href: `/notre-histoire?lang=${locale}#notre-vision`, label: identity.vision.title },
       ],
     },
     ...(PROJECTS_NEWS_ENABLED
