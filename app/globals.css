@@ -499,7 +499,7 @@ button, input, textarea, select { font: inherit; }
 .domainCard:hover .domainCardCaption { transform: translateY(0); background: rgba(8,47,40,.93); }
 .domainCardBack { transform: rotateY(180deg); display: flex; flex-direction: column; padding: 22px 22px 16px; background: linear-gradient(155deg, #fff 0%, color-mix(in srgb, var(--accent), white 92%) 100%); color: var(--ink); overflow-y: auto; }
 .domainCardBack h3 { margin: 0 0 8px; color: var(--accent); font-size: 17px; line-height: 1.2; letter-spacing: -.03em; }
-.domainCardSummary { margin: 0 0 14px; color: var(--muted); font-size: 13.5px; font-weight: 500; line-height: 1.52; text-align: justify; hyphens: auto; }
+.domainCardSummary { margin: 0 0 14px; color: var(--muted); font-size: 13.5px; font-weight: 500; line-height: 1.52; text-align: justify; hyphens: none; }
 .domainCardInterventions { display: grid; gap: 6px; margin: 0 0 12px; padding: 0; list-style: none; }
 .domainCardInterventions li { border-radius: 10px; background: color-mix(in srgb, var(--accent), white 90%); transition: background .2s ease; }
 .domainCardInterventions li.open { background: color-mix(in srgb, var(--accent), white 84%); }
@@ -507,10 +507,10 @@ button, input, textarea, select { font: inherit; }
 .domainCardInterventions li.open button { color: var(--accent); }
 .domainCardInterventions li i { flex: none; font-style: normal; font-size: 15px; line-height: 1; color: color-mix(in srgb, var(--accent), transparent 30%); }
 .domainCardInterventions li.open i { color: var(--accent); }
-.domainCardInterventions li p { margin: 0; padding: 0 11px 11px; color: var(--muted); font-size: 12.5px; line-height: 1.52; text-align: justify; hyphens: auto; }
+.domainCardInterventions li p { margin: 0; padding: 0 11px 11px; color: var(--muted); font-size: 12.5px; line-height: 1.52; text-align: justify; hyphens: none; }
 .domainCardImpact { margin-top: auto; padding: 12px 13px; border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent), white 94%); }
 .domainCardImpact strong { display: block; margin-bottom: 4px; color: var(--accent); font-size: 10.5px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.domainCardImpact p { margin: 0; color: var(--ink); font-size: 12.5px; line-height: 1.48; text-align: justify; hyphens: auto; }
+.domainCardImpact p { margin: 0; color: var(--ink); font-size: 12.5px; line-height: 1.48; text-align: justify; hyphens: none; }
 
 .newsSection { padding-block: 120px; }
 .newsGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -797,7 +797,7 @@ button, input, textarea, select { font: inherit; }
 .historyBody p,
 .founderQuoteText {
   text-align: justify;
-  hyphens: auto;
+  hyphens: none;
   text-justify: inter-word;
 }
 .latestNewsBlock { display: grid; gap: 28px; }
@@ -933,7 +933,7 @@ button, input, textarea, select { font: inherit; }
     url("/images/visite_terrain.jpeg") center 35% / cover no-repeat;
 }
 .historyTimeline { position: relative; max-width: 760px; margin: 0 auto; padding-left: 30px; border-left: 2px solid var(--line); display: grid; gap: 30px; }
-.historyTimeline p { position: relative; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; text-align: justify; hyphens: auto; }
+.historyTimeline p { position: relative; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; text-align: justify; hyphens: none; }
 .historyTimeline p::before { content: ""; position: absolute; left: -38px; top: 7px; width: 11px; height: 11px; border-radius: 50%; background: var(--ochre); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ochre), white 72%); }
 
 .valuesSection { padding-block: 20px 100px; }
