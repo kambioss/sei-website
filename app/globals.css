@@ -880,7 +880,7 @@ button, input, textarea, select { font: inherit; }
   padding-bottom: 20px;
   column-gap: clamp(24px, 3vw, 48px);
   row-gap: 0;
-  grid-template-columns: .46fr 1.44fr;
+  grid-template-columns: .52fr 1.38fr;
   grid-template-areas: "intro visual";
 }
 #nous-connaitre h1 { max-width: none; font-size: clamp(24px, 2.7vw, 40px); line-height: 1.1; white-space: nowrap; }
