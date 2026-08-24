@@ -201,21 +201,20 @@ button, input, textarea, select { font: inherit; }
 .firstCta h2 { max-width: 780px; margin: 0 0 32px; font-size: clamp(36px, 5vw, 64px); line-height: 1.02; letter-spacing: -.05em; }
 .buttonLight { background: white; color: var(--forest); }
 
-.approachSection { padding-block: 124px 108px; background: linear-gradient(160deg, #0c2027 0%, var(--ink) 42%, #204a4f 100%); color: white; }
-.eyebrow.light { color: #e1af57; }
+.approachSection { padding-block: 124px 108px; background: linear-gradient(160deg, var(--paper) 0%, var(--sand) 100%); color: var(--ink); }
 .approachIntro { display: grid; grid-template-columns: .75fr 1.25fr; align-items: end; gap: 14px 80px; }
 .approachIntro .eyebrow { align-self: start; }
-.approachIntro h2 { margin: 0; font-size: clamp(42px, 5vw, 69px); line-height: 1.02; letter-spacing: -.055em; }
-.approachIntro h2 em { color: #e3b562; font-style: normal; }
-.approachLead { grid-column: 2; align-self: start; max-width: 56ch; margin: 0; color: rgba(255,255,255,.78); font-size: 16px; line-height: 1.55; }
-.approachGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 70px; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.18); }
-.approachGrid article { min-height: 290px; padding: 30px; background: var(--ink); }
-.approachIcon { display: inline-flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 18px; background: var(--paper); box-shadow: 0 10px 24px rgba(0,0,0,.2); }
-.approachGrid h3 { margin: 24px 0 17px; font-size: clamp(27px, 2.5vw, 37px); letter-spacing: -.04em; }
-.approachGrid p { margin: 0; color: rgba(255,255,255,.78); font-size: 15.5px; line-height: 1.42; }
-.approachClosing { margin-top: 64px; padding-top: 48px; border-top: 1px solid rgba(255,255,255,.16); text-align: center; }
-.approachClosing h3 { max-width: 44ch; margin: 0 auto 14px; color: white; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.03em; }
-.approachClosing p { max-width: 62ch; margin: 0 auto; color: rgba(255,255,255,.75); font-size: 15px; line-height: 1.55; }
+.approachIntro h2 { margin: 0; color: var(--forest); font-size: clamp(42px, 5vw, 69px); line-height: 1.02; letter-spacing: -.055em; }
+.approachIntro h2 em { color: var(--ochre); font-style: normal; }
+.approachLead { grid-column: 2; align-self: start; max-width: 56ch; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.55; }
+.approachGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 70px; background: var(--line); border: 1px solid var(--line); }
+.approachGrid article { min-height: 290px; padding: 30px; background: var(--paper); }
+.approachIcon { display: inline-flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 18px; background: var(--sand); }
+.approachGrid h3 { margin: 24px 0 17px; color: var(--ink); font-size: clamp(27px, 2.5vw, 37px); letter-spacing: -.04em; }
+.approachGrid p { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.42; }
+.approachClosing { margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--line); text-align: center; }
+.approachClosing h3 { max-width: 44ch; margin: 0 auto 14px; color: var(--forest); font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.03em; }
+.approachClosing p { max-width: 62ch; margin: 0 auto; color: var(--muted); font-size: 15px; line-height: 1.55; }
 .principles { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 39px; color: rgba(255,255,255,.74); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .principles i { width: 4px; height: 4px; flex: 0 0 auto; border-radius: 50%; background: #e1ad54; }
 .principles p { margin: 0; }
@@ -716,10 +715,10 @@ button, input, textarea, select { font: inherit; }
 .button:hover span, .newsCardCopy > a:hover span { transform: translateX(5px); }
 
 .approachGrid { gap: 16px; background: transparent; border: 0; }
-.approachGrid article { position: relative; overflow: hidden; min-height: 315px; border: 1px solid rgba(255,255,255,.14); border-radius: 22px 22px 48px 22px; background: rgba(255,255,255,.055); transition: transform .3s ease, background .3s ease, border-color .3s ease; }
-.approachGrid article::after { content: "↘"; position: absolute; right: 24px; bottom: 20px; color: rgba(230,182,98,.28); font-size: 28px; transition: transform .3s ease, color .3s ease; }
-.approachGrid article:hover { transform: translateY(-8px); border-color: rgba(230,182,98,.55); background: rgba(255,255,255,.1); }
-.approachGrid article:hover::after { color: #e6b662; transform: rotate(-8deg); }
+.approachGrid article { position: relative; overflow: hidden; min-height: 315px; border: 1px solid var(--line); border-radius: 22px 22px 48px 22px; background: white; box-shadow: 0 16px 40px rgba(17,57,48,.06); transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+.approachGrid article::after { content: "↘"; position: absolute; right: 24px; bottom: 20px; color: color-mix(in srgb, var(--ochre), transparent 55%); font-size: 28px; transition: transform .3s ease, color .3s ease; }
+.approachGrid article:hover { transform: translateY(-8px); border-color: color-mix(in srgb, var(--ochre), transparent 45%); box-shadow: 0 24px 55px rgba(17,57,48,.12); }
+.approachGrid article:hover::after { color: var(--ochre); transform: rotate(-8deg); }
 
 .capabilitiesSection ul { display: grid; gap: 12px; border: 0; }
 .capabilitiesSection li { min-height: 88px; padding: 20px 22px; border: 1px solid var(--line); border-radius: 17px; background: white; box-shadow: 0 9px 28px rgba(17,57,48,.045); transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }

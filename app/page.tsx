@@ -125,7 +125,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
       <section className="approachSection" id="approche">
         <div className="sectionShell">
           <div className="approachIntro">
-            <p className="eyebrow light"><span /> {approach.eyebrow}</p>
+            <p className="eyebrow"><span /> {approach.eyebrow}</p>
             <h2>{approach.title}</h2>
             <p className="approachLead">{approach.lead}</p>
           </div>
