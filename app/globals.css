@@ -336,8 +336,8 @@ button, input, textarea, select { font: inherit; }
 .formNote { align-self: center; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.38; }
 
 .siteFooter { background: var(--forest-dark); color: white; }
-.footerTop { display: flex; flex-wrap: wrap; gap: 70px; padding-block: 60px; border-bottom: 1px solid rgba(255,255,255,.12); }
-.footerBrand { flex: 0 1 320px; display: grid; gap: 22px; align-content: start; }
+.footerTop { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px 70px; padding-block: 60px; border-bottom: 1px solid rgba(255,255,255,.12); }
+.footerBrand { flex: 0 1 280px; display: grid; gap: 22px; align-content: start; }
 .footerDescriptor { margin: 0; max-width: 30ch; color: rgba(255,255,255,.65); font-size: 13px; line-height: 1.5; }
 .footerContact, .footerNavGroup { display: grid; gap: 11px; align-content: start; }
 .footerContact h3, .footerNavGroup h3 { margin: 0; color: #e6b662; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
@@ -880,7 +880,7 @@ button, input, textarea, select { font: inherit; }
   padding-bottom: 20px;
   column-gap: clamp(24px, 3vw, 48px);
   row-gap: 0;
-  grid-template-columns: .63fr 1.27fr;
+  grid-template-columns: .7fr 1.2fr;
   grid-template-areas: "intro visual";
 }
 #nous-connaitre h1 { max-width: none; font-size: clamp(24px, 2.7vw, 40px); line-height: 1.1; white-space: nowrap; }
