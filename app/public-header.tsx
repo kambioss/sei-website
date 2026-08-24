@@ -17,15 +17,15 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
   const english = locale === "en";
   const homeAnchor = (id: string) => `/?lang=${locale}#${id}`;
   const aboutSubItems = [
-    { id: "nous-connaitre", href: `/qui-sommes-nous?lang=${locale}#nous-connaitre`, label: english ? "Get to know us" : "Nous connaître" },
+    { id: "nous-connaitre", href: homeAnchor("nous-connaitre"), label: english ? "Get to know us" : "Nous connaître" },
     { id: "notre-histoire", href: `/notre-histoire?lang=${locale}`, label: english ? "Our history" : "Notre histoire" },
     { id: "nos-valeurs", href: `/nos-valeurs?lang=${locale}`, label: english ? "Our values" : "Nos valeurs" },
     { id: "notre-vision", href: `/notre-vision?lang=${locale}`, label: english ? "Our vision" : "Notre vision" },
   ];
   const links: Array<{ section: PublicNavSection; label: string; href: string }> = [
-    { section: "sei", label: english ? "Who we are" : "Qui sommes-nous", href: `/qui-sommes-nous?lang=${locale}` },
-    { section: "expertises", label: english ? "Our expertise" : "Notre expertise", href: `/qui-sommes-nous?lang=${locale}#expertises` },
-    { section: "approche", label: english ? "Knowledge" : "Notre savoir-faire", href: `/qui-sommes-nous?lang=${locale}#approche` },
+    { section: "sei", label: english ? "Who we are" : "Qui sommes-nous", href: `/?lang=${locale}` },
+    { section: "expertises", label: english ? "Our expertise" : "Notre expertise", href: homeAnchor("expertises") },
+    { section: "approche", label: english ? "Knowledge" : "Notre savoir-faire", href: homeAnchor("approche") },
     ...(PROJECTS_NEWS_ENABLED
       ? [
           { section: "projets" as const, label: english ? "Projects" : "Projets", href: `/projets?lang=${locale}` },
@@ -36,7 +36,7 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
 
   return (
     <header className="siteHeader">
-      <Link className="brand" href={homeAnchor("accueil")} aria-label="Social & Eco Impact">
+      <Link className="brand" href={`/?lang=${locale}`} aria-label="Social & Eco Impact">
         <span className="brandLogoFrame"><Image src="/images/Logo_SEImpact-01.png" alt="" fill priority unoptimized sizes="160px" /></span>
         <span className="brandName">
           <span className="brandNameTop">Social &amp; Eco</span>
