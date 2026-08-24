@@ -41,9 +41,9 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
   const { brand, identity, founder, hero, expertiseIntro, expertises, approach, contact } = content;
   const { knowUs } = identity;
   const impactLabel = english ? "Expected impact" : "Impact recherché";
-  const domainGalleryHeading = english
-    ? "Natural capital and territorial resilience at the heart of our interventions"
-    : "Le capital naturel et la résilience des territoires au cœur de nos interventions";
+  const domainsSubtitle = english
+    ? "Connecting international commitments to the realities of territories."
+    : "Relier les engagements internationaux aux réalités des territoires.";
 
   return (
     <main className="homePage">
@@ -88,7 +88,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           </div>
           <p>{expertiseIntro.text}</p>
         </div>
-        <h3 className="domainGalleryHeading">{domainGalleryHeading}</h3>
         <DomainCards
           items={domainImages.map((src, index) => ({
             src,
@@ -107,7 +106,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           <div className="approachIntro">
             <p className="eyebrow"><span /> {approach.eyebrow}</p>
             <h2>{approach.title}</h2>
-            <p className="approachSubtitle">{expertiseIntro.title}</p>
+            <p className="approachSubtitle">{domainsSubtitle}</p>
             <p className="approachLead">{approach.lead}</p>
           </div>
           <div className="approachGrid">

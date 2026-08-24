@@ -487,8 +487,7 @@ button, input, textarea, select { font: inherit; }
 .mobileLanguages { display: flex; }
 .mobileLanguages a { flex: 1; text-align: center; background: var(--paper); }
 
-.domainGalleryHeading { margin: 0 0 24px; color: var(--forest); font-size: clamp(20px, 1.8vw, 26px); font-weight: 800; letter-spacing: -.02em; }
-.domainGalleryGrid { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 470px; gap: 12px; margin-bottom: 58px; }
+.domainGalleryGrid { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 470px; gap: 12px; margin-top: 40px; }
 .domainCard { --accent: var(--forest); position: relative; min-width: 0; perspective: 1600px; }
 .domainCard.ochre { --accent: var(--ochre); }
 .domainCard.teal { --accent: var(--teal); }

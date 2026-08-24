@@ -19,7 +19,6 @@ export function PageInteractions({ backToTopLabel }: { backToTopLabel: string })
       ".valuesText",
       ".founderLetter",
       ".expertiseSection .sectionIntro",
-      ".domainGalleryHeading",
       ".domainGalleryGrid .domainCard",
       ".approachIntro",
       ".approachGrid article",
