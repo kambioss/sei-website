@@ -176,7 +176,16 @@ button, input, textarea, select { font: inherit; }
 .aboutCopy blockquote { margin: 32px 0 0; padding: 22px 0 22px 25px; border-left: 4px solid var(--ochre); color: var(--forest); font-size: 17px; font-weight: 800; line-height: 1.38; }
 .aboutCopy blockquote span { display: block; margin-bottom: 8px; color: var(--ochre); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
 
-.expertiseSection { padding-block: 118px 124px; }
+.expertiseSection { position: relative; isolation: isolate; padding-block: 64px 124px; border-radius: 6px 90px 6px 6px; overflow: hidden; }
+.expertiseSection::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(251,250,246,.95) 0%, rgba(251,250,246,.88) 45%, rgba(251,250,246,.97) 100%),
+    url("/images/mountain-cloudy-sky.jpg") center 32% / cover no-repeat;
+}
 .sectionIntro { display: grid; grid-template-columns: 1.15fr .72fr; align-items: end; gap: 70px; margin-bottom: 58px; }
 .sectionIntro .eyebrow { margin-bottom: 19px; }
 .sectionIntro h2 { margin: 0; color: var(--forest); font-size: clamp(42px, 5vw, 68px); line-height: 1; letter-spacing: -.055em; }
@@ -377,7 +386,7 @@ button, input, textarea, select { font: inherit; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .heroVisual { min-height: 610px; order: -1; }
   .heroCopy { padding-bottom: 28px; }
-  #nous-connaitre.hero { grid-template-columns: 1fr; grid-template-areas: "visual" "intro" "founder-rest"; }
+  #nous-connaitre.hero { grid-template-columns: 1fr; grid-template-areas: "visual" "intro"; }
   #nous-connaitre .heroVisualColumn { align-self: auto; margin-top: 0; margin-bottom: 28px; }
   #nous-connaitre .heroVisual { min-height: 420px; height: auto; }
   .audienceBand { grid-template-columns: 1fr; gap: 15px; }
@@ -489,18 +498,18 @@ button, input, textarea, select { font: inherit; }
 .domainCard:hover .domainCardCaption { transform: translateY(0); background: rgba(8,47,40,.93); }
 .domainCardBack { transform: rotateY(180deg); display: flex; flex-direction: column; padding: 22px 22px 16px; background: linear-gradient(155deg, #fff 0%, color-mix(in srgb, var(--accent), white 92%) 100%); color: var(--ink); overflow-y: auto; }
 .domainCardBack h3 { margin: 0 0 8px; color: var(--accent); font-size: 17px; line-height: 1.2; letter-spacing: -.03em; }
-.domainCardSummary { margin: 0 0 14px; color: var(--muted); font-size: 12.5px; font-weight: 500; line-height: 1.48; }
+.domainCardSummary { margin: 0 0 14px; color: var(--muted); font-size: 13.5px; font-weight: 500; line-height: 1.52; text-align: justify; hyphens: auto; }
 .domainCardInterventions { display: grid; gap: 6px; margin: 0 0 12px; padding: 0; list-style: none; }
 .domainCardInterventions li { border-radius: 10px; background: color-mix(in srgb, var(--accent), white 90%); transition: background .2s ease; }
 .domainCardInterventions li.open { background: color-mix(in srgb, var(--accent), white 84%); }
-.domainCardInterventions li button { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; margin: 0; padding: 9px 11px; border: 0; background: none; color: var(--ink); font-size: 12px; font-weight: 700; line-height: 1.32; text-align: left; cursor: pointer; }
+.domainCardInterventions li button { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; margin: 0; padding: 9px 11px; border: 0; background: none; color: var(--ink); font-size: 13px; font-weight: 700; line-height: 1.34; text-align: left; cursor: pointer; }
 .domainCardInterventions li.open button { color: var(--accent); }
 .domainCardInterventions li i { flex: none; font-style: normal; font-size: 15px; line-height: 1; color: color-mix(in srgb, var(--accent), transparent 30%); }
 .domainCardInterventions li.open i { color: var(--accent); }
-.domainCardInterventions li p { margin: 0; padding: 0 11px 11px; color: var(--muted); font-size: 11.5px; line-height: 1.5; }
+.domainCardInterventions li p { margin: 0; padding: 0 11px 11px; color: var(--muted); font-size: 12.5px; line-height: 1.52; text-align: justify; hyphens: auto; }
 .domainCardImpact { margin-top: auto; padding: 12px 13px; border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent), white 94%); }
 .domainCardImpact strong { display: block; margin-bottom: 4px; color: var(--accent); font-size: 10.5px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.domainCardImpact p { margin: 0; color: var(--ink); font-size: 11.5px; line-height: 1.45; }
+.domainCardImpact p { margin: 0; color: var(--ink); font-size: 12.5px; line-height: 1.48; text-align: justify; hyphens: auto; }
 
 .newsSection { padding-block: 120px; }
 .newsGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -858,15 +867,15 @@ button, input, textarea, select { font: inherit; }
   min-height: 0;
   align-items: start;
   padding-top: 0;
+  padding-bottom: 20px;
   column-gap: clamp(38px, 6vw, 92px);
   row-gap: 0;
   grid-template-columns: .65fr 1.2fr;
-  grid-template-areas: "intro visual" "founder-rest .";
+  grid-template-areas: "intro visual";
 }
 #nous-connaitre h1 { max-width: none; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.1; white-space: nowrap; }
 #nous-connaitre .heroIntro { grid-area: intro; }
 #nous-connaitre .heroVisualColumn { grid-area: visual; align-self: stretch; margin-top: 36px; }
-#nous-connaitre .founderLetterRest { grid-area: founder-rest; margin-top: 16px; }
 #nous-connaitre .heroVisual { min-height: 280px; height: 100%; }
 #nous-connaitre .heroVisual img { object-position: center; }
 
@@ -927,7 +936,6 @@ button, input, textarea, select { font: inherit; }
   .valuesGrid { grid-template-columns: 1fr; }
   #nous-connaitre h1 { white-space: normal; font-size: clamp(20px, 5.5vw, 28px); }
   #nous-connaitre .founderLetter { margin-top: 24px; }
-  #nous-connaitre .founderLetterRest { margin-top: 12px; }
   .founderPhotoBlock { float: none; width: 100%; max-width: 220px; margin: 0 0 18px; }
   .founderPhoto { aspect-ratio: 4 / 3; }
   .historySection { padding-block: 50px; }

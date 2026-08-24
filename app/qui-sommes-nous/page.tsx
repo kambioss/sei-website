@@ -49,7 +49,7 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
               </div>
               <p className="founderPhotoName">{founder.name}</p>
             </div>
-            <p className="founderQuoteText">{founder.quote[0]}</p>
+            {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
           </div>
         </div>
         <div className="heroVisualColumn">
@@ -58,9 +58,6 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
             <div className="imageShade" />
             <p className="imageCaption">{hero.imageCaption}</p>
           </div>
-        </div>
-        <div className="founderLetterRest">
-          {founder.quote.slice(1).map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
         </div>
       </section>
 
