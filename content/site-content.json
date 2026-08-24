@@ -10,7 +10,11 @@
     "lead": "SEI accompagne les institutions et les acteurs du développement dans la conception et la mise en œuvre de solutions à fort impact environnemental et social en Afrique.",
     "primaryAction": "Parler de votre projet",
     "secondaryAction": "Découvrir nos expertises",
-    "proofs": ["Expertise technique", "Ancrage territorial", "Résultats mesurables"],
+    "proofs": [
+      "Expertise technique",
+      "Ancrage territorial",
+      "Résultats mesurables"
+    ],
     "imageCaption": "Une vision intégrée des territoires"
   },
   "audiences": [
@@ -58,7 +62,11 @@
       "heading": "L’intégrité, la responsabilité et l’équité",
       "statement": "Des principes qui guident chacune de nos interventions.",
       "image": "/images/extra-long-shot-peaceful-landscape-with-trees.jpg",
-      "pillars": ["Intégrité", "Responsabilité", "Équité"],
+      "pillars": [
+        "Intégrité",
+        "Responsabilité",
+        "Équité"
+      ],
       "text": "Chez SEI, nous plaçons l’intégrité, la responsabilité et l’équité au cœur de notre engagement. Nous privilégions l’écoute et la concertation, en associant l’expertise des institutions aux savoirs et aux réalités des communautés. Nos interventions reposent sur la rigueur, la transparence et la recherche de solutions concrètes, inclusives et durables, générant des résultats tangibles et mesurables au bénéfice des populations et des écosystèmes."
     },
     "vision": {
@@ -71,58 +79,118 @@
   },
   "expertiseIntro": {
     "eyebrow": "Notre expertise",
-    "title": "Trois domaines d’expertise complémentaires",
-    "text": "Neutralité en matière de dégradation des terres • Évaluation et gestion environnementale et sociale • Paix, mobilités et changement climatique"
+    "title": "Relier les engagements internationaux aux réalités des territoires.",
+    "text": "SEI accompagne la mise en œuvre intégrée et les synergies entre les Conventions de Rio sur la biodiversité, le climat et la lutte contre la désertification. Nos expertises permettent de restaurer les terres et les écosystèmes, de maîtriser les risques environnementaux et sociaux et de renforcer la résilience des populations et des territoires."
   },
   "expertises": [
     {
       "number": "01",
       "tone": "green",
-      "title": "Neutralité en matière de dégradation des terres – NDT",
-      "summary": "SEI accompagne les acteurs publics et leurs partenaires dans la mise en œuvre de la neutralité en matière de dégradation des terres, en plaçant la restauration des terres dégradées par l’exploitation minière au cœur de son intervention.",
+      "title": "Gestion durable des Terres et NDT",
+      "summary": "SEI accompagne les acteurs publics et leurs partenaires dans la gestion durable des terres et l’atteinte de la Neutralité en matière de dégradation des terres (NDT). Notre expertise couvre la prévention et la réduction de la dégradation, la restauration des terres et des écosystèmes, ainsi que la planification et le suivi des engagements nationaux.",
       "interventions": [
-        "Restauration des terres dégradées par l’exploitation minière pour un environnement sain et une production alimentaire durable",
-        "Fourniture d’informations fondées sur les données concernant les tendances de dégradation des sols et l’efficacité des interventions",
-        "Intégration des objectifs de neutralité en matière de dégradation des terres dans les politiques, stratégies et programmes de développement",
-        "Renforcement des capacités institutionnelles et techniques des acteurs"
+        {
+          "title": "Réhabilitation écologique et reconversion durable des sites miniers dégradés",
+          "text": "Réalisation de diagnostics, élaboration de plans de restauration, appui à la remise en état des sols, revégétalisation et définition d’usages durables — y compris agricoles lorsque la qualité des sols le permet."
+        },
+        {
+          "title": "Production de données, cartographie et suivi de la dégradation des terres",
+          "text": "Évaluation des tendances de dégradation, identification des zones prioritaires, définition des cibles de Neutralité en matière de dégradation des terres (NDT) et mesure de l’efficacité des interventions au moyen des SIG, de la télédétection et d’indicateurs de suivi."
+        },
+        {
+          "title": "Intégration de la NDT dans les politiques et la planification territoriale",
+          "text": "Accompagnement des institutions dans l’intégration des objectifs de NDT au sein des politiques, stratégies, plans d’investissement et programmes nationaux et territoriaux de développement."
+        },
+        {
+          "title": "Renforcement des capacités institutionnelles et techniques",
+          "text": "Conception de formations, de guides, de manuels opérationnels et d’outils d’aide à la décision, complétée par un accompagnement pratique des institutions, des collectivités et des acteurs de terrain."
+        },
+        {
+          "title": "Conception de projets et mobilisation des financements",
+          "text": "Élaboration de notes conceptuelles, d’études de faisabilité et de dossiers de financement consacrés à la gestion durable des terres, à la restauration des écosystèmes et à l’atteinte de la NDT."
+        }
       ],
-      "impact": "Restaurer les fonctions écologiques et productives des terres dégradées, soutenir une production alimentaire durable et orienter l’action publique au moyen de données fiables."
+      "impact": "Restaurer les fonctions écologiques et productives des terres dégradées, soutenir une production alimentaire durable et orienter l’action publique grâce à des données fiables, afin d’accélérer l’atteinte de la Neutralité en matière de dégradation des terres."
     },
     {
       "number": "02",
       "tone": "ochre",
-      "title": "Évaluation et gestion environnementale et sociale",
-      "summary": "SEI accompagne la maîtrise des risques et des impacts environnementaux et sociaux associés aux politiques, aux projets et aux programmes de développement.",
+      "title": "Évaluation environnementale et sociale",
+      "summary": "SEI accompagne les porteurs de projets dans l’identification, l’évaluation et la maîtrise des risques environnementaux et sociaux tout au long du cycle de leurs interventions. Notre approche vise à préserver les écosystèmes, protéger les populations et favoriser la réalisation de projets responsables, conformes aux réglementations nationales et aux standards internationaux.",
       "interventions": [
-        "Conduite d’études et d’évaluations des impacts environnementaux et sociaux (EIES)",
-        "Élaboration, mise en œuvre et suivi des plans de gestion environnementale et sociale (PGES)",
-        "Intégration de la dimension genre et prise en compte des groupes vulnérables dans les projets et programmes",
-        "Réalisation des audits, suivi-évaluation et reporting environnemental et social"
+        {
+          "title": "Réalisation d’évaluations environnementales et sociales",
+          "text": "Conduite d’études d’impact (EIES), de notices d’impact (NIES) et d’évaluations environnementales stratégiques, incluant l’analyse des risques, des effets sur les écosystèmes et les populations, ainsi que la définition de mesures d’atténuation adaptées."
+        },
+        {
+          "title": "Élaboration et opérationnalisation des instruments de gestion environnementale et sociale",
+          "text": "Conception de plans de gestion environnementale et sociale (PGES), de procédures, de budgets et d’indicateurs de suivi, assortie d’un appui à leur mise en œuvre et à l’application des mesures correctives."
+        },
+        {
+          "title": "Concertation et mobilisation des parties prenantes",
+          "text": "Cartographie des acteurs, conduite de consultations inclusives, élaboration de plans de mobilisation et mise en place de mécanismes accessibles de gestion des plaintes."
+        },
+        {
+          "title": "Intégration du genre et inclusion des groupes vulnérables",
+          "text": "Réalisation d’analyses sociales et de genre, définition de mesures d’inclusion et intégration d’indicateurs spécifiques afin de prévenir les impacts disproportionnés et de favoriser une participation équitable."
+        },
+        {
+          "title": "Audit, suivi et reporting environnemental et social",
+          "text": "Réalisation d’audits de conformité et de missions de suivi sur le terrain, mise en place de tableaux de bord et préparation de rapports répondant aux exigences réglementaires et aux standards des partenaires financiers."
+        }
       ],
-      "impact": "Anticiper les risques, renforcer l’acceptabilité sociale des interventions et améliorer leur conformité, leur performance et leur durabilité."
+      "impact": "Anticiper et maîtriser les risques environnementaux et sociaux, réduire les impacts sur les écosystèmes et les populations, et renforcer l’acceptabilité, la conformité et la performance durable des projets."
     },
     {
       "number": "03",
       "tone": "teal",
       "title": "Paix, mobilités et changement climatique",
-      "summary": "SEI intervient au cœur des interactions entre changement climatique, pression sur les ressources naturelles, mobilités humaines et pastorales, déplacements de populations et conflits d’usage.",
+      "summary": "SEI accompagne les institutions, les territoires et les communautés dans l’anticipation des effets du dérèglement climatique sur les ressources naturelles, les moyens d’existence et les mobilités humaines. Notre approche vise à renforcer la résilience des populations, à prévenir les tensions liées à l’accès aux ressources et à favoriser des réponses inclusives, adaptées aux réalités locales.",
       "interventions": [
-        "Élaboration de stratégies agropastorales inclusives favorisant une cohabitation apaisée entre les usagers des territoires (pasteurs et agriculteurs)",
-        "Accompagnement des institutions dans la prévention et la gestion des risques climatiques aux échelles locale, nationale et régionale",
-        "Conception et mise en œuvre de stratégies locales d’agriculture climato-intelligente",
-        "Développement de moyens d’existence inclusifs et résilients face aux défis climatiques"
+        {
+          "title": "Planification concertée et prévention des conflits liés aux ressources naturelles",
+          "text": "Réalisation de diagnostics participatifs et élaboration de plans d’action, de chartes ou d’accords locaux favorisant une gestion partagée des terres, de l’eau, des espaces pastoraux et de la transhumance."
+        },
+        {
+          "title": "Prévention et gestion des risques climatiques",
+          "text": "Conduite d’analyses de vulnérabilité, élaboration de plans de prévention et de préparation, appui aux systèmes d’alerte précoce et renforcement de la coordination institutionnelle aux échelles locale, nationale et régionale."
+        },
+        {
+          "title": "Anticipation des mobilités et des déplacements liés au climat",
+          "text": "Analyse des facteurs environnementaux et climatiques de mobilité, cartographie des zones à risque et intégration de mesures d’anticipation et d’accompagnement dans les politiques et plans territoriaux."
+        },
+        {
+          "title": "Développement de stratégies locales d’agriculture climato-intelligente",
+          "text": "Conception et opérationnalisation de stratégies adaptées aux réalités locales, intégrant la gestion durable des sols et de l’eau, l’amélioration des pratiques agricoles et le renforcement des capacités des producteurs."
+        },
+        {
+          "title": "Diversification des moyens d’existence résilients",
+          "text": "Identification et développement d’activités économiques inclusives, de chaînes de valeur durables et de solutions de diversification des revenus, avec une attention particulière portée aux femmes, aux jeunes et aux groupes vulnérables."
+        }
       ],
-      "impact": "Réduire les vulnérabilités, prévenir les tensions et renforcer la capacité des populations et des territoires à faire face au dérèglement climatique et aux transformations socio-économiques."
+      "impact": "Réduire les vulnérabilités climatiques, sécuriser l’accès aux ressources naturelles et les moyens d’existence, anticiper les mobilités et prévenir les tensions afin de renforcer la résilience et la cohésion sociale des territoires."
     }
   ],
   "approach": {
     "eyebrow": "Notre savoir-faire",
     "title": "Une intervention pensée pour durer",
     "items": [
-      {"title": "Lecture croisée", "text": "Une lecture croisée des enjeux environnementaux, sociaux, climatiques et territoriaux."},
-      {"title": "Solutions adaptées", "text": "Des solutions adaptées aux réalités institutionnelles, écologiques et socioéconomiques de chaque territoire."},
-      {"title": "Participation active", "text": "Une implication active des institutions, des communautés locales et des parties prenantes à chaque étape."},
-      {"title": "Outils opérationnels", "text": "Des outils opérationnels pour éclairer la décision, maîtriser les risques et renforcer durablement la résilience."}
+      {
+        "title": "Lecture croisée",
+        "text": "Une lecture croisée des enjeux environnementaux, sociaux, climatiques et territoriaux."
+      },
+      {
+        "title": "Solutions adaptées",
+        "text": "Des solutions adaptées aux réalités institutionnelles, écologiques et socioéconomiques de chaque territoire."
+      },
+      {
+        "title": "Participation active",
+        "text": "Une implication active des institutions, des communautés locales et des parties prenantes à chaque étape."
+      },
+      {
+        "title": "Outils opérationnels",
+        "text": "Des outils opérationnels pour éclairer la décision, maîtriser les risques et renforcer durablement la résilience."
+      }
     ]
   },
   "capabilities": {
@@ -130,10 +198,22 @@
     "title": "Une expertise mobilisée au service de l’impact",
     "lead": "Les compétences transversales de SEI renforcent la qualité technique, la cohérence et la portée opérationnelle de l’ensemble de ses interventions.",
     "items": [
-      {"title": "Mise en œuvre intégrée et synergies entre les Conventions de Rio", "text": "Accompagnement des pays Parties dans la mise en œuvre de leurs engagements au titre des Conventions de Rio, à travers la création de synergies entre les enjeux liés à la biodiversité, au climat et à la lutte contre la désertification, ainsi que leur intégration cohérente dans les stratégies nationales de développement durable."},
-      {"title": "Développement de projets et mobilisation des parties prenantes", "text": "Conception de projets transformateurs alignés sur les priorités nationales et conformes aux standards internationaux, à travers une concertation inclusive et la conduite de consultations avec les parties prenantes."},
-      {"title": "Renforcement des capacités et gestion des connaissances", "text": "Conception et mise en œuvre de formations, capitalisation et diffusion des connaissances, sensibilisation des acteurs et appui au renforcement des capacités institutionnelles."},
-      {"title": "", "text": ""}
+      {
+        "title": "Mise en œuvre intégrée et synergies entre les Conventions de Rio",
+        "text": "Accompagnement des pays Parties dans la mise en œuvre de leurs engagements au titre des Conventions de Rio, à travers la création de synergies entre les enjeux liés à la biodiversité, au climat et à la lutte contre la désertification, ainsi que leur intégration cohérente dans les stratégies nationales de développement durable."
+      },
+      {
+        "title": "Développement de projets et mobilisation des parties prenantes",
+        "text": "Conception de projets transformateurs alignés sur les priorités nationales et conformes aux standards internationaux, à travers une concertation inclusive et la conduite de consultations avec les parties prenantes."
+      },
+      {
+        "title": "Renforcement des capacités et gestion des connaissances",
+        "text": "Conception et mise en œuvre de formations, capitalisation et diffusion des connaissances, sensibilisation des acteurs et appui au renforcement des capacités institutionnelles."
+      },
+      {
+        "title": "",
+        "text": ""
+      }
     ]
   },
   "projects": {
@@ -147,10 +227,30 @@
     "title": "Des organisations engagées à nos côtés",
     "intro": "Institutions, programmes et partenaires qui choisissent l’expertise de Social & Eco Impact.",
     "items": [
-      {"name": "Organisation partenaire 1", "description": "Ajoutez une courte présentation de l’organisation.", "logoUrl": "", "link": ""},
-      {"name": "Organisation partenaire 2", "description": "Ajoutez une courte présentation de l’organisation.", "logoUrl": "", "link": ""},
-      {"name": "Organisation partenaire 3", "description": "Ajoutez une courte présentation de l’organisation.", "logoUrl": "", "link": ""},
-      {"name": "Organisation partenaire 4", "description": "Ajoutez une courte présentation de l’organisation.", "logoUrl": "", "link": ""}
+      {
+        "name": "Organisation partenaire 1",
+        "description": "Ajoutez une courte présentation de l’organisation.",
+        "logoUrl": "",
+        "link": ""
+      },
+      {
+        "name": "Organisation partenaire 2",
+        "description": "Ajoutez une courte présentation de l’organisation.",
+        "logoUrl": "",
+        "link": ""
+      },
+      {
+        "name": "Organisation partenaire 3",
+        "description": "Ajoutez une courte présentation de l’organisation.",
+        "logoUrl": "",
+        "link": ""
+      },
+      {
+        "name": "Organisation partenaire 4",
+        "description": "Ajoutez une courte présentation de l’organisation.",
+        "logoUrl": "",
+        "link": ""
+      }
     ]
   },
   "valueAdded": {

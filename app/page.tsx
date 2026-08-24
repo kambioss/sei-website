@@ -5,6 +5,7 @@ import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
 import { OrganizationSlider } from "@/app/organization-slider";
 import { SiteFooter } from "@/app/site-footer";
+import { TerritoryGallery } from "@/app/territory-gallery";
 import { PROJECTS_NEWS_ENABLED } from "@/lib/feature-flags";
 import { getPublishedNews } from "@/lib/news";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
@@ -26,12 +27,10 @@ const ui = {
     interventions: "Nos interventions",
     impact: "Impact recherché",
     directContact: "Contact direct",
-    galleryTitle: "Le capital naturel au cœur de notre engagement.",
-    galleryCaptions: [
-      "Gestion durable des terres",
-      "Préservation intégrée des écosystèmes",
-      "Résilience face au dérèglement climatique",
-    ],
+    galleryTitle: "Le capital naturel et la résilience des territoires au cœur de nos interventions",
+    galleryFlip: "Voir le domaine d’expertise",
+    galleryClose: "Revenir à l’image",
+    galleryMore: "Interventions et impact recherché",
     newsEyebrow: "Nos actualités",
     latestNewsTitle: "Notre dernière activité",
     newsTitle: "Projets, idées et nouvelles du terrain.",
@@ -57,12 +56,10 @@ const ui = {
     interventions: "Our services",
     impact: "Expected impact",
     directContact: "Direct contact",
-    galleryTitle: "Natural capital at the heart of our commitment.",
-    galleryCaptions: [
-      "Sustainable land management",
-      "Integrated ecosystem preservation",
-      "Resilience to climate change",
-    ],
+    galleryTitle: "Natural capital and territorial resilience at the heart of our interventions",
+    galleryFlip: "View this area of expertise",
+    galleryClose: "Back to the image",
+    galleryMore: "Services and expected impact",
     newsEyebrow: "Our news",
     latestNewsTitle: "Our latest activity",
     newsTitle: "Projects, ideas and news from the field.",
@@ -224,20 +221,17 @@ export default async function Home({ searchParams }: HomeProps) {
         <div className="territoryGalleryIntro">
           <h2>{copy.galleryTitle}</h2>
         </div>
-        <div className="territoryGalleryGrid">
-          {territoryImages.map((src, index) => (
-            <figure key={src}>
-              <Image
-                src={src}
-                alt={copy.galleryCaptions[index]}
-                fill
-                unoptimized
-                sizes="(max-width: 680px) 100vw, 50vw"
-              />
-              <figcaption>{copy.galleryCaptions[index]}</figcaption>
-            </figure>
-          ))}
-        </div>
+        <TerritoryGallery
+          flipLabel={copy.galleryFlip}
+          closeLabel={copy.galleryClose}
+          moreLabel={copy.galleryMore}
+          items={territoryImages.map((src, index) => ({
+            src,
+            title: expertises[index].title,
+            summary: expertises[index].summary,
+            href: `/qui-sommes-nous?lang=${locale}#expertise-${expertises[index].number}`,
+          }))}
+        />
       </section>
 
       {PROJECTS_NEWS_ENABLED && (

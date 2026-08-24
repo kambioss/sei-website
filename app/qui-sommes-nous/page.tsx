@@ -62,13 +62,18 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
         </div>
         <div className="expertiseGrid">
           {expertises.map((card) => (
-            <article className={"expertiseCard " + card.tone} key={card.number}>
+            <article className={"expertiseCard " + card.tone} id={`expertise-${card.number}`} key={card.number}>
               <div className="cardTop"><span>{card.number}</span><i /></div>
               <h3>{card.title}</h3>
               <p className="cardBody">{card.summary}</p>
               <h4>{interventionsLabel}</h4>
               <ul className="interventionList">
-                {card.interventions.map((item) => <li key={item}>{item}</li>)}
+                {card.interventions.map((item) => (
+                  <li key={item.title}>
+                    <strong>{item.title}</strong>
+                    <span>{item.text}</span>
+                  </li>
+                ))}
               </ul>
               <div className="impactBox">
                 <strong>{impactLabel}</strong>
