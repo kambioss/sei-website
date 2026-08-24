@@ -26,24 +26,29 @@ export default async function ValuesPage({ searchParams }: { searchParams: Promi
         languageHrefEn="/nos-valeurs?lang=en"
       />
 
-      <section className="aboutFeature sectionShell">
-        <div className="aboutFeatureCopy">
+      <section id="nos-valeurs" className="hero sectionShell">
+        <div className="heroCopy">
           <p className="eyebrow"><span /> {values.title}</p>
           <h1>{values.heading}</h1>
-          <p className="aboutFeatureStatement">{values.statement}</p>
-          <div className="valuesGrid">
-            {values.pillars.map((pillar, index) => (
-              <div className="valueCard" key={pillar}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{pillar}</strong>
-              </div>
-            ))}
-          </div>
-          <p>{values.text}</p>
+          <p className="heroStatement">{values.statement}</p>
         </div>
-        <div className="aboutFeatureMedia">
-          <Image src={values.image} alt={values.title} fill unoptimized sizes="(max-width: 900px) 100vw, 46vw" />
+        <div className="heroVisual">
+          <Image src={values.image} alt={values.heading} fill unoptimized priority sizes="(max-width: 980px) 100vw, 42vw" />
+          <div className="imageShade" />
+          <p className="imageCaption">{values.title}</p>
         </div>
+      </section>
+
+      <section className="valuesSection sectionShell">
+        <div className="valuesGrid">
+          {values.pillars.map((pillar, index) => (
+            <div className="valueCard" key={pillar}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{pillar}</strong>
+            </div>
+          ))}
+        </div>
+        <p className="valuesText">{values.text}</p>
       </section>
 
       <SiteFooter

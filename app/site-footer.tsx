@@ -34,6 +34,7 @@ export function SiteFooter({
           </span>
           <p className="footerDescriptor">{descriptor}</p>
           <div className="footerContact">
+            <h3>Contact</h3>
             <a href={"mailto:" + email}>{email}</a>
             <span>{address}</span>
             <span>{location}</span>

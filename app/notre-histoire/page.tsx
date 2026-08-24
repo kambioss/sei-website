@@ -26,16 +26,20 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
         languageHrefEn="/notre-histoire?lang=en"
       />
 
-      <section className="historyBanner sectionShell">
-        <Image src={history.image} alt={history.heading} fill unoptimized priority sizes="(max-width: 980px) 100vw, 1240px" />
+      <section id="notre-histoire" className="hero sectionShell">
+        <div className="heroCopy">
+          <p className="eyebrow"><span /> {history.title}</p>
+          <h1>{history.heading}</h1>
+          <p className="heroStatement">{history.statement}</p>
+        </div>
+        <div className="heroVisual">
+          <Image src={history.image} alt={history.heading} fill unoptimized priority sizes="(max-width: 980px) 100vw, 42vw" />
+          <div className="imageShade" />
+          <p className="imageCaption">{history.title}</p>
+        </div>
       </section>
 
       <section className="historySection sectionShell">
-        <div className="historyIntro">
-          <p className="eyebrow"><span /> {history.title}</p>
-          <h1>{history.heading}</h1>
-          <p className="aboutFeatureStatement">{history.statement}</p>
-        </div>
         <div className="historyTimeline">
           {history.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         </div>
