@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
+import { SiteFooter } from "@/app/site-footer";
+import { getFooterLinkGroups } from "@/lib/footer-links";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
 
 export const dynamic = "force-dynamic";
@@ -10,7 +12,7 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
   const locale = normaliseLocale(query.lang);
   const english = locale === "en";
   const content = await getSiteContent(locale);
-  const { identity, hero } = content;
+  const { brand, identity, hero, contact } = content;
   const { history } = identity;
 
   return (
@@ -38,6 +40,15 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
           {history.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         </div>
       </section>
+
+      <SiteFooter
+        brandName={brand.name}
+        descriptor={brand.descriptor}
+        email={contact.email}
+        address={contact.address}
+        location={contact.location}
+        linkGroups={getFooterLinkGroups(locale, content)}
+      />
     </main>
   );
 }

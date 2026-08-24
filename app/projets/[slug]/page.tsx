@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { PublicHeader } from "@/app/public-header";
+import { SiteFooter } from "@/app/site-footer";
 import { PROJECTS_NEWS_ENABLED } from "@/lib/feature-flags";
+import { getFooterLinkGroups } from "@/lib/footer-links";
 import { getPublishedProjectBySlug } from "@/lib/projects";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
 
@@ -44,6 +46,15 @@ export default async function ProjectPage({ params, searchParams }: { params: Pr
           {project.body.split(/\n{2,}/).map((paragraph, index) => <p key={index}>{paragraph}</p>)}
         </div>
       </article>
+
+      <SiteFooter
+        brandName={content.brand.name}
+        descriptor={content.brand.descriptor}
+        email={content.contact.email}
+        address={content.contact.address}
+        location={content.contact.location}
+        linkGroups={getFooterLinkGroups(locale, content)}
+      />
     </main>
   );
 }

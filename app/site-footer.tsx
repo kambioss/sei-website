@@ -2,19 +2,26 @@ import Image from "next/image";
 import Link from "next/link";
 
 export type FooterLink = { href: string; label: string };
+export type FooterLinkGroup = { title: string; links: FooterLink[] };
 
 export function SiteFooter({
   brandName,
-  tagline,
-  links,
+  descriptor,
+  email,
+  address,
+  location,
+  linkGroups,
 }: {
   brandName: string;
-  tagline: string;
-  links: FooterLink[];
+  descriptor: string;
+  email: string;
+  address: string;
+  location: string;
+  linkGroups: FooterLinkGroup[];
 }) {
   return (
     <footer className="siteFooter">
-      <div className="sectionShell footerInner">
+      <div className="sectionShell footerTop">
         <div className="footerBrand">
           <span className="brandLogoFrame">
             <Image
@@ -25,18 +32,30 @@ export function SiteFooter({
               sizes="150px"
             />
           </span>
-          <small>{tagline}</small>
+          <p className="footerDescriptor">{descriptor}</p>
+          <div className="footerContact">
+            <a href={"mailto:" + email}>{email}</a>
+            <span>{address}</span>
+            <span>{location}</span>
+          </div>
         </div>
-        <div className="footerLinks">
-          {links.map((link) => (
-            <Link key={link.href} href={link.href}>
-              {link.label}
-            </Link>
+        <nav className="footerNav" aria-label="Footer">
+          {linkGroups.map((group) => (
+            <div className="footerNavGroup" key={group.title}>
+              <h3>{group.title}</h3>
+              <ul>
+                {group.links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href}>{link.label}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </div>
-        <p>
-          © {new Date().getFullYear()} {brandName}
-        </p>
+        </nav>
+      </div>
+      <div className="sectionShell footerBottom">
+        <p>© {new Date().getFullYear()} {brandName}</p>
       </div>
     </footer>
   );

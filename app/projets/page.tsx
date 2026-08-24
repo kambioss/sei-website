@@ -3,7 +3,9 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
+import { SiteFooter } from "@/app/site-footer";
 import { PROJECTS_NEWS_ENABLED } from "@/lib/feature-flags";
+import { getFooterLinkGroups } from "@/lib/footer-links";
 import { getPublishedProjects } from "@/lib/projects";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
 
@@ -45,6 +47,15 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
           </div>
         ) : <p className="newsEmpty">{english ? "Projects will be published soon." : "Les premiers projets seront publiés prochainement."}</p>}
       </section>
+
+      <SiteFooter
+        brandName={content.brand.name}
+        descriptor={content.brand.descriptor}
+        email={content.contact.email}
+        address={content.contact.address}
+        location={content.contact.location}
+        linkGroups={getFooterLinkGroups(locale, content)}
+      />
     </main>
   );
 }

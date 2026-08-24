@@ -3,7 +3,9 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
+import { SiteFooter } from "@/app/site-footer";
 import { PROJECTS_NEWS_ENABLED } from "@/lib/feature-flags";
+import { getFooterLinkGroups } from "@/lib/footer-links";
 import { getPublishedNews } from "@/lib/news";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
 
@@ -79,6 +81,15 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
           </div>
         ) : <p className="newsEmpty">{ui.empty}</p>}
       </section>
+
+      <SiteFooter
+        brandName={content.brand.name}
+        descriptor={content.brand.descriptor}
+        email={content.contact.email}
+        address={content.contact.address}
+        location={content.contact.location}
+        linkGroups={getFooterLinkGroups(locale, content)}
+      />
     </main>
   );
 }

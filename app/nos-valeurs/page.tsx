@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
+import { SiteFooter } from "@/app/site-footer";
+import { getFooterLinkGroups } from "@/lib/footer-links";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
 
 export const dynamic = "force-dynamic";
@@ -10,7 +12,7 @@ export default async function ValuesPage({ searchParams }: { searchParams: Promi
   const locale = normaliseLocale(query.lang);
   const english = locale === "en";
   const content = await getSiteContent(locale);
-  const { identity, hero } = content;
+  const { brand, identity, hero, contact } = content;
   const { values } = identity;
 
   return (
@@ -43,6 +45,15 @@ export default async function ValuesPage({ searchParams }: { searchParams: Promi
           <Image src={values.image} alt={values.title} fill unoptimized sizes="(max-width: 900px) 100vw, 46vw" />
         </div>
       </section>
+
+      <SiteFooter
+        brandName={brand.name}
+        descriptor={brand.descriptor}
+        email={contact.email}
+        address={contact.address}
+        location={contact.location}
+        linkGroups={getFooterLinkGroups(locale, content)}
+      />
     </main>
   );
 }

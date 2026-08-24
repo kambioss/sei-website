@@ -3,7 +3,9 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { GallerySlider } from "@/app/actualites/[slug]/gallery-slider";
 import { PublicHeader } from "@/app/public-header";
+import { SiteFooter } from "@/app/site-footer";
 import { PROJECTS_NEWS_ENABLED } from "@/lib/feature-flags";
+import { getFooterLinkGroups } from "@/lib/footer-links";
 import { getPublishedNewsBySlug } from "@/lib/news";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
 
@@ -52,6 +54,15 @@ export default async function ArticlePage({ params, searchParams }: ArticlePageP
           {article.body.split(/\n{2,}/).map((paragraph, index) => <p key={index}>{paragraph}</p>)}
         </div>
       </article>
+
+      <SiteFooter
+        brandName={content.brand.name}
+        descriptor={content.brand.descriptor}
+        email={content.contact.email}
+        address={content.contact.address}
+        location={content.contact.location}
+        linkGroups={getFooterLinkGroups(locale, content)}
+      />
     </main>
   );
 }

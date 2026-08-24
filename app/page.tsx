@@ -4,7 +4,7 @@ import { DomainCards } from "@/app/domain-cards";
 import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
 import { SiteFooter } from "@/app/site-footer";
-import { PROJECTS_NEWS_ENABLED } from "@/lib/feature-flags";
+import { getFooterLinkGroups } from "@/lib/footer-links";
 import { getSiteContent, normaliseLocale } from "@/lib/site-content";
 
 export const dynamic = "force-dynamic";
@@ -39,7 +39,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
   const english = locale === "en";
   const content = await getSiteContent(locale);
   const { brand, identity, founder, hero, expertiseIntro, expertises, approach, capabilities, contact } = content;
-  const { knowUs, history, values, vision } = identity;
+  const { knowUs } = identity;
   const impactLabel = english ? "Expected impact" : "Impact recherché";
   const domainGalleryHeading = english
     ? "Natural capital and territorial resilience at the heart of our interventions"
@@ -168,19 +168,11 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
 
       <SiteFooter
         brandName={brand.name}
-        tagline={english ? "Consulting · Strategy · Impact" : "Conseil · Stratégie · Impact"}
-        links={[
-          { href: `/?lang=${locale}`, label: english ? "About us" : "Le cabinet" },
-          { href: `/?lang=${locale}#expertises`, label: english ? "Expertise" : "Expertises" },
-          { href: `/?lang=${locale}#approche`, label: english ? "Approach" : "Approche" },
-          { href: `/notre-histoire?lang=${locale}`, label: history.title },
-          { href: `/nos-valeurs?lang=${locale}`, label: values.title },
-          { href: `/notre-vision?lang=${locale}`, label: vision.title },
-          ...(PROJECTS_NEWS_ENABLED
-            ? [{ href: `/actualites?lang=${locale}`, label: english ? "News" : "Actualités" }]
-            : []),
-          { href: `/?lang=${locale}#contact`, label: "Contact" },
-        ]}
+        descriptor={brand.descriptor}
+        email={contact.email}
+        address={contact.address}
+        location={contact.location}
+        linkGroups={getFooterLinkGroups(locale, content)}
       />
     </main>
   );
