@@ -224,7 +224,7 @@ button, input, textarea, select { font: inherit; }
   width: 100vw;
   transform: translateX(-50%);
   background:
-    linear-gradient(180deg, rgba(251,250,246,.93) 0%, rgba(251,250,246,.85) 45%, rgba(251,250,246,.95) 100%),
+    linear-gradient(180deg, rgba(251,250,246,.97) 0%, rgba(251,250,246,.93) 45%, rgba(251,250,246,.98) 100%),
     url("/images/extra-long-shot-peaceful-landscape-with-trees.jpg") center 30% / cover no-repeat;
 }
 .approachClosing h3 { max-width: 44ch; margin: 0 auto 14px; color: var(--forest); font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.03em; }
@@ -336,10 +336,10 @@ button, input, textarea, select { font: inherit; }
 .formNote { align-self: center; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.38; }
 
 .siteFooter { background: var(--forest-dark); color: white; }
-.footerTop { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 40px; padding-block: 60px; border-bottom: 1px solid rgba(255,255,255,.12); }
-.footerBrand { grid-column: span 2; display: grid; gap: 22px; align-content: start; }
+.footerTop { display: flex; flex-wrap: wrap; gap: 40px 90px; padding-block: 60px; border-bottom: 1px solid rgba(255,255,255,.12); }
+.footerBrand { flex: 0 0 auto; display: grid; gap: 22px; align-content: start; }
 .footerDescriptor { margin: 0; max-width: 30ch; color: rgba(255,255,255,.65); font-size: 13px; line-height: 1.5; }
-.footerNavGroup { display: grid; gap: 11px; align-content: start; }
+.footerNavGroup { flex: 0 0 auto; display: grid; gap: 11px; align-content: start; }
 .footerNavGroup h3 { margin: 0; color: #e6b662; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .footerNav { display: contents; }
 .footerNavGroup ul { display: grid; gap: 11px; margin: 0; padding: 0; list-style: none; }
@@ -420,8 +420,8 @@ button, input, textarea, select { font: inherit; }
   .projectDetailCover { min-height: 520px; order: -1; }
   .principles { flex-wrap: wrap; justify-content: flex-start; }
   .contactCopy { position: static; }
-  .footerTop { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 32px; }
-  .footerBrand { grid-column: 1 / -1; }
+  .footerTop { gap: 32px 60px; }
+  .footerBrand { flex-basis: 100%; }
   .adminHeader { display: grid; }
   .adminAccount { justify-items: start; }
 }
@@ -473,8 +473,9 @@ button, input, textarea, select { font: inherit; }
   .fullField { grid-column: auto; }
   .formSubmit { width: 100%; }
   .formNote { text-align: center; }
-  .footerTop { grid-template-columns: 1fr 1fr; gap: 28px; }
-  .footerBrand { grid-column: 1 / -1; }
+  .footerTop { gap: 28px 40px; }
+  .footerBrand { flex-basis: 100%; }
+  .footerNavGroup { flex-basis: calc(50% - 20px); }
   .firstCta { width: calc(100% - 28px); padding: 40px 24px; border-radius: 4px 42px 4px 4px; }
   .adminShell { width: min(100% - 24px, 1080px); padding-top: 28px; }
   .adminSaveBar { justify-content: stretch; display: grid; gap: 8px; }
@@ -875,7 +876,7 @@ button, input, textarea, select { font: inherit; }
   padding-bottom: 20px;
   column-gap: clamp(24px, 3vw, 48px);
   row-gap: 0;
-  grid-template-columns: .84fr 1.06fr;
+  grid-template-columns: .9fr 1fr;
   grid-template-areas: "intro visual";
 }
 #nous-connaitre h1 { max-width: none; font-size: clamp(24px, 2.7vw, 40px); line-height: 1.1; white-space: nowrap; }
@@ -921,15 +922,14 @@ button, input, textarea, select { font: inherit; }
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 24px;
-  text-align: center;
+  padding: 24px max(24px, calc((100vw - 1240px) / 2));
+  text-align: left;
   color: white;
 }
-#notre-histoire.hero .heroCopy .eyebrow { justify-content: center; }
 #notre-histoire.hero .heroCopy h1 { max-width: 16ch; color: white; font-size: clamp(30px, 3.4vw, 48px); }
-#notre-histoire.hero .heroCopy .heroStatement { max-width: 50ch; margin-top: 14px; text-align: center; }
+#notre-histoire.hero .heroCopy .heroStatement { max-width: 50ch; margin-top: 14px; text-align: left; }
 
 .historySection { position: relative; isolation: isolate; padding-block: 60px 100px; }
 .historySection::before {
