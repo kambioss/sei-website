@@ -17,14 +17,19 @@ const domainImages = [
 
 const approachIcons = [
   <svg key="capacity" width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <path d="M16 8.7c-2.5-1.7-5.6-2.3-8.7-1.8v14.6c3.1-.5 6.2.1 8.7 1.8 2.5-1.7 5.6-2.3 8.7-1.8V6.9c-3.1-.5-6.2.1-8.7 1.8Z" fill="var(--forest)" />
-    <path d="M16 8.7v14.6" stroke="white" strokeWidth="1.3" strokeLinecap="round" opacity=".45" />
-    <path d="M22.3 5.6c1.9.5 3 2.5 2.4 4.4-.4 1.2-1.4 2-2.6 2.3.5-1.7.1-3.7-1.3-5 .4-.8 1-1.4 1.5-1.7Z" fill="var(--ochre)" />
+    <path d="M16 9c-2.6-1.7-5.8-2.3-9-1.8v15.2c3.2-.5 6.4.1 9 1.8 2.6-1.7 5.8-2.3 9-1.8V7.2c-3.2-.5-6.4.1-9 1.8Z" fill="var(--forest)" />
+    <path d="M16 9v15.2" stroke="white" strokeWidth="1.2" strokeLinecap="round" opacity=".4" />
+    <path d="M23 4.3c2 .4 3.3 2.3 2.9 4.3-.3 1.5-1.4 2.6-2.8 3 .6-1.8.2-3.9-1.2-5.3.3-.9.8-1.6 1.1-2Z" fill="var(--ochre)" />
+    <circle cx="26.6" cy="12.6" r="1.6" fill="var(--teal)" />
+    <path d="M24.7 10.6l1.1 1.2" stroke="var(--teal)" strokeWidth="1" strokeLinecap="round" />
   </svg>,
   <svg key="events" width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <circle cx="14" cy="16.5" r="9.3" fill="var(--forest)" />
-    <path d="M14 7.2c2.5 2.5 2.5 15.8 0 18.6M9.1 16.5h9.8M10 11h8M10 22h8" stroke="white" strokeWidth="1" strokeLinecap="round" opacity=".4" />
-    <path d="M22.7 13c2.3 0 4.2 1.9 4.2 4.2 0 1.1-.4 2.1-1.1 2.8l.5 2.5-2.6-1c-.3.1-.7.1-1 .1-2.3 0-4.2-1.9-4.2-4.2 0-1.3.6-2.5 1.5-3.3" fill="var(--ochre)" />
+    <circle cx="14" cy="16" r="8.5" fill="var(--forest)" />
+    <path d="M14 7.5c2.3 2.3 2.3 14.7 0 17M8.2 16h11.6M9 11h10M9 21h10" stroke="white" strokeWidth="1" strokeLinecap="round" opacity=".4" />
+    <rect x="20" y="5" width="10" height="7" rx="3.5" fill="var(--ochre)" />
+    <path d="M22 11.2 21 14 24.2 11.5Z" fill="var(--ochre)" />
+    <rect x="2" y="21" width="8" height="6" rx="3" fill="var(--teal)" />
+    <path d="M3.4 26.5 3 28.5 5.6 26.7Z" fill="var(--teal)" />
   </svg>,
 ];
 

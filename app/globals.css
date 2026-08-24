@@ -210,7 +210,7 @@ button, input, textarea, select { font: inherit; }
 .approachLead { grid-column: 2; align-self: start; max-width: 56ch; margin: 0; color: rgba(255,255,255,.78); font-size: 16px; line-height: 1.55; }
 .approachGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 70px; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.18); }
 .approachGrid article { min-height: 290px; padding: 30px; background: var(--ink); }
-.approachIcon { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,.08); }
+.approachIcon { display: inline-flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 18px; background: var(--paper); box-shadow: 0 10px 24px rgba(0,0,0,.2); }
 .approachGrid h3 { margin: 24px 0 17px; font-size: clamp(27px, 2.5vw, 37px); letter-spacing: -.04em; }
 .approachGrid p { margin: 0; color: rgba(255,255,255,.78); font-size: 15.5px; line-height: 1.42; }
 .approachClosing { margin-top: 64px; padding-top: 48px; border-top: 1px solid rgba(255,255,255,.16); text-align: center; }
