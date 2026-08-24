@@ -914,19 +914,22 @@ button, input, textarea, select { font: inherit; }
   border-radius: 0;
   box-shadow: none;
 }
-#notre-histoire.hero .imageShade { background: linear-gradient(0deg, rgba(4,20,18,.9) 0%, rgba(4,20,18,.42) 52%, transparent 82%); }
+#notre-histoire.hero .imageShade { background: rgba(4,20,18,.52); }
 #notre-histoire.hero .heroCopy {
   position: absolute;
-  left: max(24px, calc((100vw - 1240px) / 2));
-  right: 24px;
-  bottom: 0;
+  inset: 0;
   z-index: 1;
-  max-width: 640px;
-  padding-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
   color: white;
 }
-#notre-histoire.hero .heroCopy h1 { color: white; font-size: clamp(30px, 3.4vw, 48px); }
-#notre-histoire.hero .heroCopy .heroStatement { margin-top: 14px; }
+#notre-histoire.hero .heroCopy .eyebrow { justify-content: center; }
+#notre-histoire.hero .heroCopy h1 { max-width: 16ch; color: white; font-size: clamp(30px, 3.4vw, 48px); }
+#notre-histoire.hero .heroCopy .heroStatement { max-width: 50ch; margin-top: 14px; text-align: center; }
 
 .historySection { position: relative; isolation: isolate; padding-block: 60px 100px; }
 .historySection::before {
@@ -943,7 +946,7 @@ button, input, textarea, select { font: inherit; }
     url("/images/visite_terrain.jpeg") center 35% / cover no-repeat;
 }
 .historyTimeline { position: relative; max-width: 760px; margin: 0 auto; padding-left: 30px; border-left: 2px solid var(--line); display: grid; gap: 30px; }
-.historyTimeline p { position: relative; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; }
+.historyTimeline p { position: relative; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; text-align: justify; hyphens: auto; }
 .historyTimeline p::before { content: ""; position: absolute; left: -38px; top: 7px; width: 11px; height: 11px; border-radius: 50%; background: var(--ochre); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ochre), white 72%); }
 
 .valuesSection { padding-block: 20px 100px; }
@@ -984,5 +987,5 @@ button, input, textarea, select { font: inherit; }
   .historyTimeline { padding-left: 22px; }
   .historyTimeline p::before { left: -28px; }
   #notre-histoire.hero .heroVisual { min-height: 0; aspect-ratio: 4 / 3; }
-  #notre-histoire.hero .heroCopy { max-width: none; padding-bottom: 22px; }
+  #notre-histoire.hero .heroCopy { padding: 18px; }
 }
