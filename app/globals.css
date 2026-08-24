@@ -201,7 +201,7 @@ button, input, textarea, select { font: inherit; }
 .firstCta h2 { max-width: 780px; margin: 0 0 32px; font-size: clamp(36px, 5vw, 64px); line-height: 1.02; letter-spacing: -.05em; }
 .buttonLight { background: white; color: var(--forest); }
 
-.approachSection { padding-block: 124px 108px; background: linear-gradient(160deg, #04211d 0%, var(--forest-dark) 32%, #1c4b47 100%); color: white; }
+.approachSection { padding-block: 124px 108px; background: linear-gradient(160deg, #0c2027 0%, var(--ink) 42%, #204a4f 100%); color: white; }
 .eyebrow.light { color: #e1af57; }
 .approachIntro { display: grid; grid-template-columns: .75fr 1.25fr; align-items: end; gap: 14px 80px; }
 .approachIntro .eyebrow { align-self: start; }
@@ -209,8 +209,8 @@ button, input, textarea, select { font: inherit; }
 .approachIntro h2 em { color: #e3b562; font-style: normal; }
 .approachLead { grid-column: 2; align-self: start; max-width: 56ch; margin: 0; color: rgba(255,255,255,.78); font-size: 16px; line-height: 1.55; }
 .approachGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 70px; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.18); }
-.approachGrid article { min-height: 290px; padding: 30px; background: var(--forest-dark); }
-.approachIcon { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border: 1px solid rgba(230,182,98,.4); border-radius: 50%; color: #e6b662; }
+.approachGrid article { min-height: 290px; padding: 30px; background: var(--ink); }
+.approachIcon { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,.08); }
 .approachGrid h3 { margin: 24px 0 17px; font-size: clamp(27px, 2.5vw, 37px); letter-spacing: -.04em; }
 .approachGrid p { margin: 0; color: rgba(255,255,255,.78); font-size: 15.5px; line-height: 1.42; }
 .approachClosing { margin-top: 64px; padding-top: 48px; border-top: 1px solid rgba(255,255,255,.16); text-align: center; }
