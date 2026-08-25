@@ -960,11 +960,11 @@ button, input, textarea, select { font: inherit; }
 #nous-connaitre .founderLetter { margin-top: 16px; }
 .founderLetter::after { content: ""; display: block; clear: both; }
 .founderLetter .eyebrow { color: var(--teal); margin-bottom: 18px; font-size: 10.5px; }
-.founderPhotoBlock { float: left; width: clamp(130px, 24%, 190px); margin: 0 26px 14px 0; }
+.founderPhotoBlock { float: left; width: clamp(145px, 26%, 200px); margin: 0 26px 14px 0; }
 .founderPhoto { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 14px 14px 36px 14px; box-shadow: 0 16px 36px rgba(17,57,48,.18); background: var(--sand); }
 .founderPhoto img { object-fit: cover; }
 .founderPhotoName { margin: 10px 0 0; color: var(--forest); font-size: 13px; font-weight: 800; letter-spacing: -.01em; text-align: center; }
-.founderQuoteText { margin: 0 0 16px; color: var(--ink); font-size: 10px; line-height: 1.46; }
+.founderQuoteText { margin: 0 0 16px; color: var(--ink); font-size: 12px; line-height: 1.46; }
 .founderQuoteText:last-of-type { margin-bottom: 0; }
 
 @media (max-width: 900px) {
