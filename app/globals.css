@@ -195,7 +195,7 @@ button, input, textarea, select { font: inherit; }
 .sectionIntro .eyebrow { margin-bottom: 19px; }
 .sectionIntro h2 { margin: 0; color: var(--forest); font-size: clamp(42px, 5vw, 68px); line-height: 1; letter-spacing: -.055em; }
 .expertiseSection .sectionIntro { display: block; }
-.expertiseIntroTitle { font-size: clamp(14px, 1.9vw, 24px); line-height: 1.1; white-space: nowrap; }
+.expertiseSection .expertiseIntroTitle { font-size: clamp(14px, 1.9vw, 24px); line-height: 1.1; white-space: nowrap; }
 .sectionIntro h2 em { color: var(--ochre); font-style: normal; }
 .sectionIntro > p { margin: 0 0 4px; color: var(--muted); font-size: 17px; line-height: 1.4; }
 .firstCta { margin-bottom: 40px; padding: clamp(45px, 7vw, 82px); background: var(--forest); color: white; border-radius: 4px 70px 4px 4px; }
@@ -215,7 +215,7 @@ button, input, textarea, select { font: inherit; }
 .approachIcon { display: inline-flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 18px; background: var(--sand); }
 .approachGrid h3 { margin: 24px 0 17px; color: var(--ink); font-size: clamp(27px, 2.5vw, 37px); letter-spacing: -.04em; }
 .approachGrid p { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.42; }
-.approachClosing { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, .9fr) minmax(360px, 1fr); grid-template-areas: "title logos" "text logos"; align-items: start; gap: 14px 64px; margin-top: 64px; padding: 56px 24px 60px; border-top: 1px solid var(--line); text-align: left; }
+.approachClosing { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, .9fr) minmax(360px, 1fr); grid-template-areas: "title logos" "text logos"; grid-template-rows: auto 1fr; align-items: start; gap: 14px 64px; margin-top: 24px; padding: 24px 24px 60px; border-top: 1px solid var(--line); text-align: left; }
 .approachClosing::before {
   content: "";
   position: absolute;
@@ -229,7 +229,7 @@ button, input, textarea, select { font: inherit; }
     linear-gradient(180deg, rgba(251,250,246,.85) 0%, rgba(251,250,246,.72) 45%, rgba(251,250,246,.9) 100%),
     url("/images/extra-long-shot-peaceful-landscape-with-trees.jpg") center 30% / cover no-repeat;
 }
-.approachClosing h3 { grid-area: title; align-self: end; max-width: 44ch; margin: 0; color: var(--forest); font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.03em; }
+.approachClosing h3 { grid-area: title; align-self: start; max-width: 44ch; margin: 0; color: var(--forest); font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.03em; }
 .approachClosing p { grid-area: text; max-width: 62ch; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.6; }
 .oddLogoGrid { grid-area: logos; align-self: center; justify-self: end; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; width: min(100%, 440px); margin: 0; }
 .oddLogo { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 8px; box-shadow: 0 12px 28px rgba(17,57,48,.1); }
@@ -414,7 +414,7 @@ button, input, textarea, select { font: inherit; }
   .approachGrid { grid-template-columns: 1fr; }
   .approachGrid article { min-height: auto; }
   .approachGrid h3 { margin-top: 32px; }
-  .approachClosing { grid-template-columns: 1fr; grid-template-areas: "title" "text" "logos"; gap: 14px; margin-top: 46px; padding-top: 34px; }
+  .approachClosing { grid-template-columns: 1fr; grid-template-areas: "title" "text" "logos"; grid-template-rows: auto; gap: 14px; margin-top: 16px; padding-top: 20px; }
   .oddLogoGrid { justify-self: start; margin-top: 16px; }
   .projectsIntro { grid-template-columns: 1fr; }
   .projectsIntro .eyebrow { grid-column: auto; }

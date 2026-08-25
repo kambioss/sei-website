@@ -51,9 +51,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
   const { brand, identity, hero, expertiseIntro, expertises, approach, contact } = content;
   const { knowUs } = identity;
   const impactLabel = english ? "Expected impact" : "Impact recherché";
-  const domainsSubtitle = english
-    ? "Connecting international commitments to the realities of territories."
-    : "Relier les engagements internationaux aux réalités des territoires.";
 
   return (
     <main className="homePage">
@@ -105,7 +102,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           <div className="approachIntro">
             <p className="eyebrow"><span /> {approach.eyebrow}</p>
             <h2>{approach.title}</h2>
-            <p className="approachSubtitle">{domainsSubtitle}</p>
             <p className="approachLead">{approach.lead}</p>
           </div>
           <div className="approachGrid">
