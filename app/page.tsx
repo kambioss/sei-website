@@ -33,6 +33,16 @@ const approachIcons = [
   </svg>,
 ];
 
+const oddLogos = [
+  { number: 2, left: "-142.5%", top: "-129.2%" },
+  { number: 5, left: "-475.4%", top: "-129.2%" },
+  { number: 13, left: "-30.6%", top: "-351.4%" },
+  { number: 14, left: "-142.5%", top: "-351.4%" },
+  { number: 15, left: "-252.9%", top: "-351.4%" },
+  { number: 16, left: "-364.7%", top: "-351.4%" },
+  { number: 17, left: "-475.4%", top: "-351.4%" },
+];
+
 export default async function Home({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
   const query = await searchParams;
   const locale = normaliseLocale(query.lang);
@@ -76,7 +86,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
             <p className="eyebrow"><span /> {expertiseIntro.eyebrow}</p>
             <h2 className="expertiseIntroTitle">{expertiseIntro.title}</h2>
           </div>
-          <p>{expertiseIntro.text}</p>
         </div>
         <DomainCards
           items={domainImages.map((src, index) => ({
@@ -111,14 +120,21 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           <div className="approachClosing">
             <h3>{approach.closingTitle}</h3>
             <p>{approach.closingText}</p>
-            <Image
-              className="approachClosingImage"
-              src="/images/objectifs-developpement-durable.png"
-              alt={english ? "United Nations Sustainable Development Goals" : "Objectifs de développement durable des Nations unies"}
-              width={2482}
-              height={1755}
-              unoptimized
-            />
+            <div className="oddLogoGrid" aria-label={english ? "Selected Sustainable Development Goals" : "Objectifs de développement durable sélectionnés"}>
+              {oddLogos.map((logo) => (
+                <div className="oddLogo" key={logo.number}>
+                  <Image
+                    className="oddLogoSprite"
+                    src="/images/objectifs-developpement-durable.png"
+                    alt={(english ? "SDG " : "ODD ") + logo.number}
+                    width={2482}
+                    height={1755}
+                    style={{ left: logo.left, top: logo.top }}
+                    unoptimized
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

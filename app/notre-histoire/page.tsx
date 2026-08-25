@@ -52,14 +52,6 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
           </div>
           <p>{values.statement}</p>
         </div>
-        <div className="valuesGrid">
-          {values.pillars.map((pillar, index) => (
-            <div className="valueCard" key={pillar}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <strong>{pillar}</strong>
-            </div>
-          ))}
-        </div>
         <p className="valuesText">{values.text}</p>
       </section>
 
