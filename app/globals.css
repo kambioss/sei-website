@@ -15,11 +15,12 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { max-width: 100%; overflow-x: clip; scroll-behavior: smooth; }
 section[id] { scroll-margin-top: 96px; }
 body {
+  max-width: 100%;
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-display);
@@ -27,6 +28,7 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 button, input, textarea, select { font: inherit; }
+img, svg { max-width: 100%; }
 ::selection { background: #d5b06f; color: #102f2a; }
 
 .sectionShell { width: min(1240px, calc(100% - 48px)); margin-inline: auto; }
@@ -203,19 +205,20 @@ button, input, textarea, select { font: inherit; }
 .firstCta h2 { max-width: 780px; margin: 0 0 32px; font-size: clamp(36px, 5vw, 64px); line-height: 1.02; letter-spacing: -.05em; }
 .buttonLight { background: white; color: var(--forest); }
 
-.approachSection { padding-block: 64px 108px; background: linear-gradient(160deg, var(--paper) 0%, var(--sand) 100%); color: var(--ink); }
-.approachIntro { display: grid; grid-template-columns: .75fr 1.25fr; align-items: end; gap: 14px 80px; }
-.approachIntro .eyebrow { align-self: start; }
-.approachIntro h2 { margin: 0; color: var(--forest); font-size: clamp(16px, 1.8vw, 24px); line-height: 1.1; letter-spacing: -.03em; white-space: nowrap; }
+.approachSection { padding-block: 64px 24px; background: linear-gradient(160deg, var(--paper) 0%, var(--sand) 100%); color: var(--ink); }
+.approachSection > .sectionShell { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); gap: 64px 70px; }
+.approachIntro { display: block; min-width: 0; }
+.approachIntro .eyebrow { margin-bottom: 20px; }
+.approachIntro h2 { margin: 0; color: var(--forest); font-size: clamp(16px, 1.8vw, 24px); line-height: 1.1; letter-spacing: -.03em; white-space: normal; }
 .approachIntro h2 em { color: var(--ochre); font-style: normal; }
 .approachSubtitle { grid-column: 2; align-self: start; max-width: 56ch; margin: 10px 0 0; color: var(--ochre); font-size: 15px; font-weight: 800; letter-spacing: -.005em; }
-.approachLead { grid-column: 2; align-self: start; max-width: 56ch; margin: 12px 0 0; color: var(--muted); font-size: 16px; line-height: 1.55; text-align: justify; text-justify: inter-word; hyphens: none; }
-.approachGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 70px; background: var(--line); border: 1px solid var(--line); }
+.approachLead { max-width: 56ch; margin: 12px 0 0; color: var(--muted); font-size: 16px; line-height: 1.55; text-align: justify; text-justify: inter-word; hyphens: none; }
+.approachGrid { align-self: start; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 0; background: var(--line); border: 1px solid var(--line); }
 .approachGrid article { min-height: 290px; padding: 30px; background: var(--paper); }
 .approachIcon { display: inline-flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 18px; background: var(--sand); }
 .approachGrid h3 { margin: 24px 0 17px; color: var(--ink); font-size: clamp(27px, 2.5vw, 37px); letter-spacing: -.04em; }
 .approachGrid p { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.42; }
-.approachClosing { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, .9fr) minmax(360px, 1fr); grid-template-areas: "title logos" "text logos"; grid-template-rows: auto 1fr; align-items: start; gap: 14px 64px; margin-top: 24px; padding: 24px 24px 60px; border-top: 1px solid var(--line); text-align: left; }
+.approachClosing { grid-column: 1 / -1; position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, .9fr) minmax(360px, 1fr); grid-template-areas: "title logos" "text logos"; grid-template-rows: auto 1fr; align-items: start; gap: 14px 64px; margin-top: 24px; padding: 24px 24px 60px; border-top: 1px solid var(--line); text-align: left; }
 .approachClosing::before {
   content: "";
   position: absolute;
@@ -322,7 +325,7 @@ button, input, textarea, select { font: inherit; }
 .organizationControls > div button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 5px; background: #c2cbc7; cursor: pointer; transition: width .2s ease, background .2s ease; }
 .organizationControls > div button.active { width: 28px; background: var(--ochre); }
 
-.contactSection { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(50px, 9vw, 120px); padding-block: 30px 130px; }
+.contactSection { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(50px, 9vw, 120px); padding-block: 16px 130px; }
 .contactCopy { position: sticky; top: 120px; align-self: start; }
 .contactCopy h2 { margin: 0; color: var(--forest); font-size: clamp(48px, 5.8vw, 78px); line-height: .97; letter-spacing: -.065em; }
 .contactCopy > p:not(.eyebrow) { margin: 27px 0 0; color: var(--muted); font-size: 17px; line-height: 1.42; }
@@ -408,8 +411,11 @@ button, input, textarea, select { font: inherit; }
   .audienceBand { grid-template-columns: 1fr; gap: 15px; }
   .audienceBand div { justify-content: flex-start; flex-wrap: wrap; }
   .sectionIntro { grid-template-columns: 1fr; gap: 22px; }
+  .hero > *, .sectionIntro > *, .approachIntro > *, .approachClosing > * { min-width: 0; }
+  .expertiseSection .expertiseIntroTitle, .approachIntro h2 { white-space: normal; overflow-wrap: anywhere; }
   .aboutSection, .contactSection, .organizationsInner { grid-template-columns: 1fr; }
   .aboutCopy { padding-top: 0; }
+  .approachSection > .sectionShell { grid-template-columns: 1fr; gap: 42px; }
   .approachIntro { grid-template-columns: 1fr; gap: 12px; }
   .approachSubtitle, .approachLead { grid-column: 1; max-width: none; }
   .approachGrid { grid-template-columns: 1fr; }
@@ -435,6 +441,7 @@ button, input, textarea, select { font: inherit; }
 @media (max-width: 900px) {
   .desktopNav { display: none; }
   .mobileMenu { display: block; }
+  .mobileMenu > div { width: min(230px, calc(100vw - 28px)); }
 }
 
 @media (max-width: 680px) {
@@ -454,7 +461,7 @@ button, input, textarea, select { font: inherit; }
   .expertiseSection { padding: 0 0 40px; }
   .sectionIntro { margin-bottom: 35px; }
   .aboutSection { padding-block: 80px 10px; }
-  .approachSection { padding-block: 50px 75px; }
+  .approachSection { padding-block: 50px 24px; }
   .approachGrid { margin-top: 42px; }
   .principles i { display: none; }
   .principles { display: grid; gap: 11px; }
@@ -474,7 +481,7 @@ button, input, textarea, select { font: inherit; }
   .midCta { grid-template-columns: 1fr; margin-bottom: 85px; border-radius: 26px 26px 58px 26px; }
   .midCta .roundArrow { justify-self: end; }
   .roundArrow { width: 62px; height: 62px; }
-  .contactSection { padding-bottom: 90px; }
+  .contactSection { padding-block: 12px 90px; }
   .projectForm { grid-template-columns: 1fr; padding: 24px 18px; }
   .fullField { grid-column: auto; }
   .formSubmit { width: 100%; }
@@ -891,7 +898,7 @@ button, input, textarea, select { font: inherit; }
   grid-template-columns: .9fr 1fr;
   grid-template-areas: "intro visual";
 }
-#nous-connaitre h1 { max-width: none; font-size: clamp(24px, 2.7vw, 40px); font-weight: 400; line-height: 1.1; white-space: nowrap; }
+#nous-connaitre h1 { max-width: none; font-size: clamp(24px, 2.7vw, 40px); font-weight: 400; line-height: 1.1; text-align: center; white-space: nowrap; }
 #nous-connaitre .heroCopy { padding-block: 0; }
 #nous-connaitre .heroIntro { grid-area: intro; }
 #nous-connaitre .heroVisualColumn { grid-area: visual; align-self: stretch; margin-top: 6px; }
