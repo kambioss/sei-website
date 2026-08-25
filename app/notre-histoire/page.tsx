@@ -75,7 +75,9 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
             </div>
             <p className="founderPhotoName">{founder.name}</p>
           </div>
-          {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
+          <div className="founderQuote">
+            {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
+          </div>
         </div>
       </section>
 

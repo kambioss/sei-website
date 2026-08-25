@@ -195,7 +195,7 @@ button, input, textarea, select { font: inherit; }
 .sectionIntro .eyebrow { margin-bottom: 19px; }
 .sectionIntro h2 { margin: 0; color: var(--forest); font-size: clamp(42px, 5vw, 68px); line-height: 1; letter-spacing: -.055em; }
 .expertiseSection .sectionIntro { display: block; }
-.expertiseSection .expertiseIntroTitle { font-size: clamp(14px, 1.9vw, 24px); line-height: 1.1; white-space: nowrap; }
+.expertiseSection .expertiseIntroTitle { font-size: clamp(18px, 2.3vw, 28px); line-height: 1.1; white-space: nowrap; }
 .sectionIntro h2 em { color: var(--ochre); font-style: normal; }
 .sectionIntro > p { margin: 0 0 4px; color: var(--muted); font-size: 17px; line-height: 1.4; }
 .firstCta { margin-bottom: 40px; padding: clamp(45px, 7vw, 82px); background: var(--forest); color: white; border-radius: 4px 70px 4px 4px; }
@@ -230,9 +230,10 @@ button, input, textarea, select { font: inherit; }
     url("/images/extra-long-shot-peaceful-landscape-with-trees.jpg") center 30% / cover no-repeat;
 }
 .approachClosing h3 { grid-area: title; align-self: start; max-width: 44ch; margin: 0; color: var(--forest); font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.03em; }
-.approachClosing p { grid-area: text; max-width: 62ch; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.6; }
+.approachClosing p { grid-area: text; max-width: 62ch; margin: 0; color: var(--muted); font-size: 20px; line-height: 1.55; }
 .oddLogoGrid { grid-area: logos; align-self: center; justify-self: end; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; width: min(100%, 440px); margin: 0; }
 .oddLogo { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 8px; box-shadow: 0 12px 28px rgba(17,57,48,.1); }
+.oddLogo:last-child { grid-column: 2; }
 .oddLogoSprite { position: absolute; width: 717.4%; max-width: none; height: auto; }
 .principles { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 39px; color: rgba(255,255,255,.74); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .principles i { width: 4px; height: 4px; flex: 0 0 auto; border-radius: 50%; background: #e1ad54; }
@@ -503,6 +504,8 @@ button, input, textarea, select { font: inherit; }
 
 .domainGalleryGrid { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 470px; gap: 12px; margin-top: 40px; }
 .domainCard { --accent: var(--forest); position: relative; min-width: 0; perspective: 1600px; }
+.domainCard::after { content: "↘"; position: absolute; z-index: 4; right: 24px; bottom: 20px; color: color-mix(in srgb, var(--ochre), transparent 25%); font-size: 28px; pointer-events: none; transition: transform .3s ease, color .3s ease; }
+.domainCard:hover::after, .domainCard:focus-within::after { color: var(--ochre); transform: rotate(-8deg); }
 .domainCard.ochre { --accent: var(--ochre); }
 .domainCard.teal { --accent: var(--teal); }
 .domainCardInner { position: relative; width: 100%; height: 100%; transition: transform .7s cubic-bezier(.3,.2,.2,1); transform-style: preserve-3d; }
@@ -730,9 +733,7 @@ button, input, textarea, select { font: inherit; }
 
 .approachGrid { gap: 16px; background: transparent; border: 0; }
 .approachGrid article { position: relative; overflow: hidden; min-height: 315px; border: 1px solid var(--line); border-radius: 22px 22px 48px 22px; background: white; box-shadow: 0 16px 40px rgba(17,57,48,.06); transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
-.approachGrid article::after { content: "↘"; position: absolute; right: 24px; bottom: 20px; color: color-mix(in srgb, var(--ochre), transparent 55%); font-size: 28px; transition: transform .3s ease, color .3s ease; }
 .approachGrid article:hover { transform: translateY(-8px); border-color: color-mix(in srgb, var(--ochre), transparent 45%); box-shadow: 0 24px 55px rgba(17,57,48,.12); }
-.approachGrid article:hover::after { color: var(--ochre); transform: rotate(-8deg); }
 
 .newsSection { position: relative; padding-block: 112px; background: linear-gradient(145deg, #eaf1eb 0%, #f6f2e8 100%); border-block: 1px solid rgba(13,77,59,.1); }
 .newsSection::before { content: ""; position: absolute; top: 0; right: 0; width: min(34vw, 460px); height: 100%; background: radial-gradient(circle at 100% 10%, rgba(200,140,54,.13), transparent 62%); pointer-events: none; }
@@ -969,12 +970,14 @@ button, input, textarea, select { font: inherit; }
 /* Mot du fondateur : carte façon témoignage, en clôture de page */
 .founderSection { padding-block: 20px 100px; }
 .founderSection .founderLetter { max-width: 900px; margin: 0 auto; }
-.founderLetter::after { content: ""; display: block; clear: both; }
-.founderLetter .eyebrow { color: var(--teal); margin-bottom: 18px; font-size: 9px; }
-.founderPhotoBlock { float: left; width: clamp(145px, 26%, 200px); margin: 0 26px 14px 0; }
+.founderLetter { display: grid; grid-template-columns: clamp(145px, 26%, 200px) minmax(0, 1fr); grid-template-areas: "eyebrow eyebrow" "photo quote"; column-gap: 26px; }
+.founderLetter::after { content: none; }
+.founderLetter .eyebrow { grid-area: eyebrow; color: var(--teal); margin-bottom: 18px; font-size: 9px; }
+.founderPhotoBlock { grid-area: photo; width: 100%; margin: 0; }
 .founderPhoto { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 14px 14px 36px 14px; box-shadow: 0 16px 36px rgba(17,57,48,.18); background: var(--sand); }
 .founderPhoto img { object-fit: cover; }
 .founderPhotoName { margin: 10px 0 0; color: var(--forest); font-size: 13px; font-weight: 800; letter-spacing: -.01em; text-align: center; }
+.founderQuote { grid-area: quote; display: flex; flex-direction: column; justify-content: space-between; min-width: 0; }
 .founderQuoteText { margin: 0 0 8px; color: var(--ink); font-size: 14px; line-height: 1.46; }
 .founderQuoteText:last-of-type { margin-bottom: 0; }
 
@@ -992,7 +995,9 @@ button, input, textarea, select { font: inherit; }
   .valuesGrid { grid-template-columns: 1fr; }
   #nous-connaitre h1 { white-space: normal; font-size: clamp(20px, 5.5vw, 28px); }
   .founderSection { padding-block: 20px 50px; }
-  .founderPhotoBlock { float: none; width: 100%; max-width: 220px; margin: 0 0 18px; }
+  .founderLetter { grid-template-columns: 1fr; grid-template-areas: "eyebrow" "photo" "quote"; }
+  .founderPhotoBlock { width: 100%; max-width: 220px; margin: 0 0 18px; }
+  .founderQuote { gap: 8px; justify-content: flex-start; }
   .founderPhoto { aspect-ratio: 4 / 3; }
   .historySection, .valuesSection { padding-block: 50px; }
   .historyTimeline { padding-left: 22px; }
