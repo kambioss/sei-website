@@ -33,7 +33,6 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
           <div className="heroCopy">
             <p className="eyebrow"><span /> {history.title}</p>
             <h1>{history.heading}</h1>
-            <p className="heroStatement">{history.statement}</p>
           </div>
         </div>
       </section>
