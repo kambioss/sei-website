@@ -177,7 +177,7 @@ button, input, textarea, select { font: inherit; }
 .aboutCopy blockquote { margin: 32px 0 0; padding: 22px 0 22px 25px; border-left: 4px solid var(--ochre); color: var(--forest); font-size: 17px; font-weight: 800; line-height: 1.38; }
 .aboutCopy blockquote span { display: block; margin-bottom: 8px; color: var(--ochre); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
 
-.expertiseSection { position: relative; isolation: isolate; padding: 0 0 124px; }
+.expertiseSection { position: relative; isolation: isolate; padding: 0 0 48px; }
 .expertiseSection::before {
   content: "";
   position: absolute;
@@ -195,7 +195,7 @@ button, input, textarea, select { font: inherit; }
 .sectionIntro .eyebrow { margin-bottom: 19px; }
 .sectionIntro h2 { margin: 0; color: var(--forest); font-size: clamp(42px, 5vw, 68px); line-height: 1; letter-spacing: -.055em; }
 .expertiseSection .sectionIntro { display: block; }
-.expertiseIntroTitle { font-size: clamp(16px, 2.25vw, 28px); line-height: 1.1; white-space: nowrap; }
+.expertiseIntroTitle { font-size: clamp(14px, 1.9vw, 24px); line-height: 1.1; white-space: nowrap; }
 .sectionIntro h2 em { color: var(--ochre); font-style: normal; }
 .sectionIntro > p { margin: 0 0 4px; color: var(--muted); font-size: 17px; line-height: 1.4; }
 .firstCta { margin-bottom: 40px; padding: clamp(45px, 7vw, 82px); background: var(--forest); color: white; border-radius: 4px 70px 4px 4px; }
@@ -203,7 +203,7 @@ button, input, textarea, select { font: inherit; }
 .firstCta h2 { max-width: 780px; margin: 0 0 32px; font-size: clamp(36px, 5vw, 64px); line-height: 1.02; letter-spacing: -.05em; }
 .buttonLight { background: white; color: var(--forest); }
 
-.approachSection { padding-block: 124px 108px; background: linear-gradient(160deg, var(--paper) 0%, var(--sand) 100%); color: var(--ink); }
+.approachSection { padding-block: 64px 108px; background: linear-gradient(160deg, var(--paper) 0%, var(--sand) 100%); color: var(--ink); }
 .approachIntro { display: grid; grid-template-columns: .75fr 1.25fr; align-items: end; gap: 14px 80px; }
 .approachIntro .eyebrow { align-self: start; }
 .approachIntro h2 { margin: 0; color: var(--forest); font-size: clamp(42px, 5vw, 69px); line-height: 1.02; letter-spacing: -.055em; }
@@ -215,7 +215,7 @@ button, input, textarea, select { font: inherit; }
 .approachIcon { display: inline-flex; align-items: center; justify-content: center; width: 58px; height: 58px; border-radius: 18px; background: var(--sand); }
 .approachGrid h3 { margin: 24px 0 17px; color: var(--ink); font-size: clamp(27px, 2.5vw, 37px); letter-spacing: -.04em; }
 .approachGrid p { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.42; }
-.approachClosing { position: relative; isolation: isolate; margin-top: 64px; padding: 56px 24px 60px; border-top: 1px solid var(--line); text-align: center; }
+.approachClosing { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, .9fr) minmax(360px, 1fr); grid-template-areas: "title logos" "text logos"; align-items: start; gap: 14px 64px; margin-top: 64px; padding: 56px 24px 60px; border-top: 1px solid var(--line); text-align: left; }
 .approachClosing::before {
   content: "";
   position: absolute;
@@ -229,9 +229,9 @@ button, input, textarea, select { font: inherit; }
     linear-gradient(180deg, rgba(251,250,246,.85) 0%, rgba(251,250,246,.72) 45%, rgba(251,250,246,.9) 100%),
     url("/images/extra-long-shot-peaceful-landscape-with-trees.jpg") center 30% / cover no-repeat;
 }
-.approachClosing h3 { max-width: 44ch; margin: 0 auto 14px; color: var(--forest); font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.03em; }
-.approachClosing p { max-width: 62ch; margin: 0 auto; color: var(--muted); font-size: 18px; line-height: 1.6; }
-.oddLogoGrid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px; width: min(100%, 860px); margin: 30px auto 0; }
+.approachClosing h3 { grid-area: title; align-self: end; max-width: 44ch; margin: 0; color: var(--forest); font-size: clamp(22px, 2.4vw, 30px); line-height: 1.15; letter-spacing: -.03em; }
+.approachClosing p { grid-area: text; max-width: 62ch; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.6; }
+.oddLogoGrid { grid-area: logos; align-self: center; justify-self: end; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; width: min(100%, 440px); margin: 0; }
 .oddLogo { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 8px; box-shadow: 0 12px 28px rgba(17,57,48,.1); }
 .oddLogoSprite { position: absolute; width: 717.4%; max-width: none; height: auto; }
 .principles { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 39px; color: rgba(255,255,255,.74); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
@@ -414,7 +414,8 @@ button, input, textarea, select { font: inherit; }
   .approachGrid { grid-template-columns: 1fr; }
   .approachGrid article { min-height: auto; }
   .approachGrid h3 { margin-top: 32px; }
-  .approachClosing { margin-top: 46px; padding-top: 34px; }
+  .approachClosing { grid-template-columns: 1fr; grid-template-areas: "title" "text" "logos"; gap: 14px; margin-top: 46px; padding-top: 34px; }
+  .oddLogoGrid { justify-self: start; margin-top: 16px; }
   .projectsIntro { grid-template-columns: 1fr; }
   .projectsIntro .eyebrow { grid-column: auto; }
   .projectsGrid { grid-template-columns: 1fr; }
@@ -449,10 +450,10 @@ button, input, textarea, select { font: inherit; }
   .heroActions { flex-direction: column; align-items: stretch; }
   .heroProof { margin-top: 28px; }
   .audienceBand { padding-block: 22px; }
-  .expertiseSection { padding: 0 0 80px; }
+  .expertiseSection { padding: 0 0 40px; }
   .sectionIntro { margin-bottom: 35px; }
   .aboutSection { padding-block: 80px 10px; }
-  .approachSection { padding-block: 82px 75px; }
+  .approachSection { padding-block: 50px 75px; }
   .approachGrid { margin-top: 42px; }
   .principles i { display: none; }
   .principles { display: grid; gap: 11px; }
@@ -618,7 +619,7 @@ button, input, textarea, select { font: inherit; }
 
 @media (max-width: 680px) {
   .domainGalleryGrid { grid-template-columns: 1fr; grid-template-rows: repeat(3, 330px); margin-bottom: 42px; }
-  .oddLogoGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .oddLogoGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
   .expertiseIntroTitle { white-space: normal; }
   .domainCard:last-child { grid-column: auto; }
   .newsSection { padding-block: 80px; }
