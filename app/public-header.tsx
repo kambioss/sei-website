@@ -24,7 +24,7 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
   ];
   const links: Array<{ section: PublicNavSection; label: string; href: string }> = [
     { section: "sei", label: english ? "Who we are" : "Qui sommes-nous", href: `/?lang=${locale}` },
-    { section: "expertises", label: english ? "Our expertise" : "Notre expertise", href: homeAnchor("expertises") },
+    { section: "expertises", label: english ? "Our expertise" : "domaines d’expertise", href: homeAnchor("expertises") },
     { section: "approche", label: english ? "Knowledge" : "Notre savoir-faire", href: homeAnchor("approche") },
     ...(PROJECTS_NEWS_ENABLED
       ? [
