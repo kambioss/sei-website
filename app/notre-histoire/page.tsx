@@ -12,7 +12,7 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
   const locale = normaliseLocale(query.lang);
   const english = locale === "en";
   const content = await getSiteContent(locale);
-  const { brand, identity, hero } = content;
+  const { brand, identity, founder, hero } = content;
   const { history, values, vision } = identity;
 
   return (
@@ -72,6 +72,19 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
         </div>
         <div className="aboutFeatureMedia">
           <Image src={vision.image} alt={vision.title} fill unoptimized sizes="(max-width: 900px) 100vw, 46vw" />
+        </div>
+      </section>
+
+      <section className="founderSection sectionShell">
+        <div className="founderLetter">
+          <p className="eyebrow"><span /> {founder.eyebrow}</p>
+          <div className="founderPhotoBlock">
+            <div className="founderPhoto">
+              <Image src={founder.photo} alt={founder.name} fill unoptimized sizes="160px" />
+            </div>
+            <p className="founderPhotoName">{founder.name}</p>
+          </div>
+          {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
         </div>
       </section>
 

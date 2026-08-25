@@ -194,6 +194,7 @@ button, input, textarea, select { font: inherit; }
 .sectionIntro { display: grid; grid-template-columns: 1.15fr .72fr; align-items: end; gap: 70px; margin-bottom: 58px; }
 .sectionIntro .eyebrow { margin-bottom: 19px; }
 .sectionIntro h2 { margin: 0; color: var(--forest); font-size: clamp(42px, 5vw, 68px); line-height: 1; letter-spacing: -.055em; }
+.expertiseIntroTitle { font-size: clamp(32px, 4vw, 52px); }
 .sectionIntro h2 em { color: var(--ochre); font-style: normal; }
 .sectionIntro > p { margin: 0 0 4px; color: var(--muted); font-size: 17px; line-height: 1.4; }
 .firstCta { margin-bottom: 40px; padding: clamp(45px, 7vw, 82px); background: var(--forest); color: white; border-radius: 4px 70px 4px 4px; }
@@ -957,7 +958,8 @@ button, input, textarea, select { font: inherit; }
 .valuesText { max-width: 760px; margin: 0 auto; color: var(--muted); font-size: 16px; line-height: 1.6; }
 
 /* Mot du fondateur : carte façon témoignage, en clôture de page */
-#nous-connaitre .founderLetter { margin-top: 16px; }
+.founderSection { padding-block: 20px 100px; }
+.founderSection .founderLetter { max-width: 900px; margin: 0 auto; }
 .founderLetter::after { content: ""; display: block; clear: both; }
 .founderLetter .eyebrow { color: var(--teal); margin-bottom: 18px; font-size: 9px; }
 .founderPhotoBlock { float: left; width: clamp(145px, 26%, 200px); margin: 0 26px 14px 0; }
@@ -980,7 +982,7 @@ button, input, textarea, select { font: inherit; }
   .aboutFeature { padding-block: 50px; }
   .valuesGrid { grid-template-columns: 1fr; }
   #nous-connaitre h1 { white-space: normal; font-size: clamp(20px, 5.5vw, 28px); }
-  #nous-connaitre .founderLetter { margin-top: 12px; }
+  .founderSection { padding-block: 20px 50px; }
   .founderPhotoBlock { float: none; width: 100%; max-width: 220px; margin: 0 0 18px; }
   .founderPhoto { aspect-ratio: 4 / 3; }
   .historySection, .valuesSection { padding-block: 50px; }

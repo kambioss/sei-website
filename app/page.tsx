@@ -38,7 +38,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
   const locale = normaliseLocale(query.lang);
   const english = locale === "en";
   const content = await getSiteContent(locale);
-  const { brand, identity, founder, hero, expertiseIntro, expertises, approach, contact } = content;
+  const { brand, identity, hero, expertiseIntro, expertises, approach, contact } = content;
   const { knowUs } = identity;
   const impactLabel = english ? "Expected impact" : "Impact recherché";
   const domainsSubtitle = english
@@ -60,16 +60,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
         <div className="heroCopy heroIntro">
           <h1>{english ? "Act for sustainable development" : "Agir pour le développement durable"}</h1>
           {knowUs.paragraphs.map((paragraph) => <p className="heroLead" key={paragraph}>{paragraph}</p>)}
-          <div className="founderLetter">
-            <p className="eyebrow"><span /> {founder.eyebrow}</p>
-            <div className="founderPhotoBlock">
-              <div className="founderPhoto">
-                <Image src={founder.photo} alt={founder.name} fill unoptimized sizes="160px" />
-              </div>
-              <p className="founderPhotoName">{founder.name}</p>
-            </div>
-            {founder.quote.map((paragraph) => <p className="founderQuoteText" key={paragraph}>{paragraph}</p>)}
-          </div>
         </div>
         <div className="heroVisualColumn">
           <div className="heroVisual">
@@ -84,7 +74,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
         <div className="sectionIntro">
           <div>
             <p className="eyebrow"><span /> {expertiseIntro.eyebrow}</p>
-            <h2>{expertiseIntro.title}</h2>
+            <h2 className="expertiseIntroTitle">{expertiseIntro.title}</h2>
           </div>
           <p>{expertiseIntro.text}</p>
         </div>
