@@ -900,13 +900,13 @@ img, svg { max-width: 100%; }
 #nous-connaitre h1 { max-width: none; font-size: clamp(24px, 2.7vw, 40px); font-weight: 400; line-height: 1.1; text-align: center; white-space: nowrap; }
 #nous-connaitre .heroCopy { padding-block: 0; }
 #nous-connaitre .heroIntro { grid-area: intro; }
-#nous-connaitre .heroVisualColumn { grid-area: visual; align-self: stretch; margin-top: 6px; }
-#nous-connaitre .heroVisual { min-height: 280px; height: 100%; }
-#nous-connaitre .heroVisual img { object-position: center 15%; }
+#nous-connaitre .heroVisualColumn { grid-area: visual; align-self: start; width: 100%; margin-top: 6px; }
+#nous-connaitre .heroVisual { width: 100%; min-height: 0; height: auto; aspect-ratio: 1597 / 1853; }
+#nous-connaitre .heroVisual img { object-position: center; }
 @media (max-width: 980px) {
   #nous-connaitre.hero { grid-template-columns: 1fr; grid-template-areas: "visual" "intro"; padding-bottom: 0; }
   #nous-connaitre .heroVisualColumn { align-self: auto; margin-top: 0; margin-bottom: 28px; }
-  #nous-connaitre .heroVisual { min-height: 420px; height: auto; }
+  #nous-connaitre .heroVisual { min-height: 420px; height: auto; aspect-ratio: auto; }
 }
 
 /* Rangées alternées texte/image (Nos valeurs, Notre vision) */
@@ -922,13 +922,13 @@ img, svg { max-width: 100%; }
 .aboutFeatureMedia img { object-fit: cover; }
 
 /* Notre histoire : image à gauche, contenu à droite */
-#notre-histoire.hero { display: grid; grid-template-columns: 1.08fr .92fr; align-items: stretch; min-height: 0; gap: clamp(36px, 5vw, 72px); padding: 40px 0 64px; }
-#notre-histoire.hero .heroVisual { position: relative; left: auto; width: auto; min-height: 460px; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 6px 64px 6px 6px; box-shadow: 0 26px 60px rgba(17,57,48,.15); transform: none; }
+#notre-histoire.hero { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); align-items: start; min-height: 0; gap: clamp(36px, 5vw, 72px); padding: 40px 0 64px; }
+#notre-histoire.hero .heroVisual { position: relative; grid-column: 1; grid-row: 1; z-index: 0; left: auto; width: 100%; height: min(620px, calc(100vh - 140px)); min-height: 480px; aspect-ratio: auto; overflow: hidden; isolation: isolate; contain: paint; border-radius: 6px 64px 6px 6px; box-shadow: 0 26px 60px rgba(17,57,48,.15); transform: none; }
 #notre-histoire.hero .heroVisual img { object-fit: cover; }
 #notre-histoire.hero .imageShade { display: block; background: rgba(4,20,18,.48); }
 #notre-histoire.hero .heroCopy { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 0; padding: clamp(24px, 4vw, 52px); text-align: left; color: white; }
 #notre-histoire.hero .heroCopy h1 { max-width: 16ch; color: white; font-size: clamp(30px, 3.4vw, 48px); }
-.historyIntro { display: grid; align-content: center; gap: 22px; min-width: 0; padding: clamp(12px, 2.5vw, 32px); }
+.historyIntro { position: relative; grid-column: 2; grid-row: 1; z-index: 2; display: grid; align-content: start; gap: 22px; min-width: 0; padding: clamp(12px, 2.5vw, 32px); background: var(--paper); }
 .historyIntro p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; text-align: justify; text-justify: inter-word; hyphens: none; }
 
 .valuesSection { padding-block: 20px 100px; }
@@ -967,6 +967,8 @@ img, svg { max-width: 100%; }
   .aboutFeature, .aboutFeature.reverse { flex-direction: column; }
   .valuesVisionGrid { grid-template-columns: 1fr; padding-block: 40px 60px; }
   #notre-histoire.hero { grid-template-columns: 1fr; gap: 24px; padding-top: 24px; }
+  #notre-histoire.hero .heroVisual { grid-column: 1; grid-row: auto; width: 100%; height: auto; min-height: 460px; aspect-ratio: 4 / 3; }
+  #notre-histoire.hero .historyIntro { grid-column: 1; grid-row: auto; padding-inline: 0; }
   #notre-histoire.hero .heroCopy { padding: 24px; }
   .aboutFeatureMedia, .aboutFeature.reverse .aboutFeatureMedia { border-radius: 6px 46px 6px 6px; }
 }
