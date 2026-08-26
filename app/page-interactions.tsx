@@ -6,6 +6,7 @@ export function PageInteractions({ backToTopLabel }: { backToTopLabel: string })
   useEffect(() => {
     const header = document.querySelector<HTMLElement>(".siteHeader");
     const backToTop = document.querySelector<HTMLElement>(".backToTop");
+    const mobileMenu = document.querySelector<HTMLDetailsElement>(".mobileMenu");
     const targets = document.querySelectorAll<HTMLElement>([
       ".heroCopy",
       ".heroVisual",
@@ -72,7 +73,18 @@ export function PageInteractions({ backToTopLabel }: { backToTopLabel: string })
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => { observer.disconnect(); window.removeEventListener("scroll", onScroll); };
+
+    const closeMobileMenuOutside = (event: PointerEvent) => {
+      if (!mobileMenu?.open || !(event.target instanceof Node) || mobileMenu.contains(event.target)) return;
+      mobileMenu.open = false;
+    };
+    document.addEventListener("pointerdown", closeMobileMenuOutside);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("pointerdown", closeMobileMenuOutside);
+    };
   }, []);
 
   return <button className="backToTop" type="button" aria-label={backToTopLabel} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>↑</button>;
