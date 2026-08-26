@@ -889,7 +889,7 @@ img, svg { max-width: 100%; }
 /* Hero "Nous connaître" : titre nettement plus modeste que celui de l'accueil, image étirée sur la hauteur du texte d'intro (pas sur tout le viewport, ni sur la lettre du fondateur) */
 #nous-connaitre.hero {
   min-height: 0;
-  align-items: start;
+  align-items: stretch;
   padding-top: 6px;
   padding-bottom: 20px;
   column-gap: clamp(24px, 3vw, 48px);
@@ -900,13 +900,13 @@ img, svg { max-width: 100%; }
 #nous-connaitre h1 { max-width: none; font-size: clamp(24px, 2.7vw, 40px); font-weight: 400; line-height: 1.1; text-align: center; white-space: nowrap; }
 #nous-connaitre .heroCopy { padding-block: 0; }
 #nous-connaitre .heroIntro { grid-area: intro; }
-#nous-connaitre .heroVisualColumn { grid-area: visual; align-self: start; width: 100%; margin-top: 6px; }
-#nous-connaitre .heroVisual { width: 100%; min-height: 0; height: auto; aspect-ratio: 1597 / 1853; }
+#nous-connaitre .heroVisualColumn { grid-area: visual; align-self: stretch; width: 100%; margin-top: 6px; }
+#nous-connaitre .heroVisual { width: 100%; min-height: 0; height: 100%; aspect-ratio: auto; }
 #nous-connaitre .heroVisual img { object-position: center; }
 @media (max-width: 980px) {
   #nous-connaitre.hero { grid-template-columns: 1fr; grid-template-areas: "visual" "intro"; padding-bottom: 0; }
   #nous-connaitre .heroVisualColumn { align-self: auto; margin-top: 0; margin-bottom: 28px; }
-  #nous-connaitre .heroVisual { min-height: 0; height: auto; aspect-ratio: 1597 / 1853; }
+  #nous-connaitre .heroVisual { min-height: 0; height: auto; aspect-ratio: 3 / 2; }
 }
 
 /* Rangées alternées texte/image (Nos valeurs, Notre vision) */
@@ -928,8 +928,9 @@ img, svg { max-width: 100%; }
 #notre-histoire.hero .imageShade { display: block; background: rgba(4,20,18,.48); }
 #notre-histoire.hero .heroCopy { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 0; padding: clamp(24px, 4vw, 52px); text-align: left; color: white; }
 #notre-histoire.hero .heroCopy h1 { max-width: 16ch; color: white; font-size: clamp(30px, 3.4vw, 48px); }
-.historyIntro { position: relative; grid-column: 2; grid-row: 1; z-index: 2; display: grid; align-content: start; gap: 22px; min-width: 0; padding: clamp(12px, 2.5vw, 32px); background: var(--paper); }
-.historyIntro p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; text-align: justify; text-justify: inter-word; hyphens: none; }
+.historyIntro { position: relative; grid-column: 2; grid-row: 1; z-index: 2; display: grid; align-content: start; gap: 30px; min-width: 0; padding: 12px 12px 12px 30px; border-left: 2px solid var(--line); background: var(--paper); }
+.historyIntro p { position: relative; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; text-align: justify; text-justify: inter-word; hyphens: none; }
+.historyIntro p::before { content: ""; position: absolute; left: -38px; top: 7px; width: 11px; height: 11px; border-radius: 50%; background: var(--ochre); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ochre), white 72%); }
 
 .valuesSection { padding-block: 20px 100px; }
 .valuesGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 900px; margin: 0 auto 44px; }
@@ -968,7 +969,8 @@ img, svg { max-width: 100%; }
   .valuesVisionGrid { grid-template-columns: 1fr; padding-block: 40px 60px; }
   #notre-histoire.hero { grid-template-columns: 1fr; gap: 24px; padding-top: 24px; }
   #notre-histoire.hero .heroVisual { grid-column: 1; grid-row: auto; width: 100%; height: auto; min-height: 460px; aspect-ratio: 4 / 3; }
-  #notre-histoire.hero .historyIntro { grid-column: 1; grid-row: auto; padding-inline: 0; }
+  #notre-histoire.hero .historyIntro { grid-column: 1; grid-row: auto; padding: 0 0 0 22px; }
+  #notre-histoire.hero .historyIntro p::before { left: -30px; }
   #notre-histoire.hero .heroCopy { padding: 24px; }
   .aboutFeatureMedia, .aboutFeature.reverse .aboutFeatureMedia { border-radius: 6px 46px 6px 6px; }
 }
