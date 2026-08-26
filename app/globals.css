@@ -213,8 +213,8 @@ img, svg { max-width: 100%; }
 .approachIntro h2 em { color: var(--ochre); font-style: normal; }
 .approachSubtitle { grid-column: 2; align-self: start; max-width: 56ch; margin: 10px 0 0; color: var(--ochre); font-size: 15px; font-weight: 800; letter-spacing: -.005em; }
 .approachLead { max-width: 56ch; margin: 12px 0 0; color: var(--muted); font-size: 16px; line-height: 1.55; text-align: justify; text-justify: inter-word; hyphens: none; }
-.approachGrid { align-self: start; align-items: start; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 0; background: var(--line); border: 1px solid var(--line); }
-.approachGrid article { display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: center; column-gap: 14px; min-height: 0; padding: 22px; background: var(--paper); }
+.approachGrid { align-self: start; align-items: stretch; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 0; background: var(--line); border: 1px solid var(--line); }
+.approachGrid article { display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: center; column-gap: 14px; min-height: 0; height: 100%; padding: 22px; background: var(--paper); }
 .approachIcon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 15px; background: var(--sand); }
 .approachGrid h3 { align-self: center; margin: 0; color: var(--ink); font-size: clamp(15px, 1.35vw, 18px); line-height: 1.25; letter-spacing: -.02em; }
 .approachGrid p { grid-column: 1 / -1; margin: 16px 0 0; color: var(--muted); font-size: 14px; line-height: 1.38; }
@@ -925,27 +925,11 @@ img, svg { max-width: 100%; }
 #notre-histoire.hero { display: grid; grid-template-columns: 1.08fr .92fr; align-items: stretch; min-height: 0; gap: clamp(36px, 5vw, 72px); padding: 40px 0 64px; }
 #notre-histoire.hero .heroVisual { position: relative; left: auto; width: auto; min-height: 460px; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 6px 64px 6px 6px; box-shadow: 0 26px 60px rgba(17,57,48,.15); transform: none; }
 #notre-histoire.hero .heroVisual img { object-fit: cover; }
-#notre-histoire.hero .imageShade { display: none; }
-#notre-histoire.hero .heroCopy { position: static; inset: auto; z-index: auto; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 0; padding: clamp(24px, 4vw, 52px); text-align: left; color: var(--ink); }
-#notre-histoire.hero .heroCopy h1 { max-width: 16ch; color: var(--forest); font-size: clamp(30px, 3.4vw, 48px); }
-
-.historySection { position: relative; isolation: isolate; padding-block: 60px 100px; }
-.historySection::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
-  background:
-    linear-gradient(180deg, rgba(251,250,246,.95) 0%, rgba(251,250,246,.88) 45%, rgba(251,250,246,.97) 100%),
-    url("/images/visite_terrain.jpeg") center 35% / cover no-repeat;
-}
-.historyTimeline { position: relative; max-width: 760px; margin: 0 auto; padding-left: 30px; border-left: 2px solid var(--line); display: grid; gap: 30px; }
-.historyTimeline p { position: relative; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; text-align: justify; hyphens: none; }
-.historyTimeline p::before { content: ""; position: absolute; left: -38px; top: 7px; width: 11px; height: 11px; border-radius: 50%; background: var(--ochre); box-shadow: 0 0 0 4px color-mix(in srgb, var(--ochre), white 72%); }
+#notre-histoire.hero .imageShade { display: block; background: rgba(4,20,18,.48); }
+#notre-histoire.hero .heroCopy { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 0; padding: clamp(24px, 4vw, 52px); text-align: left; color: white; }
+#notre-histoire.hero .heroCopy h1 { max-width: 16ch; color: white; font-size: clamp(30px, 3.4vw, 48px); }
+.historyIntro { display: grid; align-content: center; gap: 22px; min-width: 0; padding: clamp(12px, 2.5vw, 32px); }
+.historyIntro p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.6; text-align: justify; text-justify: inter-word; hyphens: none; }
 
 .valuesSection { padding-block: 20px 100px; }
 .valuesGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 900px; margin: 0 auto 44px; }
@@ -960,6 +944,10 @@ img, svg { max-width: 100%; }
 .valuesVisionGrid .sectionIntro > p { margin-top: 20px; }
 .valuesVisionGrid .valuesText { margin: 0; }
 .visionSection { min-width: 0; }
+.valuesVisionGrid .sectionIntro > p,
+.valuesVisionGrid .valuesText,
+.visionSection .aboutFeatureStatement,
+.visionSection .aboutFeatureCopy > p:not(.eyebrow) { text-align: justify; text-justify: inter-word; hyphens: none; }
 
 /* Mot du fondateur : carte façon témoignage, en clôture de page */
 .founderSection { padding-block: 20px 100px; }
@@ -971,15 +959,15 @@ img, svg { max-width: 100%; }
 .founderPhoto { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 14px 14px 36px 14px; box-shadow: 0 16px 36px rgba(17,57,48,.18); background: var(--sand); }
 .founderPhoto img { object-fit: cover; }
 .founderPhotoName { margin: 10px 0 0; color: var(--forest); font-size: 13px; font-weight: 800; letter-spacing: -.01em; text-align: center; }
-.founderQuote { grid-area: quote; display: flex; flex-direction: column; justify-content: space-between; min-width: 0; }
-.founderQuoteText { margin: 0 0 8px; color: var(--ink); font-size: 14px; line-height: 1.46; }
+.founderQuote { grid-area: quote; display: flex; flex-direction: column; justify-content: flex-start; gap: 12px; min-width: 0; }
+.founderQuoteText { margin: 0; color: var(--ink); font-size: 18px; line-height: 1.5; }
 .founderQuoteText:last-of-type { margin-bottom: 0; }
 
 @media (max-width: 900px) {
   .aboutFeature, .aboutFeature.reverse { flex-direction: column; }
   .valuesVisionGrid { grid-template-columns: 1fr; padding-block: 40px 60px; }
   #notre-histoire.hero { grid-template-columns: 1fr; gap: 24px; padding-top: 24px; }
-  #notre-histoire.hero .heroCopy { padding: 18px 4px; }
+  #notre-histoire.hero .heroCopy { padding: 24px; }
   .aboutFeatureMedia, .aboutFeature.reverse .aboutFeatureMedia { border-radius: 6px 46px 6px 6px; }
 }
 
@@ -994,11 +982,10 @@ img, svg { max-width: 100%; }
   .founderSection { padding-block: 20px 50px; }
   .founderLetter { grid-template-columns: 1fr; grid-template-areas: "eyebrow" "photo" "quote"; }
   .founderPhotoBlock { width: 100%; max-width: 220px; margin: 0 0 18px; }
-  .founderQuote { gap: 8px; justify-content: flex-start; }
+  .founderQuote { gap: 10px; }
+  .founderQuoteText { font-size: 16px; }
   .founderPhoto { aspect-ratio: 4 / 3; }
-  .historySection, .valuesSection { padding-block: 50px; }
-  .historyTimeline { padding-left: 22px; }
-  .historyTimeline p::before { left: -28px; }
+  .valuesSection { padding-block: 50px; }
   #notre-histoire.hero .heroVisual { min-height: 0; aspect-ratio: 4 / 3; }
   #notre-histoire.hero .heroCopy { padding: 18px; }
 }
