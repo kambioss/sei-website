@@ -902,13 +902,17 @@ img, svg { max-width: 100%; }
 #nous-connaitre h1 { max-width: none; font-size: clamp(24px, 2.7vw, 40px); font-weight: 400; line-height: 1.1; text-align: center; white-space: nowrap; }
 #nous-connaitre .heroCopy { padding-block: 0; }
 #nous-connaitre .heroIntro { grid-area: intro; }
-#nous-connaitre .heroVisualColumn { grid-area: visual; align-self: start; width: 100%; margin-top: 6px; }
-#nous-connaitre .heroVisual { width: 100%; min-height: 0; height: auto; aspect-ratio: 1597 / 1853; }
-#nous-connaitre .heroVisual img { object-fit: contain; object-position: top center; }
+#nous-connaitre .heroVisualColumn { grid-area: visual; align-self: stretch; width: 100%; margin-top: 6px; }
+#nous-connaitre .heroVisual { width: 100%; min-height: 0; height: 100%; aspect-ratio: auto; background: #403c36; }
+#nous-connaitre .heroVisual img.heroVisualBackdrop { object-fit: cover; object-position: center; filter: blur(18px); transform: scale(1.08); opacity: .72; }
+#nous-connaitre .heroVisual img.heroVisualMain { z-index: 1; object-fit: contain; object-position: center; }
+#nous-connaitre .heroVisual .imageShade { z-index: 2; }
+#nous-connaitre .heroVisual .imageCaption { z-index: 3; }
 @media (max-width: 980px) {
   #nous-connaitre.hero { grid-template-columns: 1fr; grid-template-areas: "visual" "intro"; padding-bottom: 0; }
   #nous-connaitre .heroVisualColumn { align-self: auto; margin-top: 0; margin-bottom: 28px; }
   #nous-connaitre .heroVisual { min-height: 0; height: auto; aspect-ratio: 1597 / 1853; }
+  #nous-connaitre .heroVisual img.heroVisualBackdrop { display: none; }
 }
 
 /* Rangées alternées texte/image (Nos valeurs, Notre vision) */

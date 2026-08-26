@@ -70,7 +70,8 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
         </div>
         <div className="heroVisualColumn">
           <div className="heroVisual">
-            <Image src={knowUs.image} alt={english ? "Act for sustainable development" : "Agir pour le développement durable"} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
+            <Image className="heroVisualBackdrop" src={knowUs.image} alt="" aria-hidden="true" fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
+            <Image className="heroVisualMain" src={knowUs.image} alt={english ? "Act for sustainable development" : "Agir pour le développement durable"} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
             <div className="imageShade" />
             <p className="imageCaption">{hero.imageCaption}</p>
           </div>
