@@ -150,7 +150,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           </div>
         </div>
         <ContactForm
-          email={contact.email}
           expertiseOptions={expertises.map((item) => item.title)}
           locale={locale}
         />

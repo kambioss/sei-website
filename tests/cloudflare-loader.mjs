@@ -6,6 +6,13 @@ export async function resolve(specifier, context, nextResolve) {
     };
   }
 
+  if (specifier === "cloudflare:sockets") {
+    return {
+      url: "data:text/javascript,export function connect(){throw new Error(%27TCP sockets are unavailable during artifact validation.%27)}",
+      shortCircuit: true,
+    };
+  }
+
   return nextResolve(specifier, context);
 }
 

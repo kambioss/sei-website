@@ -4,7 +4,6 @@ import type { FormEvent } from "react";
 import { useState } from "react";
 
 type ContactFormProps = {
-  email: string;
   expertiseOptions: string[];
   locale: "fr" | "en";
 };
@@ -22,15 +21,11 @@ const translations = {
     organisationPlaceholder: "Nom de votre organisation",
     context: "Contexte et résultat recherché",
     contextPlaceholder: "Décrivez votre projet, le territoire concerné et le type d’appui recherché.",
-    submit: "Préparer votre demande",
-    ready: "Votre messagerie va s’ouvrir avec votre demande préremplie.",
-    note: "Le formulaire prépare un courriel dans votre messagerie. Aucune donnée n’est enregistrée sur ce site.",
-    defaultMission: "Demande de mission ou partenariat",
-    unspecified: "Non précisée",
-    bodyName: "Nom",
-    bodyEmail: "Courriel",
-    bodyNeed: "Type de besoin",
-    bodyContext: "Contexte et besoin",
+    submit: "Envoyer votre demande",
+    sending: "Envoi en cours…",
+    ready: "Votre message a bien été envoyé. Nous vous répondrons dans les meilleurs délais.",
+    error: "Votre message n’a pas pu être envoyé. Réessayez ou écrivez-nous directement.",
+    note: "Votre demande sera envoyée directement et de façon sécurisée à l’équipe SEI.",
     emailPlaceholder: "nom@organisation.org",
   },
   en: {
@@ -45,53 +40,58 @@ const translations = {
     organisationPlaceholder: "Your organisation",
     context: "Context and expected result",
     contextPlaceholder: "Describe your project, the territory concerned and the support you are looking for.",
-    submit: "Prepare your request",
-    ready: "Your email application will open with a pre-filled request.",
-    note: "This form prepares an email in your email application. No data is stored on this website.",
-    defaultMission: "Assignment or partnership request",
-    unspecified: "Not specified",
-    bodyName: "Name",
-    bodyEmail: "Email",
-    bodyNeed: "Type of request",
-    bodyContext: "Context and needs",
+    submit: "Send your request",
+    sending: "Sending…",
+    ready: "Your message has been sent. We will get back to you as soon as possible.",
+    error: "Your message could not be sent. Please try again or email us directly.",
+    note: "Your request will be sent directly and securely to the SEI team.",
     emailPlaceholder: "name@organisation.org",
   },
 };
 
-export function ContactForm({ email, expertiseOptions, locale }: ContactFormProps) {
-  const [emailPrepared, setEmailPrepared] = useState(false);
+export function ContactForm({ expertiseOptions, locale }: ContactFormProps) {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [feedback, setFeedback] = useState("");
   const copy = translations[locale];
 
-  function prepareEmail(event: FormEvent<HTMLFormElement>) {
+  async function sendMessage(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const mission = String(data.get("mission") || copy.defaultMission);
-    const organisation = String(data.get("organisation") || copy.unspecified);
-    const name = String(data.get("name") || "");
-    const senderEmail = String(data.get("email") || "");
-    const message = String(data.get("message") || "");
-    const body = [
-      copy.bodyName + " : " + name,
-      "Organisation : " + organisation,
-      copy.bodyEmail + " : " + senderEmail,
-      copy.bodyNeed + " : " + mission,
-      "",
-      copy.bodyContext + " :",
-      message,
-    ].join("\n");
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    setStatus("sending");
+    setFeedback("");
 
-    setEmailPrepared(true);
-    window.location.href =
-      "mailto:" +
-      email +
-      "?subject=" +
-      encodeURIComponent(mission + " - SEI") +
-      "&body=" +
-      encodeURIComponent(body);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          locale,
+          mission: data.get("mission"),
+          name: data.get("name"),
+          email: data.get("email"),
+          organisation: data.get("organisation"),
+          message: data.get("message"),
+          website: data.get("website"),
+        }),
+      });
+      const result = (await response.json().catch(() => ({}))) as { error?: string };
+      if (!response.ok) throw new Error(result.error || copy.error);
+      form.reset();
+      setStatus("sent");
+      setFeedback(copy.ready);
+    } catch (error) {
+      setStatus("error");
+      setFeedback(error instanceof Error ? error.message : copy.error);
+    }
   }
 
   return (
-    <form className="projectForm" onSubmit={prepareEmail}>
+    <form className="projectForm" onSubmit={sendMessage}>
+      <div className="contactHoneypot" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
       <div className="field fullField">
         <label htmlFor="mission">{copy.need}</label>
         <select id="mission" name="mission" required defaultValue="">
@@ -117,13 +117,11 @@ export function ContactForm({ email, expertiseOptions, locale }: ContactFormProp
         <label htmlFor="message">{copy.context}</label>
         <textarea id="message" name="message" required rows={5} placeholder={copy.contextPlaceholder} />
       </div>
-      <button className="button buttonPrimary formSubmit" type="submit">
-        {copy.submit} <span aria-hidden="true">→</span>
+      <button className="button buttonPrimary formSubmit" type="submit" disabled={status === "sending"}>
+        {status === "sending" ? copy.sending : copy.submit} <span aria-hidden="true">→</span>
       </button>
-      <p className="formNote" aria-live="polite">
-        {emailPrepared
-          ? copy.ready
-          : copy.note}
+      <p className={status === "error" ? "formNote formError" : "formNote"} aria-live="polite">
+        {feedback || copy.note}
       </p>
     </form>
   );

@@ -62,6 +62,21 @@ importées sans nécessiter R2.
 L’espace d’administration n’utilise ni ChatGPT ni un compte OpenAI. Il repose
 uniquement sur les identifiants internes configurés par variables d’environnement.
 
+## Formulaire de contact
+
+Le formulaire envoie directement les demandes à `contact@se-impact.com` via le
+serveur SMTP authentifié Infomaniak (`mail.infomaniak.com:587`, STARTTLS). Le mot
+de passe de la boîte ne doit jamais être commité. Configurez-le en production :
+
+```bash
+npx wrangler secret put CONTACT_SMTP_PASSWORD --config wrangler.jsonc
+```
+
+Pour le développement local, renseignez `CONTACT_SMTP_PASSWORD` dans `.dev.vars`.
+L’identifiant SMTP et l’expéditeur sont `contact@se-impact.com`. L’API applique
+une validation, un champ anti-robot et une limitation d’un envoi par minute et
+par adresse IP via le binding KV `MEDIA`.
+
 ## Diagnostic Commands
 
 - `npm run install:ci`: perform the one bounded lockfile install

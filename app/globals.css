@@ -342,6 +342,8 @@ img, svg { max-width: 100%; }
 .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(47,116,120,.12); }
 .formSubmit { justify-self: start; border: 0; cursor: pointer; }
 .formNote { align-self: center; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.38; }
+.formError { color: #a93232; }
+.contactHoneypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 
 .siteFooter { background: var(--forest-dark); color: white; }
 .footerTop { display: flex; flex-wrap: wrap; gap: 40px 90px; padding-block: 60px; border-bottom: 1px solid rgba(255,255,255,.12); }

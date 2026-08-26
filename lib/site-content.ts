@@ -6,6 +6,7 @@ import { siteContent } from "@/db/schema";
 export type SiteContent = typeof defaultContent;
 export const fallbackSiteContent: SiteContent = defaultContent;
 export type Locale = "fr" | "en";
+export const CONTACT_EMAIL = "contact@se-impact.com";
 
 const fallbackByLocale: Record<Locale, SiteContent> = {
   fr: defaultContent,
@@ -28,12 +29,17 @@ export async function getSiteContent(locale: Locale = "fr"): Promise<SiteContent
       .where(eq(siteContent.key, "main:" + locale))
       .limit(1);
 
-    if (!row) return fallbackByLocale[locale];
-    return parseSiteContent(row.content, locale);
+    if (!row) return applySiteOverrides(fallbackByLocale[locale]);
+    return applySiteOverrides(parseSiteContent(row.content, locale));
   } catch (error) {
     console.warn("Contenu D1 indisponible, utilisation du contenu intégré.", error);
-    return fallbackByLocale[locale];
+    return applySiteOverrides(fallbackByLocale[locale]);
   }
+}
+
+function applySiteOverrides(content: SiteContent): SiteContent {
+  if (content.contact.email === CONTACT_EMAIL) return content;
+  return { ...content, contact: { ...content.contact, email: CONTACT_EMAIL } };
 }
 
 export function parseSiteContent(value: unknown, locale: Locale = "fr"): SiteContent {
