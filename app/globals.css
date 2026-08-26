@@ -795,8 +795,8 @@ img, svg { max-width: 100%; }
   position: relative;
   display: block;
   flex: 0 0 auto;
-  width: 200px;
-  height: 76px;
+  width: 180px;
+  height: 69px;
   overflow: hidden;
   border-radius: 10px;
   transition: transform .25s ease, box-shadow .25s ease;
@@ -808,7 +808,7 @@ img, svg { max-width: 100%; }
 .loginBrand .brandLogoFrame { width: 165px; height: 64px; }
 
 @media (max-width: 680px) {
-  .brandLogoFrame { width: 137px; height: 52px; }
+  .brandLogoFrame { width: 125px; height: 48px; }
   .brandName { display: none; }
   .footerBrand .brandLogoFrame { width: 142px; height: 55px; }
   .loginBrand .brandLogoFrame { width: 145px; height: 56px; }
