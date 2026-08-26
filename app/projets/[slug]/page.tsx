@@ -19,7 +19,7 @@ export default async function ProjectPage({ params, searchParams }: { params: Pr
   if (!project) notFound();
 
   return (
-    <main className="projectDetailPage">
+    <main className="projectDetailPage" lang={locale}>
       <PublicHeader
         locale={locale}
         active="projets"

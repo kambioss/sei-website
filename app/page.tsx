@@ -53,7 +53,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
   const impactLabel = english ? "Expected impact" : "Impact recherché";
 
   return (
-    <main className="homePage">
+    <main className="homePage" lang={locale}>
       <PageInteractions backToTopLabel={english ? "Back to top" : "Retour en haut"} />
       <PublicHeader
         locale={locale}

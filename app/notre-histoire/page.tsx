@@ -16,7 +16,7 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
   const { history, values, vision } = identity;
 
   return (
-    <main className="aboutPage">
+    <main className="aboutPage" lang={locale}>
       <PageInteractions backToTopLabel={english ? "Back to top" : "Retour en haut"} />
       <PublicHeader
         locale={locale}

@@ -25,7 +25,7 @@ export default async function ArticlePage({ params, searchParams }: ArticlePageP
   const english = locale === "en";
 
   return (
-    <main className="articlePage">
+    <main className="articlePage" lang={locale}>
       <PublicHeader
         locale={locale}
         active="actualites"

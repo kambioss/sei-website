@@ -19,7 +19,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
   const [content, projects] = await Promise.all([getSiteContent(locale), getPublishedProjects(locale)]);
 
   return (
-    <main className="projectsArchivePage">
+    <main className="projectsArchivePage" lang={locale}>
       <PageInteractions backToTopLabel={english ? "Back to top" : "Retour en haut"} />
       <PublicHeader locale={locale} active="projets" ctaLabel={content.hero.primaryAction} languageHrefFr="/projets?lang=fr" languageHrefEn="/projets?lang=en" />
       <section className="projectsArchive sectionShell">

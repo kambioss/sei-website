@@ -47,7 +47,7 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
   ]);
 
   return (
-    <main className="newsArchivePage">
+    <main className="newsArchivePage" lang={locale}>
       <PageInteractions backToTopLabel={ui.backToTop} />
       <PublicHeader
         locale={locale}

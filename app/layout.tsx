@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Social & Eco Impact",
-  description: "Cabinet de conseil en gestion durable des territoires, environnement et social, paix, mobilités et changement climatique en Afrique.",
+  description: "Consulting, research and strategy firm specialising in sustainable land management, environmental and social assessment, peace, mobility and climate change across Africa.",
   other: {
     "codex-preview": "development",
   },
