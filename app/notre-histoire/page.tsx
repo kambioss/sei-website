@@ -81,6 +81,7 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
         brandName={brand.name}
         descriptor={brand.descriptor}
         linkGroups={getFooterLinkGroups(locale, content)}
+        locale={locale}
       />
     </main>
   );

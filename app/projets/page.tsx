@@ -52,6 +52,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
         brandName={content.brand.name}
         descriptor={content.brand.descriptor}
         linkGroups={getFooterLinkGroups(locale, content)}
+        locale={locale}
       />
     </main>
   );

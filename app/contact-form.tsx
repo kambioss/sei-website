@@ -23,6 +23,7 @@ const translations = {
     contextPlaceholder: "Décrivez votre projet, le territoire concerné et le type d’appui recherché.",
     submit: "Envoyer votre demande",
     sending: "Envoi en cours…",
+    successTitle: "Message envoyé !",
     ready: "Votre message a bien été envoyé. Nous vous répondrons dans les meilleurs délais.",
     error: "Votre message n’a pas pu être envoyé. Réessayez ou écrivez-nous directement.",
     note: "Votre demande sera envoyée directement et de façon sécurisée à l’équipe SEI.",
@@ -42,6 +43,7 @@ const translations = {
     contextPlaceholder: "Describe your project, the territory concerned and the support you are looking for.",
     submit: "Send your request",
     sending: "Sending…",
+    successTitle: "Message sent!",
     ready: "Your message has been sent. We will get back to you as soon as possible.",
     error: "Your message could not be sent. Please try again or email us directly.",
     note: "Your request will be sent directly and securely to the SEI team.",
@@ -120,9 +122,19 @@ export function ContactForm({ expertiseOptions, locale }: ContactFormProps) {
       <button className="button buttonPrimary formSubmit" type="submit" disabled={status === "sending"}>
         {status === "sending" ? copy.sending : copy.submit} <span aria-hidden="true">→</span>
       </button>
-      <p className={status === "error" ? "formNote formError" : "formNote"} aria-live="polite">
-        {feedback || copy.note}
-      </p>
+      {status === "sent" ? (
+        <div className="formFeedback formSuccess" role="status" aria-live="polite">
+          <span aria-hidden="true">✓</span>
+          <div><strong>{copy.successTitle}</strong><p>{feedback}</p></div>
+        </div>
+      ) : status === "error" ? (
+        <div className="formFeedback formError" role="alert">
+          <span aria-hidden="true">!</span>
+          <p>{feedback}</p>
+        </div>
+      ) : (
+        <p className="formNote" aria-live="polite">{copy.note}</p>
+      )}
     </form>
   );
 }

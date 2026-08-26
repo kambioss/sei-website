@@ -159,6 +159,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
         brandName={brand.name}
         descriptor={brand.descriptor}
         linkGroups={getFooterLinkGroups(locale, content)}
+        locale={locale}
       />
     </main>
   );

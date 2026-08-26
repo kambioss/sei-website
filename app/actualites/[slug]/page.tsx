@@ -59,6 +59,7 @@ export default async function ArticlePage({ params, searchParams }: ArticlePageP
         brandName={content.brand.name}
         descriptor={content.brand.descriptor}
         linkGroups={getFooterLinkGroups(locale, content)}
+        locale={locale}
       />
     </main>
   );

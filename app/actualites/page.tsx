@@ -86,6 +86,7 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
         brandName={content.brand.name}
         descriptor={content.brand.descriptor}
         linkGroups={getFooterLinkGroups(locale, content)}
+        locale={locale}
       />
     </main>
   );
