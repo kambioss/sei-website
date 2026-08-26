@@ -214,10 +214,10 @@ img, svg { max-width: 100%; }
 .approachSubtitle { grid-column: 2; align-self: start; max-width: 56ch; margin: 10px 0 0; color: var(--ochre); font-size: 15px; font-weight: 800; letter-spacing: -.005em; }
 .approachLead { max-width: 56ch; margin: 12px 0 0; color: var(--muted); font-size: 16px; line-height: 1.55; text-align: justify; text-justify: inter-word; hyphens: none; }
 .approachGrid { align-self: start; align-items: start; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 0; background: var(--line); border: 1px solid var(--line); }
-.approachGrid article { min-height: 0; padding: 22px; background: var(--paper); }
+.approachGrid article { display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: center; column-gap: 14px; min-height: 0; padding: 22px; background: var(--paper); }
 .approachIcon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 15px; background: var(--sand); }
-.approachGrid h3 { margin: 16px 0 12px; color: var(--ink); font-size: clamp(20px, 2vw, 27px); line-height: 1.18; letter-spacing: -.035em; }
-.approachGrid p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.38; }
+.approachGrid h3 { align-self: center; margin: 0; color: var(--ink); font-size: clamp(15px, 1.35vw, 18px); line-height: 1.25; letter-spacing: -.02em; }
+.approachGrid p { grid-column: 1 / -1; margin: 16px 0 0; color: var(--muted); font-size: 14px; line-height: 1.38; }
 .approachClosing { grid-column: 1 / -1; position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, .9fr) minmax(360px, 1fr); grid-template-areas: "title logos" "text logos"; grid-template-rows: auto 1fr; align-items: start; gap: 14px 64px; margin-top: 24px; padding: 24px 24px 60px; border-top: 1px solid var(--line); text-align: left; }
 .approachClosing::before {
   content: "";
@@ -420,7 +420,6 @@ img, svg { max-width: 100%; }
   .approachSubtitle, .approachLead { grid-column: 1; max-width: none; }
   .approachGrid { grid-template-columns: 1fr; }
   .approachGrid article { min-height: auto; }
-  .approachGrid h3 { margin-top: 32px; }
   .approachClosing { grid-template-columns: 1fr; grid-template-areas: "title" "text" "logos"; grid-template-rows: auto; gap: 14px; margin-top: 16px; padding-top: 20px; }
   .oddLogoGrid { justify-self: start; margin-top: 16px; }
   .projectsIntro { grid-template-columns: 1fr; }
