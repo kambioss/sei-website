@@ -28,12 +28,12 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
 
       <section id="notre-histoire" className="hero sectionShell">
         <div className="heroVisual">
-          <Image src={history.image} alt={history.heading} fill unoptimized priority sizes="100vw" />
+          <Image src={history.image} alt={history.heading} fill unoptimized priority sizes="(max-width: 900px) 100vw, 55vw" />
           <div className="imageShade" />
-          <div className="heroCopy">
-            <p className="eyebrow"><span /> {history.title}</p>
-            <h1>{history.heading}</h1>
-          </div>
+        </div>
+        <div className="heroCopy">
+          <p className="eyebrow"><span /> {history.title}</p>
+          <h1>{history.heading}</h1>
         </div>
       </section>
 
@@ -43,7 +43,8 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
         </div>
       </section>
 
-      <section className="valuesSection sectionShell" id="nos-valeurs">
+      <div className="valuesVisionGrid sectionShell">
+        <section className="valuesSection" id="nos-valeurs">
         <div className="sectionIntro">
           <div>
             <p className="eyebrow"><span /> {values.title}</p>
@@ -52,19 +53,17 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
           <p>{values.statement}</p>
         </div>
         <p className="valuesText">{values.text}</p>
-      </section>
+        </section>
 
-      <section className="aboutFeature reverse sectionShell" id="notre-vision">
+        <section className="visionSection" id="notre-vision">
         <div className="aboutFeatureCopy">
           <p className="eyebrow"><span /> {vision.title}</p>
           <h2>{vision.heading}</h2>
           <p className="aboutFeatureStatement">{vision.statement}</p>
           <p>{vision.text}</p>
         </div>
-        <div className="aboutFeatureMedia">
-          <Image src={vision.image} alt={vision.title} fill unoptimized sizes="(max-width: 900px) 100vw, 46vw" />
-        </div>
-      </section>
+        </section>
+      </div>
 
       <section className="founderSection sectionShell">
         <div className="founderLetter">

@@ -921,33 +921,13 @@ img, svg { max-width: 100%; }
 .aboutFeature.reverse .aboutFeatureMedia { border-radius: 64px 6px 6px 6px; }
 .aboutFeatureMedia img { object-fit: cover; }
 
-/* Notre histoire : bannière plein écran (pas de grille — un seul enfant, sorti du flux via 100vw) */
-#notre-histoire.hero { display: block; min-height: 0; padding: 0 0 64px; }
-#notre-histoire.hero .heroVisual {
-  position: relative;
-  left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
-  min-height: 480px;
-  aspect-ratio: 21 / 9;
-  border-radius: 0;
-  box-shadow: none;
-}
-#notre-histoire.hero .imageShade { background: rgba(4,20,18,.52); }
-#notre-histoire.hero .heroCopy {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 24px max(24px, calc((100vw - 1240px) / 2));
-  text-align: left;
-  color: white;
-}
-#notre-histoire.hero .heroCopy h1 { max-width: 16ch; color: white; font-size: clamp(30px, 3.4vw, 48px); }
-#notre-histoire.hero .heroCopy .heroStatement { max-width: 50ch; margin-top: 14px; text-align: left; }
+/* Notre histoire : image à gauche, contenu à droite */
+#notre-histoire.hero { display: grid; grid-template-columns: 1.08fr .92fr; align-items: stretch; min-height: 0; gap: clamp(36px, 5vw, 72px); padding: 40px 0 64px; }
+#notre-histoire.hero .heroVisual { position: relative; left: auto; width: auto; min-height: 460px; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 6px 64px 6px 6px; box-shadow: 0 26px 60px rgba(17,57,48,.15); transform: none; }
+#notre-histoire.hero .heroVisual img { object-fit: cover; }
+#notre-histoire.hero .imageShade { display: none; }
+#notre-histoire.hero .heroCopy { position: static; inset: auto; z-index: auto; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 0; padding: clamp(24px, 4vw, 52px); text-align: left; color: var(--ink); }
+#notre-histoire.hero .heroCopy h1 { max-width: 16ch; color: var(--forest); font-size: clamp(30px, 3.4vw, 48px); }
 
 .historySection { position: relative; isolation: isolate; padding-block: 60px 100px; }
 .historySection::before {
@@ -973,6 +953,13 @@ img, svg { max-width: 100%; }
 .valueCard span { display: block; margin-bottom: 12px; color: var(--ochre); font-size: 11px; font-weight: 900; letter-spacing: .08em; }
 .valueCard strong { display: block; color: var(--forest); font-size: 17px; letter-spacing: -.02em; }
 .valuesText { max-width: 760px; margin: 0 auto; color: var(--muted); font-size: 16px; line-height: 1.6; }
+.valuesVisionGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(42px, 6vw, 80px); padding-block: 44px 84px; border-top: 1px solid var(--line); }
+.valuesVisionGrid .valuesSection { min-width: 0; padding: 0; }
+.valuesVisionGrid .sectionIntro { display: block; margin-bottom: 28px; }
+.valuesVisionGrid .sectionIntro h2 { font-size: clamp(28px, 3vw, 42px); line-height: 1.06; }
+.valuesVisionGrid .sectionIntro > p { margin-top: 20px; }
+.valuesVisionGrid .valuesText { margin: 0; }
+.visionSection { min-width: 0; }
 
 /* Mot du fondateur : carte façon témoignage, en clôture de page */
 .founderSection { padding-block: 20px 100px; }
@@ -990,6 +977,9 @@ img, svg { max-width: 100%; }
 
 @media (max-width: 900px) {
   .aboutFeature, .aboutFeature.reverse { flex-direction: column; }
+  .valuesVisionGrid { grid-template-columns: 1fr; padding-block: 40px 60px; }
+  #notre-histoire.hero { grid-template-columns: 1fr; gap: 24px; padding-top: 24px; }
+  #notre-histoire.hero .heroCopy { padding: 18px 4px; }
   .aboutFeatureMedia, .aboutFeature.reverse .aboutFeatureMedia { border-radius: 6px 46px 6px 6px; }
 }
 
