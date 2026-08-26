@@ -996,61 +996,6 @@ img, svg { max-width: 100%; }
   #notre-histoire.hero .heroCopy { padding: 18px; }
 }
 
-/* Navigation principale — redesign compact et flottant */
-.siteHeader { top: 0; width: 100%; min-height: 72px; margin-inline: 0; padding: 7px max(24px, calc((100vw - 1240px) / 2)); border: 0; border-bottom: 1px solid rgba(13,77,59,.09); border-radius: 0; background: var(--paper); box-shadow: 0 8px 28px rgba(8,47,40,.07); backdrop-filter: none; }
-.siteHeader.scrolled { min-height: 64px; background: rgba(251,250,246,.97); border-color: rgba(13,77,59,.16); box-shadow: 0 16px 44px rgba(8,47,40,.14); }
-.siteHeader .brand { min-width: 0; gap: 0; }
-.siteHeader .brandLogoFrame { width: 142px; height: 55px; border-radius: 8px; transition: width .25s ease, height .25s ease, transform .25s ease, box-shadow .25s ease; }
-.siteHeader.scrolled .brandLogoFrame { width: 136px; height: 52px; }
-.siteHeader .brandName { display: none; }
-.siteHeader .desktopNav { gap: 4px; min-width: 0; padding-left: 14px; color: color-mix(in srgb, var(--ink), white 13%); font-size: 13px; font-weight: 720; }
-.siteHeader .desktopNav > a:not(.navCta), .siteHeader .desktopNav .navItem > a { display: inline-flex; align-items: center; justify-content: center; height: 44px; min-height: 44px; padding: 0 12px; line-height: 1; white-space: nowrap; border-radius: 13px; transition: color .2s ease, background .2s ease, transform .2s ease; }
-.siteHeader .desktopNav > a:not(.navCta)::after, .siteHeader .desktopNav .navItem > a::after { content: none; }
-.siteHeader .desktopNav > a:not(.navCta):hover, .siteHeader .desktopNav .navItem > a:hover { background: rgba(13,77,59,.065); color: var(--forest); transform: translateY(-1px); }
-.siteHeader .desktopNav > a.active:not(.navCta), .siteHeader .desktopNav .navItem > a.active { background: var(--sand); color: var(--forest); box-shadow: inset 0 0 0 1px rgba(13,77,59,.08); }
-.siteHeader .desktopNav .navItem { display: flex; align-items: center; height: 44px; }
-.siteHeader .navCaret { margin-left: 1px; }
-.siteHeader .languageSwitch { align-items: center; height: 36px; margin-inline: 6px 4px; padding: 3px; border-color: rgba(13,77,59,.13); background: rgba(255,255,255,.72); }
-.siteHeader .languageSwitch a { min-width: 30px; height: 28px; }
-.siteHeader .languageSwitch a.active { background: var(--forest); box-shadow: 0 4px 12px rgba(13,77,59,.2); }
-.siteHeader .navCta { display: inline-flex; align-items: center; justify-content: center; height: 48px; min-height: 48px; padding: 0 18px; line-height: 1; white-space: nowrap; border: 1px solid var(--forest); border-radius: 15px; box-shadow: 0 8px 22px rgba(13,77,59,.18); transition: transform .2s ease, background .2s ease, box-shadow .2s ease; }
-.siteHeader .navCta:hover { background: var(--forest-dark); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(13,77,59,.25); }
-.siteHeader .navDropdown { left: 0; width: 232px; margin-top: 12px; padding: 8px; border-color: rgba(13,77,59,.12); border-radius: 16px; box-shadow: 0 24px 60px rgba(8,47,40,.18); }
-.siteHeader .navDropdown::before { top: -12px; height: 12px; }
-.siteHeader .navDropdown a { border-radius: 10px; transition: padding .2s ease, background .2s ease; }
-.siteHeader .navDropdown a:hover { padding-left: 17px; background: color-mix(in srgb, var(--sand), white 20%); }
-.mobileMenuIcon { position: relative; display: grid; width: 18px; height: 14px; align-content: space-between; }
-.mobileMenuIcon b { display: block; width: 100%; height: 2px; border-radius: 2px; background: currentColor; transition: transform .2s ease; }
-.mobileMenu[open] .mobileMenuIcon b:first-child { transform: translateY(6px) rotate(45deg); }
-.mobileMenu[open] .mobileMenuIcon b:last-child { transform: translateY(-6px) rotate(-45deg); }
-@media (max-width: 1040px) and (min-width: 901px) {
-  .siteHeader .desktopNav > a:not(.navCta), .siteHeader .desktopNav .navItem > a { padding-inline: 9px; }
-  .siteHeader .desktopNav { font-size: 12px; }
-  .siteHeader .navCta { padding-inline: 14px; }
-}
-@media (max-width: 1020px) {
-  .siteHeader .desktopNav { display: none; }
-  .siteHeader .mobileMenu { display: block; }
-  .siteHeader { top: 0; width: 100%; min-height: 66px; padding: 6px 14px; border-radius: 0; }
-  .siteHeader.scrolled { min-height: 62px; }
-  .siteHeader .brandLogoFrame, .siteHeader.scrolled .brandLogoFrame { width: 132px; height: 51px; }
-  .mobileMenu summary { display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 14px; border: 1px solid rgba(255,255,255,.12); border-radius: 14px; box-shadow: 0 7px 18px rgba(13,77,59,.18); }
-  .mobileMenuPanel { top: 58px; right: -2px; width: min(360px, calc(100vw - 20px)); max-height: calc(100svh - 92px); overflow-y: auto; padding: 12px; border: 1px solid rgba(13,77,59,.12); border-radius: 20px; background: rgba(255,255,255,.98); box-shadow: 0 28px 70px rgba(8,47,40,.23); }
-  .mobileMenuPanel .mobileNavGroup > a { padding: 14px 13px; border-radius: 11px; border-bottom: 0; }
-  .mobileMenuPanel .mobileNavGroup > a:hover, .mobileMenuPanel .mobileNavGroup > a.active { background: var(--sand); }
-  .mobileSubLinks { margin: 0 0 7px 12px; padding: 0 0 7px 12px; border-left: 1px solid rgba(13,77,59,.15); border-bottom: 0; }
-  .mobileSubLinks a { padding: 8px 10px; border-radius: 9px; }
-  .mobileLanguages { gap: 6px; margin: 8px 0; padding-top: 10px; border-top: 1px solid var(--line); }
-  .mobileLanguages a { padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: white; }
-  .mobileLanguages a.active { border-color: var(--forest); background: var(--forest); color: white; }
-  .mobileMenuPanel .mobileNavCta { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; padding: 14px 15px; border: 0; border-radius: 12px; background: var(--forest); color: white; }
-}
-@media (max-width: 480px) {
-  .siteHeader .brandLogoFrame, .siteHeader.scrolled .brandLogoFrame { width: 116px; height: 45px; }
-  .mobileMenu summary { min-height: 42px; padding-inline: 12px; }
-  .mobileMenu summary > span { display: none; }
-}
-
 /* Confirmation visible du formulaire */
 .formFeedback { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; margin: 4px 0 0; padding: 14px 16px; border-radius: 14px; font-size: 13px; line-height: 1.4; }
 .formFeedback > span { display: grid; flex: 0 0 auto; place-items: center; width: 30px; height: 30px; border-radius: 50%; font-size: 16px; font-weight: 900; }
