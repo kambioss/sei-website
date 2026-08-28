@@ -6,6 +6,8 @@ export function PageInteractions() {
   useEffect(() => {
     const header = document.querySelector<HTMLElement>(".siteHeader");
     const mobileMenu = document.querySelector<HTMLDetailsElement>(".mobileMenu");
+    const historyVideo = document.querySelector<HTMLVideoElement>("#notre-histoire .heroVisual video");
+    if (historyVideo) historyVideo.playbackRate = 0.6;
     const targets = document.querySelectorAll<HTMLElement>([
       ".heroCopy",
       ".heroVisual",
