@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Locale } from "@/lib/site-content";
 
@@ -30,15 +29,12 @@ export function SiteFooter({
       </div>
       <div className="sectionShell footerTop">
         <div className="footerBrand">
-          <span className="brandLogoFrame">
-            <Image
-              src="/images/Logo_SEImpact-01.png"
-              alt={brandName}
-              fill
-              unoptimized
-              sizes="150px"
-            />
-          </span>
+          <p className="footerLegalTitle">{english ? "Legal information" : "Informations légales"}</p>
+          <ul className="footerLegal">
+            <li>{english ? "Legal form" : "Forme juridique"} : <b>SUARL</b></li>
+            <li>RC/JORT : <b>202484600</b></li>
+            <li>MF : <b>1880009N</b></li>
+          </ul>
           <p className="footerDescriptor">{descriptor}</p>
           <p className="footerTagline">{english ? "Expertise rooted in African territories." : "Une expertise ancrée dans les territoires africains."}</p>
         </div>
