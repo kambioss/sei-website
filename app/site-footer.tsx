@@ -29,12 +29,23 @@ export function SiteFooter({
       </div>
       <div className="sectionShell footerTop">
         <div className="footerBrand">
-          <p className="footerLegalTitle">{english ? "Legal information" : "Informations légales"}</p>
-          <ul className="footerLegal">
-            <li>{english ? "Legal form" : "Forme juridique"} : <b>SUARL</b></li>
-            <li>RC/JORT : <b>202484600</b></li>
-            <li>MF : <b>1880009N</b></li>
-          </ul>
+          <div className="footerLegalCard">
+            <p className="footerLegalTitle">{english ? "Legal information" : "Informations légales"}</p>
+            <dl className="footerLegalList">
+              <div>
+                <dt>{english ? "Legal form" : "Forme juridique"}</dt>
+                <dd>SUARL</dd>
+              </div>
+              <div>
+                <dt>RC/JORT</dt>
+                <dd>202484600</dd>
+              </div>
+              <div>
+                <dt>MF</dt>
+                <dd>1880009N</dd>
+              </div>
+            </dl>
+          </div>
           <p className="footerDescriptor">{descriptor}</p>
           <p className="footerTagline">{english ? "Expertise rooted in African territories." : "Une expertise ancrée dans les territoires africains."}</p>
         </div>
