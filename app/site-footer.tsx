@@ -61,8 +61,9 @@ export function SiteFooter({
         </nav>
         <div className="footerContact">
           <p>{english ? "Address" : "Adresse"}</p>
-          <a href="mailto:contact@se-impact.com">contact@se-impact.com</a>
           <span>{address}</span>
+          <a href="mailto:contact@se-impact.com">contact@se-impact.com</a>
+          <a href="tel:+21693912196">+216 93 912 196</a>
         </div>
       </div>
       <div className="sectionShell footerBottom">
