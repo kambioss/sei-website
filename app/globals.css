@@ -875,7 +875,8 @@ img, svg { max-width: 100%; }
   grid-template-columns: .9fr 1fr;
   grid-template-areas: "intro visual";
 }
-#nous-connaitre .heroIntro .eyebrow { margin-bottom: 14px; }
+#nous-connaitre .heroIntro .eyebrow { margin-bottom: 0; }
+#nous-connaitre .heroIntro .eyebrow + .heroLead { margin-top: 8px; }
 #nous-connaitre .heroCopy { padding-block: 0; }
 #nous-connaitre .heroIntro { grid-area: intro; }
 #nous-connaitre .heroVisualColumn { grid-area: visual; align-self: stretch; width: 100%; margin-top: 6px; }
@@ -996,21 +997,21 @@ img, svg { max-width: 100%; }
 .siteFooter::before { content: ""; position: absolute; z-index: -1; right: -120px; bottom: -190px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(47,116,120,.3), transparent 68%); }
 .siteFooter::after { content: ""; position: absolute; z-index: -1; top: -240px; left: 24%; width: 430px; height: 430px; border-radius: 50%; background: radial-gradient(circle, rgba(230,182,98,.07), transparent 68%); }
 .footerTop { display: grid; grid-template-columns: minmax(220px, .9fr) minmax(320px, 1.25fr) minmax(250px, .9fr); align-items: stretch; gap: clamp(38px, 5vw, 72px); padding-block: 56px; }
-.footerBrand { display: grid; }
+.footerBrand { display: grid; order: 3; }
 .footerLegalCard, .footerContact { border: 1px solid rgba(255,255,255,.16); background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.035)); box-shadow: inset 0 1px 0 rgba(255,255,255,.055), 0 18px 45px rgba(0,0,0,.08); backdrop-filter: blur(8px); }
-.footerLegalCard { display: grid; gap: 16px; padding: 23px 24px; border-radius: 20px 20px 20px 42px; }
+.footerLegalCard { display: grid; gap: 16px; padding: 23px 24px; border-radius: 20px 20px 42px 20px; }
 .footerLegalTitle { margin: 0; color: rgb(240,189,99); font-size: 11px; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
 .footerLegalList { display: grid; gap: 11px; margin: 0; }
 .footerLegalList > div { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; }
 .footerLegalList dt { margin: 0; color: rgba(255,255,255,.76); font-size: 12px; }
-.footerLegalList dd { margin: 0; color: white; font-size: 13.5px; font-weight: 800; letter-spacing: .01em; text-align: right; }
-.footerNav { display: grid; grid-template-columns: repeat(2, minmax(120px, 1fr)); gap: 32px 48px; padding-block: 7px; }
+.footerLegalList dd { margin: 0; color: white; font-size: 12px; font-weight: 400; letter-spacing: .01em; text-align: right; }
+.footerNav { order: 2; display: grid; grid-template-columns: repeat(2, minmax(120px, 1fr)); gap: 32px 48px; padding-block: 7px; }
 .footerNavGroup { display: grid; align-content: start; gap: 16px; }
 .footerNavGroup h3, .footerContact > p { margin: 0; color: rgb(240,189,99); font-size: 11px; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
 .footerNavGroup ul { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
 .footerNavGroup a { display: inline-block; color: rgba(255,255,255,.82); font-size: 14px; font-weight: 600; line-height: 1.35; transition: color .2s ease, transform .2s ease; }
 .footerNavGroup a:hover { color: white; transform: translateX(4px); }
-.footerContact { display: grid; align-content: start; gap: 14px; padding: 24px; border-radius: 20px 20px 42px 20px; }
+.footerContact { order: 1; display: grid; align-content: start; gap: 14px; padding: 24px; border-radius: 20px 20px 20px 42px; }
 .footerContact p { margin-bottom: 2px; }
 .footerContact a { color: white; font-size: clamp(16px, 1.4vw, 19px); font-weight: 800; letter-spacing: -.01em; overflow-wrap: anywhere; }
 .footerContact span { color: rgba(255,255,255,.76); font-size: 12.5px; line-height: 1.55; }
