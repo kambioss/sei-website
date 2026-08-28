@@ -16,6 +16,7 @@ type PublicHeaderProps = {
 export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languageHrefEn }: PublicHeaderProps) {
   const english = locale === "en";
   const homeAnchor = (id: string) => `/?lang=${locale}#${id}`;
+  const contactHref = `/contact?lang=${locale}`;
   const aboutSubItems = [
     { id: "nous-connaitre", href: homeAnchor("nous-connaitre"), label: english ? "Get to know us" : "Nous connaître" },
     { id: "notre-histoire", href: `/notre-histoire?lang=${locale}`, label: english ? "Our history" : "Notre histoire" },
@@ -84,7 +85,7 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
           <Link className={locale === "fr" ? "active" : ""} href={languageHrefFr}>FR</Link>
           <Link className={locale === "en" ? "active" : ""} href={languageHrefEn}>EN</Link>
         </div>
-        <Link className="navCta" href={homeAnchor("contact")}>{ctaLabel} <span aria-hidden="true">↗</span></Link>
+        <Link className="navCta" href={contactHref} target="_blank" rel="noopener noreferrer">{ctaLabel} <span aria-hidden="true">↗</span></Link>
       </nav>
       <details className="mobileMenu">
         <summary aria-label={english ? "Menu" : "Menu"}>{english ? "Menu" : "Menu"}</summary>
@@ -109,7 +110,7 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
             </div>
           ))}
           <span className="mobileLanguages"><Link href={languageHrefFr}>FR</Link><Link href={languageHrefEn}>EN</Link></span>
-          <Link href={homeAnchor("contact")}>{ctaLabel}</Link>
+          <Link href={contactHref} target="_blank" rel="noopener noreferrer">{ctaLabel}</Link>
         </div>
       </details>
     </header>

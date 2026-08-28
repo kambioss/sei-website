@@ -76,7 +76,7 @@ img, svg { max-width: 100%; }
 .desktopNav > a:hover::after, .desktopNav > a.active::after,
 .desktopNav .navItem > a:hover::after, .desktopNav .navItem > a.active::after { right: 0; }
 .desktopNav > a.active, .desktopNav .navItem > a.active { color: var(--forest); }
-.navCta { padding: 13px 18px; border-radius: 999px; background: var(--forest); color: white; }
+.navCta { padding: 10px 14px; border-radius: 999px; background: var(--forest); color: white; }
 .navCta span { color: #e6b65d; margin-left: 5px; }
 .mobileMenu { display: none; position: relative; }
 .mobileMenu summary { list-style: none; cursor: pointer; padding: 11px 15px; border-radius: 999px; background: var(--forest); color: white; font-size: 12px; font-weight: 800; }
@@ -213,7 +213,7 @@ img, svg { max-width: 100%; }
 .approachIntro h2 em { color: var(--ochre); font-style: normal; }
 .approachSubtitle { grid-column: 2; align-self: start; max-width: 56ch; margin: 10px 0 0; color: var(--ochre); font-size: 15px; font-weight: 800; letter-spacing: -.005em; }
 .approachLead { max-width: 56ch; margin: 12px 0 0; color: var(--muted); font-size: 16px; line-height: 1.55; text-align: justify; text-justify: inter-word; hyphens: none; }
-.approachGrid { align-self: start; align-items: stretch; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 0; background: var(--line); border: 1px solid var(--line); }
+.approachGrid { align-self: stretch; align-items: stretch; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 0; background: var(--line); border: 1px solid var(--line); }
 .approachGrid article { display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; min-height: 0; height: 100%; padding: 20px 18px; background: var(--paper); }
 .approachGrid h3 { align-self: center; margin: 0; color: var(--ink); font-size: clamp(15px, 1.35vw, 18px); line-height: 1.25; letter-spacing: -.02em; }
 .approachGrid p { grid-column: 1 / -1; margin: 16px 0 0; color: var(--muted); font-size: 14px; line-height: 1.38; }
@@ -324,7 +324,8 @@ img, svg { max-width: 100%; }
 .organizationControls > div button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 5px; background: #c2cbc7; cursor: pointer; transition: width .2s ease, background .2s ease; }
 .organizationControls > div button.active { width: 28px; background: var(--ochre); }
 
-.contactSection { display: block; padding-block: 32px 130px; }
+.contactPage { min-height: 100svh; background: linear-gradient(180deg, var(--paper), #eef3ed); }
+.contactPageSection { display: grid; place-items: center; min-height: calc(100svh - 78px); padding-block: clamp(48px, 8vw, 96px); }
 .projectForm { display: grid; width: min(100%, 820px); margin-inline: auto; grid-template-columns: 1fr 1fr; gap: 22px 18px; padding: clamp(25px, 4vw, 45px); background: white; border: 1px solid rgba(24,52,61,.12); box-shadow: 0 30px 80px rgba(23,54,49,.09); }
 .field { display: grid; gap: 8px; }
 .fullField { grid-column: 1 / -1; }
@@ -460,7 +461,6 @@ img, svg { max-width: 100%; }
   .midCta { grid-template-columns: 1fr; margin-bottom: 85px; border-radius: 26px 26px 58px 26px; }
   .midCta .roundArrow { justify-self: end; }
   .roundArrow { width: 62px; height: 62px; }
-  .contactSection { padding-block: 12px 90px; }
   .projectForm { grid-template-columns: 1fr; padding: 24px 18px; }
   .fullField { grid-column: auto; }
   .formSubmit { width: 100%; }
@@ -498,11 +498,13 @@ img, svg { max-width: 100%; }
 .domainCardFront { display: block; width: 100%; background: #d7d7ce; }
 .domainCardFront img { object-fit: cover; transition: transform .6s ease; }
 .domainCard:hover .domainCardFront img { transform: scale(1.035); }
+.domainCardCaption { position: absolute; z-index: 1; left: 15px; right: 15px; bottom: 15px; padding: 12px 14px; border-radius: 12px; background: rgba(8,47,40,.8); color: white; font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; backdrop-filter: blur(8px); transform: translateY(4px); transition: transform .3s ease, background .3s ease; }
+.domainCard:hover .domainCardCaption { transform: translateY(0); background: rgba(8,47,40,.93); }
 .domainCardBack { transform: rotateY(180deg); display: flex; flex-direction: column; padding: 22px 22px 16px; background: linear-gradient(155deg, #fff 0%, color-mix(in srgb, var(--accent), white 92%) 100%); color: var(--ink); overflow-y: auto; }
 .domainCardFrontBtn, .domainCardBackBtn { position: absolute; top: 14px; right: 14px; z-index: 2; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; flex: none; border: 0; border-radius: 999px; background: color-mix(in srgb, var(--accent), white 10%); color: white; font-size: 15px; line-height: 1; cursor: pointer; transition: transform .2s ease, background .2s ease; }
 .domainCardFrontBtn:hover, .domainCardBackBtn:hover { background: var(--accent); transform: scale(1.08); }
 .domainCardBack h3 { margin: 0 0 8px; padding-right: 34px; color: var(--accent); font-size: 17px; line-height: 1.2; letter-spacing: -.03em; }
-.domainCardSummary { margin: 0 0 14px; color: var(--muted); font-size: 13.5px; font-weight: 500; line-height: 1.52; text-align: justify; hyphens: none; }
+.domainCardSummary { margin: 0 0 14px; padding-right: 34px; color: var(--muted); font-size: 13.5px; font-weight: 500; line-height: 1.52; text-align: justify; hyphens: none; }
 .domainCardInterventions { display: grid; gap: 6px; margin: 0 0 12px; padding: 0; list-style: none; }
 .domainCardInterventions li { border-radius: 10px; background: color-mix(in srgb, var(--accent), white 90%); transition: background .2s ease; }
 .domainCardInterventions li.open { background: color-mix(in srgb, var(--accent), white 84%); }
@@ -982,7 +984,7 @@ img, svg { max-width: 100%; }
 
 /* Savoir-faire — lisibilité renforcée */
 .approachLead { font-size: 17px; line-height: 1.62; }
-.approachGrid h3 { font-size: clamp(12px, 1vw, 14px); line-height: 1.3; white-space: nowrap; }
+.approachGrid h3 { font-size: 14px; font-weight: 650; line-height: 1.3; white-space: nowrap; }
 .approachGrid p { font-size: 15px; line-height: 1.5; }
 
 /* Footer éditorial et utile */

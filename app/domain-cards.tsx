@@ -48,6 +48,7 @@ function DomainCard({ item, english }: { item: DomainItem; english: boolean }) {
       <div className={"domainCardInner" + (isFlipped ? " isFlipped" : "")}>
         <div className="domainCardFace domainCardFront">
           <Image src={item.src} alt="" fill unoptimized sizes="(max-width: 680px) 100vw, 33vw" />
+          <span className="domainCardCaption" aria-hidden="true">{item.title}</span>
           <button
             type="button"
             className="domainCardFrontBtn"
@@ -72,7 +73,6 @@ function DomainCard({ item, english }: { item: DomainItem; english: boolean }) {
           >
             <span aria-hidden="true">↺</span>
           </button>
-          <h3>{item.title}</h3>
           <p className="domainCardSummary">{item.summary}</p>
           <ul className="domainCardInterventions">
             {item.interventions.map((entry, index) => {

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { ContactForm } from "@/app/contact-form";
 import { DomainCards } from "@/app/domain-cards";
 import { PageInteractions } from "@/app/page-interactions";
 import { PublicHeader } from "@/app/public-header";
@@ -47,7 +46,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
 
       <section id="nous-connaitre" className="hero sectionShell">
         <div className="heroCopy heroIntro">
-          <p className="eyebrow"><span /> {english ? "Get to know us" : "Nous connaître"}</p>
+          <p className="eyebrow"><span /> {english ? "Who we are" : "Qui sommes-nous"}</p>
           {knowUs.paragraphs.map((paragraph) => <p className="heroLead" key={paragraph}>{paragraph}</p>)}
         </div>
         <div className="heroVisualColumn">
@@ -116,13 +115,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="contactSection sectionShell" id="contact">
-        <ContactForm
-          expertiseOptions={expertises.map((item) => item.title)}
-          locale={locale}
-        />
       </section>
 
       <SiteFooter

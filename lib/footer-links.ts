@@ -13,7 +13,7 @@ export function getFooterLinkGroups(locale: Locale, content: SiteContent): Foote
         { href: `/?lang=${locale}`, label: english ? "Who we are" : "Qui sommes-nous" },
         { href: `/?lang=${locale}#expertises`, label: english ? "Expertise" : "Expertises" },
         { href: `/?lang=${locale}#approche`, label: english ? "Know-how" : "Notre savoir-faire" },
-        { href: `/?lang=${locale}#contact`, label: "Contact" },
+        { href: `/contact?lang=${locale}`, label: "Contact", newTab: true },
       ],
     },
     {

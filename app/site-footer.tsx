@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Locale } from "@/lib/site-content";
 
-export type FooterLink = { href: string; label: string };
+export type FooterLink = { href: string; label: string; newTab?: boolean };
 export type FooterLinkGroup = { title: string; links: FooterLink[] };
 
 export function SiteFooter({
@@ -44,7 +44,7 @@ export function SiteFooter({
               <ul>
                 {group.links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href}>{link.label}</Link>
+                    <Link href={link.href} target={link.newTab ? "_blank" : undefined} rel={link.newTab ? "noopener noreferrer" : undefined}>{link.label}</Link>
                   </li>
                 ))}
               </ul>
