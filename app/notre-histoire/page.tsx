@@ -27,7 +27,7 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
 
       <section id="notre-histoire" className="hero sectionShell">
         <div className="heroVisual">
-          <Image src={history.image} alt={history.heading} fill unoptimized priority sizes="(max-width: 900px) 100vw, 55vw" />
+          <video src="/images/histoire.mp4" autoPlay loop muted playsInline />
           <div className="imageShade" />
           <div className="heroCopy">
             <p className="eyebrow"><span /> {history.title}</p>
@@ -40,25 +40,20 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
       </section>
 
       <div className="valuesVisionGrid sectionShell">
-        <div className="valuesVisionCol">
-          <p className="eyebrow"><span /> {values.title}</p>
-          <section className="valuesSection" id="nos-valeurs">
-            <div className="sectionIntro">
-              <p>{values.statement}</p>
-            </div>
-            <p className="valuesText">{values.text}</p>
-          </section>
-        </div>
+        <section className="valuesSection" id="nos-valeurs">
+          <div className="sectionIntro">
+            <p className="eyebrow"><span /> {values.title}</p>
+          </div>
+          <p className="valuesText">{values.text}</p>
+        </section>
 
-        <div className="valuesVisionCol">
-          <p className="eyebrow"><span /> {vision.title}</p>
-          <section className="visionSection" id="notre-vision">
-            <div className="aboutFeatureCopy">
-              <p className="aboutFeatureStatement">{vision.statement}</p>
-              <p>{vision.text}</p>
-            </div>
-          </section>
-        </div>
+        <section className="visionSection" id="notre-vision">
+          <div className="aboutFeatureCopy">
+            <p className="eyebrow"><span /> {vision.title}</p>
+            <p className="aboutFeatureStatement">{vision.statement}</p>
+            <p>{vision.text}</p>
+          </div>
+        </section>
       </div>
 
       <section className="founderSection sectionShell">

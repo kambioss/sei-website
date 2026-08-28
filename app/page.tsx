@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 const domainImages = [
   "/images/beautiful-scenery-lone-tree-middle-empty-field-grey-cloudy-sky.jpg",
   "/images/extra-long-shot-peaceful-landscape-with-trees.jpg",
-  "/images/sei-territoires.webp",
+  "/images/paix.jpeg",
 ];
 
 const oddLogos = [
