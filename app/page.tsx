@@ -34,21 +34,21 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
   const impactLabel = english ? "Expected impact" : "Impact recherché";
   const approachCardItems = english
     ? [
-        "Needs assessment, design and delivery of training,",
-        "Development of guides and practical tools,",
-        "Knowledge capture and dissemination,",
-        "Stakeholder awareness-raising and institutional and technical capacity building,",
-        "Design and organisation of international conferences,",
-        "Facilitation of stakeholder consultation workshops,",
+        "Needs assessment, design and delivery of training",
+        "Development of guides and practical tools",
+        "Knowledge capture and dissemination",
+        "Stakeholder awareness-raising and institutional and technical capacity building",
+        "Design and organisation of international conferences",
+        "Facilitation of stakeholder consultation workshops",
         "Communication and capitalisation of results.",
       ]
     : [
-        "Diagnostic des besoins, conception et animation de formations,",
-        "Élaboration de guides et d’outils pratiques,",
-        "Capitalisation et diffusion des connaissances,",
-        "Sensibilisation des acteurs et renforcement des capacités institutionnelles et techniques,",
-        "Conception et organisation de conférences internationales,",
-        "Conduite d’ateliers de consultation des parties prenantes,",
+        "Diagnostic des besoins, conception et animation de formations",
+        "Élaboration de guides et d’outils pratiques",
+        "Capitalisation et diffusion des connaissances",
+        "Sensibilisation des acteurs et renforcement des capacités institutionnelles et techniques",
+        "Conception et organisation de conférences internationales",
+        "Conduite d’ateliers de consultation des parties prenantes",
         "Communication et capitalisation des résultats.",
       ];
 
@@ -70,7 +70,8 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
         </div>
         <div className="heroVisualColumn">
           <div className="heroVisual">
-            <Image className="heroVisualMain" src={knowUs.image} alt={english ? "Act for sustainable development" : "Agir pour le développement durable"} fill unoptimized sizes="(max-width: 980px) 100vw, 42vw" />
+            <Image className="heroVisualMain heroVisualDesktop" src="/images/image_hero_grand_ecrans.png" alt={english ? "Act for sustainable development" : "Agir pour le développement durable"} fill unoptimized sizes="(min-width: 981px) 42vw, 0px" />
+            <Image className="heroVisualMain heroVisualMobile" src={knowUs.image} alt={english ? "Act for sustainable development" : "Agir pour le développement durable"} fill unoptimized sizes="(max-width: 980px) 100vw, 0px" />
             <div className="imageShade" />
             <p className="imageCaption">{hero.imageCaption}</p>
           </div>

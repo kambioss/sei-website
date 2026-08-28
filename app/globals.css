@@ -215,9 +215,9 @@ img, svg { max-width: 100%; }
 .approachLead { grid-column: 1; align-self: stretch; max-width: 56ch; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.55; text-align: justify; text-justify: inter-word; hyphens: none; }
 .approachGrid { align-self: stretch; align-items: stretch; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; margin-top: 0; background: var(--line); border: 1px solid var(--line); }
 .approachGrid article { display: flex; flex-direction: column; align-items: stretch; justify-content: center; min-height: 0; height: 100%; padding: 28px 18px; background: var(--paper); }
-.approachGrid ul { display: grid; gap: 13px; margin: 0; padding-left: 24px; color: var(--muted); }
-.approachGrid li { padding-left: 4px; font-size: 17px; line-height: 1.5; }
-.approachGrid li::marker { color: var(--ochre); }
+.approachGrid ul { display: grid; gap: 13px; margin: 0; padding: 0; color: var(--muted); list-style: none; }
+.approachGrid li { position: relative; padding-left: 28px; font-size: 17px; line-height: 1.5; }
+.approachGrid li::before { content: "✓"; position: absolute; left: 0; top: .05em; color: var(--ochre); font-size: 16px; font-weight: 900; }
 .approachClosing { grid-column: 1 / -1; position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, .9fr) minmax(360px, 1fr); grid-template-areas: "title logos" "text logos"; grid-template-rows: auto 1fr; align-items: start; gap: 14px 64px; margin-top: 24px; padding: 24px 24px 60px; border-top: 1px solid var(--line); text-align: left; }
 .approachClosing::before {
   content: "";
@@ -875,14 +875,17 @@ img, svg { max-width: 100%; }
 #nous-connaitre .heroCopy { padding-block: 0; }
 #nous-connaitre .heroIntro { grid-area: intro; }
 #nous-connaitre .heroVisualColumn { grid-area: visual; align-self: start; width: 100%; margin-top: 6px; }
-#nous-connaitre .heroVisual { width: 100%; min-height: 0; height: auto; aspect-ratio: 1597 / 1853; background: #403c36; }
+#nous-connaitre .heroVisual { width: 100%; min-height: 0; height: auto; aspect-ratio: 3 / 2; background: #403c36; }
 #nous-connaitre .heroVisual img.heroVisualMain { z-index: 1; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+#nous-connaitre .heroVisualMobile { display: none; }
 #nous-connaitre .heroVisual .imageShade { z-index: 2; }
 #nous-connaitre .heroVisual .imageCaption { z-index: 3; }
 @media (max-width: 980px) {
   #nous-connaitre.hero { grid-template-columns: 1fr; grid-template-areas: "visual" "intro"; padding-bottom: 0; }
   #nous-connaitre .heroVisualColumn { align-self: auto; margin-top: 0; margin-bottom: 28px; }
   #nous-connaitre .heroVisual { min-height: 0; height: auto; aspect-ratio: 1597 / 1853; }
+  #nous-connaitre .heroVisualDesktop { display: none; }
+  #nous-connaitre .heroVisualMobile { display: block; }
 }
 
 /* Rangées alternées texte/image (Nos valeurs, Notre vision) */
