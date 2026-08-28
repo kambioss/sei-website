@@ -327,12 +327,8 @@ img, svg { max-width: 100%; }
 
 .contactSection { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(50px, 9vw, 120px); padding-block: 16px 130px; }
 .contactCopy { position: sticky; top: 120px; align-self: start; }
-.contactCopy h2 { margin: 0; color: var(--forest); font-size: clamp(36px, 4.5vw, 60px); line-height: 1; letter-spacing: -.055em; }
+.contactCopy h2 { margin: 0; color: var(--forest); font-size: clamp(30px, 3.6vw, 46px); line-height: 1.05; letter-spacing: -.055em; }
 .contactCopy > p:not(.eyebrow) { margin: 27px 0 0; color: var(--muted); font-size: 17px; line-height: 1.42; }
-.directContact { display: grid; gap: 8px; margin-top: 38px; padding-top: 25px; border-top: 1px solid var(--line); }
-.directContact span { color: var(--ochre); font-size: 11.5px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
-.directContact a { color: var(--forest); font-size: clamp(17px, 1.7vw, 22px); font-weight: 800; word-break: break-word; }
-.directContact small { color: var(--muted); font-size: 13.5px; }
 .projectForm { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 18px; padding: clamp(25px, 4vw, 45px); background: white; border: 1px solid rgba(24,52,61,.12); box-shadow: 0 30px 80px rgba(23,54,49,.09); }
 .field { display: grid; gap: 8px; }
 .fullField { grid-column: 1 / -1; }
@@ -517,9 +513,6 @@ img, svg { max-width: 100%; }
 .domainCard.ochre { --accent: var(--ochre); }
 .domainCard.teal { --accent: var(--teal); }
 .domainCardInner { position: relative; width: 100%; height: 100%; transition: transform .7s cubic-bezier(.3,.2,.2,1); transform-style: preserve-3d; }
-.domainCard:hover .domainCardInner,
-.domainCard:focus-within .domainCardInner,
-.domainCard:active .domainCardInner,
 .domainCardInner.isFlipped { transform: rotateY(180deg); }
 .domainCardFace { position: absolute; inset: 0; overflow: hidden; border-radius: 22px; box-shadow: 0 16px 38px rgba(13,77,59,.09); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
 .domainCardFront { display: block; width: 100%; margin: 0; padding: 0; border: 0; background: #d7d7ce; font: inherit; color: inherit; text-align: inherit; cursor: pointer; }
@@ -765,8 +758,6 @@ img, svg { max-width: 100%; }
 .projectForm { border-radius: 26px 26px 58px 26px; }
 .field input, .field select, .field textarea { border-radius: 10px; transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
 .field input:hover, .field select:hover, .field textarea:hover { border-color: rgba(47,116,120,.45); }
-.directContact a { transition: color .2s ease; }
-.directContact a:hover { color: var(--ochre); }
 
 .backToTop { position: fixed; z-index: 45; right: 22px; bottom: 22px; display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border: 1px solid rgba(255,255,255,.32); border-radius: 50%; background: rgba(8,47,40,.92); color: white; box-shadow: 0 12px 35px rgba(8,47,40,.24); cursor: pointer; opacity: 0; pointer-events: none; transform: translateY(14px); transition: opacity .25s ease, transform .25s ease, background .2s ease; }
 .backToTop.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }

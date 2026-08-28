@@ -144,12 +144,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           </p>
           <h2>{contact.title}</h2>
           <p>{contact.intro}</p>
-          <div className="directContact">
-            <span>{english ? "Direct contact" : "Contact direct"}</span>
-            <a href={"mailto:" + contact.email}>{contact.email}</a>
-            <small>{contact.address}</small>
-            <small>{contact.location}</small>
-          </div>
         </div>
         <ContactForm
           expertiseOptions={expertises.map((item) => item.title)}
