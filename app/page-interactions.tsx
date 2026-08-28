@@ -34,9 +34,13 @@ export function PageInteractions() {
       ".projectForm",
     ].join(","));
 
+    const revealVariants = ["revealFromRight", "revealFromLeft", "revealFromBottom", "revealScale", "revealDiagonal"];
+    const revealDurations = [1150, 1350, 1500, 1250, 1450];
+
     targets.forEach((target, index) => {
-      target.classList.add("revealItem");
-      target.style.setProperty("--reveal-delay", `${(index % 4) * 70}ms`);
+      target.classList.add("revealItem", revealVariants[index % revealVariants.length]);
+      target.style.setProperty("--reveal-delay", `${(index % 4) * 140}ms`);
+      target.style.setProperty("--reveal-duration", String(revealDurations[index % revealDurations.length]) + "ms");
     });
 
     const observer = new IntersectionObserver((entries) => {

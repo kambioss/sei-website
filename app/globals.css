@@ -741,8 +741,13 @@ img, svg { max-width: 100%; }
 .field input, .field select, .field textarea { border-radius: 10px; transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
 .field input:hover, .field select:hover, .field textarea:hover { border-color: rgba(47,116,120,.45); }
 
-.revealItem { opacity: 0; transform: translateX(48px); transition: opacity .7s ease var(--reveal-delay, 0ms), transform .75s cubic-bezier(.2,.8,.2,1) var(--reveal-delay, 0ms); will-change: opacity, transform; }
-.revealItem.inView { opacity: 1; transform: translateX(0); }
+.revealItem { opacity: 0; filter: blur(2px); transition: opacity var(--reveal-duration, 1.2s) ease var(--reveal-delay, 0ms), transform var(--reveal-duration, 1.2s) cubic-bezier(.2,.8,.2,1) var(--reveal-delay, 0ms), filter var(--reveal-duration, 1.2s) ease var(--reveal-delay, 0ms); will-change: opacity, transform; }
+.revealItem.revealFromRight { transform: translateX(58px); }
+.revealItem.revealFromLeft { transform: translateX(-58px); }
+.revealItem.revealFromBottom { transform: translateY(46px); }
+.revealItem.revealScale { transform: translateY(22px) scale(.96); }
+.revealItem.revealDiagonal { transform: translate(-28px, 38px) rotate(-.6deg) scale(.98); }
+.revealItem.inView { opacity: 1; filter: none; transform: none; }
 
 @media (min-width: 981px) {
   .newsCard:first-child { grid-column: span 2; display: grid; grid-template-columns: 1.15fr .85fr; }
@@ -761,7 +766,7 @@ img, svg { max-width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .revealItem { opacity: 1; transform: none; }
+  .revealItem { opacity: 1; filter: none; transform: none; transition: none; }
 }
 
 /* Logo institutionnel */
@@ -871,7 +876,7 @@ img, svg { max-width: 100%; }
   grid-template-columns: .9fr 1fr;
   grid-template-areas: "intro visual";
 }
-#nous-connaitre .heroIntro .eyebrow { margin-bottom: 0; }
+#nous-connaitre .heroIntro .eyebrow { margin-bottom: 0; padding-block: 10px 6px; }
 #nous-connaitre .heroIntro .eyebrow + .heroLead { margin-top: 8px; }
 #nous-connaitre .heroCopy { padding-block: 0; }
 #nous-connaitre .heroIntro { grid-area: intro; }
@@ -994,7 +999,7 @@ img, svg { max-width: 100%; }
 .siteFooter::after { content: ""; position: absolute; z-index: -1; top: -240px; left: 24%; width: 430px; height: 430px; border-radius: 50%; background: radial-gradient(circle, rgba(230,182,98,.07), transparent 68%); }
 .footerTop { display: grid; grid-template-columns: minmax(220px, .9fr) minmax(320px, 1.25fr) minmax(250px, .9fr); align-items: stretch; gap: clamp(28px, 4vw, 52px); padding-block: 34px; }
 .footerBrand { display: grid; align-content: space-between; justify-items: end; gap: 20px; order: 3; }
-.footerLegalCard, .footerContact { border: 1px solid rgba(255,255,255,.16); background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.035)); box-shadow: inset 0 1px 0 rgba(255,255,255,.055), 0 18px 45px rgba(0,0,0,.08); backdrop-filter: blur(8px); }
+.footerLegalCard, .footerContact { border: 0; background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.035)); box-shadow: 0 18px 45px rgba(0,0,0,.08); backdrop-filter: blur(8px); }
 .footerLegalCard { display: grid; gap: 12px; padding: 18px 20px; border-radius: 20px 20px 42px 20px; }
 .footerLogoFrame { position: relative; display: block; width: 150px; height: 58px; margin-right: 8px; }
 .footerLogoFrame img { object-fit: contain; object-position: center; }
