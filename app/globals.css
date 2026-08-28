@@ -896,7 +896,7 @@ img, svg { max-width: 100%; }
 .aboutFeatureCopy .eyebrow { margin-bottom: 20px; }
 .aboutFeatureCopy h1, .aboutFeatureCopy h2 { margin: 0; max-width: 20ch; color: var(--forest); font-size: clamp(32px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -.05em; }
 .aboutFeatureStatement { max-width: 46ch; margin: 20px 0 0; color: var(--ochre); font-size: clamp(16px, 1.3vw, 19px); font-weight: 800; line-height: 1.38; }
-.aboutFeatureCopy > p:not(.aboutFeatureStatement) { max-width: 58ch; margin: 20px 0 0; color: var(--muted); font-size: 16px; line-height: 1.45; }
+.aboutFeatureCopy > p:not(.aboutFeatureStatement):not(.eyebrow) { max-width: 58ch; margin: 20px 0 0; color: var(--muted); font-size: 16px; line-height: 1.45; }
 .aboutFeatureMedia { position: relative; flex: 1 1 0; min-width: 0; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 6px 64px 6px 6px; box-shadow: 0 26px 60px rgba(17,57,48,.15); }
 .aboutFeature.reverse .aboutFeatureMedia { border-radius: 64px 6px 6px 6px; }
 .aboutFeatureMedia img { object-fit: cover; }
@@ -1031,10 +1031,14 @@ img, svg { max-width: 100%; }
 @media (max-width: 680px) {
   .approachLead { font-size: 16.5px; }
   .approachGrid li { font-size: 14.5px; }
-  .footerTop { grid-template-columns: 1fr; gap: 20px; padding-block: 20px; }
-  .footerNav { grid-template-columns: 1fr 1fr; }
-  .footerContact { grid-column: auto; }
-  .footerBrand { flex-direction: column; align-items: flex-start; margin-left: 0; gap: 14px; }
-  .footerLegalCard { flex: 0 0 auto; width: 100%; }
+  .footerTop { grid-template-columns: 1fr; gap: 0; padding-block: 32px; }
+  .footerContact { order: 1; grid-column: auto; justify-items: center; text-align: center; gap: 6px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,.12); }
+  .footerNav { order: 2; grid-template-columns: 1fr; gap: 24px; width: 100%; max-width: 280px; margin: 28px auto 0; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,.12); }
+  .footerNavGroup { justify-items: center; text-align: center; }
+  .footerNavGroup ul { justify-items: center; }
+  .footerBrand { order: 3; flex-direction: column; align-items: center; margin: 28px 0 0; gap: 14px; }
+  .footerLegalCard { flex: 0 0 auto; width: 100%; max-width: 260px; }
+  .footerLegalTitle { text-align: center; }
+  .footerLegalList > div { justify-content: center; }
   .footerLogoFrame { width: 112px; height: 43px; }
 }

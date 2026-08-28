@@ -50,7 +50,6 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
         <section className="visionSection" id="notre-vision">
           <div className="aboutFeatureCopy">
             <p className="eyebrow">{vision.title}</p>
-            <p className="aboutFeatureStatement">{vision.statement}</p>
             <p>{vision.text}</p>
           </div>
         </section>
