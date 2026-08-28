@@ -207,7 +207,7 @@ img, svg { max-width: 100%; }
 .buttonLight { background: white; color: var(--forest); }
 
 .approachSection { padding-block: 24px 24px; background: linear-gradient(160deg, var(--paper) 0%, var(--sand) 100%); color: var(--ink); }
-.approachSection > .sectionShell { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; row-gap: 20px; }
+.approachSection > .sectionShell { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; column-gap: 48px; row-gap: 20px; }
 .approachIntro { grid-column: 1; display: flex; min-width: 0; flex-direction: column; align-items: stretch; }
 .approachIntro .eyebrow { align-self: flex-start; justify-content: flex-start; margin-bottom: 12px; }
 .approachIntro h2 { width: 100%; margin: 0; color: var(--forest); font-size: clamp(17px, 1.5vw, 20px); line-height: 1.15; letter-spacing: -.03em; white-space: nowrap; text-align: left; }
