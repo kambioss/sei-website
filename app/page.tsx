@@ -106,7 +106,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           </div>
           <div className="approachGrid">
             <article>
-              <h3>{english ? "Knowledge management" : "Gestion de connaissances"}</h3>
               <ul>
                 {approachCardItems.map((item) => <li key={item}>{item}</li>)}
               </ul>

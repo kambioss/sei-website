@@ -44,7 +44,6 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
         <div className="sectionIntro">
           <div>
             <p className="eyebrow"><span /> {values.title}</p>
-            <h2>{values.heading}</h2>
           </div>
           <p>{values.statement}</p>
         </div>
@@ -54,7 +53,6 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
         <section className="visionSection" id="notre-vision">
         <div className="aboutFeatureCopy">
           <p className="eyebrow"><span /> {vision.title}</p>
-          <h2>{vision.heading}</h2>
           <p className="aboutFeatureStatement">{vision.statement}</p>
           <p>{vision.text}</p>
         </div>
