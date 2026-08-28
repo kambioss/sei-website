@@ -940,11 +940,11 @@ img, svg { max-width: 100%; }
 /* Mot du fondateur : carte façon témoignage, en clôture de page */
 .founderSection { padding-block: 4px 40px; }
 .founderSection .founderLetter { max-width: 1140px; margin: 0 auto; }
-.founderLetter { display: grid; grid-template-columns: clamp(145px, 26%, 200px) minmax(0, 1fr); grid-template-areas: "eyebrow eyebrow" "photo quote"; column-gap: 26px; }
+.founderLetter { display: grid; grid-template-columns: clamp(145px, 26%, 200px) minmax(0, 1fr); grid-template-areas: "eyebrow eyebrow" "photo quote"; column-gap: 26px; border-left: 4px solid var(--ochre); padding-left: 24px; }
 .founderLetter::after { content: none; }
 .founderLetter .eyebrow { grid-area: eyebrow; justify-self: start; color: var(--ochre); margin: 0 0 14px; font-size: 9px; }
 .founderPhotoBlock { grid-area: photo; width: 100%; margin: 0; }
-.founderPhoto { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 14px 14px 36px 14px; border-left: 4px solid var(--ochre); box-shadow: 0 16px 36px rgba(17,57,48,.18); background: var(--sand); }
+.founderPhoto { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 14px 14px 36px 14px; box-shadow: 0 16px 36px rgba(17,57,48,.18); background: var(--sand); }
 .founderPhoto img { object-fit: cover; object-position: center 15%; }
 .founderPhotoName { margin: 10px 0 0; color: var(--forest); font-size: 13px; font-weight: 800; letter-spacing: -.01em; text-align: center; }
 .founderQuote { grid-area: quote; display: flex; flex-direction: column; justify-content: flex-start; gap: 12px; min-width: 0; }
