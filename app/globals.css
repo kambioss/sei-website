@@ -404,7 +404,7 @@ img, svg { max-width: 100%; }
   .approachSubtitle, .approachLead { grid-column: 1; max-width: none; }
   .approachGrid { grid-template-columns: 1fr; }
   .approachGrid article { min-height: auto; }
-  .approachClosing { grid-template-columns: 1fr; grid-template-areas: "title" "text" "logos"; grid-template-rows: auto; gap: 14px; margin-top: 16px; padding-top: 20px; }
+  .approachClosing { grid-template-columns: 1fr; grid-template-areas: "title" "text" "logos"; grid-template-rows: auto; gap: 14px; margin-top: 4px; padding-top: 12px; }
   .oddLogoGrid { justify-self: start; margin-top: 16px; }
   .projectsIntro { grid-template-columns: 1fr; }
   .projectsIntro .eyebrow { grid-column: auto; }
@@ -442,7 +442,6 @@ img, svg { max-width: 100%; }
   .sectionIntro { margin-bottom: 35px; }
   .aboutSection { padding-block: 80px 10px; }
   .approachSection { padding-block: 24px; }
-  .approachGrid { margin-top: 42px; }
   .principles i { display: none; }
   .principles { display: grid; gap: 11px; }
   .projectsSection { padding-bottom: 82px; }
