@@ -206,16 +206,16 @@ img, svg { max-width: 100%; }
 .buttonLight { background: white; color: var(--forest); }
 
 .approachSection { padding-block: 24px 24px; background: linear-gradient(160deg, var(--paper) 0%, var(--sand) 100%); color: var(--ink); }
-.approachSection > .sectionShell { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); column-gap: 70px; row-gap: 20px; }
-.approachIntro { grid-column: 1 / -1; display: flex; min-width: 0; flex-direction: column; align-items: stretch; }
+.approachSection > .sectionShell { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; row-gap: 20px; }
+.approachIntro { grid-column: 1; display: flex; min-width: 0; flex-direction: column; align-items: stretch; }
 .approachIntro .eyebrow { align-self: flex-start; justify-content: flex-start; margin-bottom: 12px; }
-.approachIntro h2 { width: 100%; margin: 0 auto; color: var(--forest); font-size: clamp(16px, 1.8vw, 24px); line-height: 1.1; letter-spacing: -.03em; white-space: nowrap; text-align: center; }
+.approachIntro h2 { width: 100%; margin: 0; color: var(--forest); font-size: clamp(17px, 1.5vw, 20px); line-height: 1.15; letter-spacing: -.03em; white-space: nowrap; text-align: left; }
 .approachIntro h2 em { color: var(--ochre); font-style: normal; }
 .approachSubtitle { grid-column: 2; align-self: start; max-width: 56ch; margin: 10px 0 0; color: var(--ochre); font-size: 15px; font-weight: 800; letter-spacing: -.005em; }
-.approachLead { grid-column: 1; align-self: center; max-width: 56ch; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.55; text-align: justify; text-justify: inter-word; hyphens: none; }
-.approachGrid { align-self: stretch; align-items: stretch; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; margin-top: 0; background: var(--line); border: 1px solid var(--line); }
+.approachLead { align-self: auto; max-width: 56ch; margin: 18px 0 0; color: var(--muted); font-size: 16px; line-height: 1.55; text-align: justify; text-justify: inter-word; hyphens: none; }
+.approachGrid { justify-self: center; align-self: stretch; align-items: stretch; display: grid; width: min(100%, 620px); grid-template-columns: minmax(0, 1fr); gap: 0; margin-top: 0; background: var(--line); border: 1px solid var(--line); }
 .approachGrid article { display: flex; flex-direction: column; align-items: stretch; justify-content: center; gap: 18px; min-height: 0; height: 100%; padding: 24px 22px; background: var(--paper); }
-.approachGrid h3 { margin: 0; color: var(--forest); font-size: clamp(19px, 1.8vw, 24px); line-height: 1.15; letter-spacing: -.03em; text-align: center; }
+.approachGrid h3 { margin: 0; color: var(--forest); font-size: clamp(19px, 1.8vw, 24px); line-height: 1.15; letter-spacing: -.03em; text-align: left; }
 .approachGrid ul { display: grid; gap: 13px; margin: 0; padding: 0; color: var(--muted); list-style: none; }
 .approachGrid li { position: relative; padding-left: 28px; font-size: 17px; line-height: 1.5; }
 .approachGrid li::before { content: "✓"; position: absolute; left: 0; top: .05em; color: var(--ochre); font-size: 16px; font-weight: 900; }
@@ -998,11 +998,12 @@ img, svg { max-width: 100%; }
 .siteFooter::before { content: ""; position: absolute; z-index: -1; right: -120px; bottom: -190px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(47,116,120,.3), transparent 68%); }
 .siteFooter::after { content: ""; position: absolute; z-index: -1; top: -240px; left: 24%; width: 430px; height: 430px; border-radius: 50%; background: radial-gradient(circle, rgba(230,182,98,.07), transparent 68%); }
 .footerTop { display: grid; grid-template-columns: minmax(220px, .9fr) minmax(320px, 1.25fr) minmax(250px, .9fr); align-items: stretch; gap: clamp(28px, 4vw, 52px); padding-block: 34px; }
-.footerBrand { display: grid; align-content: space-between; justify-items: end; gap: 20px; order: 3; }
+.footerBrand { display: grid; align-content: start; justify-items: start; gap: 10px; order: 1; }
 .footerLegalCard, .footerContact { border: 0; background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.035)); box-shadow: 0 18px 45px rgba(0,0,0,.08); backdrop-filter: blur(8px); }
 .footerLegalCard { display: grid; gap: 12px; padding: 18px 20px; border-radius: 20px 20px 42px 20px; }
-.footerLogoFrame { position: relative; display: block; width: 150px; height: 58px; margin-right: 8px; }
+.footerLogoFrame { position: relative; display: block; width: 150px; height: 58px; margin-top: 2px; }
 .footerLogoFrame img { object-fit: contain; object-position: center; }
+.footerMission { color: rgba(255,255,255,.76); font-size: 11px; line-height: 1.45; }
 .footerLegalTitle { margin: 0; color: rgb(240,189,99); font-size: 10px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
 .footerLegalList { display: grid; gap: 8px; margin: 0; }
 .footerLegalList > div { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; }
@@ -1014,7 +1015,7 @@ img, svg { max-width: 100%; }
 .footerNavGroup ul { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; }
 .footerNavGroup a { display: inline-block; color: rgba(255,255,255,.82); font-size: 12px; font-weight: 600; line-height: 1.35; transition: color .2s ease, transform .2s ease; }
 .footerNavGroup a:hover { color: white; transform: translateX(4px); }
-.footerContact { order: 1; display: grid; align-content: start; gap: 10px; padding: 18px 20px; border-radius: 20px 20px 20px 42px; }
+.footerContact { order: 3; display: grid; align-content: start; gap: 10px; padding: 18px 20px; border-radius: 20px 20px 20px 42px; }
 .footerContact p { margin-bottom: 2px; }
 .footerContact a { color: white; font-size: 14px; font-weight: 800; letter-spacing: -.01em; overflow-wrap: anywhere; }
 .footerContact span { color: rgba(255,255,255,.76); font-size: 11px; line-height: 1.45; }
