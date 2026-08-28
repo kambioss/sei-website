@@ -42,14 +42,14 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
       <div className="valuesVisionGrid sectionShell">
         <section className="valuesSection" id="nos-valeurs">
           <div className="sectionIntro">
-            <p className="eyebrow"><span /> {values.title}</p>
+            <p className="eyebrow">{values.title}</p>
           </div>
           <p className="valuesText">{values.text}</p>
         </section>
 
         <section className="visionSection" id="notre-vision">
           <div className="aboutFeatureCopy">
-            <p className="eyebrow"><span /> {vision.title}</p>
+            <p className="eyebrow">{vision.title}</p>
             <p className="aboutFeatureStatement">{vision.statement}</p>
             <p>{vision.text}</p>
           </div>
@@ -58,7 +58,7 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
 
       <section className="founderSection sectionShell">
         <div className="founderLetter">
-          <p className="eyebrow"><span /> {founder.eyebrow}</p>
+          <p className="eyebrow">{founder.eyebrow}</p>
           <div className="founderPhotoBlock">
             <div className="founderPhoto">
               <Image src={founder.photo} alt={founder.name} fill unoptimized sizes="160px" />
