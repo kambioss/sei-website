@@ -36,7 +36,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
     ? [
         "Needs assessment, design and delivery of training",
         "Development of guides and practical tools",
-        "Knowledge capture and dissemination",
         "Stakeholder awareness-raising and institutional and technical capacity building",
         "Design and organisation of international conferences",
         "Facilitation of stakeholder consultation workshops",
@@ -44,8 +43,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
       ]
     : [
         "Diagnostic des besoins, conception et animation de formations",
-        "Élaboration de guides et d’outils pratiques",
-        "Capitalisation et diffusion des connaissances",
+        "Élaboration de manuels et guides pédagogiques",
         "Sensibilisation des acteurs et renforcement des capacités institutionnelles et techniques",
         "Conception et organisation de conférences internationales",
         "Conduite d’ateliers de consultation des parties prenantes",
@@ -108,6 +106,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           <p className="approachLead">{approach.lead}</p>
           <div className="approachGrid">
             <article>
+              <h3>{english ? "Knowledge management" : "Gestion de connaissances"}</h3>
               <ul>
                 {approachCardItems.map((item) => <li key={item}>{item}</li>)}
               </ul>
