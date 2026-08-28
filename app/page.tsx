@@ -15,24 +15,6 @@ const domainImages = [
   "/images/sei-territoires.webp",
 ];
 
-const approachIcons = [
-  <svg key="capacity" width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <path d="M16 9c-2.6-1.7-5.8-2.3-9-1.8v15.2c3.2-.5 6.4.1 9 1.8 2.6-1.7 5.8-2.3 9-1.8V7.2c-3.2-.5-6.4.1-9 1.8Z" fill="var(--forest)" />
-    <path d="M16 9v15.2" stroke="white" strokeWidth="1.2" strokeLinecap="round" opacity=".4" />
-    <path d="M23 4.3c2 .4 3.3 2.3 2.9 4.3-.3 1.5-1.4 2.6-2.8 3 .6-1.8.2-3.9-1.2-5.3.3-.9.8-1.6 1.1-2Z" fill="var(--ochre)" />
-    <circle cx="26.6" cy="12.6" r="1.6" fill="var(--teal)" />
-    <path d="M24.7 10.6l1.1 1.2" stroke="var(--teal)" strokeWidth="1" strokeLinecap="round" />
-  </svg>,
-  <svg key="events" width="30" height="30" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-    <circle cx="14" cy="16" r="8.5" fill="var(--forest)" />
-    <path d="M14 7.5c2.3 2.3 2.3 14.7 0 17M8.2 16h11.6M9 11h10M9 21h10" stroke="white" strokeWidth="1" strokeLinecap="round" opacity=".4" />
-    <rect x="20" y="5" width="10" height="7" rx="3.5" fill="var(--ochre)" />
-    <path d="M22 11.2 21 14 24.2 11.5Z" fill="var(--ochre)" />
-    <rect x="2" y="21" width="8" height="6" rx="3" fill="var(--teal)" />
-    <path d="M3.4 26.5 3 28.5 5.6 26.7Z" fill="var(--teal)" />
-  </svg>,
-];
-
 const oddLogos = [
   { number: 2, left: "-142.5%", top: "-129.2%" },
   { number: 5, left: "-475.4%", top: "-129.2%" },
@@ -107,9 +89,8 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
             <p className="approachLead">{approach.lead}</p>
           </div>
           <div className="approachGrid">
-            {approach.items.map((step, index) => (
+            {approach.items.map((step) => (
               <article key={step.title}>
-                <span className="approachIcon">{approachIcons[index]}</span>
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
               </article>
@@ -138,14 +119,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
       </section>
 
       <section className="contactSection sectionShell" id="contact">
-        <div className="contactCopy">
-          <p className="eyebrow">
-            <span /> {contact.eyebrow}
-          </p>
-          <h2>{contact.title}</h2>
-          <p>{contact.intro}</p>
-          <address className="contactAddress">{contact.address}</address>
-        </div>
         <ContactForm
           expertiseOptions={expertises.map((item) => item.title)}
           locale={locale}

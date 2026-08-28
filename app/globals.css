@@ -214,8 +214,7 @@ img, svg { max-width: 100%; }
 .approachSubtitle { grid-column: 2; align-self: start; max-width: 56ch; margin: 10px 0 0; color: var(--ochre); font-size: 15px; font-weight: 800; letter-spacing: -.005em; }
 .approachLead { max-width: 56ch; margin: 12px 0 0; color: var(--muted); font-size: 16px; line-height: 1.55; text-align: justify; text-justify: inter-word; hyphens: none; }
 .approachGrid { align-self: start; align-items: stretch; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 0; background: var(--line); border: 1px solid var(--line); }
-.approachGrid article { display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: center; column-gap: 14px; min-height: 0; height: 100%; padding: 22px; background: var(--paper); }
-.approachIcon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 15px; background: var(--sand); }
+.approachGrid article { display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; min-height: 0; height: 100%; padding: 20px 18px; background: var(--paper); }
 .approachGrid h3 { align-self: center; margin: 0; color: var(--ink); font-size: clamp(15px, 1.35vw, 18px); line-height: 1.25; letter-spacing: -.02em; }
 .approachGrid p { grid-column: 1 / -1; margin: 16px 0 0; color: var(--muted); font-size: 14px; line-height: 1.38; }
 .approachClosing { grid-column: 1 / -1; position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, .9fr) minmax(360px, 1fr); grid-template-areas: "title logos" "text logos"; grid-template-rows: auto 1fr; align-items: start; gap: 14px 64px; margin-top: 24px; padding: 24px 24px 60px; border-top: 1px solid var(--line); text-align: left; }
@@ -325,12 +324,8 @@ img, svg { max-width: 100%; }
 .organizationControls > div button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 5px; background: #c2cbc7; cursor: pointer; transition: width .2s ease, background .2s ease; }
 .organizationControls > div button.active { width: 28px; background: var(--ochre); }
 
-.contactSection { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(50px, 9vw, 120px); padding-block: 16px 130px; }
-.contactCopy { position: sticky; top: 120px; align-self: start; }
-.contactCopy h2 { margin: 0; color: var(--forest); font-size: clamp(30px, 3.6vw, 46px); line-height: 1.05; letter-spacing: -.055em; }
-.contactCopy > p:not(.eyebrow) { margin: 27px 0 0; color: var(--muted); font-size: 17px; line-height: 1.42; }
-.contactAddress { margin-top: 22px; padding-left: 24px; color: var(--forest); font-size: 15px; font-style: normal; font-weight: 750; line-height: 1.45; background: linear-gradient(var(--ochre), var(--ochre)) 0 4px / 3px calc(100% - 8px) no-repeat; }
-.projectForm { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 18px; padding: clamp(25px, 4vw, 45px); background: white; border: 1px solid rgba(24,52,61,.12); box-shadow: 0 30px 80px rgba(23,54,49,.09); }
+.contactSection { display: block; padding-block: 32px 130px; }
+.projectForm { display: grid; width: min(100%, 820px); margin-inline: auto; grid-template-columns: 1fr 1fr; gap: 22px 18px; padding: clamp(25px, 4vw, 45px); background: white; border: 1px solid rgba(24,52,61,.12); box-shadow: 0 30px 80px rgba(23,54,49,.09); }
 .field { display: grid; gap: 8px; }
 .fullField { grid-column: 1 / -1; }
 .field label { color: var(--ink); font-size: 13.5px; font-weight: 800; }
@@ -416,7 +411,6 @@ img, svg { max-width: 100%; }
   .projectsArchiveIntro, .projectDetailHero { grid-template-columns: 1fr; }
   .projectDetailCover { min-height: 520px; order: -1; }
   .principles { flex-wrap: wrap; justify-content: flex-start; }
-  .contactCopy { position: static; }
   .footerTop { gap: 32px 60px; }
   .footerBrand { flex-basis: 100%; }
   .adminHeader { display: grid; }
@@ -501,14 +495,12 @@ img, svg { max-width: 100%; }
 .domainCardInner { position: relative; width: 100%; height: 100%; transition: transform .7s cubic-bezier(.3,.2,.2,1); transform-style: preserve-3d; }
 .domainCardInner.isFlipped { transform: rotateY(180deg); }
 .domainCardFace { position: absolute; inset: 0; overflow: hidden; border-radius: 22px; box-shadow: 0 16px 38px rgba(13,77,59,.09); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
-.domainCardFront { display: block; width: 100%; margin: 0; padding: 0; border: 0; background: #d7d7ce; font: inherit; color: inherit; text-align: inherit; cursor: pointer; }
+.domainCardFront { display: block; width: 100%; background: #d7d7ce; }
 .domainCardFront img { object-fit: cover; transition: transform .6s ease; }
 .domainCard:hover .domainCardFront img { transform: scale(1.035); }
-.domainCardCaption { position: absolute; left: 15px; right: 15px; bottom: 15px; padding: 12px 14px; border-radius: 12px; background: rgba(8,47,40,.8); color: white; font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; backdrop-filter: blur(8px); transform: translateY(4px); transition: transform .3s ease, background .3s ease; }
-.domainCard:hover .domainCardCaption { transform: translateY(0); background: rgba(8,47,40,.93); }
 .domainCardBack { transform: rotateY(180deg); display: flex; flex-direction: column; padding: 22px 22px 16px; background: linear-gradient(155deg, #fff 0%, color-mix(in srgb, var(--accent), white 92%) 100%); color: var(--ink); overflow-y: auto; }
-.domainCardBackBtn { position: absolute; top: 14px; right: 14px; z-index: 2; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; flex: none; border: 0; border-radius: 999px; background: color-mix(in srgb, var(--accent), white 10%); color: white; font-size: 15px; line-height: 1; cursor: pointer; transition: transform .2s ease, background .2s ease; }
-.domainCardBackBtn:hover { background: var(--accent); transform: scale(1.08); }
+.domainCardFrontBtn, .domainCardBackBtn { position: absolute; top: 14px; right: 14px; z-index: 2; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; flex: none; border: 0; border-radius: 999px; background: color-mix(in srgb, var(--accent), white 10%); color: white; font-size: 15px; line-height: 1; cursor: pointer; transition: transform .2s ease, background .2s ease; }
+.domainCardFrontBtn:hover, .domainCardBackBtn:hover { background: var(--accent); transform: scale(1.08); }
 .domainCardBack h3 { margin: 0 0 8px; padding-right: 34px; color: var(--accent); font-size: 17px; line-height: 1.2; letter-spacing: -.03em; }
 .domainCardSummary { margin: 0 0 14px; color: var(--muted); font-size: 13.5px; font-weight: 500; line-height: 1.52; text-align: justify; hyphens: none; }
 .domainCardInterventions { display: grid; gap: 6px; margin: 0 0 12px; padding: 0; list-style: none; }
@@ -757,6 +749,7 @@ img, svg { max-width: 100%; }
 
 @media (max-width: 980px) {
   .approachGrid article { min-height: 240px; }
+  .approachGrid h3 { white-space: normal; }
 }
 
 @media (max-width: 680px) {
@@ -773,8 +766,8 @@ img, svg { max-width: 100%; }
   position: relative;
   display: block;
   flex: 0 0 auto;
-  width: 180px;
-  height: 69px;
+  width: 150px;
+  height: 58px;
   overflow: hidden;
   border-radius: 10px;
   transition: transform .25s ease, box-shadow .25s ease;
@@ -786,7 +779,7 @@ img, svg { max-width: 100%; }
 .loginBrand .brandLogoFrame { width: 165px; height: 64px; }
 
 @media (max-width: 680px) {
-  .brandLogoFrame { width: 125px; height: 48px; }
+  .brandLogoFrame { width: 112px; height: 43px; }
   .brandName { display: none; }
   .footerBrand .brandLogoFrame { width: 142px; height: 55px; }
   .loginBrand .brandLogoFrame { width: 145px; height: 56px; }
@@ -989,7 +982,7 @@ img, svg { max-width: 100%; }
 
 /* Savoir-faire — lisibilité renforcée */
 .approachLead { font-size: 17px; line-height: 1.62; }
-.approachGrid h3 { font-size: clamp(16px, 1.45vw, 19px); line-height: 1.32; }
+.approachGrid h3 { font-size: clamp(12px, 1vw, 14px); line-height: 1.3; white-space: nowrap; }
 .approachGrid p { font-size: 15px; line-height: 1.5; }
 
 /* Footer éditorial et utile */

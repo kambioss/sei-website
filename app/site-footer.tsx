@@ -52,7 +52,7 @@ export function SiteFooter({
           ))}
         </nav>
         <div className="footerContact">
-          <p>{english ? "Contact" : "Nous contacter"}</p>
+          <p>{english ? "Address" : "Adresse"}</p>
           <a href="mailto:contact@se-impact.com">contact@se-impact.com</a>
           <span>{address}</span>
           <span>{english ? "Africa & international assignments" : "Afrique & missions internationales"}</span>

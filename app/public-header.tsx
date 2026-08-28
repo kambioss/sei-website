@@ -37,7 +37,7 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
   return (
     <header className="siteHeader">
       <Link className="brand" href={`/?lang=${locale}`} aria-label="Social & Eco Impact">
-        <span className="brandLogoFrame"><Image src="/images/Logo_SEImpact-01.png" alt="" fill priority unoptimized sizes="160px" /></span>
+        <span className="brandLogoFrame"><Image src="/images/Logo_SEImpact-01.png" alt="" fill priority unoptimized sizes="150px" /></span>
         <span className="brandName">
           <span className="brandNameTop">Social &amp; Eco</span>
           <span className="brandNameBottom">

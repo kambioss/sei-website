@@ -46,10 +46,17 @@ function DomainCard({ item, english }: { item: DomainItem; english: boolean }) {
       }}
     >
       <div className={"domainCardInner" + (isFlipped ? " isFlipped" : "")}>
-        <button type="button" className="domainCardFace domainCardFront" onClick={() => setIsFlipped(true)} aria-label={item.title}>
+        <div className="domainCardFace domainCardFront">
           <Image src={item.src} alt="" fill unoptimized sizes="(max-width: 680px) 100vw, 33vw" />
-          <span className="domainCardCaption" aria-hidden="true">{item.title}</span>
-        </button>
+          <button
+            type="button"
+            className="domainCardFrontBtn"
+            aria-label={english ? "View card details" : "Voir les détails de la carte"}
+            onClick={() => setIsFlipped(true)}
+          >
+            <span aria-hidden="true">↻</span>
+          </button>
+        </div>
         <div
           className="domainCardFace domainCardBack"
           aria-hidden={!isFlipped}

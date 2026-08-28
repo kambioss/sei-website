@@ -31,7 +31,6 @@ export function PageInteractions() {
       ".midCta",
       ".organizationsIntro",
       ".organizationSlider",
-      ".contactCopy",
       ".projectForm",
     ].join(","));
 
