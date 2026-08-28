@@ -5,6 +5,7 @@ export type FooterLink = { href: string; label: string; newTab?: boolean };
 export type FooterLinkGroup = { title: string; links: FooterLink[] };
 
 export function SiteFooter({
+  brandName,
   address,
   linkGroups,
   locale,
@@ -57,6 +58,9 @@ export function SiteFooter({
           <span>{address}</span>
           <span>{english ? "Africa & international assignments" : "Afrique & missions internationales"}</span>
         </div>
+      </div>
+      <div className="sectionShell footerBottom">
+        <p>© {new Date().getFullYear()} {brandName}. {english ? "All rights reserved." : "Tous droits réservés."}</p>
       </div>
     </footer>
   );

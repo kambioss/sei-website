@@ -32,6 +32,9 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
   const { brand, identity, hero, expertiseIntro, expertises, approach, contact } = content;
   const { knowUs } = identity;
   const impactLabel = english ? "Expected impact" : "Impact recherché";
+  const approachCardText = english
+    ? "Needs assessment, design and delivery of training, development of guides and practical tools, knowledge capture and dissemination, stakeholder awareness-raising, and institutional and technical capacity building. Design and organisation of international conferences, facilitation of stakeholder consultation workshops, communication, and capitalisation of results."
+    : "Diagnostic des besoins, conception et animation de formations, élaboration de guides et d’outils pratiques, capitalisation et diffusion des connaissances, sensibilisation des acteurs et renforcement des capacités institutionnelles et techniques. Conception et organisation de conférences internationales, conduite d’ateliers de consultation des parties prenantes, communication et capitalisation des résultats.";
 
   return (
     <main className="homePage" lang={locale}>
@@ -88,12 +91,9 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
             <p className="approachLead">{approach.lead}</p>
           </div>
           <div className="approachGrid">
-            {approach.items.map((step) => (
-              <article key={step.title}>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-              </article>
-            ))}
+            <article>
+              <p>{approachCardText}</p>
+            </article>
           </div>
           <div className="approachClosing">
             <h3>{approach.closingTitle}</h3>
