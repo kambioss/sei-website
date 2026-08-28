@@ -26,8 +26,8 @@
   "founder": {
     "eyebrow": "Le mot du fondateur",
     "quote": [
-      "« Les écosystèmes africains et les populations qui en dépendent sont aujourd’hui confrontés à une vulnérabilité croissante. Le dérèglement climatique, la dégradation des terres, la perte de biodiversité et les pressions anthropiques exercées sur les ressources naturelles fragilisent les moyens d’existence, accentuent les inégalités et peuvent alimenter les tensions au sein des territoires.",
-      "Avec SEI, notre vocation est de renforcer le lien entre les engagements internationaux, les politiques publiques et l’action de terrain, afin de protéger les écosystèmes, de renforcer la résilience des populations et de contribuer à un développement durable, inclusif et adapté aux réalités africaines.»"
+      "« Les écosystèmes africains et les populations qui en dépendent sont de plus en plus vulnérables. Le dérèglement climatique, la dégradation des terres, l’érosion de la biodiversité et la pression croissante sur les ressources naturelles fragilisent les moyens d’existence, aggravent les inégalités et peuvent accentuer les tensions au sein des territoires.",
+      "C’est de ce constat et de la volonté d’agir qu’est né SEI. Notre vocation est de rapprocher les engagements internationaux et les politiques publiques des réalités de terrain, afin de préserver les écosystèmes, de renforcer la résilience des populations et de faire du développement durable un levier concret d’action, d’inclusion et de paix pour les territoires africains. »"
     ],
     "photo": "/images/fondateur-sei.jpeg",
     "name": "Youssouf AMADOU"
@@ -75,7 +75,7 @@
       "heading": "Des territoires africains plus résilients",
       "statement": "Protéger les écosystèmes, sécuriser les moyens d’existence.",
       "image": "/images/mountain-cloudy-sky.jpg",
-      "text": "Contribuer à des territoires africains plus résilients, où la gestion durable des ressources naturelles protège les écosystèmes, sécurise les moyens d’existence des populations et prévient les tensions exacerbées par le dérèglement climatique."
+      "text": "Contribuer à l’émergence de territoires africains résilients, où la gestion durable des ressources naturelles préserve les écosystèmes, renforce les moyens d’existence des populations et contribue à prévenir les tensions liées au dérèglement climatique."
     }
   },
   "expertiseIntro": {
