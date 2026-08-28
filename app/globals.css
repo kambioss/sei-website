@@ -945,9 +945,9 @@ img, svg { max-width: 100%; }
 .founderLetter .eyebrow { grid-area: eyebrow; justify-self: start; color: var(--ochre); margin: 0 0 14px; font-size: 9px; }
 .founderPhotoBlock { grid-area: photo; width: 100%; margin: 0; }
 .founderPhoto { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 14px 14px 36px 14px; box-shadow: 0 16px 36px rgba(17,57,48,.18); background: var(--sand); }
-.founderPhoto img { object-fit: cover; }
+.founderPhoto img { object-fit: cover; object-position: center 15%; }
 .founderPhotoName { margin: 10px 0 0; color: var(--forest); font-size: 13px; font-weight: 800; letter-spacing: -.01em; text-align: center; }
-.founderQuote { grid-area: quote; display: flex; flex-direction: column; justify-content: flex-start; gap: 12px; min-width: 0; }
+.founderQuote { grid-area: quote; display: flex; flex-direction: column; justify-content: flex-start; gap: 12px; min-width: 0; border-left: 3px solid var(--ochre); padding-left: 22px; }
 .founderQuoteText { margin: 0; color: var(--ink); font-size: 18px; line-height: 1.5; }
 .founderQuoteText:last-of-type { margin-bottom: 0; }
 
