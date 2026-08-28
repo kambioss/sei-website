@@ -34,14 +34,22 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
   const impactLabel = english ? "Expected impact" : "Impact recherché";
   const approachCardItems = english
     ? [
-        "Needs assessment, design and delivery of training, development of guides and practical tools, knowledge capture and dissemination, stakeholder awareness-raising, and institutional and technical capacity building.",
-        "Design and organisation of international conferences.",
-        "Facilitation of stakeholder consultation workshops, communication, and capitalisation of results.",
+        "Needs assessment, design and delivery of training,",
+        "Development of guides and practical tools,",
+        "Knowledge capture and dissemination,",
+        "Stakeholder awareness-raising and institutional and technical capacity building,",
+        "Design and organisation of international conferences,",
+        "Facilitation of stakeholder consultation workshops,",
+        "Communication and capitalisation of results.",
       ]
     : [
-        "Diagnostic des besoins, conception et animation de formations, élaboration de guides et d’outils pratiques, capitalisation et diffusion des connaissances, sensibilisation des acteurs et renforcement des capacités institutionnelles et techniques.",
-        "Conception et organisation de conférences internationales.",
-        "Conduite d’ateliers de consultation des parties prenantes, communication et capitalisation des résultats.",
+        "Diagnostic des besoins, conception et animation de formations,",
+        "Élaboration de guides et d’outils pratiques,",
+        "Capitalisation et diffusion des connaissances,",
+        "Sensibilisation des acteurs et renforcement des capacités institutionnelles et techniques,",
+        "Conception et organisation de conférences internationales,",
+        "Conduite d’ateliers de consultation des parties prenantes,",
+        "Communication et capitalisation des résultats.",
       ];
 
   return (

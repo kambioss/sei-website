@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Locale } from "@/lib/site-content";
 
@@ -37,6 +38,9 @@ export function SiteFooter({
               </div>
             </dl>
           </div>
+          <span className="footerLogoFrame">
+            <Image src="/images/logo S&EImpact White-01.png" alt="Social & Eco Impact" fill unoptimized sizes="150px" />
+          </span>
         </div>
         <nav className="footerNav" aria-label="Footer">
           {linkGroups.map((group) => (

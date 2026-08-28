@@ -989,9 +989,11 @@ img, svg { max-width: 100%; }
 .siteFooter::before { content: ""; position: absolute; z-index: -1; right: -120px; bottom: -190px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(47,116,120,.3), transparent 68%); }
 .siteFooter::after { content: ""; position: absolute; z-index: -1; top: -240px; left: 24%; width: 430px; height: 430px; border-radius: 50%; background: radial-gradient(circle, rgba(230,182,98,.07), transparent 68%); }
 .footerTop { display: grid; grid-template-columns: minmax(220px, .9fr) minmax(320px, 1.25fr) minmax(250px, .9fr); align-items: stretch; gap: clamp(28px, 4vw, 52px); padding-block: 34px; }
-.footerBrand { display: grid; order: 3; }
+.footerBrand { display: grid; align-content: space-between; justify-items: end; gap: 20px; order: 3; }
 .footerLegalCard, .footerContact { border: 1px solid rgba(255,255,255,.16); background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.035)); box-shadow: inset 0 1px 0 rgba(255,255,255,.055), 0 18px 45px rgba(0,0,0,.08); backdrop-filter: blur(8px); }
 .footerLegalCard { display: grid; gap: 12px; padding: 18px 20px; border-radius: 20px 20px 42px 20px; }
+.footerLogoFrame { position: relative; display: block; width: 150px; height: 58px; margin-right: 8px; }
+.footerLogoFrame img { object-fit: contain; object-position: center; }
 .footerLegalTitle { margin: 0; color: rgb(240,189,99); font-size: 10px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
 .footerLegalList { display: grid; gap: 8px; margin: 0; }
 .footerLegalList > div { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; }
@@ -1019,4 +1021,5 @@ img, svg { max-width: 100%; }
   .footerTop { grid-template-columns: 1fr; gap: 26px; padding-block: 28px; }
   .footerNav { grid-template-columns: 1fr 1fr; }
   .footerContact { grid-column: auto; }
+  .footerLogoFrame { width: 112px; height: 43px; margin-right: 0; }
 }
