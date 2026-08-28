@@ -88,8 +88,8 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           <div className="approachIntro">
             <p className="eyebrow"><span /> {approach.eyebrow}</p>
             <h2>{approach.title}</h2>
-            <p className="approachLead">{approach.lead}</p>
           </div>
+          <p className="approachLead">{approach.lead}</p>
           <div className="approachGrid">
             <article>
               <p>{approachCardText}</p>

@@ -58,7 +58,7 @@ img, svg { max-width: 100%; }
   font-weight: 800;
   letter-spacing: .08em;
 }
-.brandName { display: flex; flex-direction: column; align-items: flex-start; width: max-content; max-width: 185px; color: var(--forest); font-size: 21px; line-height: 1.12; letter-spacing: -.02em; }
+.brandName { display: flex; flex-direction: column; align-items: flex-start; width: max-content; max-width: 185px; color: var(--forest); font-size: 19px; line-height: 1.12; letter-spacing: -.02em; }
 .brandNameTop { color: var(--ochre); font-weight: 800; white-space: nowrap; }
 .brandNameBottom { display: flex; justify-content: space-between; width: 100%; font-weight: 800; }
 .desktopNav { display: flex; align-items: center; gap: 30px; font-size: 14px; font-weight: 700; }
@@ -206,13 +206,13 @@ img, svg { max-width: 100%; }
 .buttonLight { background: white; color: var(--forest); }
 
 .approachSection { padding-block: 24px 24px; background: linear-gradient(160deg, var(--paper) 0%, var(--sand) 100%); color: var(--ink); }
-.approachSection > .sectionShell { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); gap: 64px 70px; }
-.approachIntro { display: flex; min-width: 0; flex-direction: column; justify-content: center; }
-.approachIntro .eyebrow { margin-bottom: 20px; }
-.approachIntro h2 { margin: 0; color: var(--forest); font-size: clamp(16px, 1.8vw, 24px); line-height: 1.1; letter-spacing: -.03em; white-space: normal; text-align: center; }
+.approachSection > .sectionShell { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr); column-gap: 70px; row-gap: 32px; }
+.approachIntro { grid-column: 1 / -1; display: flex; min-width: 0; flex-direction: column; align-items: center; }
+.approachIntro .eyebrow { justify-content: center; margin-bottom: 14px; }
+.approachIntro h2 { width: min(100%, 600px); margin: 0 auto; color: var(--forest); font-size: clamp(16px, 1.8vw, 24px); line-height: 1.1; letter-spacing: -.03em; white-space: normal; text-align: center; }
 .approachIntro h2 em { color: var(--ochre); font-style: normal; }
 .approachSubtitle { grid-column: 2; align-self: start; max-width: 56ch; margin: 10px 0 0; color: var(--ochre); font-size: 15px; font-weight: 800; letter-spacing: -.005em; }
-.approachLead { max-width: 56ch; margin: 12px 0 0; color: var(--muted); font-size: 16px; line-height: 1.55; text-align: justify; text-justify: inter-word; hyphens: none; }
+.approachLead { grid-column: 1; align-self: stretch; max-width: 56ch; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.55; text-align: justify; text-justify: inter-word; hyphens: none; }
 .approachGrid { align-self: stretch; align-items: stretch; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; margin-top: 0; background: var(--line); border: 1px solid var(--line); }
 .approachGrid article { display: flex; flex-direction: column; align-items: stretch; justify-content: center; min-height: 0; height: 100%; padding: 28px 18px; background: var(--paper); }
 .approachGrid p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.58; }
