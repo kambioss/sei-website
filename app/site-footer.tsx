@@ -41,7 +41,6 @@ export function SiteFooter({
           <span className="footerLogoFrame">
             <Image src="/images/logo S&EImpact White-01.png" alt="Social & Eco Impact" fill unoptimized sizes="150px" />
           </span>
-          <span className="footerMission">{english ? "Africa & international assignments" : "Afrique & missions internationales"}</span>
         </div>
         <nav className="footerNav" aria-label="Footer">
           {linkGroups.map((group) => (
@@ -61,6 +60,7 @@ export function SiteFooter({
           <p>{english ? "Address" : "Adresse"}</p>
           <a href="mailto:contact@se-impact.com">contact@se-impact.com</a>
           <span>{address}</span>
+          <span>{english ? "Africa & international assignments" : "Afrique & missions internationales"}</span>
         </div>
       </div>
       <div className="sectionShell footerBottom">
