@@ -918,7 +918,9 @@ img, svg { max-width: 100%; }
 .valueCard span { display: block; margin-bottom: 12px; color: var(--ochre); font-size: 11px; font-weight: 900; letter-spacing: .08em; }
 .valueCard strong { display: block; color: var(--forest); font-size: 17px; letter-spacing: -.02em; }
 .valuesText { max-width: 760px; margin: 0 auto; color: var(--muted); font-size: 16px; line-height: 1.6; }
-.valuesVisionGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: clamp(32px, 5vw, 64px); padding-block: 44px 84px; border-top: 1px solid var(--line); }
+.valuesVisionGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: clamp(32px, 5vw, 64px); padding-block: 44px 84px; border-top: 1px solid var(--line); }
+.valuesVisionCol { display: grid; align-content: start; gap: 18px; min-width: 0; }
+.valuesVisionCol > .eyebrow { margin: 0; }
 .valuesVisionGrid .valuesSection,
 .valuesVisionGrid .visionSection {
   min-width: 0;
@@ -930,7 +932,6 @@ img, svg { max-width: 100%; }
 }
 .valuesVisionGrid .sectionIntro { display: block; margin-bottom: 28px; }
 .valuesVisionGrid .sectionIntro h2 { font-size: clamp(28px, 3vw, 42px); line-height: 1.06; }
-.valuesVisionGrid .sectionIntro > p { margin-top: 20px; }
 .valuesVisionGrid .valuesText { margin: 0; }
 .valuesVisionGrid .sectionIntro > p,
 .valuesVisionGrid .valuesText,
@@ -999,11 +1000,11 @@ img, svg { max-width: 100%; }
 .siteFooter { position: relative; isolation: isolate; overflow: hidden; border-top: 1px solid rgba(255,255,255,.1); background: var(--forest-dark); color: white; }
 .siteFooter::before { content: ""; position: absolute; z-index: -1; right: -120px; bottom: -190px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(47,116,120,.3), transparent 68%); }
 .siteFooter::after { content: ""; position: absolute; z-index: -1; top: -240px; left: 24%; width: 430px; height: 430px; border-radius: 50%; background: radial-gradient(circle, rgba(230,182,98,.07), transparent 68%); }
-.footerTop { display: grid; grid-template-columns: minmax(220px, .9fr) minmax(320px, 1.25fr) minmax(230px, .8fr); align-items: start; gap: clamp(20px, 3vw, 36px); padding-block: 24px; }
-.footerBrand { display: grid; grid-template-columns: 1fr; justify-items: start; align-content: start; gap: 10px; order: 3; }
+.footerTop { display: grid; grid-template-columns: minmax(220px, .9fr) minmax(320px, 1.1fr) minmax(280px, 1fr); align-items: start; gap: clamp(20px, 3vw, 36px); padding-block: 24px; }
+.footerBrand { display: flex; align-items: center; gap: 16px; margin-left: -10px; order: 3; }
 .footerLegalCard, .footerContact { border: 0; background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.035)); box-shadow: 0 18px 45px rgba(0,0,0,.08); backdrop-filter: blur(8px); }
-.footerLegalCard { display: grid; gap: 10px; padding: 14px 18px; border-radius: 16px 16px 34px 16px; width: 100%; }
-.footerLogoFrame { position: relative; display: block; width: 122px; height: 47px; }
+.footerLegalCard { flex: 1 1 auto; min-width: 0; display: grid; gap: 10px; padding: 14px 18px; border-radius: 16px 16px 34px 16px; }
+.footerLogoFrame { flex: 0 0 auto; position: relative; display: block; width: 100px; height: 39px; }
 .footerLogoFrame img { object-fit: contain; object-position: center; }
 .footerLegalTitle { margin: 0; color: rgb(240,189,99); font-size: 10px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
 .footerLegalList { display: grid; gap: 6px; margin: 0; }
@@ -1032,6 +1033,7 @@ img, svg { max-width: 100%; }
   .footerTop { grid-template-columns: 1fr; gap: 20px; padding-block: 20px; }
   .footerNav { grid-template-columns: 1fr 1fr; }
   .footerContact { grid-column: auto; }
-  .footerBrand { justify-items: start; }
+  .footerBrand { flex-direction: column; align-items: flex-start; margin-left: 0; gap: 14px; }
+  .footerLegalCard { width: 100%; }
   .footerLogoFrame { width: 112px; height: 43px; }
 }
