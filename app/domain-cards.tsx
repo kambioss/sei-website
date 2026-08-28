@@ -15,27 +15,31 @@ type DomainItem = {
   tone: string;
 };
 
-export function DomainCards({ items }: { items: DomainItem[] }) {
+export function DomainCards({ items, english }: { items: DomainItem[]; english: boolean }) {
   return (
     <div className="domainGalleryGrid">
       {items.map((item) => (
-        <DomainCard key={item.src} item={item} />
+        <DomainCard key={item.src} item={item} english={english} />
       ))}
     </div>
   );
 }
 
-function DomainCard({ item }: { item: DomainItem }) {
+function DomainCard({ item, english }: { item: DomainItem; english: boolean }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   return (
     <div className={"domainCard " + item.tone} role="group" aria-label={item.title}>
-      <div className="domainCardInner">
-        <div className="domainCardFace domainCardFront">
-          <Image src={item.src} alt={item.title} fill unoptimized sizes="(max-width: 680px) 100vw, 33vw" />
-          <span className="domainCardCaption">{item.title}</span>
-        </div>
+      <div className={"domainCardInner" + (isFlipped ? " isFlipped" : "")}>
+        <button type="button" className="domainCardFace domainCardFront" onClick={() => setIsFlipped(true)} aria-label={item.title}>
+          <Image src={item.src} alt="" fill unoptimized sizes="(max-width: 680px) 100vw, 33vw" />
+          <span className="domainCardCaption" aria-hidden="true">{item.title}</span>
+        </button>
         <div className="domainCardFace domainCardBack">
+          <button type="button" className="domainCardBackBtn" aria-label={english ? "Back to front" : "Retour"} onClick={() => setIsFlipped(false)}>
+            <span aria-hidden="true">↺</span>
+          </button>
           <h3>{item.title}</h3>
           <p className="domainCardSummary">{item.summary}</p>
           <ul className="domainCardInterventions">

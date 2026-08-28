@@ -519,15 +519,18 @@ img, svg { max-width: 100%; }
 .domainCardInner { position: relative; width: 100%; height: 100%; transition: transform .7s cubic-bezier(.3,.2,.2,1); transform-style: preserve-3d; }
 .domainCard:hover .domainCardInner,
 .domainCard:focus-within .domainCardInner,
-.domainCard:active .domainCardInner { transform: rotateY(180deg); }
+.domainCard:active .domainCardInner,
+.domainCardInner.isFlipped { transform: rotateY(180deg); }
 .domainCardFace { position: absolute; inset: 0; overflow: hidden; border-radius: 22px; box-shadow: 0 16px 38px rgba(13,77,59,.09); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
-.domainCardFront { background: #d7d7ce; }
+.domainCardFront { display: block; width: 100%; margin: 0; padding: 0; border: 0; background: #d7d7ce; font: inherit; color: inherit; text-align: inherit; cursor: pointer; }
 .domainCardFront img { object-fit: cover; transition: transform .6s ease; }
 .domainCard:hover .domainCardFront img { transform: scale(1.035); }
 .domainCardCaption { position: absolute; left: 15px; right: 15px; bottom: 15px; padding: 12px 14px; border-radius: 12px; background: rgba(8,47,40,.8); color: white; font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; backdrop-filter: blur(8px); transform: translateY(4px); transition: transform .3s ease, background .3s ease; }
 .domainCard:hover .domainCardCaption { transform: translateY(0); background: rgba(8,47,40,.93); }
 .domainCardBack { transform: rotateY(180deg); display: flex; flex-direction: column; padding: 22px 22px 16px; background: linear-gradient(155deg, #fff 0%, color-mix(in srgb, var(--accent), white 92%) 100%); color: var(--ink); overflow-y: auto; }
-.domainCardBack h3 { margin: 0 0 8px; color: var(--accent); font-size: 17px; line-height: 1.2; letter-spacing: -.03em; }
+.domainCardBackBtn { position: absolute; top: 14px; right: 14px; z-index: 2; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; flex: none; border: 0; border-radius: 999px; background: color-mix(in srgb, var(--accent), white 10%); color: white; font-size: 15px; line-height: 1; cursor: pointer; transition: transform .2s ease, background .2s ease; }
+.domainCardBackBtn:hover { background: var(--accent); transform: scale(1.08); }
+.domainCardBack h3 { margin: 0 0 8px; padding-right: 34px; color: var(--accent); font-size: 17px; line-height: 1.2; letter-spacing: -.03em; }
 .domainCardSummary { margin: 0 0 14px; color: var(--muted); font-size: 13.5px; font-weight: 500; line-height: 1.52; text-align: justify; hyphens: none; }
 .domainCardInterventions { display: grid; gap: 6px; margin: 0 0 12px; padding: 0; list-style: none; }
 .domainCardInterventions li { border-radius: 10px; background: color-mix(in srgb, var(--accent), white 90%); transition: background .2s ease; }

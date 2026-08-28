@@ -86,6 +86,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           </div>
         </div>
         <DomainCards
+          english={english}
           items={domainImages.map((src, index) => ({
             src,
             title: expertises[index].title,
