@@ -65,7 +65,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
 
       <section id="nous-connaitre" className="hero sectionShell">
         <div className="heroCopy heroIntro">
-          <h1>{english ? "Act for sustainable development" : "Agir pour le développement durable"}</h1>
+          <p className="eyebrow"><span /> {english ? "Get to know us" : "Nous connaître"}</p>
           {knowUs.paragraphs.map((paragraph) => <p className="heroLead" key={paragraph}>{paragraph}</p>)}
         </div>
         <div className="heroVisualColumn">

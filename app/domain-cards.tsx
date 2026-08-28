@@ -25,7 +25,7 @@ export function DomainCards({ items, english }: { items: DomainItem[]; english: 
   );
 }
 
-function DomainCard({ item }: { item: DomainItem; english: boolean }) {
+function DomainCard({ item, english }: { item: DomainItem; english: boolean }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -57,6 +57,14 @@ function DomainCard({ item }: { item: DomainItem; english: boolean }) {
             if (!(event.target as HTMLElement).closest("button")) setIsFlipped(false);
           }}
         >
+          <button
+            type="button"
+            className="domainCardBackBtn"
+            aria-label={english ? "Back to front" : "Retourner la carte"}
+            onClick={() => setIsFlipped(false)}
+          >
+            <span aria-hidden="true">↺</span>
+          </button>
           <h3>{item.title}</h3>
           <p className="domainCardSummary">{item.summary}</p>
           <ul className="domainCardInterventions">
