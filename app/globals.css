@@ -214,9 +214,9 @@ img, svg { max-width: 100%; }
 .approachSubtitle { grid-column: 2; align-self: start; max-width: 56ch; margin: 10px 0 0; color: var(--ochre); font-size: 15px; font-weight: 800; letter-spacing: -.005em; }
 .approachLead { max-width: 56ch; margin: 12px 0 0; color: var(--muted); font-size: 16px; line-height: 1.55; text-align: justify; text-justify: inter-word; hyphens: none; }
 .approachGrid { align-self: stretch; align-items: stretch; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 0; background: var(--line); border: 1px solid var(--line); }
-.approachGrid article { display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; min-height: 0; height: 100%; padding: 20px 18px; background: var(--paper); }
+.approachGrid article { display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 24px; min-height: 0; height: 100%; padding: 28px 18px; background: var(--paper); }
 .approachGrid h3 { align-self: center; margin: 0; color: var(--ink); font-size: clamp(15px, 1.35vw, 18px); line-height: 1.25; letter-spacing: -.02em; }
-.approachGrid p { grid-column: 1 / -1; margin: 16px 0 0; color: var(--muted); font-size: 14px; line-height: 1.38; }
+.approachGrid p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.38; }
 .approachClosing { grid-column: 1 / -1; position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, .9fr) minmax(360px, 1fr); grid-template-areas: "title logos" "text logos"; grid-template-rows: auto 1fr; align-items: start; gap: 14px 64px; margin-top: 24px; padding: 24px 24px 60px; border-top: 1px solid var(--line); text-align: left; }
 .approachClosing::before {
   content: "";
@@ -751,7 +751,6 @@ img, svg { max-width: 100%; }
 
 @media (max-width: 980px) {
   .approachGrid article { min-height: 240px; }
-  .approachGrid h3 { white-space: normal; }
 }
 
 @media (max-width: 680px) {
@@ -876,8 +875,8 @@ img, svg { max-width: 100%; }
 #nous-connaitre .heroIntro { grid-area: intro; }
 #nous-connaitre .heroVisualColumn { grid-area: visual; align-self: stretch; width: 100%; margin-top: 6px; }
 #nous-connaitre .heroVisual { width: 100%; min-height: 0; height: 100%; aspect-ratio: auto; background: #403c36; }
-#nous-connaitre .heroVisual img.heroVisualBackdrop { object-fit: cover; object-position: center; filter: blur(18px); transform: scale(1.08); opacity: .72; }
-#nous-connaitre .heroVisual img.heroVisualMain { z-index: 1; object-fit: contain; object-position: center; }
+#nous-connaitre .heroVisual img.heroVisualBackdrop { display: none; }
+#nous-connaitre .heroVisual img.heroVisualMain { z-index: 1; object-fit: cover; object-position: center; }
 #nous-connaitre .heroVisual .imageShade { z-index: 2; }
 #nous-connaitre .heroVisual .imageCaption { z-index: 3; }
 @media (max-width: 980px) {
@@ -984,7 +983,7 @@ img, svg { max-width: 100%; }
 
 /* Savoir-faire — lisibilité renforcée */
 .approachLead { font-size: 17px; line-height: 1.62; }
-.approachGrid h3 { font-size: 14px; font-weight: 650; line-height: 1.3; white-space: nowrap; }
+.approachGrid h3 { min-height: 42px; font-size: clamp(15px, 1.2vw, 17px); font-weight: 650; line-height: 1.28; white-space: normal; }
 .approachGrid p { font-size: 15px; line-height: 1.5; }
 
 /* Footer éditorial et utile */

@@ -18,7 +18,6 @@ export function PublicHeader({ locale, active, ctaLabel, languageHrefFr, languag
   const homeAnchor = (id: string) => `/?lang=${locale}#${id}`;
   const contactHref = `/contact?lang=${locale}`;
   const aboutSubItems = [
-    { id: "nous-connaitre", href: homeAnchor("nous-connaitre"), label: english ? "Get to know us" : "Nous connaître" },
     { id: "notre-histoire", href: `/notre-histoire?lang=${locale}`, label: english ? "Our history" : "Notre histoire" },
     { id: "nos-valeurs", href: `/notre-histoire?lang=${locale}#nos-valeurs`, label: english ? "Our values" : "Nos valeurs" },
     { id: "notre-vision", href: `/notre-histoire?lang=${locale}#notre-vision`, label: english ? "Our vision" : "Notre vision" },
