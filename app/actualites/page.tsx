@@ -48,7 +48,7 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
 
   return (
     <main className="newsArchivePage" lang={locale}>
-      <PageInteractions backToTopLabel={ui.backToTop} />
+      <PageInteractions />
       <PublicHeader
         locale={locale}
         active="actualites"
@@ -84,7 +84,7 @@ export default async function NewsPage({ searchParams }: NewsPageProps) {
 
       <SiteFooter
         brandName={content.brand.name}
-        descriptor={content.brand.descriptor}
+        address={content.contact.address}
         linkGroups={getFooterLinkGroups(locale, content)}
         locale={locale}
       />

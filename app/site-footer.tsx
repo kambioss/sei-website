@@ -5,28 +5,18 @@ export type FooterLink = { href: string; label: string };
 export type FooterLinkGroup = { title: string; links: FooterLink[] };
 
 export function SiteFooter({
-  brandName,
-  descriptor,
+  address,
   linkGroups,
   locale,
 }: {
   brandName: string;
-  descriptor: string;
+  address: string;
   linkGroups: FooterLinkGroup[];
   locale: Locale;
 }) {
   const english = locale === "en";
   return (
     <footer className="siteFooter">
-      <div className="sectionShell footerCallout">
-        <div>
-          <p>{english ? "From ambition to impact" : "De l’ambition à l’impact"}</p>
-          <h2>{english ? "Let’s build resilient territories together." : "Construisons ensemble des territoires résilients."}</h2>
-        </div>
-        <Link href={`/?lang=${locale}#contact`}>
-          {english ? "Discuss your project" : "Parlons de votre projet"} <span aria-hidden="true">↗</span>
-        </Link>
-      </div>
       <div className="sectionShell footerTop">
         <div className="footerBrand">
           <div className="footerLegalCard">
@@ -46,8 +36,6 @@ export function SiteFooter({
               </div>
             </dl>
           </div>
-          <p className="footerDescriptor">{descriptor}</p>
-          <p className="footerTagline">{english ? "Expertise rooted in African territories." : "Une expertise ancrée dans les territoires africains."}</p>
         </div>
         <nav className="footerNav" aria-label="Footer">
           {linkGroups.map((group) => (
@@ -66,12 +54,9 @@ export function SiteFooter({
         <div className="footerContact">
           <p>{english ? "Contact" : "Nous contacter"}</p>
           <a href="mailto:contact@se-impact.com">contact@se-impact.com</a>
-          <span>Tunis · {english ? "Africa & international assignments" : "Afrique & missions internationales"}</span>
+          <span>{address}</span>
+          <span>{english ? "Africa & international assignments" : "Afrique & missions internationales"}</span>
         </div>
-      </div>
-      <div className="sectionShell footerBottom">
-        <p>© {new Date().getFullYear()} {brandName}</p>
-        <p>{english ? "Sustainable solutions. Measurable impact." : "Solutions durables. Impact mesurable."}</p>
       </div>
     </footer>
   );

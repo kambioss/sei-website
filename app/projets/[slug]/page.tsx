@@ -49,7 +49,7 @@ export default async function ProjectPage({ params, searchParams }: { params: Pr
 
       <SiteFooter
         brandName={content.brand.name}
-        descriptor={content.brand.descriptor}
+        address={content.contact.address}
         linkGroups={getFooterLinkGroups(locale, content)}
         locale={locale}
       />

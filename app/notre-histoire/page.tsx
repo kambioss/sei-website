@@ -10,14 +10,13 @@ export const dynamic = "force-dynamic";
 export default async function HistoryPage({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
   const query = await searchParams;
   const locale = normaliseLocale(query.lang);
-  const english = locale === "en";
   const content = await getSiteContent(locale);
   const { brand, identity, founder, hero } = content;
   const { history, values, vision } = identity;
 
   return (
     <main className="aboutPage" lang={locale}>
-      <PageInteractions backToTopLabel={english ? "Back to top" : "Retour en haut"} />
+      <PageInteractions />
       <PublicHeader
         locale={locale}
         active="sei"
@@ -79,7 +78,7 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
 
       <SiteFooter
         brandName={brand.name}
-        descriptor={brand.descriptor}
+        address={content.contact.address}
         linkGroups={getFooterLinkGroups(locale, content)}
         locale={locale}
       />

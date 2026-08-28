@@ -25,21 +25,38 @@ export function DomainCards({ items, english }: { items: DomainItem[]; english: 
   );
 }
 
-function DomainCard({ item, english }: { item: DomainItem; english: boolean }) {
+function DomainCard({ item }: { item: DomainItem; english: boolean }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div className={"domainCard " + item.tone} role="group" aria-label={item.title}>
+    <div
+      className={"domainCard " + item.tone}
+      role="group"
+      aria-label={item.title}
+      onPointerEnter={(event) => {
+        if (event.pointerType === "mouse" || event.pointerType === "pen") setIsFlipped(true);
+      }}
+      onPointerLeave={(event) => {
+        if (event.pointerType === "mouse" || event.pointerType === "pen") setIsFlipped(false);
+      }}
+      onFocus={() => setIsFlipped(true)}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setIsFlipped(false);
+      }}
+    >
       <div className={"domainCardInner" + (isFlipped ? " isFlipped" : "")}>
         <button type="button" className="domainCardFace domainCardFront" onClick={() => setIsFlipped(true)} aria-label={item.title}>
           <Image src={item.src} alt="" fill unoptimized sizes="(max-width: 680px) 100vw, 33vw" />
           <span className="domainCardCaption" aria-hidden="true">{item.title}</span>
         </button>
-        <div className="domainCardFace domainCardBack">
-          <button type="button" className="domainCardBackBtn" aria-label={english ? "Back to front" : "Retour"} onClick={() => setIsFlipped(false)}>
-            <span aria-hidden="true">↺</span>
-          </button>
+        <div
+          className="domainCardFace domainCardBack"
+          aria-hidden={!isFlipped}
+          onClick={(event) => {
+            if (!(event.target as HTMLElement).closest("button")) setIsFlipped(false);
+          }}
+        >
           <h3>{item.title}</h3>
           <p className="domainCardSummary">{item.summary}</p>
           <ul className="domainCardInterventions">

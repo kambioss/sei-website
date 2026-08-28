@@ -54,7 +54,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
 
   return (
     <main className="homePage" lang={locale}>
-      <PageInteractions backToTopLabel={english ? "Back to top" : "Retour en haut"} />
+      <PageInteractions />
       <PublicHeader
         locale={locale}
         active="sei"
@@ -144,6 +144,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           </p>
           <h2>{contact.title}</h2>
           <p>{contact.intro}</p>
+          <address className="contactAddress">{contact.address}</address>
         </div>
         <ContactForm
           expertiseOptions={expertises.map((item) => item.title)}
@@ -153,7 +154,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
 
       <SiteFooter
         brandName={brand.name}
-        descriptor={brand.descriptor}
+        address={contact.address}
         linkGroups={getFooterLinkGroups(locale, content)}
         locale={locale}
       />

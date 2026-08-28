@@ -57,7 +57,7 @@ export default async function ArticlePage({ params, searchParams }: ArticlePageP
 
       <SiteFooter
         brandName={content.brand.name}
-        descriptor={content.brand.descriptor}
+        address={content.contact.address}
         linkGroups={getFooterLinkGroups(locale, content)}
         locale={locale}
       />

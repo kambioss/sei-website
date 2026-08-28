@@ -20,7 +20,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
 
   return (
     <main className="projectsArchivePage" lang={locale}>
-      <PageInteractions backToTopLabel={english ? "Back to top" : "Retour en haut"} />
+      <PageInteractions />
       <PublicHeader locale={locale} active="projets" ctaLabel={content.hero.primaryAction} languageHrefFr="/projets?lang=fr" languageHrefEn="/projets?lang=en" />
       <section className="projectsArchive sectionShell">
         <div className="projectsArchiveIntro">
@@ -50,7 +50,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
 
       <SiteFooter
         brandName={content.brand.name}
-        descriptor={content.brand.descriptor}
+        address={content.contact.address}
         linkGroups={getFooterLinkGroups(locale, content)}
         locale={locale}
       />

@@ -2,10 +2,9 @@
 
 import { useEffect } from "react";
 
-export function PageInteractions({ backToTopLabel }: { backToTopLabel: string }) {
+export function PageInteractions() {
   useEffect(() => {
     const header = document.querySelector<HTMLElement>(".siteHeader");
-    const backToTop = document.querySelector<HTMLElement>(".backToTop");
     const mobileMenu = document.querySelector<HTMLDetailsElement>(".mobileMenu");
     const targets = document.querySelectorAll<HTMLElement>([
       ".heroCopy",
@@ -53,7 +52,6 @@ export function PageInteractions({ backToTopLabel }: { backToTopLabel: string })
     const onScroll = () => {
       const active = window.scrollY > 40;
       header?.classList.toggle("scrolled", active);
-      backToTop?.classList.toggle("visible", window.scrollY > 650);
 
       const sectionIds = ["sei", "expertises", "approche", "projets", "actualites"];
       const threshold = (header?.offsetHeight ?? 0) + 140;
@@ -87,6 +85,6 @@ export function PageInteractions({ backToTopLabel }: { backToTopLabel: string })
     };
   }, []);
 
-  return <button className="backToTop" type="button" aria-label={backToTopLabel} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>↑</button>;
+  return null;
 
 }
