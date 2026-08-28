@@ -30,11 +30,11 @@ export default async function HistoryPage({ searchParams }: { searchParams: Prom
           <video src="/images/histoire.mp4" autoPlay loop muted playsInline />
           <div className="imageShade" />
           <div className="heroCopy">
-            <p className="eyebrow"><span /> {history.title}</p>
             <h1>{history.heading}</h1>
           </div>
         </div>
         <div className="historyIntro">
+          <p className="eyebrow"><span /> {history.title}</p>
           {history.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         </div>
       </section>
