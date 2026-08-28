@@ -932,6 +932,7 @@ img, svg { max-width: 100%; }
 }
 .valuesVisionGrid .sectionIntro { display: block; margin-bottom: 28px; }
 .valuesVisionGrid .sectionIntro h2 { font-size: clamp(28px, 3vw, 42px); line-height: 1.06; }
+.valuesVisionGrid .sectionIntro > p { max-width: 46ch; color: var(--ochre); font-size: clamp(16px, 1.3vw, 19px); font-weight: 800; line-height: 1.38; }
 .valuesVisionGrid .valuesText { margin: 0; }
 .valuesVisionGrid .sectionIntro > p,
 .valuesVisionGrid .valuesText,
@@ -1003,12 +1004,14 @@ img, svg { max-width: 100%; }
 .footerTop { display: grid; grid-template-columns: minmax(220px, .9fr) minmax(320px, 1.1fr) minmax(280px, 1fr); align-items: start; gap: clamp(20px, 3vw, 36px); padding-block: 24px; }
 .footerBrand { display: flex; align-items: center; gap: 16px; margin-left: -10px; order: 3; }
 .footerLegalCard, .footerContact { border: 0; background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.035)); box-shadow: 0 18px 45px rgba(0,0,0,.08); backdrop-filter: blur(8px); }
-.footerLegalCard { flex: 1 1 auto; min-width: 0; display: grid; gap: 10px; padding: 14px 18px; border-radius: 16px 16px 34px 16px; }
-.footerLogoFrame { flex: 0 0 auto; position: relative; display: block; width: 100px; height: 39px; }
+.footerLegalCard { flex: 0 1 240px; min-width: 0; display: grid; gap: 10px; padding: 14px 18px; border-radius: 16px 16px 34px 16px; }
+.footerLogoBlock { flex: 0 0 auto; display: grid; justify-items: start; gap: 8px; }
+.footerLogoFrame { position: relative; display: block; width: 100px; height: 39px; }
 .footerLogoFrame img { object-fit: contain; object-position: center; }
+.footerLogoNote { color: rgba(255,255,255,.76); font-size: 11px; line-height: 1.4; }
 .footerLegalTitle { margin: 0; color: rgb(240,189,99); font-size: 10px; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
 .footerLegalList { display: grid; gap: 6px; margin: 0; }
-.footerLegalList > div { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; }
+.footerLegalList > div { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
 .footerLegalList dt { margin: 0; color: rgba(255,255,255,.76); font-size: 11px; }
 .footerLegalList dd { margin: 0; color: white; font-size: 11px; font-weight: 400; letter-spacing: .01em; text-align: right; }
 .footerNav { order: 2; display: grid; grid-template-columns: repeat(2, minmax(120px, 1fr)); gap: 18px 28px; }
@@ -1034,6 +1037,6 @@ img, svg { max-width: 100%; }
   .footerNav { grid-template-columns: 1fr 1fr; }
   .footerContact { grid-column: auto; }
   .footerBrand { flex-direction: column; align-items: flex-start; margin-left: 0; gap: 14px; }
-  .footerLegalCard { width: 100%; }
+  .footerLegalCard { flex: 0 0 auto; width: 100%; }
   .footerLogoFrame { width: 112px; height: 43px; }
 }
