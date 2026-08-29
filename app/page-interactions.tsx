@@ -7,7 +7,7 @@ export function PageInteractions() {
     const header = document.querySelector<HTMLElement>(".siteHeader");
     const mobileMenu = document.querySelector<HTMLDetailsElement>(".mobileMenu");
     const historyVideo = document.querySelector<HTMLVideoElement>("#notre-histoire .heroVisual video");
-    if (historyVideo) historyVideo.playbackRate = 0.35;
+    if (historyVideo) historyVideo.playbackRate = 0.15;
     const targets = document.querySelectorAll<HTMLElement>([
       ".heroCopy",
       ".heroVisual",
