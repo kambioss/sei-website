@@ -488,15 +488,17 @@ img, svg { max-width: 100%; }
 .domainCard { --accent: var(--forest); position: relative; min-width: 0; perspective: 1600px; }
 .domainCard.ochre { --accent: var(--ochre); }
 .domainCard.teal { --accent: var(--teal); }
-.domainCardInner { position: relative; width: 100%; height: 100%; transition: transform .7s cubic-bezier(.3,.2,.2,1); transform-style: preserve-3d; }
-.domainCardInner.isFlipped { transform: rotateY(180deg); }
-.domainCardFace { position: absolute; inset: 0; overflow: hidden; border-radius: 22px; box-shadow: 0 16px 38px rgba(13,77,59,.09); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.domainCardInner { position: relative; width: 100%; height: 100%; transition: transform .7s cubic-bezier(.3,.2,.2,1); transform-style: preserve-3d; -webkit-transform-style: preserve-3d; }
+.domainCardInner.isFlipped { transform: rotateY(180deg); -webkit-transform: rotateY(180deg); }
+.domainCardFace { position: absolute; inset: 0; overflow: hidden; border-radius: 22px; box-shadow: 0 16px 38px rgba(13,77,59,.09); backface-visibility: hidden; -webkit-backface-visibility: hidden; transition: visibility 0s linear .35s; }
+.domainCardInner:not(.isFlipped) .domainCardBack { visibility: hidden; }
+.domainCardInner.isFlipped .domainCardFront { visibility: hidden; }
 .domainCardFront { display: block; width: 100%; background: #d7d7ce; }
 .domainCardFront img { object-fit: cover; transition: transform .6s ease; }
 .domainCard:hover .domainCardFront img { transform: scale(1.035); }
 .domainCardCaption { position: absolute; z-index: 1; left: 15px; right: 15px; bottom: 15px; padding: 12px 14px; border-radius: 12px; background: rgba(8,47,40,.8); color: white; font-size: 13px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; backdrop-filter: blur(8px); transform: translateY(4px); transition: transform .3s ease, background .3s ease; }
 .domainCard:hover .domainCardCaption { transform: translateY(0); background: rgba(8,47,40,.93); }
-.domainCardBack { transform: rotateY(180deg); display: flex; flex-direction: column; padding: 22px 22px 16px; background: linear-gradient(155deg, #fff 0%, color-mix(in srgb, var(--accent), white 92%) 100%); color: var(--ink); overflow-y: auto; }
+.domainCardBack { transform: rotateY(180deg); -webkit-transform: rotateY(180deg); display: flex; flex-direction: column; padding: 22px 22px 16px; background: linear-gradient(155deg, #fff 0%, color-mix(in srgb, var(--accent), white 92%) 100%); color: var(--ink); overflow-y: auto; }
 .domainCardFrontBtn, .domainCardBackBtn { position: absolute; top: 14px; right: 14px; z-index: 2; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; flex: none; border: 0; border-radius: 999px; background: color-mix(in srgb, var(--accent), white 10%); color: white; font-size: 15px; line-height: 1; cursor: pointer; transition: transform .2s ease, background .2s ease; }
 .domainCardFrontBtn:hover, .domainCardBackBtn:hover { background: var(--accent); transform: scale(1.08); }
 .domainCardBack h3 { margin: 0 0 8px; padding-right: 34px; color: var(--accent); font-size: 17px; line-height: 1.2; letter-spacing: -.03em; }
