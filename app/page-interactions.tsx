@@ -7,7 +7,13 @@ export function PageInteractions() {
     const header = document.querySelector<HTMLElement>(".siteHeader");
     const mobileMenu = document.querySelector<HTMLDetailsElement>(".mobileMenu");
     const historyVideo = document.querySelector<HTMLVideoElement>("#notre-histoire .heroVisual video");
-    if (historyVideo) historyVideo.playbackRate = 0.15;
+    const setHistoryVideoSpeed = () => {
+      if (!historyVideo) return;
+      historyVideo.defaultPlaybackRate = 0.08;
+      historyVideo.playbackRate = 0.08;
+    };
+    setHistoryVideoSpeed();
+    historyVideo?.addEventListener("loadedmetadata", setHistoryVideoSpeed);
     const targets = document.querySelectorAll<HTMLElement>([
       ".heroCopy",
       ".heroVisual",
@@ -85,6 +91,7 @@ export function PageInteractions() {
 
     return () => {
       observer.disconnect();
+      historyVideo?.removeEventListener("loadedmetadata", setHistoryVideoSpeed);
       window.removeEventListener("scroll", onScroll);
       document.removeEventListener("pointerdown", closeMobileMenuOutside);
     };
