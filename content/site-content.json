@@ -27,7 +27,7 @@
     "eyebrow": "Le mot du fondateur",
     "quote": [
       "« Les écosystèmes africains et les populations qui en dépendent sont de plus en plus vulnérables. Le dérèglement climatique, la dégradation des terres, l’érosion de la biodiversité et la pression croissante sur les ressources naturelles fragilisent les moyens d’existence, aggravent les inégalités et peuvent accentuer les tensions au sein des territoires.",
-      "C’est de ce constat et de la volonté d’agir qu’est né SEI. Notre vocation est de rapprocher les engagements internationaux et les politiques publiques des réalités de terrain, afin de préserver les écosystèmes, de renforcer la résilience des populations et de faire du développement durable un levier concret d’action, d’inclusion et de paix pour les territoires africains. »"
+      "C’est de ce constat et de la volonté d’agir qu’est né SEI. Notre vocation est de rapprocher les engagements internationaux et les politiques publiques des réalités de terrain, afin de préserver les écosystèmes, de renforcer la résilience des populations et de faire du développement durable un levier concret d’action, d’inclusion et de dialogue pour les territoires africains. »"
     ],
     "photo": "/images/fondateur-sei.jpeg",
     "name": "Youssouf AMADOU"
@@ -35,11 +35,11 @@
   "identity": {
     "eyebrow": "Identité & positionnement",
     "title": "Un cabinet engagé au service du développement durable",
-    "ambition": "Transformer les défis environnementaux, sociaux et climatiques en leviers d’action, de paix et de résilience pour les populations et les territoires africains.",
+    "ambition": "Transformer les défis environnementaux, sociaux et climatiques en leviers d’action, de dialogue et de résilience pour les populations et les territoires africains.",
     "knowUs": {
       "image": "/images/natural-landscape-with-sunrise-trees.jpg",
       "paragraphs": [
-        "Social & Eco Impact (SEI) est un cabinet de conseils spécialisé dans la réalisation d’études et l’élaboration de stratégies en matière de gestion durable des terres, d’évaluation environnementale et sociale, ainsi que dans l’accompagnement des réponses aux enjeux de paix, de mobilités et de changement climatique.",
+        "Social & Eco Impact (SEI) est un cabinet de conseils spécialisé dans la réalisation d’études et l’élaboration de stratégies en matière de gestion durable des terres, d’évaluation environnementale et sociale, ainsi que dans l’accompagnement des réponses aux enjeux de dialogue, de mobilités et de changement climatique.",
         "SEI accompagne les institutions publiques, les collectivités territoriales, les organisations internationales et les partenaires techniques et financiers dans la conception, la mise en œuvre, le suivi et l’évaluation de politiques, stratégies, projets et programmes à fort impact environnemental et social en Afrique.",
         "Le cabinet appuie également les partenaires dans le renforcement des synergies entre les trois Conventions de Rio : la Convention sur la diversité biologique (CDB), la Convention-cadre des Nations Unies sur les changements climatiques (CCNUCC) et la Convention des Nations Unies sur la lutte contre la désertification (CNULCD) afin d’optimiser la cohérence des politiques et des interventions nationales."
       ]
@@ -145,7 +145,7 @@
     {
       "number": "03",
       "tone": "teal",
-      "title": "Paix, mobilités et changement climatique",
+      "title": "Dialogue, mobilités et changement climatique",
       "summary": "SEI accompagne les institutions, les territoires et les communautés dans l’anticipation des effets du dérèglement climatique sur les ressources naturelles, les moyens d’existence et les mobilités humaines. Notre approche vise à renforcer la résilience des populations, à prévenir les tensions liées à l’accès aux ressources et à favoriser des réponses inclusives, adaptées aux réalités locales.",
       "interventions": [
         {
@@ -187,7 +187,7 @@
       }
     ],
     "closingTitle": "Nos interventions et l'agenda 2030",
-    "closingText": "SEI contribue directement à plusieurs Objectifs de développement durable, notamment ceux liés à l’action climatique, à la restauration des terres et à la préservation de la biodiversité, à la paix et aux institutions efficaces, ainsi qu’aux partenariats. Notre approche intégrée traduit ces objectifs mondiaux en actions concrètes au service des populations et des territoires."
+    "closingText": "SEI contribue directement à plusieurs Objectifs de développement durable, notamment ceux liés à l’action climatique, à la restauration des terres et à la préservation de la biodiversité, au dialogue et aux institutions efficaces, ainsi qu’aux partenariats. Notre approche intégrée traduit ces objectifs mondiaux en actions concrètes au service des populations et des territoires."
   },
   "capabilities": {
     "eyebrow": "Compétences transversales",
